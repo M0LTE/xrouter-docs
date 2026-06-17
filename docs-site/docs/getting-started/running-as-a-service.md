@@ -7,7 +7,7 @@ assumes you already have a working node from one of the
 [Getting started](index.md) pages.
 
 XRouter on Linux is normally an interactive, full-screen text program. Left to itself it
-runs in your terminal, and closing the terminal closes the node — no good for a station that
+runs in your terminal, and closing the terminal closes the node, no good for a station that
 should be on the air 24/7. There are two established ways to fix that, and they suit
 different needs.
 
@@ -22,22 +22,22 @@ no text interface at all:
 ./xrlin -d
 ```
 
-In this mode you control and monitor the node entirely over the network — its HTTP server,
+In this mode you control and monitor the node entirely over the network, its HTTP server,
 Telnet, or by connecting in over packet. There is no TUI to attach to, which is exactly what
 you want under a service manager: the program runs quietly in the background and `systemd`
 looks after starting it at boot and restarting it if it ever exits.
 
 !!! note "Daemon mode means no TUI"
     > "If you start xrpi with `xrpi -d` it runs completely headless, and you can only
-    > control it via http or telnet (or packet)." — *Paula G8PZT*
+    > control it via http or telnet (or packet).", *Paula G8PZT*
 
     That is the clean option for a `systemd` service. If you specifically want the
     interactive screens, use the `screen`/`tmux` approach below instead.
 
 ### Inside screen or tmux (keep the TUI)
 
-If you would rather keep XRouter's interactive interface — the status, monitor and console
-windows — run it **without** `-d` inside a detachable terminal multiplexer such as `screen`
+If you would rather keep XRouter's interactive interface, the status, monitor and console
+windows, run it **without** `-d` inside a detachable terminal multiplexer such as `screen`
 or `tmux`. The node runs in a session you can detach from and re-attach to at will, so it
 keeps running after you log out but the full TUI is there whenever you reconnect:
 
@@ -57,7 +57,7 @@ yourself.
 ## A generic systemd unit
 
 The following is a clean, generic `systemd` unit for daemon-mode operation. Adapt the user,
-paths and binary name to your installation — do not run it as `root`. Save it as, for
+paths and binary name to your installation, do not run it as `root`. Save it as, for
 example, `/etc/systemd/system/xrouter.service`:
 
 ```ini
@@ -96,7 +96,7 @@ A few points about this unit:
   because XRouter reads and writes its files relative to where it runs.
 - **`Restart=always`** with a short `RestartSec` is what gives you automatic recovery: if
   the node crashes or exits, `systemd` brings it back a few seconds later.
-- **`User=packet`** runs the node as an unprivileged account, not `root` — see below.
+- **`User=packet`** runs the node as an unprivileged account, not `root`, see below.
 
 !!! danger "Don't run the service as root"
     Run XRouter as a normal, unprivileged user, here `packet`. To let an unprivileged
@@ -111,12 +111,12 @@ A few points about this unit:
 
 ## The trade-off
 
-Neither approach is "correct" — they optimise for different things:
+Neither approach is "correct", they optimise for different things:
 
 | | `systemd` + `-d` | `screen` / `tmux` |
 | --- | --- | --- |
 | Starts at boot | Yes, natively | Needs a boot script of your own |
-| Auto-restart on crash | Yes (`Restart=always`) | No — you must script it |
+| Auto-restart on crash | Yes (`Restart=always`) | No, you must script it |
 | Interactive TUI | No (control via HTTP/Telnet/packet) | Yes, attach any time |
 | Best for | A set-and-forget hilltop node | A node you like to watch and tinker with |
 
@@ -144,7 +144,7 @@ capabilities you granted it:
 
 ---
 
-**Sources:** [in-program manual, OARC wiki — installation/running topics (man6)](https://wiki.oarc.uk/packet:xrouter:docs:man6)
+**Sources:** [in-program manual, OARC wiki: installation/running topics (man6)](https://wiki.oarc.uk/packet:xrouter:docs:man6)
 · [XRouter support group, groups.io](https://groups.io/g/xrouter) (the `-d` daemon-mode and
 `setcap` guidance from the author). The `systemd` unit above is a generic example written for
 these docs; adapt it to your own user and paths.

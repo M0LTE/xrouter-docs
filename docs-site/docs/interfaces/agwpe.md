@@ -1,10 +1,10 @@
 # AGWPE
 
-This page connects XRouter to an **AGW Packet Engine** — SV2AGW's AGWPE, or any program that
+This page connects XRouter to an **AGW Packet Engine**, SV2AGW's AGWPE, or any program that
 speaks the AGW protocol, including **Direwolf**, **UZ7HO SoundModem** and **QtSoundModem** in
 AGW mode. It is for a sysop who already runs an AGW engine to drive their radios and wants
-XRouter to use it. The reverse case — XRouter pretending to *be* an AGW engine for other
-apps — is covered at the end.
+XRouter to use it. The reverse case, XRouter pretending to *be* an AGW engine for other
+apps, is covered at the end.
 
 The AGW protocol lets one program present multiple radio ports over a single TCP connection.
 Where KISS gives you one TNC per interface, an AGW interface can carry **up to 16 ports**
@@ -16,11 +16,11 @@ Use a **`TYPE=AGW`** interface. The keywords that matter:
 
 | Keyword | What it sets | Default |
 | --- | --- | --- |
-| `TYPE=AGW` | AGW client interface | — (mandatory) |
+| `TYPE=AGW` | AGW client interface |, (mandatory) |
 | `MTU=<bytes>` | Max transmission unit | mandatory; use `256` on AX.25 |
 | `IOADDR=<ip>` | IP address of the AGW engine | `127.0.0.1` (localhost) |
 | `INTNUM=<port>` | The engine's TCP port | `8000` |
-| `CONFIG=<password>` | AGW login password, if the engine requires one | — |
+| `CONFIG=<password>` | AGW login password, if the engine requires one | n/a 
 
 When `CONFIG` supplies a password, the username presented to the engine is your `NODECALL`.
 For a local engine with no password, you can omit `CONFIG` and `IOADDR` and accept the
@@ -51,8 +51,8 @@ To use a second radio port on the same engine, add another `PORT` block pointing
 
 !!! tip "AGW vs KISS for a soundcard modem"
     Direwolf, UZ7HO SoundModem and QtSoundModem can present *either* a KISS interface or an
-    AGW interface. If you would rather connect via KISS — for instance over a serial device
-    or Direwolf's KISS-over-TCP — see [Soundcard modems](soundcard-modems.md). Either path
+    AGW interface. If you would rather connect via KISS, for instance over a serial device
+    or Direwolf's KISS-over-TCP, see [Soundcard modems](soundcard-modems.md). Either path
     works; choose whichever is simpler on your system.
 
 !!! warning "An AGW engine on a remote host needs IP enabled"
@@ -63,8 +63,8 @@ To use a second radio port on the same engine, add another `PORT` block pointing
 
 ## XRouter as an AGW host (the other direction)
 
-XRouter can also **emulate an AGW Packet Engine**, so that other applications — a logger, a
-terminal, an APRS client — can use XRouter as *their* packet engine. This is the opposite of
+XRouter can also **emulate an AGW Packet Engine**, so that other applications, a logger, a
+terminal, an APRS client, can use XRouter as *their* packet engine. This is the opposite of
 the interface above: here other programs connect *in* to XRouter.
 
 The emulator is enabled with the global directive **`AGWPORT`**, which sets the TCP port
@@ -75,7 +75,7 @@ AGWPORT=8000        ; XRouter offers an AGWPE host on port 8000
 ```
 
 A client application then points its AGWPE connection at XRouter's IP address and that port.
-Because the emulator listens on a TCP port, it is — like all IP services — subject to the
+Because the emulator listens on a TCP port, it is, like all IP services, subject to the
 `IPADDRESS` rule above.
 
 !!! note "Don't run a client and host on the same port by accident"
@@ -85,7 +85,7 @@ Because the emulator listens on a TCP port, it is — like all IP services — s
 
 ---
 
-**Sources:** [In-program manual, OARC wiki — §6 Installation & Configuration](https://wiki.oarc.uk/packet:xrouter:docs:man6)
+**Sources:** [In-program manual, OARC wiki: §6 Installation & Configuration](https://wiki.oarc.uk/packet:xrouter:docs:man6)
 (AGW client interface keywords; AGW host emulation via `AGWPORT`) ·
-[ohiopacket.org XRPi mirror — interfaces](https://ohiopacket.org/xrpi/docs/ifaces.htm) ·
+[ohiopacket.org XRPi mirror: interfaces](https://ohiopacket.org/xrpi/docs/ifaces.htm) ·
 [XRouter support group (groups.io)](https://groups.io/g/xrouter)

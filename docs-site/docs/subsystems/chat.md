@@ -1,6 +1,6 @@
 # Chat server
 
-XRouter includes a built-in multi-channel chat server, **XRChat** — a keyboard-to-keyboard
+XRouter includes a built-in multi-channel chat server, **XRChat**, a keyboard-to-keyboard
 conferencing system that lets users on your node, and on linked nodes, talk in shared
 rooms. This page covers what it is, how to switch it on, how its rooms and links work, and
 how callers reach it.
@@ -36,13 +36,13 @@ CHATQUAL=0          ; reachable, but not broadcast as its own node
 
 !!! note "The chat server is effectively always on"
     Unlike the mailbox, the chat server is part of XRouter's core and cannot be fully
-    switched off — at most it can be hidden from NET-ROM by leaving `CHATQUAL` at `0`.
+    switched off, at most it can be hidden from NET-ROM by leaving `CHATQUAL` at `0`.
     There is no harm in this; an unused chat server simply sits idle.
 
 ## Rooms and channels
 
-XRChat supports a very large number of channels — far more than any node will use in
-practice — so you never run short of rooms. Users join, leave and create rooms with the
+XRChat supports a very large number of channels, far more than any node will use in
+practice, so you never run short of rooms. Users join, leave and create rooms with the
 `/`-prefixed chat commands once they are connected. A few rooms have special significance:
 
 - There is a **default room** that users land in, so a caller who just connects has
@@ -58,7 +58,7 @@ on your node can be seen by users on quite different software elsewhere.
 
 !!! tip "The sysop instant-message channel"
     XRouter's own console carries a sysop chat window. Community sources place the sysop
-    instant-messaging channel at **channel 1234** — handy for sysop-to-sysop chat across
+    instant-messaging channel at **channel 1234**, handy for sysop-to-sysop chat across
     linked nodes. Treat the exact number as community knowledge; confirm it against your
     own build's chat help if you intend to rely on it.
 
@@ -93,13 +93,13 @@ CONNECT M0XXX 8
 ```
 
 See [NetRom-X service numbers](../networking/netromx-services.md) for the full scheme.
-The user-facing chat commands — joining rooms, listing users, sending and leaving — are
+The user-facing chat commands, joining rooms, listing users, sending and leaving, are
 documented with the other node commands in the
 [Command reference](../commands/command-reference.md).
 
 ---
 
-**Sources:** [In-program manual, OARC wiki — Chat server](https://wiki.oarc.uk/packet:xrouter:chatserver) ·
+**Sources:** [In-program manual, OARC wiki: Chat server](https://wiki.oarc.uk/packet:xrouter:chatserver) ·
 [Chat server help](https://wiki.oarc.uk/packet:xrouter:docs:chatserverhelp) ·
-[In-program manual — Section 7 (directives)](https://wiki.oarc.uk/packet:xrouter:docs:man7) ·
+[In-program manual: Section 7 (directives)](https://wiki.oarc.uk/packet:xrouter:docs:man7) ·
 [XRouter support group (groups.io)](https://groups.io/g/xrouter)

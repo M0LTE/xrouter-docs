@@ -2,16 +2,17 @@ site_name: XRouter Documentation
 site_description: >-
   A re-presentation of the documentation for XRouter, Paula G8PZT's
   AX.25 / NET-ROM / TCP-IP packet-radio node, router, chat server and
-  APRS digipeater — organised by user journey and cited to primary sources.
+  APRS digipeater, organised by user journey and cited to primary sources.
 site_author: XRouter Documentation contributors
 site_url: https://m0lte.github.io/xrouter-docs/
 repo_url: https://github.com/m0lte/xrouter-docs
 repo_name: m0lte/xrouter-docs
 edit_uri: edit/master/docs/
 copyright: >-
-  Documentation re-presentation released under CC BY 4.0. XRouter itself is
-  copyright Paula G8PZT and is free for non-commercial amateur use. This is an
-  unofficial, community-maintained site; for canonical information defer to the author.
+  Documentation re-presentation released under CC BY 4.0, written entirely by AI from primary
+  sources and not fact-checked by a human. XRouter itself is copyright Paula G8PZT and is free
+  for non-commercial amateur use. This is an unofficial, community-maintained site; for
+  canonical information defer to the author.
 
 theme:
   name: material
@@ -97,8 +98,8 @@ nav:
       - Migrating from BPQ or other node software: start/migrating-from-bpq.md
   - Packet radio basics:
       - What is packet radio?: basics/what-is-packet-radio.md
-      - AX.25 — the data link: basics/ax25.md
-      - NET/ROM — networking and routing: basics/netrom.md
+      - "AX.25: the data link": basics/ax25.md
+      - "NET/ROM: networking and routing": basics/netrom.md
       - KISS, TNCs and soundcard modems: basics/kiss-tncs-and-modems.md
       - APRS in brief: basics/aprs.md
       - IP over AX.25 and AMPRNet: basics/ip-over-ax25.md

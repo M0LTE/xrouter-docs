@@ -2,18 +2,18 @@
 
 This page collects complete, annotated `XROUTER.CFG` examples for the common ways a node gets
 on the air. They are written from scratch to be readable starting points, not copies of any
-running station — substitute your own callsigns, devices and addresses throughout. Each one
+running station, substitute your own callsigns, devices and addresses throughout. Each one
 obeys the rules from the [configuration model](index.md): identity in the GLOBAL section,
 interfaces before the ports that use them, and a valid `IPADDRESS`.
 
 !!! tip "Edit incrementally"
     XRouter reports configuration errors with a line number and reads the file once at
-    startup. Change one thing, restart, check, repeat — it is far easier than writing a large
+    startup. Change one thing, restart, check, repeat, it is far easier than writing a large
     file and debugging it all at once.
 
 ## 1. Soundcard-modem (KISS) RF node
 
-A single VHF channel through a soundcard modem — Direwolf, UZ7HO SoundModem or QtSoundModem —
+A single VHF channel through a soundcard modem, Direwolf, UZ7HO SoundModem or QtSoundModem,
 configured to present a KISS interface on a serial device or pseudo-TTY. This is the typical
 "no hardware TNC" station.
 
@@ -58,7 +58,7 @@ modems](../interfaces/soundcard-modems.md) for the modem-side setup.
 
 ## 2. Serial KISS TNC / NinoTNC node
 
-A hardware KISS TNC — including a NinoTNC, which appears as a USB-serial device — on one
+A hardware KISS TNC, including a NinoTNC, which appears as a USB-serial device, on one
 channel. Almost identical to the soundcard case, because both speak KISS over a serial port;
 only the device and speed differ.
 
@@ -93,7 +93,7 @@ ENDPORT
 ```
 
 Key points: `KISSOPTIONS=NONE` is plain KISS, which suits most TNCs; raise `MAXFRAME` above 7
-only on a clean channel (it would switch on modulo-128). A BPQ-KISS EPROM is the exception —
+only on a clean channel (it would switch on modulo-128). A BPQ-KISS EPROM is the exception,
 it needs `KISSOPTIONS=POLLED,CHECKSUM`. See [KISS TNCs](../interfaces/kiss-tncs.md).
 
 ## 3. Internet AXUDP link to a partner node
@@ -103,9 +103,9 @@ UDP datagrams; you and your partner agree on UDP ports and each points at the ot
 
 !!! danger "IPADDRESS is required for any internet link"
     AXUDP, AXIP and AXTCP are all IP services, so they are **disabled entirely** if the global
-    `IPADDRESS` is `0.0.0.0` or undefined — XRouter switches off all IP activity as a
+    `IPADDRESS` is `0.0.0.0` or undefined, XRouter switches off all IP activity as a
     deliberate security measure. Set a real 44Net address, or a private dummy such as
-    `10.1.1.1`, before an internet link will work. — *Paula G8PZT,
+    `10.1.1.1`, before an internet link will work., *Paula G8PZT,
     [groups.io](https://groups.io/g/xrouter/message/1957)*
 
 ```ini
@@ -141,7 +141,7 @@ AXTCP](../interfaces/axip-axudp-axtcp.md).
 
 ## 4. Adding a LAN / Ethernet port
 
-A LAN port gives XRouter its own address on your home network — useful for IP routing between
+A LAN port gives XRouter its own address on your home network, useful for IP routing between
 radio ports and the LAN, and for reaching the node's web and Telnet servers from another
 machine. This snippet adds an Ethernet interface and port to any of the configs above; the
 `EXTERNAL` interface's IP address must differ from the host Linux box's own IP.
@@ -159,7 +159,7 @@ ENDINTERFACE
 PORT=8
         ID=Ethernet LAN
         INTERFACENUM=8
-        IPADDRESS=192.168.1.50   ; XRouter's own LAN address — NOT the host's IP
+        IPADDRESS=192.168.1.50   ; XRouter's own LAN address, NOT the host's IP
         NETMASK=255.255.255.0
 ENDPORT
 ```
@@ -167,18 +167,18 @@ ENDPORT
 !!! note "Capabilities for Ethernet and low ports"
     The `EXTERNAL` interface uses raw sockets, and binding service ports below 1024 needs
     privilege. Rather than running as root, grant the binary the right Linux capabilities
-    once with `setcap` — see [Raspberry Pi](../getting-started/raspberry-pi.md) and [Security
+    once with `setcap`, see [Raspberry Pi](../getting-started/raspberry-pi.md) and [Security
     and hardening](../admin/security-hardening.md).
 
 If you only need to reach IP services *from* the LAN (not route between the LAN and radio
-ports), you may not need an `EXTERNAL` port at all — the Linux kernel stack can carry it. The
+ports), you may not need an `EXTERNAL` port at all, the Linux kernel stack can carry it. The
 trade-offs between the two approaches are covered on [The TCP/IP
 stack](../networking/tcpip.md).
 
 ## Putting it together
 
 A real node usually combines several of these: one or more RF ports, perhaps an internet link
-to a neighbour, and a LAN port for administration. Stack the blocks in one `XROUTER.CFG` —
+to a neighbour, and a LAN port for administration. Stack the blocks in one `XROUTER.CFG`,
 GLOBAL identity at the top, then each `INTERFACE` followed (anywhere below it) by its
 `PORT`(s). Give each interface and port a unique number, and keep your descriptive `ID`
 strings meaningful, because that is what you will see on the `PORTS` display when something

@@ -1,7 +1,7 @@
 # XRouter Documentation
 
 An unofficial, community-maintained re-presentation of the documentation for
-**XRouter** — Paula G8PZT's AX.25 / NET-ROM / TCP-IP packet-radio node, router,
+**XRouter**, Paula G8PZT's AX.25 / NET-ROM / TCP-IP packet-radio node, router,
 chat server and APRS digipeater. Built with [MkDocs](https://www.mkdocs.org/) and
 [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/), versioned with
 [mike](https://github.com/jimporter/mike).
@@ -10,6 +10,11 @@ This site is **organised by user journey** and **cited to primary sources**. It 
 *not* authoritative: for canonical information, defer to the author and to the
 in-program manual. See
 [`docs-site/docs/project/about-these-docs.md`](docs-site/docs/project/about-these-docs.md).
+
+> **Written entirely by AI, and not fact-checked by a human.** Every page was written by a
+> large language model from primary sources and checked only by that same model. Treat it as
+> an unverified secondary source and defer to the author and the in-program manual. See
+> [About these docs](docs-site/docs/project/about-these-docs.md#how-this-site-was-written).
 
 ## Repository layout
 

@@ -2,7 +2,7 @@
 
 Short definitions of the terms you meet across this site and in XRouter's own manual.
 Where a concept has a fuller page, the term links to it. This is a quick reference, not
-a tutorial — start with [Packet radio basics](../basics/what-is-packet-radio.md) if a
+a tutorial, start with [Packet radio basics](../basics/what-is-packet-radio.md) if a
 whole area is new to you.
 
 ### AGWPE
@@ -29,7 +29,7 @@ plotted on a live map. XRouter can digipeat APRS and act as an [IGate](#igate). 
 ### AX.25
 **Amateur X.25**, the data-link (layer-2) protocol underneath almost all packet radio.
 It carries [callsigns](#ssid) in every frame, supports both connected and connectionless
-operation, and defines [digipeating](#digipeater). See [AX.25 — the data link](../basics/ax25.md).
+operation, and defines [digipeating](#digipeater). See [AX.25: the data link](../basics/ax25.md).
 
 ### AXIP / AXUDP / AXTCP
 Three ways to carry AX.25 frames over the internet to link nodes: **AXIP** wraps them in
@@ -37,7 +37,7 @@ raw IP (protocol 93), **AXUDP** in UDP datagrams, **AXTCP** in a TCP stream (whi
 NAT and firewalls well). See [AXIP / AXUDP / AXTCP linking](../interfaces/axip-axudp-axtcp.md).
 
 ### BBS
-A **Bulletin Board System** — full store-and-forward mail and message handling. XRouter
+A **Bulletin Board System**, full store-and-forward mail and message handling. XRouter
 provides a smaller [PMS](#pms) rather than a full BBS; for a full BBS the community usually
 points to BPQ.
 
@@ -48,8 +48,8 @@ WA8DED host-mode TNC so applications such as FBB can use it as their packet engi
 
 ### Digipeater
 A single-frequency, store-and-forward repeater at layer 2: if its callsign appears next in a
-frame's repeater list, it retransmits the frame. It is simple source routing — the sender
-lists the path — and is the building block beneath APRS paths. See [AX.25](../basics/ax25.md).
+frame's repeater list, it retransmits the frame. It is simple source routing, the sender
+lists the path, and is the building block beneath APRS paths. See [AX.25](../basics/ax25.md).
 
 ### FRACK
 **Frame ACK** time: the AX.25 T1 timer, the time a station waits for an acknowledgement before
@@ -68,7 +68,7 @@ broadcasting [quality](#quality), it unicasts routing updates to neighbours and 
 See [NET/ROM, INP3 and L3RTT](../networking/netrom-inp3.md).
 
 ### KISS
-"**Keep It Simple, Stupid**" — a minimal framing protocol on the link between a computer and a
+"**Keep It Simple, Stupid**", a minimal framing protocol on the link between a computer and a
 [TNC](#tnc). It is not part of AX.25 and never goes on the air; it just delimits frames over the
 wire. Runs over serial or over TCP. See [KISS, TNCs and soundcard modems](../basics/kiss-tncs-and-modems.md).
 
@@ -87,7 +87,7 @@ The maximum number of un-acknowledged AX.25 information frames a station may hav
 (the window). Set per port; values of 8 or more switch the link to extended (modulo-128) operation.
 
 ### MTU
-**Maximum Transmission Unit** — the largest frame an [interface](../configuration/interfaces.md)
+**Maximum Transmission Unit**, the largest frame an [interface](../configuration/interfaces.md)
 will pass. Mandatory in every interface block; the manual advises keeping it to 256 (or less) on
 AX.25 ports because of TNC buffer limits.
 
@@ -99,7 +99,7 @@ is built up from what each node learns about its neighbours.
 A layer-3/4 networking scheme over connected-mode AX.25 that lets traffic be routed automatically
 across many nodes (with friendly [aliases](#alias) and per-hop acknowledgement) instead of relying
 on manual [digipeater](#digipeater) paths. XRouter implements it and extends it. See
-[NET/ROM — networking and routing](../basics/netrom.md).
+[NET/ROM: networking and routing](../basics/netrom.md).
 
 ### NetRom-X
 XRouter's **service-numbering scheme**: one node callsign exposing many numbered services
@@ -108,7 +108,7 @@ per service. See [NetRom-X service numbers](../networking/netromx-services.md) a
 [service-number table](ports-and-services.md#netrom-x-standard-service-numbers).
 
 ### Node
-A station — usually unattended, at a good RF site — that provides onward connectivity between
+A station, usually unattended, at a good RF site, that provides onward connectivity between
 users and other nodes, identified by a [callsign](#ssid) and an [alias](#alias). XRouter turns a
 computer plus radios/links into such a node. See [Nodes, switches and the sysop role](../basics/nodes-and-sysops.md).
 
@@ -117,7 +117,7 @@ computer plus radios/links into such a node. See [Nodes, switches and the sysop 
 per port; the global value also sets the NET/ROM layer-3 default.
 
 ### PMS
-The **Personal Message Server** — XRouter's built-in mailbox. It does FBB-style forwarding but is
+The **Personal Message Server**, XRouter's built-in mailbox. It does FBB-style forwarding but is
 deliberately smaller than a full [BBS](#bbs). See [PMS mailbox](../subsystems/pms-mailbox.md).
 
 ### PZTDOS
@@ -131,7 +131,7 @@ node tables sane; everyone using 255 causes route "hijacking" and bloat.
 
 ### Soundcard modem
 Software that turns a computer sound card (or USB audio interface) into an AX.25 modem, replacing
-a hardware TNC — for example **Direwolf**, **UZ7HO SoundModem** or **QtSoundModem**. XRouter
+a hardware TNC, for example **Direwolf**, **UZ7HO SoundModem** or **QtSoundModem**. XRouter
 connects to these over [KISS](#kiss) (often [KISS-over-TCP](#kiss-over-tcp)) or [AGWPE](#agwpe).
 See [Soundcard modems](../interfaces/soundcard-modems.md).
 

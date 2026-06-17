@@ -21,7 +21,7 @@ remote-management surface.
 
 !!! warning "Binding port 80 does not require running as root"
     On Linux, binding a privileged port such as 80 is better solved with the
-    `cap_net_bind_service` capability than by running XRouter as root — see
+    `cap_net_bind_service` capability than by running XRouter as root, see
     [Getting started on Raspberry Pi](../getting-started/raspberry-pi.md) and
     [Security and hardening](../admin/security-hardening.md). Also remember the global
     `IPADDRESS` rule: if `IPADDRESS` is unset, XRouter disables **all** IP services,
@@ -72,19 +72,19 @@ xrouter/event/{nodecall}/...
 
 Each message is a JSON object describing something that happened on the node. For example,
 a node coming up produces an event whose payload carries the node's callsign, alias,
-locator, coordinates, software name and version — the kind of structured event you can feed
+locator, coordinates, software name and version, the kind of structured event you can feed
 straight into a monitoring system. AX.25/KISS activity and mailbox events are published in
 the same way.
 
 !!! tip "This is what makes XRouter easy to monitor at scale"
     The combination of a REST API for state and an MQTT event feed for changes is unusual
     in this niche. Together they let you build live network maps, dashboards and alerting
-    around a node without touching its console — see
+    around a node without touching its console, see
     [Logging and monitoring](../admin/logging-and-monitoring.md) for ways to use them.
 
 ---
 
-**Sources:** [In-program manual, OARC wiki — Section 9 (HTTP, REST, MQTT)](https://wiki.oarc.uk/packet:xrouter:docs:man9) ·
-[OARC wiki — XRouter overview (REST/MQTT)](https://wiki.oarc.uk/packet:xrouter) ·
-[In-program manual — Section 7 (directives)](https://wiki.oarc.uk/packet:xrouter:docs:man7) ·
+**Sources:** [In-program manual, OARC wiki: Section 9 (HTTP, REST, MQTT)](https://wiki.oarc.uk/packet:xrouter:docs:man9) ·
+[OARC wiki: XRouter overview (REST/MQTT)](https://wiki.oarc.uk/packet:xrouter) ·
+[In-program manual: Section 7 (directives)](https://wiki.oarc.uk/packet:xrouter:docs:man7) ·
 [XRouter support group (groups.io)](https://groups.io/g/xrouter)

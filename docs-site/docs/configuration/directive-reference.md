@@ -38,7 +38,7 @@ keywords that define hardware and radio ports, see [Interfaces](interfaces.md) a
 
 ---
 
-## Global — identity and location
+## Global: identity and location
 
 | Directive | Scope | Purpose | Default |
 | --- | --- | --- | --- |
@@ -55,7 +55,7 @@ keywords that define hardware and radio ports, see [Interfaces](interfaces.md) a
 | `MAPSERVADDR` | G | Hostname/IP of the map server (override) | built-in |
 | `MAPSERVPORT` | G | TCP port of the map server | 80 |
 
-## Global — console and display
+## Global: console and display
 
 These control the local sysop console(s). Most colours are set inside a `CONSOLE` block; a few
 have global equivalents. Colour names are taken verbatim from the manual.
@@ -64,7 +64,7 @@ have global equivalents. Colour names are taken verbatim from the manual.
 | --- | --- | --- | --- |
 | `NUMCONSOLES` | G | Number of consoles (0–5). The manual's keyword list misspells this `NUMCONOLES` | 3 |
 | `ROWS` | G | Display height in rows | 25 |
-| `COLS` | G | Display width — **deprecated** | 80 |
+| `COLS` | G | Display width, **deprecated** | 80 |
 | `BOOTWIN` | G | Window shown after bootup | 6 (overview) |
 | `BELL` | G | Allowed hours for console bells | 0800-2200 |
 | `AUDIODEVICE` | G | Audio output device for sounds | PC speaker / `/dev/audio` (Pi) |
@@ -94,14 +94,14 @@ have global equivalents. Colour names are taken verbatim from the manual.
     The manual quotes `PROMPTCOLOR` as TURQUOISE in one place and *cyan* in the `XROUTER.CFG`
     keyword list, and `MMASK` as `3f8` / `03FF`. These are cosmetic; take them from your build.
 
-## Global — languages
+## Global: languages
 
 | Directive | Scope | Purpose | Default |
 | --- | --- | --- | --- |
 | `DEFAULTLANG` | G | Default language number for unassigned sessions | 0 |
 | `CONSOLELANG` | G/C | Console language number (see console) | 0 |
 
-## Global — NET-ROM and routing
+## Global: NET-ROM and routing
 
 | Directive | Scope | Purpose | Default |
 | --- | --- | --- | --- |
@@ -135,10 +135,10 @@ have global equivalents. Colour names are taken verbatim from the manual.
 !!! note "`MAXTT` units and default"
     The `XROUTER.CFG` keyword list gives `MAXTT` as 500 ("Maximum Trip Time in secs"); other
     pages reference a 0–60000 range where 60000 = 600 s, and the author's mirror lists a global
-    default of 5000 (hundredths of a second). The representation differs by page — confirm
+    default of 5000 (hundredths of a second). The representation differs by page, confirm
     against your build. See [NET/ROM, INP3 and L3RTT](../networking/netrom-inp3.md).
 
-## Global — TCP/IP stack
+## Global: TCP/IP stack
 
 | Directive | Scope | Purpose | Default |
 | --- | --- | --- | --- |
@@ -158,7 +158,7 @@ have global equivalents. Colour names are taken verbatim from the manual.
 | `SYNCACHELIFE` | G | TCP SYN cache lifetime (s) | 10 |
 | `SYNCACHESIZE` | G | TCP SYN cache slots | 1000 |
 
-## Global — built-in TCP/IP server ports
+## Global: built-in TCP/IP server ports
 
 Each of these sets the listening TCP/UDP port of a built-in server. See
 [Ports and service numbers](../reference/ports-and-services.md) and
@@ -186,7 +186,7 @@ Each of these sets the listening TCP/UDP port of a built-in server. See
 | `RIGSRVPORT` | G | Radio control server port | (unset) |
 | `POP3PORT` | G | POP3 server (default unverified in the manual) | 110 |
 
-## Global — chat, PMS, blog and wall
+## Global: chat, PMS, blog and wall
 
 | Directive | Scope | Purpose | Default |
 | --- | --- | --- | --- |
@@ -209,7 +209,7 @@ Each of these sets the listening TCP/UDP port of a built-in server. See
     `NODECALL`") but 150 in an overview table. 255 is the likely current default; confirm
     against your build. See [Chat server](../subsystems/chat.md).
 
-## Global — APRS and IGate identity
+## Global: APRS and IGate identity
 
 | Directive | Scope | Purpose | Default |
 | --- | --- | --- | --- |
@@ -223,7 +223,7 @@ Each of these sets the listening TCP/UDP port of a built-in server. See
     `UIFLOOD`=WIDE; the other treats `UITRACE`=WIDE for the New-N paradigm). Set these
     explicitly for your region. See [APRS digipeater and IGate](../subsystems/aprs-igate.md).
 
-## Global — weather, DynDNS, MQTT publisher, logging
+## Global: weather, DynDNS, MQTT publisher, logging
 
 | Directive | Scope | Purpose | Default |
 | --- | --- | --- | --- |
@@ -239,7 +239,7 @@ Each of these sets the listening TCP/UDP port of a built-in server. See
 | `COMMAND` | G | Creates a custom single-word command alias | (none) |
 | `ENABLE_LINKED` | G | Controls who may use `*** LINKED AS` (Y/A/N) | varies / see note |
 
-## Global — connect text and access defaults
+## Global: connect text and access defaults
 
 These set defaults that can be overridden per port (next section).
 
@@ -257,7 +257,7 @@ These set defaults that can be overridden per port (next section).
 ## INTERFACE block
 
 Defined inside `INTERFACE=n … ENDINTERFACE`, in the GLOBAL section. `TYPE` and `MTU` are
-mandatory; `PROTOCOL` is required for most types. Several keywords are *overloaded* — their
+mandatory; `PROTOCOL` is required for most types. Several keywords are *overloaded*, their
 meaning depends on the selected `TYPE`. See [Interfaces](interfaces.md) for the per-type detail.
 
 | Directive | Scope | Purpose | Default |
@@ -278,7 +278,7 @@ meaning depends on the selected `TYPE`. See [Interfaces](interfaces.md) for the 
 | `IOADDR` | I | Overloaded: target IP for AGW/TCP/UDP | 127.0.0.1 |
 | `ETHADDR` | I | Ethernet address (NDISXPKT/XR32 only; legacy) | (none) |
 | `RADIO` | I | Associates a `RADIO` block with the interface | (none) |
-| `ENDINTERFACE` | I | Ends the interface block. Mandatory | — |
+| `ENDINTERFACE` | I | Ends the interface block. Mandatory | n/a 
 
 ---
 
@@ -288,7 +288,7 @@ Defined inside `PORT=n … ENDPORT`, in the GLOBAL section, **after** the interf
 `ID`, `INTERFACENUM` and `ENDPORT` are mandatory. Many keywords mirror a global default and
 override it for this port only.
 
-### Port — identity and binding
+### Port: identity and binding
 
 | Directive | Scope | Purpose | Default |
 | --- | --- | --- | --- |
@@ -303,7 +303,7 @@ override it for this port only.
 | `PMSCALL` | P | Per-port override of global `PMSCALL` | (none) |
 | `PMSALIAS` | P | Per-port override of global `PMSALIAS` | (none) |
 
-### Port — AX.25 and link timing
+### Port: AX.25 and link timing
 
 | Directive | Scope | Purpose | Default |
 | --- | --- | --- | --- |
@@ -331,7 +331,7 @@ override it for this port only.
     ("unrestricted") and, in worked examples, 10; the per-port default is 255. Use whichever
     your build reports.
 
-### Port — SCC-only (inert on Pi/Linux)
+### Port: SCC-only (inert on Pi/Linux)
 
 The Pi and Linux builds have no SCC card slot, so these keywords are accepted but inert there.
 
@@ -343,7 +343,7 @@ The Pi and Linux builds have no SCC card slot, so these keywords are accepted bu
 | `CWID` | P | CW Morse ID every 30 min (SCC only) | (off) |
 | `FEC` | P | Reed-Solomon FEC (needs FEC-capable KISS/SCC/YAM) | 0 |
 
-### Port — NET-ROM and routing (per port)
+### Port: NET-ROM and routing (per port)
 
 | Directive | Scope | Purpose | Default |
 | --- | --- | --- | --- |
@@ -355,7 +355,7 @@ The Pi and Linux builds have no SCC card slot, so these keywords are accepted bu
 | `MAXTT` | G/P | Trip-time horizon (per-port override) | varies / see note |
 | `PROXY` | G/P | NET-ROM systems to tunnel AX.25 to (per-port override) | (none) |
 
-### Port — IP (per port)
+### Port: IP (per port)
 
 | Directive | Scope | Purpose | Default |
 | --- | --- | --- | --- |
@@ -367,7 +367,7 @@ The Pi and Linux builds have no SCC card slot, so these keywords are accepted bu
 | `UDPLOCAL` | P | RX UDP port for AXUDP operations | 93 |
 | `UDPREMOTE` | P | TX UDP port / partner's AXUDP RX port | 93 |
 
-### Port — digipeating, beacons and APRS
+### Port: digipeating, beacons and APRS
 
 | Directive | Scope | Purpose | Default |
 | --- | --- | --- | --- |
@@ -383,7 +383,7 @@ The Pi and Linux builds have no SCC card slot, so these keywords are accepted bu
 | `APRSPATH` | P | Default digi path for APRS frames | (none) |
 | `FREQUENCY` | P | Radio frequency (Hz) | 0 |
 
-### Port — MHeard and frame pipes
+### Port: MHeard and frame pipes
 
 | Directive | Scope | Purpose | Default |
 | --- | --- | --- | --- |
@@ -392,14 +392,14 @@ The Pi and Linux builds have no SCC card slot, so these keywords are accepted bu
 | `PIPE` | P | Frame pipe to another port (optional callsign filter) | (none) |
 | `PIPEFLAG` | P | Frame-pipe option flags bitmask | 3 |
 
-### Port — access and applications
+### Port: access and applications
 
 | Directive | Scope | Purpose | Default |
 | --- | --- | --- | --- |
 | `APPLMASK` | P | Which hosted apps are AX.25-L2 connectable on the port (bitmask) | 255 |
 | `EXCLUDE` | G/P | Callsigns not allowed to connect (blacklist) | (none) |
-| `VALIDCALLS` | P | Whitelist — accept only these callsigns | (none) |
-| `SYSOP` | P | If 1, all users on this port get sysop status with **no** password challenge — secure links only | 0 |
+| `VALIDCALLS` | P | Whitelist, accept only these callsigns | (none) |
+| `SYSOP` | P | If 1, all users on this port get sysop status with **no** password challenge, secure links only | 0 |
 | `CTEXT` | G/P | Per-port connect text (one line or filename) | (none) |
 | `CTFLAGS` | G/P | Per-port connect-text control flags | 9 |
 
@@ -424,7 +424,7 @@ the node).
 | `APPLFLAGS` | A | Flags controlling the application | (none) |
 | `APPLTYPE` | A | Application type (`=TCP[,ip:]port`) | (none) |
 | `APPLNUM` | A | Application number (matches a host-mode interface) | (none) |
-| `ENDAPPL` | A | Ends the application block. Mandatory | — |
+| `ENDAPPL` | A | Ends the application block. Mandatory | n/a 
 
 ---
 
@@ -447,7 +447,7 @@ Defined inside `RADIO=n … ENDRADIO`. Describes a CAT-controlled radio.
 | `VOLUME` | R | Volume level | (none) |
 | `PTTMETHOD` | R | PTT keying method | (none) |
 | `RXAUDIODEV` | R | Receive audio device | (none) |
-| `ENDRADIO` | R | Ends the radio block | — |
+| `ENDRADIO` | R | Ends the radio block | n/a 
 
 ---
 
@@ -459,7 +459,7 @@ Defined inside `RADIO=n … ENDRADIO`. Describes a CAT-controlled radio.
 
 ---
 
-**Sources:** In-program manual mirrored on the OARC wiki —
+**Sources:** In-program manual mirrored on the OARC wiki,
 [Section 7, Configuration Directives (`man7`)](https://wiki.oarc.uk/packet:xrouter:docs:man7) and
 [`XROUTER.CFG` keyword list, Section 8 (`man8`)](https://wiki.oarc.uk/packet:xrouter:docs:man8) ·
-[ohiopacket.org XRPi mirror — `xrcfg.htm` (global keywords), `ports.htm`, `ifaces.htm`](https://ohiopacket.org/xrpi/docs/xrcfg.htm)
+[ohiopacket.org XRPi mirror: `xrcfg.htm` (global keywords), `ports.htm`, `ifaces.htm`](https://ohiopacket.org/xrpi/docs/xrcfg.htm)

@@ -2,10 +2,10 @@
 
 This page is a plain-language introduction for newcomers: what packet radio is, where
 it came from, the bands and speeds you will meet, and why it is still worth doing today.
-It sets up the protocols — AX.25, NET/ROM — that XRouter implements.
+It sets up the protocols, AX.25, NET/ROM, that XRouter implements.
 
-**Packet radio** applies the ideas of packet switching — the same family of techniques
-that underpins the internet — to digital communication over amateur radio. Your data is
+**Packet radio** applies the ideas of packet switching, the same family of techniques
+that underpins the internet, to digital communication over amateur radio. Your data is
 broken into **packets**, each one carrying a source and destination address, and packets
 bound for different stations share a single radio channel. A packet can be addressed to
 everyone, or stored and forwarded onward by an intermediate **node** until it reaches its
@@ -62,7 +62,7 @@ and modern FEC-capable hardware have all helped a noticeable resurgence.
 
 The rest of these primers build up the picture: [AX.25](ax25.md) is the data-link layer
 that moves packets between stations; [NET/ROM](netrom.md) adds automatic routing across many
-nodes. XRouter is software that implements both — turning a computer and one or more radios
+nodes. XRouter is software that implements both, turning a computer and one or more radios
 into a packet [node](nodes-and-sysops.md).
 
 ---

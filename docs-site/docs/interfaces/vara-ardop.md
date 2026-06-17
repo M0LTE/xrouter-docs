@@ -7,7 +7,7 @@ TNC; XRouter attaches to the running modem over a TCP connection.
 
 VARA and ARDOP are software modems that run as their own applications and expose a TCP
 interface for other programs to drive. XRouter connects to that interface rather than to a
-serial KISS device — so, as with [Direwolf KISS-over-TCP](soundcard-modems.md), the modem
+serial KISS device, so, as with [Direwolf KISS-over-TCP](soundcard-modems.md), the modem
 runs alongside XRouter and the two talk over a socket.
 
 ## Attaching XRouter to the modem
@@ -37,14 +37,14 @@ interfaces.
 VARA is widely used with other packet software, and those setups are a useful guide to how
 the modem itself is installed and connected over TCP. One reference noted by the community is
 the **VARA + JNOS** write-up at
-[langelaar.net/projects/jnos2/vara](https://www.langelaar.net/projects/jnos2/vara) — it is
+[langelaar.net/projects/jnos2/vara](https://www.langelaar.net/projects/jnos2/vara), it is
 about JNOS rather than XRouter, but it illustrates the general pattern of driving a VARA modem
 over its TCP interface, which carries across.
 
 !!! tip "VARA and ARDOP are still IP/TCP links"
     Because XRouter reaches these modems over TCP, the `IPADDRESS` rule applies: with the
     global `IPADDRESS` left at `0.0.0.0`, all IP activity is disabled and the modem connection
-    will not come up. Set a non-zero address (a private dummy such as `10.1.1.1` is fine) —
+    will not come up. Set a non-zero address (a private dummy such as `10.1.1.1` is fine),
     see [Global settings](../configuration/global-settings.md).
 
 ## Where to go next
@@ -59,8 +59,8 @@ over its TCP interface, which carries across.
 
 ---
 
-**Sources:** [groups.io — author runs a VARA port, attaches with `TNC 6`](https://groups.io/g/xrouter/message/3407) ·
-[groups.io — ARDOP interface also exists in XRouter](https://groups.io/g/xrouter/message/3413) ·
-[groups.io — VARA is a soundcard modem reached over TCP](https://groups.io/g/xrouter/message/633) ·
-[groups.io — VARA+JNOS reference (external)](https://groups.io/g/xrouter/message/3366).
+**Sources:** [groups.io: author runs a VARA port, attaches with `TNC 6`](https://groups.io/g/xrouter/message/3407) ·
+[groups.io: ARDOP interface also exists in XRouter](https://groups.io/g/xrouter/message/3413) ·
+[groups.io: VARA is a soundcard modem reached over TCP](https://groups.io/g/xrouter/message/633) ·
+[groups.io: VARA+JNOS reference (external)](https://groups.io/g/xrouter/message/3366).
 This page intentionally omits interface-block specifics not confirmed in those sources.

@@ -1,8 +1,8 @@
 # Sysop access and commands
 
 Most of the node prompt is open to any user, but the commands that *change* the
-node — editing routes, monitoring traffic, restarting daemons, managing the IP
-stack and security — are reserved for the **sysop**. This page explains how a
+node, editing routes, monitoring traffic, restarting daemons, managing the IP
+stack and security, are reserved for the **sysop**. This page explains how a
 session becomes a sysop session, then surveys the categories of sysop power and
 the representative commands in each. The commands themselves are catalogued in
 the [command reference](command-reference.md).
@@ -15,17 +15,17 @@ trusted links.
 ### Authenticate with the sysop password
 
 The normal, link-agnostic way is to **prove who you are** against the node's
-sysop password file. XRouter keeps sysop passwords in `PASSWORD.SYS` — a list of
+sysop password file. XRouter keeps sysop passwords in `PASSWORD.SYS`, a list of
 `callsign password` pairs (no SSID, no spaces, not case-sensitive). When a
 recognised sysop connects, the node can issue a **password challenge**; you
 answer it, and the session is promoted to sysop for its duration. This is what
 guards remote AX.25 (`@`), RLOGIN and FTP sysop access. With no `PASSWORD.SYS`
-present, that access simply does not exist — which is itself a safe default.
+present, that access simply does not exist, which is itself a safe default.
 
 !!! note "Password file is sysop-only and case-matters on disk"
     `PASSWORD.SYS` holds the keys to the node; it must be readable only by the
     node's own user. Remember that on Linux the filename is **upper case** and
-    case-sensitive — see [System and data files](../configuration/system-files.md).
+    case-sensitive, see [System and data files](../configuration/system-files.md).
 
 ### The `SYSOP=1`-on-a-port shortcut
 
@@ -37,16 +37,16 @@ directive:
 PORT=1
         ID=Console / LAN link
         INTERFACENUM=1
-        SYSOP=1        ; every caller on this port is sysop — secure links ONLY
+        SYSOP=1        ; every caller on this port is sysop, secure links ONLY
 ENDPORT
 ```
 
-!!! danger "`SYSOP=1` gives every caller full control — secure links only"
+!!! danger "`SYSOP=1` gives every caller full control, secure links only"
     The manual is explicit: *"If you set `SYSOP=1`, all users who connect on this
     port get full sysop status without needing to answer a password challenge.
     This is intended ONLY FOR USE ON SECURE LINKS, such as RS232 or Ethernet, and
     the default is zero."* Never set `SYSOP=1` on a port that is reachable over
-    the air or from the wider internet — doing so hands node administration to
+    the air or from the wider internet, doing so hands node administration to
     anyone who can connect. The default is `0`, and on any RF port it must stay
     that way.
 
@@ -60,11 +60,11 @@ syntax for a given command is on the node itself via `HELP <command>`.)
 ### Node and route management
 
 XRouter learns its NET/ROM nodes table from broadcasts, which can take hours to
-rebuild — so the sysop can save and restore it, and lock in routes by hand.
+rebuild, so the sysop can save and restore it, and lock in routes by hand.
 
 - **`SAVENODES`** writes the current nodes table out to the `XRNODES` recovery
   file (it is also saved periodically and at shutdown).
-- **`LOADNODES`** reads that file back, repopulating the table — the mechanism
+- **`LOADNODES`** reads that file back, repopulating the table, the mechanism
   that lets the node restart without losing everything it knew.
 - `ROUTES` (add / drop / list) manages the neighbour routes directly, and
   `NODES` can modify the nodes table; broadcasts can be triggered or requested
@@ -75,7 +75,7 @@ mean and how routing uses them.
 
 ### Monitoring and traffic capture
 
-XRouter can trace traffic at every protocol layer — invaluable for diagnosing a
+XRouter can trace traffic at every protocol layer, invaluable for diagnosing a
 link.
 
 - **`MON`** / **`MONITOR`** turns live tracing on and off.
@@ -120,15 +120,15 @@ The stack itself is described in [The TCP/IP stack](../networking/tcpip.md).
 
 XRouter includes several layers a sysop can drive live:
 
-- **`ACL`** edits the IP Access Control List — the live packet-filter rules.
-- **IP ban** — the Intrusion Detection System maintains a banned-IP list
+- **`ACL`** edits the IP Access Control List, the live packet-filter rules.
+- **IP ban**, the Intrusion Detection System maintains a banned-IP list
   (`IPBAN.SYS`); `IDS` controls it, including honeypot ports and unbanning.
 - **`IDS`** is the front end to that Intrusion Detection System.
 - Packet capture (**PCAP**) and the tracing commands above let you see exactly
   what is hitting the node.
 
-General hardening guidance — sysop passwords, ACLs, not running as root, the
-`IPADDRESS` security behaviour — is collected on
+General hardening guidance, sysop passwords, ACLs, not running as root, the
+`IPADDRESS` security behaviour, is collected on
 [Security and hardening](../admin/security-hardening.md).
 
 ### File maintenance (PZTDOS)
@@ -149,7 +149,7 @@ commands are sysop-only**; they are listed in the
 
 ---
 
-**Sources:** [In-program manual, Section 1 — General Commands (OARC wiki)](https://wiki.oarc.uk/packet:xrouter:docs:man1)
-· [Section 3 — PZTDOS Commands (OARC wiki)](https://wiki.oarc.uk/packet:xrouter:docs:man3)
+**Sources:** [In-program manual, Section 1: General Commands (OARC wiki)](https://wiki.oarc.uk/packet:xrouter:docs:man1)
+· [Section 3: PZTDOS Commands (OARC wiki)](https://wiki.oarc.uk/packet:xrouter:docs:man3)
 · [Configuration directives, `SYSOP` (OARC wiki)](https://wiki.oarc.uk/packet:xrouter:docs:man7)
 · [XRouter support group (groups.io)](https://groups.io/g/xrouter)

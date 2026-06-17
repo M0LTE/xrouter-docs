@@ -9,20 +9,20 @@ the whole picture in one place; for a guided introduction start with
     These tables are generated from XRouter's in-program manual (the man-style
     reference sections mirrored on the OARC wiki). Your build may differ slightly.
     On any node, **`?`** lists the commands it actually offers and
-    **`HELP <command>`** gives its exact, version-correct syntax — treat that as
+    **`HELP <command>`** gives its exact, version-correct syntax, treat that as
     the final word. Where the manual itself flagged a command's exact syntax as
     uncertain, it is marked **(syntax unverified)** below rather than guessed.
 
 **How to read these tables.** The **Abbrev** column gives the shortest accepted
 form (the manual writes commands like `C[onnect]`, meaning the un-bracketed stem
 is the minimum). Commands are not case-sensitive. **Scope** is *user* (available
-to ordinary connected users) or *sysop* (requires sysop status — see
+to ordinary connected users) or *sysop* (requires sysop status, see
 [Sysop access and commands](sysop.md)); some commands are usable by both but do
 more for a sysop, noted in Purpose.
 
 ## Node and sysop commands (Section 1)
 
-The general command set — roughly 108 commands, `ACL` through `YELL`. Sysop-only
+The general command set, roughly 108 commands, `ACL` through `YELL`. Sysop-only
 [PZTDOS](#pztdos-file-commands-section-3) file commands are reached through `DOS`
 and listed separately below.
 
@@ -45,7 +45,7 @@ and listed separately below.
 | CHAT | `CH` | user | Connect to the chat server (not guests) |
 | CMD | `CM` | sysop | Add / delete command aliases |
 | CONNECT | `C` | user | Make an outgoing AX.25 / NET/ROM / NetRom-X connection (not guests) |
-| CQ | `CQ` | user | Send a CQ (UI) — only while in LISTEN mode |
+| CQ | `CQ` | user | Send a CQ (UI), only while in LISTEN mode |
 | CTEXT | `CT` | sysop | Display / set a port's connect text |
 | CTFLAGS | `CTF` | sysop | Display / set connect-text control flags |
 | CTRL | `CTRL` | sysop | Read / write the remote hardware control port |
@@ -67,7 +67,7 @@ and listed separately below.
 | FINGER | `FINGER` | user | Display user information (local or remote) |
 | FRACK | `FRACK` | sysop | Display / set a port's AX.25 frame-ack timeout |
 | FTP | `FTP` | sysop | FTP client / connect (syntax unverified) |
-| FTP-CMDS | — | user | Reference: the FTP server's verbs |
+| FTP-CMDS | n/a  user | Reference: the FTP server's verbs |
 | FULLDUP | `FULLDUP` | sysop | Display / set full-duplex on a port (SCC only) |
 | GNET | `GNET` | sysop | Globalnet configuration (syntax unverified) |
 | GPING | `GP` | user | Send a GCMP / GNET echo request (diagnostic) |
@@ -137,7 +137,7 @@ and listed separately below.
 | SEND | `SE` | user | Send an unproto (UI) packet |
 | SHELL | `SHELL` | sysop | Drop to an OS shell |
 | SLOTTIME | `SLOTTIME` | sysop | Display / set a port's CSMA slot time |
-| SMS | `SMS` | — | Short Message System (syntax unverified) |
+| SMS | `SMS` | n/a  Short Message System (syntax unverified) |
 | START | `START` | sysop | Start a port / service / daemon |
 | STATS | `S` | user | Display router performance statistics |
 | STOP | `STOP` | sysop | Stop a port / service / daemon (no argument lists daemons) |
@@ -320,9 +320,9 @@ the manual does not document each one separately.
 
 ---
 
-**Sources:** [In-program manual, Section 1 — General Commands (OARC wiki)](https://wiki.oarc.uk/packet:xrouter:docs:man1)
-· [Section 3 — PZTDOS Commands (OARC wiki)](https://wiki.oarc.uk/packet:xrouter:docs:man3)
-· [Section 4 — Mailbox Commands (OARC wiki)](https://wiki.oarc.uk/packet:xrouter:docs:man4)
+**Sources:** [In-program manual, Section 1: General Commands (OARC wiki)](https://wiki.oarc.uk/packet:xrouter:docs:man1)
+· [Section 3: PZTDOS Commands (OARC wiki)](https://wiki.oarc.uk/packet:xrouter:docs:man3)
+· [Section 4: Mailbox Commands (OARC wiki)](https://wiki.oarc.uk/packet:xrouter:docs:man4)
 · [Chat Server Help (OARC wiki)](https://wiki.oarc.uk/packet:xrouter:docs:chatserverhelp)
 · [Mailbox Help (OARC wiki)](https://wiki.oarc.uk/packet:xrouter:docs:mailboxhelp)
 · [General Help (OARC wiki)](https://wiki.oarc.uk/packet:xrouter:docs:generalhelp)

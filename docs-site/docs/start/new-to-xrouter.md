@@ -1,7 +1,7 @@
 # New to XRouter
 
-This page is the fast path for someone who already understands packet — AX.25,
-NET/ROM, KISS, the sysop role — and just wants XRouter up and configured. It points
+This page is the fast path for someone who already understands packet, AX.25,
+NET/ROM, KISS, the sysop role, and just wants XRouter up and configured. It points
 you straight at the practical pages and summarises what makes XRouter different from
 node software you may already know.
 
@@ -32,20 +32,20 @@ node software you may already know.
 ## What's distinctive about XRouter
 
 If you're coming from another node program, these are the things that will feel
-different — each links to its full page:
+different, each links to its full page:
 
 - **INP3 link-state routing is on by default.** As well as classic NET/ROM quality,
   XRouter times every packet for a round-trip-time metric (L3RTT) and uses the
   **INP3** extension to choose good paths automatically. The author is a firm
-  believer in it — in her words you "have to disable it if you want to be a luddite."
+  believer in it, in her words you "have to disable it if you want to be a luddite."
   See [NET/ROM, INP3 and L3RTT](../networking/netrom-inp3.md).
 - **NetRom-X service numbers instead of SSID sprawl.** Rather than a separate SSID
   per service, one node callsign exposes up to 65535 *numbered* services, like
-  well-known TCP ports — service 2 is the PMS, service 8 is chat, and so on. So
+  well-known TCP ports, service 2 is the PMS, service 8 is chat, and so on. So
   `C[onnect] G8PZT 2` reaches that node's mailbox. See
   [NetRom-X service numbers](../networking/netromx-services.md).
 - **Its own TCP/IP stack.** XRouter carries a complete multi-homed IP stack of its
-  own, alongside the host's — ARP, a router, DNS, NAT, RIP and IPIP/IPUDP tunnels —
+  own, alongside the host's, ARP, a router, DNS, NAT, RIP and IPIP/IPUDP tunnels,
   designed in from the start rather than bolted on. See
   [The TCP/IP stack](../networking/tcpip.md).
 - **Built-in servers, no add-ons.** A [PMS mailbox](../subsystems/pms-mailbox.md), a
@@ -62,7 +62,7 @@ different — each links to its full page:
 ## Good to know
 
 XRouter is **closed source**, free for non-commercial amateur use, and released
-briskly — at the time of writing the current family is the **v504** series. Get
+briskly, at the time of writing the current family is the **v504** series. Get
 current builds and support from the
 [XRouter group on groups.io](https://groups.io/g/xrouter); see
 [Upgrading and versions](../admin/upgrading.md). When you're ready to put a node into

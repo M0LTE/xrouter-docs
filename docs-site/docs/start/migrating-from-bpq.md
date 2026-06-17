@@ -1,7 +1,7 @@
 # Migrating from BPQ or other node software
 
-This page is for a sysop already running **BPQ32 / LinBPQ** — or another NET/ROM node
-program — who is considering XRouter, or who needs the two to interwork. It is meant
+This page is for a sysop already running **BPQ32 / LinBPQ**, or another NET/ROM node
+program, who is considering XRouter, or who needs the two to interwork. It is meant
 to be even-handed: BPQ is the de-facto standard with the larger community and a full
 BBS; XRouter is the polished alternative that's strong on routing and quick to
 configure. Plenty of networks run both, side by side, without trouble.
@@ -15,7 +15,7 @@ on-air protocols:
   the global `NODECALL` and `NODEALIAS` directives.
 - **Ports and radios.** The idea of a port per RF channel is the same. XRouter splits
   it into an `INTERFACE` (the physical or virtual connection) and a `PORT` (the
-  point your core attaches to a channel) — see the
+  point your core attaches to a channel), see the
   [configuration model](../configuration/index.md).
 - **KISS and AGW interfaces.** Hardware KISS TNCs, NinoTNCs and soundcard modems
   (Direwolf, UZ7HO, QtSoundModem) attach much as they do under BPQ. XRouter can be a
@@ -34,14 +34,14 @@ on-air protocols:
 - **INP3 is on by default.** Where BPQ routes primarily on NET/ROM quality, XRouter
   also runs the **INP3** link-state extension with round-trip-time measurement, and
   prefers it when available. This is excellent within an INP3 network but needs care
-  at the boundary with quality-only neighbours — see the cautions below and
+  at the boundary with quality-only neighbours, see the cautions below and
   [NET/ROM, INP3 and L3RTT](../networking/netrom-inp3.md).
 - **NetRom-X service numbers instead of many SSIDs.** Rather than `-2` for the BBS,
   `-11` for chat and so on, XRouter exposes numbered *services* on one callsign
   (service 2 = PMS, service 8 = chat). See
   [NetRom-X service numbers](../networking/netromx-services.md).
 - **XRouter's own IP stack.** XRouter carries a complete multi-homed TCP/IP stack of
-  its own — community members note IP was designed into XRouter from the start rather
+  its own, community members note IP was designed into XRouter from the start rather
   than grafted on. See [The TCP/IP stack](../networking/tcpip.md).
 - **A PMS, not a full BBS.** XRouter has an integral personal mailbox, not a full
   store-and-forward BBS. As the author puts it, "if you want to run a BBS, then BPQ is
@@ -54,7 +54,7 @@ on-air protocols:
 
 ## How to interoperate
 
-You do not have to choose — BPQ and XRouter link happily, over RF or the internet:
+You do not have to choose, BPQ and XRouter link happily, over RF or the internet:
 
 - **Internet links** use [AXIP / AXUDP / AXTCP](../interfaces/axip-axudp-axtcp.md),
   the same family BPQ uses, so an existing AXUDP partner keeps working. Most reported
@@ -76,6 +76,6 @@ You do not have to choose — BPQ and XRouter link happily, over RF or the inter
 ---
 
 **Sources:** [XRouter overview, OARC wiki](https://wiki.oarc.uk/packet:xrouter) ·
-[Hibby's Packet Radio Guide — software comparison](https://guide.hibbian.org/software/) ·
+[Hibby's Packet Radio Guide: software comparison](https://guide.hibbian.org/software/) ·
 [INP3/quality interop, groups.io](https://groups.io/g/xrouter/message/4048) ·
 [XRouter support group (groups.io)](https://groups.io/g/xrouter)

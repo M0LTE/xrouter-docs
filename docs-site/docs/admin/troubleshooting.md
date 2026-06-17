@@ -2,7 +2,7 @@
 
 Most XRouter problems are not subtle once you know the cause, and a handful of them account for
 the great majority of "it won't start" and "it won't work" reports. This page is a question-
-and-answer guide to those real-world issues — each with the underlying cause and the fix — drawn
+and-answer guide to those real-world issues, each with the underlying cause and the fix, drawn
 from the support group, the community, and the manual. If you are setting a node up for the
 first time, reading it once will save you an evening.
 
@@ -15,20 +15,20 @@ first time, reading it once will save you an evening.
 
 ## Starting up
 
-### IP services are dead — HTTP, FTP, AXUDP "won't start" {#ip-services-wont-start}
+### IP services are dead: HTTP, FTP, AXUDP "won't start" {#ip-services-wont-start}
 
 **Symptom.** None of the IP-based services work. The web server, FTP, and AXUDP/AXTCP/AXIP
 internet links are all silent or refuse to start, even though they look configured.
 
 **Cause.** The global `IPADDRESS` is unset or `0.0.0.0`. XRouter then **deliberately disables
-all IP activity** — on both its own stack and the Linux stack. This is an intentional security
+all IP activity**, on both its own stack and the Linux stack. This is an intentional security
 feature, not a bug: a node with no IP address exposes no IP attack surface.
 
 !!! danger "Set IPADDRESS, or you lose every IP service"
     > "If you set the global IPADDRESS to 0.0.0.0 or leave it undefined, *all* IP activity is
     > disabled, including AXUDP, AXTCP, AXIP, HTTP, FTP etc on BOTH stacks! This is a deliberate
     > security feature. … if you don't have an amprnet address, and you want to use any IP
-    > services, it is suggested that you set a non-zero dummy IP address such as `10.1.1.1`." —
+    > services, it is suggested that you set a non-zero dummy IP address such as `10.1.1.1`.",
     > *Paula G8PZT, [groups.io](https://groups.io/g/xrouter/message/1957)*
 
 **Fix.** Give the node an address. If you have an AMPRNet (44Net) allocation, use it; otherwise
@@ -48,7 +48,7 @@ is on [Security and hardening](security-hardening.md#understand-the-ipaddress-se
 80), often as `Error 13`.
 
 **Cause.** Ports below 1024 are privileged on Linux. A program running as an ordinary user
-cannot bind them without the right capability — and `Error 13` is "permission denied".
+cannot bind them without the right capability, and `Error 13` is "permission denied".
 
 **Fix.** Do **not** reach for `sudo`/root. Grant the binary the two capabilities it needs, once:
 
@@ -58,11 +58,11 @@ sudo setcap cap_net_raw,cap_net_bind_service=ep ./xrpi
 
 Then run as your normal user. `cap_net_bind_service` lets it bind the low ports;
 `cap_net_raw` covers raw sockets for `EXTERNAL`/Ethernet and AXIP. Re-apply `setcap` whenever
-you replace the binary. The full rationale — and why root is the wrong fix — is on
+you replace the binary. The full rationale, and why root is the wrong fix, is on
 [Security and hardening](security-hardening.md#run-as-a-non-root-user) and the
 [Raspberry Pi page](../getting-started/raspberry-pi.md#6-run-it-without-root-recommended).
 
-### The config won't load — "Bad or missing protocol" {#bad-or-missing-protocol}
+### The config won't load: "Bad or missing protocol" {#bad-or-missing-protocol}
 
 **Symptom.** XRouter refuses to start and complains about a bad or missing protocol on an
 interface, or stops at a numbered line in an `INTERFACE` block.
@@ -86,7 +86,7 @@ ENDINTERFACE
 Because errors are line-numbered, fix the one it names, restart, and see if it gets further.
 Two related classics: **interfaces must be defined before the ports that reference them**, and
 multi-line text blocks (`CTEXT`, `INFOTEXT`, `IDTEXT`, `ROUTES`) must be closed with their
-terminator — forgetting it is a common parse error. See
+terminator, forgetting it is a common parse error. See
 [Interfaces](../configuration/interfaces.md) and [Ports](../configuration/ports.md).
 
 ### Files not found, or odd behaviour, on Linux {#case-sensitive-filenames}
@@ -98,7 +98,7 @@ needs a `.SYS` file behaves as if the file is absent.
 CASE**. `IPROUTE.SYS` and `iproute.sys` are different files, and XRouter only reads the former.
 
 !!! warning "XRouter wants UPPER CASE filenames"
-    On Linux, name every configuration and data file in upper case — `XROUTER.CFG`,
+    On Linux, name every configuration and data file in upper case, `XROUTER.CFG`,
     `PASSWORD.SYS`, `IPROUTE.SYS`, `XRNODES`, and the rest. The executable is the exception: on
     the Pi build it is the lowercase `xrpi`. Getting the case wrong is the single most common
     reason a file is silently ignored.
@@ -114,7 +114,7 @@ CASE**. `IPROUTE.SYS` and `iproute.sys` are different files, and XRouter only re
 
 **Cause.** This was a fault in **very old** XrPi builds, from before Direwolf was widely used.
 
-> "I don't think Direwolf was much of a thing when that version of xrpi was written." —
+> "I don't think Direwolf was much of a thing when that version of xrpi was written.",
 > *Paula G8PZT*
 
 **Fix.** Update to a current build; the behaviour was fixed in later versions. See
@@ -126,13 +126,13 @@ CASE**. `IPROUTE.SYS` and `iproute.sys` are different files, and XRouter only re
 cannot reach its web or Telnet server.
 
 **Cause.** Usually one of: the service is not actually listening (it was disabled, moved to a
-non-default port, or IP is off because `IPADDRESS` is unset — see
+non-default port, or IP is off because `IPADDRESS` is unset, see
 [above](#ip-services-wont-start)); the node is answering on its *own* IP stack rather than the
 Linux one; or a firewall between you and the node is blocking the port.
 
 **Fix.** Work through it in order:
 
-- Confirm the service is enabled and note its port — `TELNETPORT` (default 23), `HTTPPORT`
+- Confirm the service is enabled and note its port, `TELNETPORT` (default 23), `HTTPPORT`
   (default 80). A `*PORT` of `0` disables it; two values set the XRouter-stack and Linux-stack
   ports separately, so a service can be reachable on one stack and not the other.
 - Confirm `IPADDRESS` is set, or no IP service runs at all.
@@ -147,9 +147,9 @@ See [Built-in TCP servers](../subsystems/built-in-servers.md) and
 that never passes traffic.
 
 **Cause.** AXIP and AXUDP ride on the IP stack, so they fall over for the same reasons any IP
-feature does — most often `IPADDRESS` being unset (which disables them entirely), but also a
+feature does, most often `IPADDRESS` being unset (which disables them entirely), but also a
 wrong local/remote UDP port, or a firewall/NAT in the path. (AXIP uses IP protocol 93; AXUDP
-defaults to UDP port 93 — don't confuse the two.) Recent builds added stricter checks here and
+defaults to UDP port 93, don't confuse the two.) Recent builds added stricter checks here and
 will not start with `IPADDRESS` omitted.
 
 **Fix.**
@@ -170,7 +170,7 @@ The interface details are on [AXIP / AXUDP / AXTCP](../interfaces/axip-axudp-axt
 **Cause.** Builds **before 501b** had known random-freeze and segfault problems, which were
 fixed. A current build should be stable; a crash on a current build is worth reporting.
 
-**Fix.** First, **update** — see [Upgrading and versions](upgrading.md). If a current build
+**Fix.** First, **update**, see [Upgrading and versions](upgrading.md). If a current build
 still crashes, capture a backtrace under a debugger and send it to the author:
 
 ```bash
@@ -223,8 +223,8 @@ case: a `-static` build has no system resolver, so there you may *need* to set a
 ### Should I run XRouter as root?
 
 No. Run it as an ordinary user with `cap_net_raw,cap_net_bind_service` granted via `setcap`
-(see [Error 13](#error-13-privileged-port)). Root — and especially `sudo`, whose session
-time-limit can make a long-running node stop responding — is best avoided. Full reasoning on
+(see [Error 13](#error-13-privileged-port)). Root, and especially `sudo`, whose session
+time-limit can make a long-running node stop responding, is best avoided. Full reasoning on
 [Security and hardening](security-hardening.md#run-as-a-non-root-user).
 
 ### How do I restart or update without losing my NET/ROM routes?
@@ -236,10 +236,10 @@ when the saved data is stale. See [Upgrading and versions](upgrading.md#your-net
 ### Where do I get the current version, and how do I know it's current?
 
 From the **Files** area of the [groups.io support group](https://groups.io/g/xrouter/files).
-Do not gauge "current" from the `ohiopacket.org` or `vk2dot` mirrors — they are stale. See
+Do not gauge "current" from the `ohiopacket.org` or `vk2dot` mirrors, they are stale. See
 [Upgrading and versions](upgrading.md#where-to-get-current-builds).
 
-### My problem isn't here — where do I ask?
+### My problem isn't here: where do I ask?
 
 The [XRouter support group on groups.io](https://groups.io/g/xrouter) is the primary venue, and
 the author answers there. Include your version string, the relevant slice of `XROUTER.CFG`
@@ -249,7 +249,7 @@ reference is the [in-program manual on the OARC wiki](https://wiki.oarc.uk/packe
 
 ---
 
-**Sources:** [XRouter support group, groups.io](https://groups.io/g/xrouter) — the `IPADDRESS`
+**Sources:** [XRouter support group, groups.io](https://groups.io/g/xrouter), the `IPADDRESS`
 behaviour ([message/1957](https://groups.io/g/xrouter/message/1957)), the `Error 13`/`setcap`
 fix ([message/1958](https://groups.io/g/xrouter/message/1958)), and the pre-501b stability,
 Direwolf, MTU and DNS guidance (author/community) ·

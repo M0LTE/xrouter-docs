@@ -1,7 +1,7 @@
 # Configuration
 
 Almost everything XRouter does is steered by a single text file, **`XROUTER.CFG`**.
-This page explains the shape of that file — the one mandatory config, its syntax, the
+This page explains the shape of that file, the one mandatory config, its syntax, the
 handful of block types, and the absolute minimum you need to make the program start. Read
 it once and the [global settings](global-settings.md), [interfaces](interfaces.md) and
 [ports](ports.md) pages will all make sense.
@@ -19,7 +19,7 @@ A few consequences follow from "read once at startup":
   parameters can also be changed live with sysop commands, but the file itself is not
   re-read on the fly.
 - Errors are reported **with the line number**. If the program prints something like
-  `ERROR in line 42`, open the file at that line — the parser stopped there. This makes the
+  `ERROR in line 42`, open the file at that line, the parser stopped there. This makes the
   natural workflow "change one thing, restart, repeat", and it is why incremental edits are
   so much easier than big rewrites.
 
@@ -33,7 +33,7 @@ A few consequences follow from "read once at startup":
 
 `XROUTER.CFG` is plain ASCII text. The rules are few:
 
-- Most directives are **`KEYWORD=value`**, one per line — for example `NODECALL=M0XXX-1`.
+- Most directives are **`KEYWORD=value`**, one per line, for example `NODECALL=M0XXX-1`.
 - **Keywords are not case-sensitive.** `NODECALL`, `nodecall` and `NodeCall` are the same
   directive. (Filenames given as *values* still obey the case rule above.)
 - **Comments** start with `;` or `#` in the leftmost column. Blank lines are allowed and
@@ -59,10 +59,10 @@ GLOBAL section, where the node's identity and most network-wide defaults live.
 | Block | Opens / closes | What it defines |
 | --- | --- | --- |
 | Interface | `INTERFACE=n` … `ENDINTERFACE` | A physical or virtual point of connection (a COM port, a soundcard link, an internet socket). See [Interfaces](interfaces.md). |
-| Port | `PORT=n` … `ENDPORT` | An AX.25 port — usually one radio channel — bound to an interface. See [Ports](ports.md). |
+| Port | `PORT=n` … `ENDPORT` | An AX.25 port, usually one radio channel, bound to an interface. See [Ports](ports.md). |
 | Radio | `RADIO=n` … `ENDRADIO` | A rig-control definition (frequency, PTT method, etc.). |
 | Console | `CONSOLE=n` … `ENDCONSOLE` | Per-console (sysop window) settings such as colours and the default monitor mask. |
-| Application | `APPL=n` … `ENDAPPL` | A hosted application — its name, callsign, alias and NET/ROM quality. |
+| Application | `APPL=n` … `ENDAPPL` | A hosted application, its name, callsign, alias and NET/ROM quality. |
 | Routes | `ROUTES` … `***` | Locked-in NET/ROM routes that survive restarts. |
 
 Everything outside those blocks is **GLOBAL**. Identity directives (`NODECALL`,
@@ -80,10 +80,10 @@ section, typically near the top of the file.
 A few directives introduce a *block of free text* rather than a single value, and these are
 terminated not by an `END…` keyword but by a line containing only `***`:
 
-- `CTEXT` — the connect text shown to users when they connect to the node.
-- `INFOTEXT` — the text returned by the `INFO` (or `I`) command.
-- `IDTEXT` — the identification beacon.
-- `ROUTES` — the locked-in routes block (also `***`-terminated).
+- `CTEXT`, the connect text shown to users when they connect to the node.
+- `INFOTEXT`, the text returned by the `INFO` (or `I`) command.
+- `IDTEXT`, the identification beacon.
+- `ROUTES`, the locked-in routes block (also `***`-terminated).
 
 ```ini
 CTEXT
@@ -96,15 +96,15 @@ Welcome to MYNODE. Type ? for a list of commands.
     Omitting the `***` terminator is a classic error: the parser keeps swallowing
     subsequent lines as part of the text block, so the directives below it silently vanish.
     If a keyword you *did* set seems to be ignored, check that the free-text block above it
-    was closed with `***`. Keep `CTEXT` short — users see it on every connection — and put
+    was closed with `***`. Keep `CTEXT` short, users see it on every connection, and put
     something genuinely useful in `INFOTEXT`.
 
 ## The minimum to start
 
 XRouter refuses to start unless the configuration provides, at the very least:
 
-1. `NODECALL` — the node's AX.25 / NET/ROM callsign (a callsign plus an SSID, e.g. `-1`).
-2. `NODEALIAS` — the node's alias (up to 6 characters, no SSID).
+1. `NODECALL`, the node's AX.25 / NET/ROM callsign (a callsign plus an SSID, e.g. `-1`).
+2. `NODEALIAS`, the node's alias (up to 6 characters, no SSID).
 3. **One `INTERFACE` block**, which itself must contain at least `TYPE` and `MTU`.
 4. **One `PORT` block**, which itself must contain at least `ID` and `INTERFACENUM`.
 
@@ -136,17 +136,17 @@ is on [Your first XROUTER.CFG](../getting-started/first-config.md).
 
 ## Where to go next
 
-- [Global settings](global-settings.md) — identity, server ports, NET/ROM and IP globals.
-- [Interfaces](interfaces.md) — the `INTERFACE` block: `TYPE`, `PROTOCOL`, `MTU` and the hardware.
-- [Ports](ports.md) — the `PORT` block: AX.25 timing, NET/ROM quality and behaviour flags.
-- [Worked example configs](examples.md) — complete, annotated configurations to adapt.
-- [Directive reference](directive-reference.md) — every keyword, grouped by block.
-- [System and data files](system-files.md) — `XROUTER.CFG` and the optional `*.SYS` / `*.CFG` files.
+- [Global settings](global-settings.md), identity, server ports, NET/ROM and IP globals.
+- [Interfaces](interfaces.md), the `INTERFACE` block: `TYPE`, `PROTOCOL`, `MTU` and the hardware.
+- [Ports](ports.md), the `PORT` block: AX.25 timing, NET/ROM quality and behaviour flags.
+- [Worked example configs](examples.md), complete, annotated configurations to adapt.
+- [Directive reference](directive-reference.md), every keyword, grouped by block.
+- [System and data files](system-files.md), `XROUTER.CFG` and the optional `*.SYS` / `*.CFG` files.
 
 ---
 
 **Sources:**
 [XROUTER.CFG, OARC wiki (man8)](https://wiki.oarc.uk/packet:xrouter:docs:man8) ·
 [Installation and configuration topics, OARC wiki (man6)](https://wiki.oarc.uk/packet:xrouter:docs:man6) ·
-[ohiopacket.org XRPi mirror — configuration](https://ohiopacket.org/xrpi/docs/xrcfg.htm) ·
+[ohiopacket.org XRPi mirror: configuration](https://ohiopacket.org/xrpi/docs/xrcfg.htm) ·
 [XRouter support group, groups.io](https://groups.io/g/xrouter)

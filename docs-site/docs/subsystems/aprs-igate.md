@@ -7,7 +7,7 @@ a primer on APRS itself, read [APRS in brief](../basics/aprs.md) first.
 
 ## The APRS identity
 
-APRS traffic from the node — beacons it originates, and packets it gates to the internet —
+APRS traffic from the node, beacons it originates, and packets it gates to the internet,
 carries the callsign set by the global `APRSCALL` directive. If you leave it unset, the
 node's `NODECALL` is used. Set it when you want the APRS side of the station to appear
 under its own callsign:
@@ -19,8 +19,8 @@ APRSCALL=M0XXX-1
 ## UI digipeating (WIDEn-N)
 
 APRS digipeating is configured per port, on the ports that carry APRS. XRouter supports the
-**New-N paradigm** — the `WIDEn-N` / `SSn-N` scheme that replaced the old RELAY/WIDE/TRACE
-aliases — through two global directives that name the digipeating aliases:
+**New-N paradigm**, the `WIDEn-N` / `SSn-N` scheme that replaced the old RELAY/WIDE/TRACE
+aliases, through two global directives that name the digipeating aliases:
 
 | Directive | Role |
 | --- | --- |
@@ -54,7 +54,7 @@ keywords such as `SERVER` (the APRS-IS host and port to connect to), `IFILTER` a
 
 ### Controlling gating direction
 
-Which way packets flow across the gateway is **not** set in `IGATE.CFG` — it is governed by
+Which way packets flow across the gateway is **not** set in `IGATE.CFG`, it is governed by
 the same per-port `DIGIFLAG` bitmask, using two dedicated bits:
 
 | `DIGIFLAG` bit | Meaning |
@@ -73,7 +73,7 @@ visibility while declining to inject internet traffic back onto a congested RF c
 
 ## The APRS message server
 
-Beyond digipeating and gating, XRouter runs an **APRS message server** — a shell that lets
+Beyond digipeating and gating, XRouter runs an **APRS message server**, a shell that lets
 a connected user send and read APRS messages interactively, rather than from a dedicated
 APRS terminal. Users enter it from the node prompt with the `AMSG` command, and there is a
 companion `DX` command for distant stations heard and `WX` for APRS weather. The server
@@ -86,7 +86,7 @@ configuration files in [System and data files](../configuration/system-files.md)
 
 ---
 
-**Sources:** [In-program manual, OARC wiki — Section 9 (APRS, IGate, APRS server)](https://wiki.oarc.uk/packet:xrouter:docs:man9) ·
+**Sources:** [In-program manual, OARC wiki: Section 9 (APRS, IGate, APRS server)](https://wiki.oarc.uk/packet:xrouter:docs:man9) ·
 [APRS message server help](https://wiki.oarc.uk/packet:xrouter:docs:aprsmessageserverhelp) ·
-[In-program manual — Section 7 (directives)](https://wiki.oarc.uk/packet:xrouter:docs:man7) ·
-[ohiopacket.org XRPi mirror — APRS/IGate](https://ohiopacket.org/xrpi/docs/index.htm)
+[In-program manual: Section 7 (directives)](https://wiki.oarc.uk/packet:xrouter:docs:man7) ·
+[ohiopacket.org XRPi mirror: APRS/IGate](https://ohiopacket.org/xrpi/docs/index.htm)

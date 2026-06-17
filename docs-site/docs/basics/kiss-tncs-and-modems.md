@@ -1,6 +1,6 @@
 # KISS, TNCs and soundcard modems
 
-Between your radio and the software that speaks [AX.25](ax25.md) sits a modem — and a thin
+Between your radio and the software that speaks [AX.25](ax25.md) sits a modem, and a thin
 protocol called KISS that carries frames between the two. This page explains what a TNC is,
 what KISS does, and how today's software "soundcard" modems compare with traditional
 hardware TNCs.
@@ -41,7 +41,7 @@ KISS is just a byte stream, so it can travel over different transports:
 
 ## Hardware TNCs vs soundcard modems
 
-Hardware TNCs are still made and used — a notable modern example is the FEC-capable
+Hardware TNCs are still made and used, a notable modern example is the FEC-capable
 **NinoTNC**, popular for building point-to-point node links. But much of today's practice
 replaces the hardware TNC with **software plus a sound card**, letting the computer's own
 processing do the modulation and demodulation:
@@ -73,4 +73,4 @@ XRouter connects to all of these. For hardware connections see
 [KISS (Wikipedia)](https://en.wikipedia.org/wiki/KISS_(TNC)) ·
 [Chepponis & Karn, "The KISS TNC" (1987)](http://www.ka9q.net/papers/kiss.html) ·
 [Dire Wolf](https://github.com/wb2osz/direwolf) ·
-[Hibby's Packet Radio Guide — modems](https://guide.hibbian.org/modems/)
+[Hibby's Packet Radio Guide: modems](https://guide.hibbian.org/modems/)

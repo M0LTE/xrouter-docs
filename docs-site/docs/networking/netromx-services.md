@@ -1,7 +1,7 @@
 # NetRom-X service numbers
 
 NetRom-X (also written NetromX or NET/ROM-X) is XRouter's scheme for exposing many services
-behind a **single node callsign**, each reached by a numbered service — much like well-known
+behind a **single node callsign**, each reached by a numbered service, much like well-known
 TCP ports. This page explains why it exists, the standard service numbers, and how a user
 connects to one. It is aimed at sysops and at users who want to reach a node's mailbox or chat
 server directly.
@@ -15,10 +15,10 @@ problem plainly:
 > -11, xrchat is -8, and it all goes to pot if you run more than one node... That's why I
 > developed NetromX in XRouter. You have one node callsign, which supports up to 65535
 > Services. The service numbers are standard, like tcp/udp well known ports, so if you
-> connect to service 2 on any xrpi it is the PMS." — *Paula G8PZT (community, OARC)*
+> connect to service 2 on any xrpi it is the PMS.", *Paula G8PZT (community, OARC)*
 
 An AX.25 callsign has only 16 SSIDs (0–15), so a node running a mailbox, a chat server, an
-APRS server, an information server and so on quickly runs out — and a sysop running more than
+APRS server, an information server and so on quickly runs out, and a sysop running more than
 one node makes it worse. NetRom-X sidesteps the limit entirely: **one** node callsign exposes
 up to **65535** numbered services, and because the numbers are standardised, the same number
 means the same thing on any XRouter node. Connect to service 2 anywhere and you reach that
@@ -32,7 +32,7 @@ defines more than these; the table lists the common, human-usable ones.)
 | Number | Service | What it is |
 | --- | --- | --- |
 | `1` | INFO | Node information server (the node's "I" info) |
-| `2` | PMS | Personal Message System — the integral mailbox |
+| `2` | PMS | Personal Message System, the integral mailbox |
 | `7` | ECHO | Echoes data back; link testing |
 | `8` | CHAT | The XRChat chat / conference server |
 | `9` | DISCARD | Data sink; link testing |
@@ -40,7 +40,7 @@ defines more than these; the table lists the common, human-usable ones.)
 | `14` | APRS | APRS server |
 | `23` | TELNET | Layer-4 login (equivalent to the node command line) |
 | `79` | FINGER | Finger user-information server |
-| `80` | HTTP | NetRomWeb — HTTP carried over NET/ROM |
+| `80` | HTTP | NetRomWeb, HTTP carried over NET/ROM |
 
 A few of these deliberately mirror the equivalent TCP well-known ports (7 echo, 9 discard, 13
 daytime, 23 telnet, 79 finger, 80 http), which makes them easy to remember. Note that the
@@ -73,27 +73,27 @@ and to drop straight into that node's chat server:
 C KIDDER 8
 ```
 
-Connecting with no service number — `C KIDDER` — lands you at the node command line
+Connecting with no service number, `C KIDDER`, lands you at the node command line
 (service 0) as usual, from where the ordinary commands (`PMS`, `CHAT`, `INFO`, and so on)
 are also available. The service number is just a shortcut that connects you directly to the
 service, which is convenient over a slow link or from an automated client.
 
 Because the destination is resolved through XRouter's routing tables, you can connect to a
-distant node's service by name from anywhere in the network — the routing layer (see
+distant node's service by name from anywhere in the network, the routing layer (see
 [NET/ROM, INP3 and L3RTT](netrom-inp3.md)) finds the path, and the service number selects
 what you talk to once you arrive.
 
 ## See also
 
-- [Ports and service numbers reference](../reference/ports-and-services.md) — the full table,
+- [Ports and service numbers reference](../reference/ports-and-services.md), the full table,
   alongside the TCP/IP service ports.
-- [NET/ROM, INP3 and L3RTT](netrom-inp3.md) — how the node you are addressing is reached.
-- [PMS mailbox](../subsystems/pms-mailbox.md) and [Chat server](../subsystems/chat.md) — the
+- [NET/ROM, INP3 and L3RTT](netrom-inp3.md), how the node you are addressing is reached.
+- [PMS mailbox](../subsystems/pms-mailbox.md) and [Chat server](../subsystems/chat.md), the
   two services users reach most via NetRom-X.
 
 ---
 
-**Sources:** in-program manual on the OARC wiki —
+**Sources:** in-program manual on the OARC wiki,
 [Subsystems and features (man9), Services list](https://wiki.oarc.uk/packet:xrouter:docs:man9)
 and the `generalhelp` SERVICES list; author's explanation of the scheme and its origin
 (community knowledge, OARC), corroborated by the manual's service-number table.

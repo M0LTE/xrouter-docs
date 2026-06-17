@@ -6,7 +6,7 @@ built-in servers are switched on or moved, and where network-wide NET/ROM and IP
 set. This page is a guided tour of the directives you are most likely to touch; the full
 keyword-by-keyword listing is in the [directive reference](directive-reference.md).
 
-Global directives can go anywhere outside a block, but convention — and readability — put
+Global directives can go anywhere outside a block, but convention, and readability, put
 them near the top of the file, above the interfaces and ports.
 
 !!! note "Defaults can vary by version"
@@ -18,7 +18,7 @@ them near the top of the file, above the interfaces and ports.
 ## Identity
 
 These establish who the node is on the air and where it claims to be. `NODECALL` and
-`NODEALIAS` are **mandatory** — XRouter will not start without them.
+`NODEALIAS` are **mandatory**, XRouter will not start without them.
 
 | Directive | Meaning | Notes |
 | --- | --- | --- |
@@ -28,24 +28,24 @@ These establish who the node is on the air and where it claims to be. `NODECALL`
 | `QTH` | A free-text description of the node's location. | Shown to users and to mapping. Keep it short. |
 | `LOCATOR` | Maidenhead locator for the site. | 6- or 8-character grid square, e.g. `IO91WM`. |
 
-Other location directives exist for nodes that want to appear on a network map —
-`CONTACT`, `LATITUDE`, `LONGITUDE`, `ALTITUDE`, `HAAT` and `MAPCOMMENT` among them — but
+Other location directives exist for nodes that want to appear on a network map,
+`CONTACT`, `LATITUDE`, `LONGITUDE`, `ALTITUDE`, `HAAT` and `MAPCOMMENT` among them, but
 `QTH` and `LOCATOR` are enough for most stations. See the [directive
 reference](directive-reference.md) for the rest.
 
 ## The IPADDRESS security behaviour
 
 `IPADDRESS` sets the node's primary IP address (an AMPRNet / 44Net address if you have one).
-It looks like an optional, IP-only directive — but it is not, because of a deliberate
+It looks like an optional, IP-only directive, but it is not, because of a deliberate
 security design choice.
 
 !!! danger "No IPADDRESS, no IP services at all"
     If the global `IPADDRESS` is `0.0.0.0` or left undefined, XRouter **deliberately disables
-    all IP activity** — AXUDP, AXTCP, AXIP, HTTP, FTP, the lot — on **both** the XRouter and
+    all IP activity**, AXUDP, AXTCP, AXIP, HTTP, FTP, the lot, on **both** the XRouter and
     Linux stacks. This is an intentional security feature, not a bug. If you do not have an
     AMPRNet address but want any IP-based service or internet link to work, set a private
-    dummy address such as `10.1.1.1`. Recent builds will not work — and may refuse to start
-    cleanly — with `IPADDRESS` omitted. — *Paula G8PZT,
+    dummy address such as `10.1.1.1`. Recent builds will not work, and may refuse to start
+    cleanly, with `IPADDRESS` omitted., *Paula G8PZT,
     [groups.io](https://groups.io/g/xrouter/message/1957)*
 
 ```ini
@@ -54,7 +54,7 @@ IPADDRESS=10.1.1.1       ; real 44Net address if you have one, else a private du
 
 Related global IP directives include `HOSTNAME`, `DNS`, `DOMAIN`, `DCACHE`, `MAXARP`,
 `IPTTL`, and the tunnelling toggles `IPENCAP`, `IPIP` and `IPUDPPORT`. IP *routing* (routes,
-ARP, NAT, RIP) is configured separately in `IPROUTE.SYS` — see [System and data
+ARP, NAT, RIP) is configured separately in `IPROUTE.SYS`, see [System and data
 files](system-files.md).
 
 ## Built-in servers: enable, move or disable
@@ -85,7 +85,7 @@ port. They are enabled by default. Each has a `…PORT` directive that controls 
 | `RHPPORT` | Remote Host Protocol (host API) | 9000 |
 | `ECHOPORT` / `DISCARDPORT` | Echo / Discard (link testing) | 7 / 9 |
 
-Binding ports below 1024 needs either root or the right Linux capability — see the `setcap`
+Binding ports below 1024 needs either root or the right Linux capability, see the `setcap`
 guidance on [Raspberry Pi](../getting-started/raspberry-pi.md) and [Security and
 hardening](../admin/security-hardening.md). A full list of servers, ports and NET/ROM
 service numbers is on [Ports and service numbers](../reference/ports-and-services.md).
@@ -114,7 +114,7 @@ The INP3 link-state extension adds `MAXHOPS` and `MAXTT` (the hop-count and trip
 [NET/ROM, INP3 and L3RTT](../networking/netrom-inp3.md).
 
 !!! tip "Be a good NET/ROM neighbour"
-    Don't drop the *global* `NODESINTERVAL` below 60 to satisfy one fussy neighbour — that
+    Don't drop the *global* `NODESINTERVAL` below 60 to satisfy one fussy neighbour, that
     floods the whole network with broadcasts. If a particular link needs more frequent
     broadcasts, set `NODESINTERVAL` inside that one [port block](ports.md) instead. Likewise
     use `MINQUAL`, the per-port `QUALITY`/`MINTXQUAL`, `CHATQUAL` and `PMSQUAL` to keep your
@@ -134,7 +134,7 @@ alias and NET/ROM quality so they can appear in the nodes table as separate dest
 ```ini
 CHATCALL=M0XXX-8
 CHATALIAS=MYCHT
-CHATQUAL=150             ; set explicitly — the documented default varies by version
+CHATQUAL=150             ; set explicitly, the documented default varies by version
 
 PMSCALL=M0XXX-2
 PMSALIAS=MYPMS
@@ -160,5 +160,5 @@ and `DCACHE` sizes the domain cache. Local host overrides go in `DOMAIN.SYS`.
 **Sources:**
 [Configuration directives, OARC wiki (man7)](https://wiki.oarc.uk/packet:xrouter:docs:man7) ·
 [XROUTER.CFG, OARC wiki (man8)](https://wiki.oarc.uk/packet:xrouter:docs:man8) ·
-[ohiopacket.org XRPi mirror — global keywords](https://ohiopacket.org/xrpi/docs/xrcfg.htm) ·
+[ohiopacket.org XRPi mirror: global keywords](https://ohiopacket.org/xrpi/docs/xrcfg.htm) ·
 [IPADDRESS guidance, groups.io](https://groups.io/g/xrouter/message/1957)

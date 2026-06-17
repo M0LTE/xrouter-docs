@@ -1,7 +1,7 @@
 # Your first XROUTER.CFG
 
-This page walks through a minimal, working `XROUTER.CFG` line by line — enough to get
-XRouter to start, identify itself on the air and accept a connection — and then shows how
+This page walks through a minimal, working `XROUTER.CFG` line by line, enough to get
+XRouter to start, identify itself on the air and accept a connection, and then shows how
 to verify it and grow it safely. It is for anyone who has just unpacked a build (see
 [Raspberry Pi](raspberry-pi.md), [Linux PC](linux-pc.md) or [Windows](windows.md)) and is
 staring at an empty config wondering what the bare minimum is.
@@ -12,11 +12,11 @@ The good news is that the bare minimum is genuinely short.
 
 ## Where the file lives
 
-XRouter reads its files from **the directory the binary lives in** — there is no
+XRouter reads its files from **the directory the binary lives in**, there is no
 system-wide config path, no `/etc` entry, nothing hidden. Put `XROUTER.CFG` next to the
 executable and that is where it will be found.
 
-!!! warning "The name is UPPER CASE — and on Linux that matters"
+!!! warning "The name is UPPER CASE, and on Linux that matters"
     The file must be named `XROUTER.CFG` in **upper case**. On Linux and the Raspberry Pi
     the filesystem is case-sensitive, so `xrouter.cfg` is a *different file* and XRouter
     will behave as though it has no config at all. Every XRouter configuration and data
@@ -25,7 +25,7 @@ executable and that is where it will be found.
     filesystem is not case-sensitive, but using upper case keeps your config portable.
 
 The file is **read once, at start-up**. XRouter parses it top to bottom, and if it finds a
-problem it reports the **line number** of the offending line. Many — though not all —
+problem it reports the **line number** of the offending line. Many, though not all,
 parameters can also be changed live from the [node command prompt](../commands/node-prompt.md)
 once the program is running, but the file itself is not re-read until the next restart.
 
@@ -34,7 +34,7 @@ once the program is running, but the file itself is not re-read until the next r
 `XROUTER.CFG` is plain ASCII text. The rules are few:
 
 - Each directive is written **`KEYWORD=value`**, one per line.
-- **Keywords are not case-sensitive** — `NODECALL`, `nodecall` and `NodeCall` are the same
+- **Keywords are not case-sensitive**, `NODECALL`, `nodecall` and `NodeCall` are the same
   directive. (Filenames given as *values* still obey the filesystem's own case rules.)
 - A line beginning with **`;`** or **`#`** in the leftmost column is a comment. Blank lines
   are allowed and ignored.
@@ -51,7 +51,7 @@ callsign, alias and most defaults live here. A few things are grouped into paire
 | Block | Purpose |
 | --- | --- |
 | `INTERFACE=n` … `ENDINTERFACE` | A hardware or virtual connection (a TNC, a soundcard modem, an internet link). |
-| `PORT=n` … `ENDPORT` | A logical port — usually one radio frequency — attached to an interface. |
+| `PORT=n` … `ENDPORT` | A logical port, usually one radio frequency, attached to an interface. |
 | `RADIO=n` … `ENDRADIO` | A block for radio / PTT control settings. |
 | `CONSOLE=n` … `ENDCONSOLE` | Per-console (sysop window) settings. |
 | `APPL=n` … `ENDAPPL` | A hosted application (e.g. a separate BBS). |
@@ -85,7 +85,7 @@ your own callsign and serial device. The inline comments explain each line.
 
 ```ini
 ; ------------------------------------------------------------------
-;  XROUTER.CFG  —  minimal single-port example
+;  XROUTER.CFG  -  minimal single-port example
 ; ------------------------------------------------------------------
 
 ; --- Node identity (GLOBAL) ---------------------------------------
@@ -95,7 +95,7 @@ CONSOLECALL=M0XXX         ; callsign used for connections you make from the cons
 QTH=Anytown IO00AA        ; free-text location, advertised to users
 LOCATOR=IO00AA            ; Maidenhead locator (optional)
 
-IPADDRESS=10.1.1.1        ; see the warning below — needed for ANY IP service
+IPADDRESS=10.1.1.1        ; see the warning below, needed for ANY IP service
 
 ; --- Connect / info text ------------------------------------------
 CTEXT
@@ -103,7 +103,7 @@ Welcome to MYNODE. Type ? for a list of commands.
 ***
 
 INFOTEXT
-MYNODE — an XRouter packet node at Anytown.
+MYNODE, an XRouter packet node at Anytown.
 Sysop: M0XXX.  Running XRouter.
 ***
 
@@ -130,13 +130,13 @@ That is a complete, startable configuration. Below, the parts worth understandin
 
 `NODECALL` is your node's main AX.25 / NET-ROM callsign and **must** include an SSID
 (for example `-1`) to distinguish the node from your personal station. `NODEALIAS` is a
-short text alias of up to six characters with no SSID — it is what neighbours and users see
+short text alias of up to six characters with no SSID, it is what neighbours and users see
 alongside your callsign in nodes lists.
 
 `CONSOLECALL` is optional. By default the console uses `NODECALL`; set `CONSOLECALL` if you
 want connections *you* originate from the local console to go out under your personal
 callsign rather than the node's. `QTH` (a free-text location, up to 32 characters) and
-`LOCATOR` (a Maidenhead grid square) are both optional but worth setting — they tell users
+`LOCATOR` (a Maidenhead grid square) are both optional but worth setting, they tell users
 and mapping services where you are.
 
 ### The IPADDRESS gotcha
@@ -149,11 +149,11 @@ This one line saves a great deal of confusion:
 
 !!! danger "No `IPADDRESS` means *no* IP services at all"
     If the global `IPADDRESS` is left at its default of `0.0.0.0` (or undefined), XRouter
-    **deliberately disables all IP activity** — AXUDP, AXTCP, AXIP, the HTTP server, FTP,
-    the lot — on *both* its own stack and the Linux stack. This is an intentional security
+    **deliberately disables all IP activity**, AXUDP, AXTCP, AXIP, the HTTP server, FTP,
+    the lot, on *both* its own stack and the Linux stack. This is an intentional security
     feature, not a bug. If you have an AMPRNet (44Net) address, put it here. If you do not,
     set a private dummy address such as `10.1.1.1` so that the IP-based features work.
-    Recent builds will not start cleanly with `IPADDRESS` omitted. — *Paula G8PZT,
+    Recent builds will not start cleanly with `IPADDRESS` omitted., *Paula G8PZT,
     [groups.io](https://groups.io/g/xrouter/message/1957)*
 
 ### Free-text blocks: CTEXT and INFOTEXT
@@ -170,7 +170,7 @@ Welcome to MYNODE. Type ? for a list of commands.
 
 !!! tip "Don't forget the `***` terminator"
     Forgetting the `***` that closes a `CTEXT`, `INFOTEXT`, `IDTEXT` or `ROUTES` block is a
-    classic error — without it, XRouter keeps reading following lines as part of the text.
+    classic error, without it, XRouter keeps reading following lines as part of the text.
     Keep `CTEXT` short, because users see it on *every* connection, and put something
     genuinely useful in `INFOTEXT` so the `I` command teaches a visitor something.
 
@@ -181,7 +181,7 @@ until you have the node on the air and working.
 
 The `INTERFACE` block describes *how* XRouter reaches the outside world; the `PORT` block
 describes a logical channel on it. The example uses `TYPE=ASYNC` with `PROTOCOL=KISS` to
-drive a serial KISS TNC — see [Interfaces](../configuration/interfaces.md) and
+drive a serial KISS TNC, see [Interfaces](../configuration/interfaces.md) and
 [KISS TNCs](../interfaces/kiss-tncs.md) for the other interface types (soundcard modems,
 AGWPE, AXIP/AXUDP internet links, and so on). The `PORT` block needs only an `ID` (a label)
 and `INTERFACENUM` (which interface it belongs to); see [Ports](../configuration/ports.md)
@@ -205,8 +205,8 @@ loop:
 A boot log is also written under `LOG/` (for example `BOOTLOG.TXT`), which is useful if the
 program exits before you can read the screen. Once it comes up cleanly, connect to the node
 locally over Telnet to confirm your `CTEXT` and try the `PORTS`, `NODES` and `INFO`
-commands. From there, build the config up **one change at a time** — add a second port, a
-mailbox callsign, an APRS IGate — restarting and checking after each. Making many changes
+commands. From there, build the config up **one change at a time**, add a second port, a
+mailbox callsign, an APRS IGate, restarting and checking after each. Making many changes
 at once and then trying to work out which one broke start-up is the slow way round.
 
 ## Next steps
@@ -218,7 +218,7 @@ at once and then trying to work out which one broke start-up is the slow way rou
 
 ---
 
-**Sources:** [In-program manual, OARC wiki — XROUTER.CFG (man8)](https://wiki.oarc.uk/packet:xrouter:docs:man8)
+**Sources:** [In-program manual, OARC wiki: XROUTER.CFG (man8)](https://wiki.oarc.uk/packet:xrouter:docs:man8)
 · [configuration directives (man7)](https://wiki.oarc.uk/packet:xrouter:docs:man7) ·
 [installation and configuration topics (man6)](https://wiki.oarc.uk/packet:xrouter:docs:man6)
 · [XRouter support group, groups.io](https://groups.io/g/xrouter) (the `IPADDRESS`
