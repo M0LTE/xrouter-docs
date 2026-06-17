@@ -1,0 +1,51 @@
+name: docs
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+permissions:
+  contents: write
+
+jobs:
+  docs:
+    runs-on: ubuntu-latest
+    # The MkDocs project lives in docs-site/, not at the repository root.
+    defaults:
+      run:
+        working-directory: docs-site
+    steps:
+      - name: Checkout (full history for mike)
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      # On pull requests: build with --strict so broken links / nav fail the check.
+      - name: Build (strict check)
+        if: github.event_name == 'pull_request'
+        run: mkdocs build --strict
+
+      # On push to master: publish this version with mike and update the "latest" alias.
+      # Change the version label (1.0) when you cut a new documentation release.
+      - name: Configure git for mike
+        if: github.event_name == 'push'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Deploy with mike
+        if: github.event_name == 'push'
+        run: |
+          git fetch origin gh-pages --depth=1 || true
+          mike deploy --push --update-aliases 1.0 latest
+          mike set-default --push latest

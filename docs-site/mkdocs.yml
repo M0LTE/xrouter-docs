@@ -1,0 +1,155 @@
+site_name: XRouter Documentation
+site_description: >-
+  A re-presentation of the documentation for XRouter, Paula G8PZT's
+  AX.25 / NET-ROM / TCP-IP packet-radio node, router, chat server and
+  APRS digipeater — organised by user journey and cited to primary sources.
+site_author: XRouter Documentation contributors
+site_url: https://m0lte.github.io/xrouter-docs/
+repo_url: https://github.com/m0lte/xrouter-docs
+repo_name: m0lte/xrouter-docs
+edit_uri: edit/master/docs/
+copyright: >-
+  Documentation re-presentation released under CC BY 4.0. XRouter itself is
+  copyright Paula G8PZT and is free for non-commercial amateur use. This is an
+  unofficial, community-maintained site; for canonical information defer to the author.
+
+theme:
+  name: material
+  language: en
+  features:
+    - navigation.sections
+    - navigation.indexes
+    - navigation.top
+    - navigation.tracking
+    - navigation.footer
+    - toc.follow
+    - search.suggest
+    - search.highlight
+    - search.share
+    - content.code.copy
+    - content.code.annotate
+    - content.tabs.link
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+  icon:
+    repo: fontawesome/brands/github
+
+extra:
+  version:
+    provider: mike
+    default: latest
+  social:
+    - icon: fontawesome/solid/people-group
+      link: https://groups.io/g/xrouter
+      name: XRouter support group (groups.io)
+
+extra_css:
+  - stylesheets/extra.css
+
+plugins:
+  - search
+
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+      toc_depth: 3
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+nav:
+  - Home: index.md
+  - Start here:
+      - start/index.md
+      - New to packet radio: start/new-to-packet.md
+      - New to XRouter: start/new-to-xrouter.md
+      - Migrating from BPQ or other node software: start/migrating-from-bpq.md
+  - Packet radio basics:
+      - What is packet radio?: basics/what-is-packet-radio.md
+      - AX.25 — the data link: basics/ax25.md
+      - NET/ROM — networking and routing: basics/netrom.md
+      - KISS, TNCs and soundcard modems: basics/kiss-tncs-and-modems.md
+      - APRS in brief: basics/aprs.md
+      - IP over AX.25 and AMPRNet: basics/ip-over-ax25.md
+      - Nodes, switches and the sysop role: basics/nodes-and-sysops.md
+  - Getting started:
+      - getting-started/index.md
+      - Raspberry Pi (XrPi): getting-started/raspberry-pi.md
+      - Linux PC (XrLin): getting-started/linux-pc.md
+      - Windows (XrWin): getting-started/windows.md
+      - Your first XROUTER.CFG: getting-started/first-config.md
+      - Running as a service: getting-started/running-as-a-service.md
+  - Configuration:
+      - configuration/index.md
+      - Global settings: configuration/global-settings.md
+      - Interfaces: configuration/interfaces.md
+      - Ports: configuration/ports.md
+      - Directive reference: configuration/directive-reference.md
+      - System and data files: configuration/system-files.md
+      - Worked example configs: configuration/examples.md
+  - Interfaces & modems:
+      - interfaces/index.md
+      - KISS TNCs: interfaces/kiss-tncs.md
+      - Soundcard modems (Direwolf, UZ7HO, QtSoundModem): interfaces/soundcard-modems.md
+      - AGWPE: interfaces/agwpe.md
+      - AXIP / AXUDP / AXTCP linking: interfaces/axip-axudp-axtcp.md
+      - VARA and ARDOP: interfaces/vara-ardop.md
+  - Networking & routing:
+      - AX.25 on XRouter: networking/ax25.md
+      - NET/ROM, INP3 and L3RTT: networking/netrom-inp3.md
+      - NetRom-X service numbers: networking/netromx-services.md
+      - The TCP/IP stack: networking/tcpip.md
+      - Linking nodes and interoperating: networking/linking-and-interop.md
+  - Subsystems & services:
+      - PMS mailbox: subsystems/pms-mailbox.md
+      - Chat server: subsystems/chat.md
+      - APRS digipeater and IGate: subsystems/aprs-igate.md
+      - HTTP, REST and MQTT: subsystems/http-rest-mqtt.md
+      - Built-in TCP servers: subsystems/built-in-servers.md
+  - Operating the node:
+      - The node command prompt: commands/node-prompt.md
+      - Sysop access and commands: commands/sysop.md
+      - Command reference: commands/command-reference.md
+  - Administration:
+      - Security and hardening: admin/security-hardening.md
+      - Logging and monitoring: admin/logging-and-monitoring.md
+      - Troubleshooting and FAQ: admin/troubleshooting.md
+      - Upgrading and versions: admin/upgrading.md
+  - Reference:
+      - Ports and service numbers: reference/ports-and-services.md
+      - Glossary: reference/glossary.md
+  - Project:
+      - About these docs: project/about-these-docs.md
+      - Sources and attribution: project/sources-and-attribution.md
+      - Contributing: project/contributing.md

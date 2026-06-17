@@ -1,0 +1,21 @@
+/* Slightly wider content for reference tables. */
+.md-grid {
+  max-width: 64rem;
+}
+
+/* Make wide reference tables scroll rather than overflow. */
+.md-typeset table:not([class]) {
+  display: block;
+  overflow-x: auto;
+}
+
+/* Tighten keyword/command tables a touch. */
+.md-typeset table:not([class]) th,
+.md-typeset table:not([class]) td {
+  padding: 0.4rem 0.6rem;
+}
+
+/* Callsign / config keyword inline code a little more legible. */
+.md-typeset code {
+  font-size: 0.85em;
+}
