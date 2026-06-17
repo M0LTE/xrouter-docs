@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="A re-presentation of the documentation for XRouter, Paula G8PZT's AX.25 / NET-ROM / TCP-IP packet-radio node, router, chat server and APRS digipeater — organised by user journey and cited to primary sources.">
+        <meta name="description" content="A re-presentation of the documentation for XRouter, Paula G8PZT's AX.25 / NET-ROM / TCP-IP packet-radio node, router, chat server and APRS digipeater, organised by user journey and cited to primary sources.">
       
       
         <meta name="author" content="XRouter Documentation contributors">
@@ -569,7 +569,7 @@
   <span class="md-ellipsis">
     
   
-    AX.25 — the data link
+    AX.25: the data link
   
 
     
@@ -597,7 +597,7 @@
   <span class="md-ellipsis">
     
   
-    NET/ROM — networking and routing
+    NET/ROM: networking and routing
   
 
     
@@ -2654,8 +2654,8 @@
 
 
 <h1 id="kiss-tncs">KISS TNCs<a class="headerlink" href="#kiss-tncs" title="Permanent link">&para;</a></h1>
-<p>This page connects a hardware <strong>KISS TNC</strong> — including a <strong>NinoTNC</strong> or a BPQ-style KISS
-EPROM — to XRouter. It is for a sysop who has a TNC on a serial or USB port and wants a
+<p>This page connects a hardware <strong>KISS TNC</strong>, including a <strong>NinoTNC</strong> or a BPQ-style KISS
+EPROM, to XRouter. It is for a sysop who has a TNC on a serial or USB port and wants a
 working radio port. If you are using a <em>software</em> modem (Direwolf, UZ7HO, QtSoundModem),
 read <a href="../soundcard-modems/">Soundcard modems</a> instead; the interface is similar but the
 device is different.</p>
@@ -2682,7 +2682,7 @@ keywords you will use:</p>
 <tr>
 <td><code>PROTOCOL=KISS</code></td>
 <td>Speak KISS to the TNC</td>
-<td>Mandatory — without a protocol you get a <em>bad or missing protocol</em> error.</td>
+<td>Mandatory, without a protocol you get a <em>bad or missing protocol</em> error.</td>
 </tr>
 <tr>
 <td><code>COM=&lt;device&gt;</code></td>
@@ -2697,7 +2697,7 @@ keywords you will use:</p>
 <tr>
 <td><code>FLOW=&lt;n&gt;</code></td>
 <td>Serial flow control</td>
-<td><code>0</code> none, <code>1</code> hardware RTS/CTS, <code>2</code> software XON/XOFF, <code>3</code> both. Use <code>0</code> for KISS — never XON/XOFF, which corrupts binary KISS frames.</td>
+<td><code>0</code> none, <code>1</code> hardware RTS/CTS, <code>2</code> software XON/XOFF, <code>3</code> both. Use <code>0</code> for KISS, never XON/XOFF, which corrupts binary KISS frames.</td>
 </tr>
 <tr>
 <td><code>MTU=&lt;bytes&gt;</code></td>
@@ -2719,7 +2719,7 @@ itself. For a NinoTNC the USB serial speed is fixed by the device, so match what
 documentation specifies.</p>
 </div>
 <h3 id="kissoptions">KISSOPTIONS<a class="headerlink" href="#kissoptions" title="Permanent link">&para;</a></h3>
-<p>Most TNCs need nothing here — plain KISS is the default. Set <code>KISSOPTIONS</code> only when your TNC
+<p>Most TNCs need nothing here, plain KISS is the default. Set <code>KISSOPTIONS</code> only when your TNC
 requires a particular dialect. The recognised values:</p>
 <table>
 <thead>
@@ -2761,7 +2761,7 @@ requires a particular dialect. The recognised values:</p>
 <div class="admonition note">
 <p class="admonition-title">ACKMODE and the NinoTNC</p>
 <p><code>ACKMODE</code> lets the TNC report when each frame is keyed up, which improves XRouter's
-timing. It is commonly used with the NinoTNC. It is optional — start without it if you
+timing. It is commonly used with the NinoTNC. It is optional, start without it if you
 are unsure, and add it once the basics work.</p>
 </div>
 <h2 id="a-clean-example">A clean example<a class="headerlink" href="#a-clean-example" title="Permanent link">&para;</a></h2>
@@ -2782,19 +2782,19 @@ are unsure, and add it once the basics work.</p>
 </span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="na">ENDPORT</span>
 </span></code></pre></div>
 <p>The <code>PORT</code> block needs only <code>ID</code> (the text shown on the node's <code>PORTS</code> display) and
-<code>INTERFACENUM</code> (the interface it binds to). Everything else — <code>PACLEN</code>, <code>TXDELAY</code>,
-<code>QUALITY</code>, digipeating and so on — is a per-port setting with sensible defaults; see
+<code>INTERFACENUM</code> (the interface it binds to). Everything else, <code>PACLEN</code>, <code>TXDELAY</code>,
+<code>QUALITY</code>, digipeating and so on, is a per-port setting with sensible defaults; see
 <a href="../../configuration/ports/">Ports</a> for the full list and the AX.25 timing parameters.</p>
 <h2 id="kiss-over-tcp">KISS over TCP<a class="headerlink" href="#kiss-over-tcp" title="Permanent link">&para;</a></h2>
-<p>Some KISS sources are reached over a TCP socket rather than a serial port — most often a
+<p>Some KISS sources are reached over a TCP socket rather than a serial port, most often a
 soundcard modem that offers "KISS over TCP". XRouter reaches those with a <strong><code>TCP</code></strong> interface
 carrying <code>PROTOCOL=KISS</code>, rather than <code>ASYNC</code>. The mechanics (which keywords carry the host
 and port) and a worked example live on the <a href="../soundcard-modems/">soundcard modems</a> page,
 since that is where KISS-over-TCP is normally used.</p>
 <hr />
-<p><strong>Sources:</strong> <a href="https://wiki.oarc.uk/packet:xrouter:docs:man6">In-program manual, OARC wiki — §6 Installation &amp; Configuration</a>
+<p><strong>Sources:</strong> <a href="https://wiki.oarc.uk/packet:xrouter:docs:man6">In-program manual, OARC wiki: §6 Installation &amp; Configuration</a>
 (ASYNC interface, <code>KISSOPTIONS</code>, MTU guidance) ·
-<a href="https://ohiopacket.org/xrpi/docs/ifaces.htm">ohiopacket.org XRPi mirror — interfaces</a> ·
+<a href="https://ohiopacket.org/xrpi/docs/ifaces.htm">ohiopacket.org XRPi mirror: interfaces</a> ·
 <a href="https://groups.io/g/xrouter">XRouter support group (groups.io)</a></p>
 
 
@@ -2873,7 +2873,7 @@ since that is where KISS-over-TCP is normally used.</p>
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Documentation re-presentation released under CC BY 4.0. XRouter itself is copyright Paula G8PZT and is free for non-commercial amateur use. This is an unofficial, community-maintained site; for canonical information defer to the author.
+      Documentation re-presentation released under CC BY 4.0, written entirely by AI from primary sources and not fact-checked by a human. XRouter itself is copyright Paula G8PZT and is free for non-commercial amateur use. This is an unofficial, community-maintained site; for canonical information defer to the author.
     </div>
   
   

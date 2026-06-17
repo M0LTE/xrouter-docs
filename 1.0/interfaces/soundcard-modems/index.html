@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="A re-presentation of the documentation for XRouter, Paula G8PZT's AX.25 / NET-ROM / TCP-IP packet-radio node, router, chat server and APRS digipeater — organised by user journey and cited to primary sources.">
+        <meta name="description" content="A re-presentation of the documentation for XRouter, Paula G8PZT's AX.25 / NET-ROM / TCP-IP packet-radio node, router, chat server and APRS digipeater, organised by user journey and cited to primary sources.">
       
       
         <meta name="author" content="XRouter Documentation contributors">
@@ -569,7 +569,7 @@
   <span class="md-ellipsis">
     
   
-    AX.25 — the data link
+    AX.25: the data link
   
 
     
@@ -597,7 +597,7 @@
   <span class="md-ellipsis">
     
   
-    NET/ROM — networking and routing
+    NET/ROM: networking and routing
   
 
     
@@ -1385,7 +1385,7 @@
   <a href="#option-a-kiss-over-a-serial-pseudo-terminal" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Option A — KISS over a serial / pseudo-terminal
+        Option A: KISS over a serial / pseudo-terminal
       
     </span>
   </a>
@@ -1396,7 +1396,7 @@
   <a href="#option-b-kiss-over-tcp-direwolf" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Option B — KISS over TCP (Direwolf)
+        Option B: KISS over TCP (Direwolf)
       
     </span>
   </a>
@@ -2570,7 +2570,7 @@
   <a href="#option-a-kiss-over-a-serial-pseudo-terminal" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Option A — KISS over a serial / pseudo-terminal
+        Option A: KISS over a serial / pseudo-terminal
       
     </span>
   </a>
@@ -2581,7 +2581,7 @@
   <a href="#option-b-kiss-over-tcp-direwolf" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Option B — KISS over TCP (Direwolf)
+        Option B: KISS over TCP (Direwolf)
       
     </span>
   </a>
@@ -2623,7 +2623,7 @@
 <p>This page uses a <strong>software modem</strong> as XRouter's TNC: the modem turns audio from a soundcard
 into packets, and presents itself to XRouter as a KISS TNC. It is for a sysop with a radio
 wired to a soundcard (or a sound-fob) who wants packet without buying a hardware TNC. If you
-have a real KISS TNC, see <a href="../kiss-tncs/">KISS TNCs</a> — the XRouter side is almost identical.</p>
+have a real KISS TNC, see <a href="../kiss-tncs/">KISS TNCs</a>, the XRouter side is almost identical.</p>
 <p>A soundcard modem replaces the hardware TNC with a program. XRouter doesn't care that the
 "TNC" is software; it just speaks KISS to it. The modems the community runs successfully with
 XRouter are:</p>
@@ -2635,10 +2635,10 @@ XRouter are:</p>
 </ul>
 <p>Any of these can drive XRouter. You connect to them in one of two ways: <strong>KISS over a serial
 device</strong> (often a pseudo-terminal), or <strong>KISS over TCP</strong>.</p>
-<h2 id="option-a-kiss-over-a-serial-pseudo-terminal">Option A — KISS over a serial / pseudo-terminal<a class="headerlink" href="#option-a-kiss-over-a-serial-pseudo-terminal" title="Permanent link">&para;</a></h2>
+<h2 id="option-a-kiss-over-a-serial-pseudo-terminal">Option A: KISS over a serial / pseudo-terminal<a class="headerlink" href="#option-a-kiss-over-a-serial-pseudo-terminal" title="Permanent link">&para;</a></h2>
 <p>If the modem creates a serial-style device (a real serial port, or a Linux pseudo-terminal
 such as <code>/dev/pts/N</code>), treat it exactly like a hardware KISS TNC: an <strong><code>ASYNC</code></strong> interface
-with <code>PROTOCOL=KISS</code>. This is how Thomas Sailer's <code>soundmodem</code> is wired — set it up to expose
+with <code>PROTOCOL=KISS</code>. This is how Thomas Sailer's <code>soundmodem</code> is wired, set it up to expose
 a KISS device, then point XRouter's <code>COM=</code> at that device.</p>
 <div class="language-ini highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="na">INTERFACE</span><span class="o">=</span><span class="s">1</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">        </span><span class="na">TYPE</span><span class="o">=</span><span class="s">ASYNC</span>
@@ -2654,17 +2654,17 @@ a KISS device, then point XRouter's <code>COM=</code> at that device.</p>
 </span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">        </span><span class="na">INTERFACENUM</span><span class="o">=</span><span class="s">1</span>
 </span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="na">ENDPORT</span>
 </span></code></pre></div>
-<p>The exact device the soundmodem creates varies — often a <code>/dev/pts/N</code> node or a symlink you
-create yourself — so consult the modem's own documentation for the device it presents, and
+<p>The exact device the soundmodem creates varies, often a <code>/dev/pts/N</code> node or a symlink you
+create yourself, so consult the modem's own documentation for the device it presents, and
 substitute it for <code>COM=</code>.</p>
-<h2 id="option-b-kiss-over-tcp-direwolf">Option B — KISS over TCP (Direwolf)<a class="headerlink" href="#option-b-kiss-over-tcp-direwolf" title="Permanent link">&para;</a></h2>
+<h2 id="option-b-kiss-over-tcp-direwolf">Option B: KISS over TCP (Direwolf)<a class="headerlink" href="#option-b-kiss-over-tcp-direwolf" title="Permanent link">&para;</a></h2>
 <p>Direwolf can offer <strong>KISS over a TCP socket</strong> instead of a serial device. XRouter connects to
 that socket with a <strong><code>TCP</code></strong> interface (not <code>ASYNC</code>) carrying <code>PROTOCOL=KISS</code>. The interface
 needs to know the modem's address and TCP port:</p>
 <ul>
-<li><code>IOADDR</code> — the IP address of the modem. Use <code>127.0.0.1</code> when Direwolf runs on the same
+<li><code>IOADDR</code>, the IP address of the modem. Use <code>127.0.0.1</code> when Direwolf runs on the same
   machine as XRouter (the default is localhost).</li>
-<li><code>INTNUM</code> — the TCP port the modem is listening on.</li>
+<li><code>INTNUM</code>, the TCP port the modem is listening on.</li>
 </ul>
 <p>Direwolf's KISS-over-TCP service listens on <strong>port 8001 by default</strong>. (That is Direwolf's
 default, set in its own configuration with <code>KISSPORT</code>; it is not an XRouter setting. If you
@@ -2687,7 +2687,7 @@ changed it in Direwolf, use the value you chose.)</p>
 <p>Very old XRouter builds had a problem with Direwolf KISS-over-TCP, where the link would
 repeatedly drop and reconnect. As Paula G8PZT put it, <em>"I don't think Direwolf was much
 of a thing when that version of xrpi was written."</em> The behaviour was fixed in later
-builds — so
+builds, so
 if you see XRouter constantly reconnecting to Direwolf, <strong>update to a current build</strong>
 before chasing anything else. See <a href="../../admin/upgrading/">Upgrading and versions</a>.</p>
 </div>
@@ -2696,20 +2696,20 @@ before chasing anything else. See <a href="../../admin/upgrading/">Upgrading and
 want it) set the radio's frequency and mode. PTT is commonly handled by the modem itself
 (VOX, a serial/GPIO line, or CAT). XRouter can also control the radio directly, or via
 <strong>Hamlib</strong>, so frequency and mode can be managed from the node rather than the modem. Rig
-control is configured separately from the interface — see the <code>RADIO</code> block in
-<a href="../../configuration/interfaces/">Interfaces</a> — and is independent of whether you chose the
+control is configured separately from the interface, see the <code>RADIO</code> block in
+<a href="../../configuration/interfaces/">Interfaces</a>, and is independent of whether you chose the
 serial or the TCP path above.</p>
 <div class="admonition note">
 <p class="admonition-title">AGW is an alternative to KISS here</p>
 <p>Direwolf, UZ7HO SoundModem and QtSoundModem can each present an <strong>AGW</strong> interface instead
-of KISS. If you would rather connect that way — or you are already running an AGW Packet
-Engine — see <a href="../agwpe/">AGWPE</a>. Neither approach is "more correct"; use whichever is
+of KISS. If you would rather connect that way, or you are already running an AGW Packet
+Engine, see <a href="../agwpe/">AGWPE</a>. Neither approach is "more correct"; use whichever is
 easier to wire up on your system.</p>
 </div>
 <hr />
-<p><strong>Sources:</strong> <a href="https://groups.io/g/xrouter/message/4118">XRouter support group (groups.io) — usable modems &amp; Hamlib</a> ·
-<a href="https://groups.io/g/xrouter/message/273">groups.io — soundmodem as a KISS TNC</a> ·
-<a href="https://wiki.oarc.uk/packet:xrouter:docs:man6">In-program manual, OARC wiki — §6 Installation &amp; Configuration</a>
+<p><strong>Sources:</strong> <a href="https://groups.io/g/xrouter/message/4118">XRouter support group (groups.io): usable modems &amp; Hamlib</a> ·
+<a href="https://groups.io/g/xrouter/message/273">groups.io: soundmodem as a KISS TNC</a> ·
+<a href="https://wiki.oarc.uk/packet:xrouter:docs:man6">In-program manual, OARC wiki: §6 Installation &amp; Configuration</a>
 (ASYNC and TCP interfaces, <code>KISSOPTIONS</code>). The Direwolf reconnect history and <code>KISSPORT</code>
 default are community knowledge (Direwolf's own documentation).</p>
 
@@ -2789,7 +2789,7 @@ default are community knowledge (Direwolf's own documentation).</p>
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Documentation re-presentation released under CC BY 4.0. XRouter itself is copyright Paula G8PZT and is free for non-commercial amateur use. This is an unofficial, community-maintained site; for canonical information defer to the author.
+      Documentation re-presentation released under CC BY 4.0, written entirely by AI from primary sources and not fact-checked by a human. XRouter itself is copyright Paula G8PZT and is free for non-commercial amateur use. This is an unofficial, community-maintained site; for canonical information defer to the author.
     </div>
   
   

@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="A re-presentation of the documentation for XRouter, Paula G8PZT's AX.25 / NET-ROM / TCP-IP packet-radio node, router, chat server and APRS digipeater — organised by user journey and cited to primary sources.">
+        <meta name="description" content="A re-presentation of the documentation for XRouter, Paula G8PZT's AX.25 / NET-ROM / TCP-IP packet-radio node, router, chat server and APRS digipeater, organised by user journey and cited to primary sources.">
       
       
         <meta name="author" content="XRouter Documentation contributors">
@@ -569,7 +569,7 @@
   <span class="md-ellipsis">
     
   
-    AX.25 — the data link
+    AX.25: the data link
   
 
     
@@ -597,7 +597,7 @@
   <span class="md-ellipsis">
     
   
-    NET/ROM — networking and routing
+    NET/ROM: networking and routing
   
 
     
@@ -2643,7 +2643,7 @@
 
 <h1 id="netrom-x-service-numbers">NetRom-X service numbers<a class="headerlink" href="#netrom-x-service-numbers" title="Permanent link">&para;</a></h1>
 <p>NetRom-X (also written NetromX or NET/ROM-X) is XRouter's scheme for exposing many services
-behind a <strong>single node callsign</strong>, each reached by a numbered service — much like well-known
+behind a <strong>single node callsign</strong>, each reached by a numbered service, much like well-known
 TCP ports. This page explains why it exists, the standard service numbers, and how a user
 connects to one. It is aimed at sysops and at users who want to reach a node's mailbox or chat
 server directly.</p>
@@ -2655,10 +2655,10 @@ problem plainly:</p>
 -11, xrchat is -8, and it all goes to pot if you run more than one node... That's why I
 developed NetromX in XRouter. You have one node callsign, which supports up to 65535
 Services. The service numbers are standard, like tcp/udp well known ports, so if you
-connect to service 2 on any xrpi it is the PMS." — <em>Paula G8PZT (community, OARC)</em></p>
+connect to service 2 on any xrpi it is the PMS.", <em>Paula G8PZT (community, OARC)</em></p>
 </blockquote>
 <p>An AX.25 callsign has only 16 SSIDs (0–15), so a node running a mailbox, a chat server, an
-APRS server, an information server and so on quickly runs out — and a sysop running more than
+APRS server, an information server and so on quickly runs out, and a sysop running more than
 one node makes it worse. NetRom-X sidesteps the limit entirely: <strong>one</strong> node callsign exposes
 up to <strong>65535</strong> numbered services, and because the numbers are standardised, the same number
 means the same thing on any XRouter node. Connect to service 2 anywhere and you reach that
@@ -2683,7 +2683,7 @@ defines more than these; the table lists the common, human-usable ones.)</p>
 <tr>
 <td><code>2</code></td>
 <td>PMS</td>
-<td>Personal Message System — the integral mailbox</td>
+<td>Personal Message System, the integral mailbox</td>
 </tr>
 <tr>
 <td><code>7</code></td>
@@ -2723,7 +2723,7 @@ defines more than these; the table lists the common, human-usable ones.)</p>
 <tr>
 <td><code>80</code></td>
 <td>HTTP</td>
-<td>NetRomWeb — HTTP carried over NET/ROM</td>
+<td>NetRomWeb, HTTP carried over NET/ROM</td>
 </tr>
 </tbody>
 </table>
@@ -2748,24 +2748,24 @@ user-facing ones; for the complete current list defer to the in-program manual a
 <p>and to drop straight into that node's chat server:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>C KIDDER 8
 </span></code></pre></div>
-<p>Connecting with no service number — <code>C KIDDER</code> — lands you at the node command line
+<p>Connecting with no service number, <code>C KIDDER</code>, lands you at the node command line
 (service 0) as usual, from where the ordinary commands (<code>PMS</code>, <code>CHAT</code>, <code>INFO</code>, and so on)
 are also available. The service number is just a shortcut that connects you directly to the
 service, which is convenient over a slow link or from an automated client.</p>
 <p>Because the destination is resolved through XRouter's routing tables, you can connect to a
-distant node's service by name from anywhere in the network — the routing layer (see
+distant node's service by name from anywhere in the network, the routing layer (see
 <a href="../netrom-inp3/">NET/ROM, INP3 and L3RTT</a>) finds the path, and the service number selects
 what you talk to once you arrive.</p>
 <h2 id="see-also">See also<a class="headerlink" href="#see-also" title="Permanent link">&para;</a></h2>
 <ul>
-<li><a href="../../reference/ports-and-services/">Ports and service numbers reference</a> — the full table,
+<li><a href="../../reference/ports-and-services/">Ports and service numbers reference</a>, the full table,
   alongside the TCP/IP service ports.</li>
-<li><a href="../netrom-inp3/">NET/ROM, INP3 and L3RTT</a> — how the node you are addressing is reached.</li>
-<li><a href="../../subsystems/pms-mailbox/">PMS mailbox</a> and <a href="../../subsystems/chat/">Chat server</a> — the
+<li><a href="../netrom-inp3/">NET/ROM, INP3 and L3RTT</a>, how the node you are addressing is reached.</li>
+<li><a href="../../subsystems/pms-mailbox/">PMS mailbox</a> and <a href="../../subsystems/chat/">Chat server</a>, the
   two services users reach most via NetRom-X.</li>
 </ul>
 <hr />
-<p><strong>Sources:</strong> in-program manual on the OARC wiki —
+<p><strong>Sources:</strong> in-program manual on the OARC wiki,
 <a href="https://wiki.oarc.uk/packet:xrouter:docs:man9">Subsystems and features (man9), Services list</a>
 and the <code>generalhelp</code> SERVICES list; author's explanation of the scheme and its origin
 (community knowledge, OARC), corroborated by the manual's service-number table.</p>
@@ -2846,7 +2846,7 @@ and the <code>generalhelp</code> SERVICES list; author's explanation of the sche
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Documentation re-presentation released under CC BY 4.0. XRouter itself is copyright Paula G8PZT and is free for non-commercial amateur use. This is an unofficial, community-maintained site; for canonical information defer to the author.
+      Documentation re-presentation released under CC BY 4.0, written entirely by AI from primary sources and not fact-checked by a human. XRouter itself is copyright Paula G8PZT and is free for non-commercial amateur use. This is an unofficial, community-maintained site; for canonical information defer to the author.
     </div>
   
   

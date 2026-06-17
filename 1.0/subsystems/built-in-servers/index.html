@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="A re-presentation of the documentation for XRouter, Paula G8PZT's AX.25 / NET-ROM / TCP-IP packet-radio node, router, chat server and APRS digipeater — organised by user journey and cited to primary sources.">
+        <meta name="description" content="A re-presentation of the documentation for XRouter, Paula G8PZT's AX.25 / NET-ROM / TCP-IP packet-radio node, router, chat server and APRS digipeater, organised by user journey and cited to primary sources.">
       
       
         <meta name="author" content="XRouter Documentation contributors">
@@ -569,7 +569,7 @@
   <span class="md-ellipsis">
     
   
-    AX.25 — the data link
+    AX.25: the data link
   
 
     
@@ -597,7 +597,7 @@
   <span class="md-ellipsis">
     
   
-    NET/ROM — networking and routing
+    NET/ROM: networking and routing
   
 
     
@@ -2620,8 +2620,8 @@
 
 
 <h1 id="built-in-tcp-servers">Built-in TCP servers<a class="headerlink" href="#built-in-tcp-servers" title="Permanent link">&para;</a></h1>
-<p>XRouter bundles a family of small internet servers — Telnet, HTTP, FTP, Finger and several
-more — so the node can be operated, queried and integrated without any external software.
+<p>XRouter bundles a family of small internet servers, Telnet, HTTP, FTP, Finger and several
+more, so the node can be operated, queried and integrated without any external software.
 This page explains the common pattern for enabling, moving and disabling them, lists the
 servers and their default ports, and flags the security points that matter. The complete
 reference table lives at <a href="../../reference/ports-and-services/">Ports and service numbers</a>.</p>
@@ -2736,15 +2736,15 @@ the authoritative, complete list (including the proxy and IP-tunnel ports) is at
 (<a href="../chat/">Chat server</a>, <a href="../aprs-igate/">APRS digipeater and IGate</a>).</p>
 <div class="admonition note">
 <p class="admonition-title">FTP is for maintenance, not a file service</p>
-<p>XRouter's FTP server exists for <strong>system maintenance</strong> — uploading config and managing
-files on a remote node — rather than as a public file library. Limited non-sysop FTP
+<p>XRouter's FTP server exists for <strong>system maintenance</strong>, uploading config and managing
+files on a remote node, rather than as a public file library. Limited non-sysop FTP
 accounts are possible via <code>USERPASS.SYS</code>, but treat FTP as an admin tool.</p>
 </div>
 <h2 id="security-notes">Security notes<a class="headerlink" href="#security-notes" title="Permanent link">&para;</a></h2>
 <p>These servers are network-facing, so a few cautions apply.</p>
 <div class="admonition danger">
 <p class="admonition-title"><code>IPADDRESS</code> gates every IP server</p>
-<p>None of these servers run if the global <code>IPADDRESS</code> is unset or <code>0.0.0.0</code> — XRouter
+<p>None of these servers run if the global <code>IPADDRESS</code> is unset or <code>0.0.0.0</code>, XRouter
 deliberately disables all IP activity in that case. Set a (private if necessary)
 <code>IPADDRESS</code> to bring the IP servers up. See
 <a href="../../getting-started/raspberry-pi/">Getting started on Raspberry Pi</a>.</p>
@@ -2754,7 +2754,7 @@ deliberately disables all IP activity in that case. Set a (private if necessary)
 <p>Several servers grant administrative reach (Rlogin, and the Telnet server when a caller
 authenticates as sysop). The per-port <code>SYSOP=1</code> directive gives <strong>every</strong> caller on that
 port full sysop status <em>without a password challenge</em>. The manual restricts this to
-genuinely secure links — RS232 or a trusted Ethernet segment — and the default is <code>0</code>.
+genuinely secure links, RS232 or a trusted Ethernet segment, and the default is <code>0</code>.
 Never set <code>SYSOP=1</code> on a port reachable from RF or the open internet. Protect remote
 sysop access with <code>PASSWORD.SYS</code> and, where appropriate, the access-control files. See
 <a href="../../admin/security-hardening/">Security and hardening</a>.</p>
@@ -2762,13 +2762,13 @@ sysop access with <code>PASSWORD.SYS</code> and, where appropriate, the access-c
 <div class="admonition tip">
 <p class="admonition-title">Run only what you need, and not as root</p>
 <p>Disable servers you don't use by setting their <code>*PORT</code> to <code>0</code>, and bind the privileged
-ports (Telnet, HTTP, FTP) using Linux capabilities rather than running XRouter as root —
+ports (Telnet, HTTP, FTP) using Linux capabilities rather than running XRouter as root,
 see <a href="../../getting-started/raspberry-pi/">Getting started on Raspberry Pi</a>.</p>
 </div>
 <hr />
-<p><strong>Sources:</strong> <a href="https://wiki.oarc.uk/packet:xrouter:docs:man9">In-program manual, OARC wiki — Section 9 (servers)</a> ·
-<a href="https://wiki.oarc.uk/packet:xrouter:docs:man7">In-program manual — Section 7 (directives, default ports)</a> ·
-<a href="https://ohiopacket.org/xrpi/docs/index.htm">ohiopacket.org XRPi mirror — servers</a> ·
+<p><strong>Sources:</strong> <a href="https://wiki.oarc.uk/packet:xrouter:docs:man9">In-program manual, OARC wiki: Section 9 (servers)</a> ·
+<a href="https://wiki.oarc.uk/packet:xrouter:docs:man7">In-program manual: Section 7 (directives, default ports)</a> ·
+<a href="https://ohiopacket.org/xrpi/docs/index.htm">ohiopacket.org XRPi mirror: servers</a> ·
 <a href="https://groups.io/g/xrouter">XRouter support group (groups.io)</a></p>
 
 
@@ -2847,7 +2847,7 @@ see <a href="../../getting-started/raspberry-pi/">Getting started on Raspberry P
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Documentation re-presentation released under CC BY 4.0. XRouter itself is copyright Paula G8PZT and is free for non-commercial amateur use. This is an unofficial, community-maintained site; for canonical information defer to the author.
+      Documentation re-presentation released under CC BY 4.0, written entirely by AI from primary sources and not fact-checked by a human. XRouter itself is copyright Paula G8PZT and is free for non-commercial amateur use. This is an unofficial, community-maintained site; for canonical information defer to the author.
     </div>
   
   

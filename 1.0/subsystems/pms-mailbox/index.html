@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="A re-presentation of the documentation for XRouter, Paula G8PZT's AX.25 / NET-ROM / TCP-IP packet-radio node, router, chat server and APRS digipeater — organised by user journey and cited to primary sources.">
+        <meta name="description" content="A re-presentation of the documentation for XRouter, Paula G8PZT's AX.25 / NET-ROM / TCP-IP packet-radio node, router, chat server and APRS digipeater, organised by user journey and cited to primary sources.">
       
       
         <meta name="author" content="XRouter Documentation contributors">
@@ -569,7 +569,7 @@
   <span class="md-ellipsis">
     
   
-    AX.25 — the data link
+    AX.25: the data link
   
 
     
@@ -597,7 +597,7 @@
   <span class="md-ellipsis">
     
   
-    NET/ROM — networking and routing
+    NET/ROM: networking and routing
   
 
     
@@ -1779,7 +1779,7 @@
   <a href="#what-the-pms-is-and-isnt" class="md-nav__link">
     <span class="md-ellipsis">
       
-        What the PMS is — and isn't
+        What the PMS is and isn't
       
     </span>
   </a>
@@ -2581,7 +2581,7 @@
   <a href="#what-the-pms-is-and-isnt" class="md-nav__link">
     <span class="md-ellipsis">
       
-        What the PMS is — and isn't
+        What the PMS is and isn't
       
     </span>
   </a>
@@ -2642,11 +2642,11 @@
 
 
 <h1 id="pms-mailbox">PMS mailbox<a class="headerlink" href="#pms-mailbox" title="Permanent link">&para;</a></h1>
-<p>XRouter has a small mailbox of its own — the <strong>Personal Message Store</strong>, or PMS.
+<p>XRouter has a small mailbox of its own, the <strong>Personal Message Store</strong>, or PMS.
 This page explains what it is (and what it deliberately isn't), how to switch it on,
 how to tune it, and how callers reach it. It assumes you already have a node running;
 if not, start with <a href="../../getting-started/">Getting started</a>.</p>
-<h2 id="what-the-pms-is-and-isnt">What the PMS is — and isn't<a class="headerlink" href="#what-the-pms-is-and-isnt" title="Permanent link">&para;</a></h2>
+<h2 id="what-the-pms-is-and-isnt">What the PMS is and isn't<a class="headerlink" href="#what-the-pms-is-and-isnt" title="Permanent link">&para;</a></h2>
 <p>The PMS is an <strong>integral personal mailbox</strong>: a place for users to leave you messages,
 for you to leave messages for them, and for simple store-and-forward mail between
 neighbouring nodes. It is built into the node, needs no separate program, and shares
@@ -2655,12 +2655,12 @@ facility and a little inter-node mail, it is all you need.</p>
 <p>It is <strong>not a full BBS.</strong> It has no message-board hierarchy, no bulletin distribution
 on the scale of a proper bulletin board, and no file libraries. Paula G8PZT is explicit
 about this: <em>"If you want to run a BBS, then BPQ is the one for you. XRouter only has a
-PMS."</em> That is a design choice, not a gap to apologise for — the PMS does mailbox-shaped
+PMS."</em> That is a design choice, not a gap to apologise for, the PMS does mailbox-shaped
 jobs well and stays out of the way.</p>
 <div class="admonition tip">
 <p class="admonition-title">Need a full BBS? Pair XRouter with FBB</p>
 <p>If you want bulletins, areas and file serving, the established approach is to run a
-real BBS — most commonly <strong>FBB</strong> — <em>alongside</em> XRouter, and let XRouter act as the
+real BBS, most commonly <strong>FBB</strong>, <em>alongside</em> XRouter, and let XRouter act as the
 packet engine for it. XRouter emulates a <strong>WA8DED host-mode TNC</strong> (<code>DEDHOST</code>) for
 exactly this purpose, so FBB connects to XRouter rather than to the radio directly.
 See <a href="../../networking/linking-and-interop/">Linking nodes and interoperating</a> for how
@@ -2687,7 +2687,7 @@ of <code>PMSCALL</code> is what brings the PMS to life: omit it and the mailbox 
 </tr>
 <tr>
 <td><code>PMSQUAL</code></td>
-<td>The NET-ROM quality at which the PMS is advertised in the nodes table. <code>0</code> (the default) keeps it from being broadcast as a separate node — callers still reach it, but it doesn't bloat everyone's tables.</td>
+<td>The NET-ROM quality at which the PMS is advertised in the nodes table. <code>0</code> (the default) keeps it from being broadcast as a separate node, callers still reach it, but it doesn't bloat everyone's tables.</td>
 </tr>
 <tr>
 <td><code>PMSTYPE</code></td>
@@ -2750,8 +2750,8 @@ cover housekeeping and forwarding rather than identity. Useful keys include:</p>
 </tbody>
 </table>
 <p>Mail acceptance, holding, forwarding and distribution are steered by the related <code>*.SYS</code>
-control files — <code>FWD.SYS</code>, <code>DISTRIB.SYS</code>, <code>HOLD.SYS</code>, <code>REJECT.SYS</code>, <code>EXPORT.SYS</code> and the
-<code>BADWORDS.SYS</code> filter — all of which also live in <code>/PMS</code>. Those are covered in
+control files, <code>FWD.SYS</code>, <code>DISTRIB.SYS</code>, <code>HOLD.SYS</code>, <code>REJECT.SYS</code>, <code>EXPORT.SYS</code> and the
+<code>BADWORDS.SYS</code> filter, all of which also live in <code>/PMS</code>. Those are covered in
 <a href="../../configuration/system-files/">System and data files</a>; reach for them only when you
 actually run inter-node mail.</p>
 <h2 id="reaching-the-mailbox">Reaching the mailbox<a class="headerlink" href="#reaching-the-mailbox" title="Permanent link">&para;</a></h2>
@@ -2762,17 +2762,17 @@ always the PMS</strong>. From any XRouter node a caller can do:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>CONNECT M0XXX 2
 </span></code></pre></div>
 <p>and land in your mailbox without needing to know its separate SSID. This is the same
-scheme that puts the node-info server on service 1 and the chat server on service 8 —
+scheme that puts the node-info server on service 1 and the chat server on service 8,
 see <a href="../../networking/netromx-services/">NetRom-X service numbers</a> for the full picture
 and why it exists (it spares the network a forest of SSIDs).</p>
-<p>Once connected, users drive the mailbox with its own command set — listing, reading,
+<p>Once connected, users drive the mailbox with its own command set, listing, reading,
 sending and killing messages. Those commands are documented with the rest of the node
 commands in the <a href="../../commands/command-reference/">Command reference</a>.</p>
 <hr />
-<p><strong>Sources:</strong> <a href="https://wiki.oarc.uk/packet:xrouter:docs:man9">In-program manual, OARC wiki — Section 9 (subsystems/servers) and Section 7
+<p><strong>Sources:</strong> <a href="https://wiki.oarc.uk/packet:xrouter:docs:man9">In-program manual, OARC wiki, Section 9 (subsystems/servers) and Section 7
 (directives)</a> ·
 <a href="https://wiki.oarc.uk/packet:xrouter:docs:mailboxhelp">Mailbox help</a> ·
-<a href="https://ohiopacket.org/xrpi/docs/index.htm">ohiopacket.org XRPi mirror — PMS</a> ·
+<a href="https://ohiopacket.org/xrpi/docs/index.htm">ohiopacket.org XRPi mirror: PMS</a> ·
 <a href="https://groups.io/g/xrouter">XRouter support group (groups.io)</a></p>
 
 
@@ -2851,7 +2851,7 @@ commands in the <a href="../../commands/command-reference/">Command reference</a
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Documentation re-presentation released under CC BY 4.0. XRouter itself is copyright Paula G8PZT and is free for non-commercial amateur use. This is an unofficial, community-maintained site; for canonical information defer to the author.
+      Documentation re-presentation released under CC BY 4.0, written entirely by AI from primary sources and not fact-checked by a human. XRouter itself is copyright Paula G8PZT and is free for non-commercial amateur use. This is an unofficial, community-maintained site; for canonical information defer to the author.
     </div>
   
   

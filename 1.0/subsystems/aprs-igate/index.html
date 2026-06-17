@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="A re-presentation of the documentation for XRouter, Paula G8PZT's AX.25 / NET-ROM / TCP-IP packet-radio node, router, chat server and APRS digipeater — organised by user journey and cited to primary sources.">
+        <meta name="description" content="A re-presentation of the documentation for XRouter, Paula G8PZT's AX.25 / NET-ROM / TCP-IP packet-radio node, router, chat server and APRS digipeater, organised by user journey and cited to primary sources.">
       
       
         <meta name="author" content="XRouter Documentation contributors">
@@ -569,7 +569,7 @@
   <span class="md-ellipsis">
     
   
-    AX.25 — the data link
+    AX.25: the data link
   
 
     
@@ -597,7 +597,7 @@
   <span class="md-ellipsis">
     
   
-    NET/ROM — networking and routing
+    NET/ROM: networking and routing
   
 
     
@@ -2681,7 +2681,7 @@ the modern New-N paradigm, gateway between RF and the APRS-IS internet backbone,
 APRS clients such as UI-View. This page covers those features and how to turn them on; for
 a primer on APRS itself, read <a href="../../basics/aprs/">APRS in brief</a> first.</p>
 <h2 id="the-aprs-identity">The APRS identity<a class="headerlink" href="#the-aprs-identity" title="Permanent link">&para;</a></h2>
-<p>APRS traffic from the node — beacons it originates, and packets it gates to the internet —
+<p>APRS traffic from the node, beacons it originates, and packets it gates to the internet,
 carries the callsign set by the global <code>APRSCALL</code> directive. If you leave it unset, the
 node's <code>NODECALL</code> is used. Set it when you want the APRS side of the station to appear
 under its own callsign:</p>
@@ -2689,8 +2689,8 @@ under its own callsign:</p>
 </span></code></pre></div>
 <h2 id="ui-digipeating-widen-n">UI digipeating (WIDEn-N)<a class="headerlink" href="#ui-digipeating-widen-n" title="Permanent link">&para;</a></h2>
 <p>APRS digipeating is configured per port, on the ports that carry APRS. XRouter supports the
-<strong>New-N paradigm</strong> — the <code>WIDEn-N</code> / <code>SSn-N</code> scheme that replaced the old RELAY/WIDE/TRACE
-aliases — through two global directives that name the digipeating aliases:</p>
+<strong>New-N paradigm</strong>, the <code>WIDEn-N</code> / <code>SSn-N</code> scheme that replaced the old RELAY/WIDE/TRACE
+aliases, through two global directives that name the digipeating aliases:</p>
 <table>
 <thead>
 <tr>
@@ -2730,7 +2730,7 @@ keywords such as <code>SERVER</code> (the APRS-IS host and port to connect to), 
 <code>MAXTRIES</code>. Its full format is documented in
 <a href="../../configuration/system-files/">System and data files</a>.</p>
 <h3 id="controlling-gating-direction">Controlling gating direction<a class="headerlink" href="#controlling-gating-direction" title="Permanent link">&para;</a></h3>
-<p>Which way packets flow across the gateway is <strong>not</strong> set in <code>IGATE.CFG</code> — it is governed by
+<p>Which way packets flow across the gateway is <strong>not</strong> set in <code>IGATE.CFG</code>, it is governed by
 the same per-port <code>DIGIFLAG</code> bitmask, using two dedicated bits:</p>
 <table>
 <thead>
@@ -2760,7 +2760,7 @@ have a specific reason and the channel can carry it. Enable to-internet gating f
 enable from-internet gating with care, and only on ports where it is appropriate.</p>
 </div>
 <h2 id="the-aprs-message-server">The APRS message server<a class="headerlink" href="#the-aprs-message-server" title="Permanent link">&para;</a></h2>
-<p>Beyond digipeating and gating, XRouter runs an <strong>APRS message server</strong> — a shell that lets
+<p>Beyond digipeating and gating, XRouter runs an <strong>APRS message server</strong>, a shell that lets
 a connected user send and read APRS messages interactively, rather than from a dedicated
 APRS terminal. Users enter it from the node prompt with the <code>AMSG</code> command, and there is a
 companion <code>DX</code> command for distant stations heard and <code>WX</code> for APRS weather. The server
@@ -2770,10 +2770,10 @@ so programs like UI-View can use XRouter as their APRS back-end.</p>
 <a href="../../commands/command-reference/">Command reference</a>, and the related data and
 configuration files in <a href="../../configuration/system-files/">System and data files</a>.</p>
 <hr />
-<p><strong>Sources:</strong> <a href="https://wiki.oarc.uk/packet:xrouter:docs:man9">In-program manual, OARC wiki — Section 9 (APRS, IGate, APRS server)</a> ·
+<p><strong>Sources:</strong> <a href="https://wiki.oarc.uk/packet:xrouter:docs:man9">In-program manual, OARC wiki: Section 9 (APRS, IGate, APRS server)</a> ·
 <a href="https://wiki.oarc.uk/packet:xrouter:docs:aprsmessageserverhelp">APRS message server help</a> ·
-<a href="https://wiki.oarc.uk/packet:xrouter:docs:man7">In-program manual — Section 7 (directives)</a> ·
-<a href="https://ohiopacket.org/xrpi/docs/index.htm">ohiopacket.org XRPi mirror — APRS/IGate</a></p>
+<a href="https://wiki.oarc.uk/packet:xrouter:docs:man7">In-program manual: Section 7 (directives)</a> ·
+<a href="https://ohiopacket.org/xrpi/docs/index.htm">ohiopacket.org XRPi mirror: APRS/IGate</a></p>
 
 
 
@@ -2851,7 +2851,7 @@ configuration files in <a href="../../configuration/system-files/">System and da
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Documentation re-presentation released under CC BY 4.0. XRouter itself is copyright Paula G8PZT and is free for non-commercial amateur use. This is an unofficial, community-maintained site; for canonical information defer to the author.
+      Documentation re-presentation released under CC BY 4.0, written entirely by AI from primary sources and not fact-checked by a human. XRouter itself is copyright Paula G8PZT and is free for non-commercial amateur use. This is an unofficial, community-maintained site; for canonical information defer to the author.
     </div>
   
   

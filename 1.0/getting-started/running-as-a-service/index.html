@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="A re-presentation of the documentation for XRouter, Paula G8PZT's AX.25 / NET-ROM / TCP-IP packet-radio node, router, chat server and APRS digipeater — organised by user journey and cited to primary sources.">
+        <meta name="description" content="A re-presentation of the documentation for XRouter, Paula G8PZT's AX.25 / NET-ROM / TCP-IP packet-radio node, router, chat server and APRS digipeater, organised by user journey and cited to primary sources.">
       
       
         <meta name="author" content="XRouter Documentation contributors">
@@ -569,7 +569,7 @@
   <span class="md-ellipsis">
     
   
-    AX.25 — the data link
+    AX.25: the data link
   
 
     
@@ -597,7 +597,7 @@
   <span class="md-ellipsis">
     
   
-    NET/ROM — networking and routing
+    NET/ROM: networking and routing
   
 
     
@@ -2726,7 +2726,7 @@ session), a clean generic <code>systemd</code> unit you can adapt, and the trade
 assumes you already have a working node from one of the
 <a href="../">Getting started</a> pages.</p>
 <p>XRouter on Linux is normally an interactive, full-screen text program. Left to itself it
-runs in your terminal, and closing the terminal closes the node — no good for a station that
+runs in your terminal, and closing the terminal closes the node, no good for a station that
 should be on the air 24/7. There are two established ways to fix that, and they suit
 different needs.</p>
 <h2 id="two-ways-to-keep-it-running">Two ways to keep it running<a class="headerlink" href="#two-ways-to-keep-it-running" title="Permanent link">&para;</a></h2>
@@ -2735,7 +2735,7 @@ different needs.</p>
 no text interface at all:</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>./xrlin<span class="w"> </span>-d
 </span></code></pre></div>
-<p>In this mode you control and monitor the node entirely over the network — its HTTP server,
+<p>In this mode you control and monitor the node entirely over the network, its HTTP server,
 Telnet, or by connecting in over packet. There is no TUI to attach to, which is exactly what
 you want under a service manager: the program runs quietly in the background and <code>systemd</code>
 looks after starting it at boot and restarting it if it ever exits.</p>
@@ -2743,14 +2743,14 @@ looks after starting it at boot and restarting it if it ever exits.</p>
 <p class="admonition-title">Daemon mode means no TUI</p>
 <blockquote>
 <p>"If you start xrpi with <code>xrpi -d</code> it runs completely headless, and you can only
-control it via http or telnet (or packet)." — <em>Paula G8PZT</em></p>
+control it via http or telnet (or packet).", <em>Paula G8PZT</em></p>
 </blockquote>
 <p>That is the clean option for a <code>systemd</code> service. If you specifically want the
 interactive screens, use the <code>screen</code>/<code>tmux</code> approach below instead.</p>
 </div>
 <h3 id="inside-screen-or-tmux-keep-the-tui">Inside screen or tmux (keep the TUI)<a class="headerlink" href="#inside-screen-or-tmux-keep-the-tui" title="Permanent link">&para;</a></h3>
-<p>If you would rather keep XRouter's interactive interface — the status, monitor and console
-windows — run it <strong>without</strong> <code>-d</code> inside a detachable terminal multiplexer such as <code>screen</code>
+<p>If you would rather keep XRouter's interactive interface, the status, monitor and console
+windows, run it <strong>without</strong> <code>-d</code> inside a detachable terminal multiplexer such as <code>screen</code>
 or <code>tmux</code>. The node runs in a session you can detach from and re-attach to at will, so it
 keeps running after you log out but the full TUI is there whenever you reconnect:</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># start the node inside a named tmux session, then detach with Ctrl-b d</span>
@@ -2765,7 +2765,7 @@ exits, the session ends and nothing automatically brings it back unless you scri
 yourself.</p>
 <h2 id="a-generic-systemd-unit">A generic systemd unit<a class="headerlink" href="#a-generic-systemd-unit" title="Permanent link">&para;</a></h2>
 <p>The following is a clean, generic <code>systemd</code> unit for daemon-mode operation. Adapt the user,
-paths and binary name to your installation — do not run it as <code>root</code>. Save it as, for
+paths and binary name to your installation, do not run it as <code>root</code>. Save it as, for
 example, <code>/etc/systemd/system/xrouter.service</code>:</p>
 <div class="language-ini highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">[Unit]</span>
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="na">Description</span><span class="o">=</span><span class="s">XRouter packet node</span>
@@ -2798,7 +2798,7 @@ example, <code>/etc/systemd/system/xrouter.service</code>:</p>
   because XRouter reads and writes its files relative to where it runs.</li>
 <li><strong><code>Restart=always</code></strong> with a short <code>RestartSec</code> is what gives you automatic recovery: if
   the node crashes or exits, <code>systemd</code> brings it back a few seconds later.</li>
-<li><strong><code>User=packet</code></strong> runs the node as an unprivileged account, not <code>root</code> — see below.</li>
+<li><strong><code>User=packet</code></strong> runs the node as an unprivileged account, not <code>root</code>, see below.</li>
 </ul>
 <div class="admonition danger">
 <p class="admonition-title">Don't run the service as root</p>
@@ -2811,7 +2811,7 @@ with <code>setcap</code> (see the <a href="../linux-pc/#6-run-it-without-root-re
 </span></code></pre></div>
 </div>
 <h2 id="the-trade-off">The trade-off<a class="headerlink" href="#the-trade-off" title="Permanent link">&para;</a></h2>
-<p>Neither approach is "correct" — they optimise for different things:</p>
+<p>Neither approach is "correct", they optimise for different things:</p>
 <table>
 <thead>
 <tr>
@@ -2829,7 +2829,7 @@ with <code>setcap</code> (see the <a href="../linux-pc/#6-run-it-without-root-re
 <tr>
 <td>Auto-restart on crash</td>
 <td>Yes (<code>Restart=always</code>)</td>
-<td>No — you must script it</td>
+<td>No, you must script it</td>
 </tr>
 <tr>
 <td>Interactive TUI</td>
@@ -2864,7 +2864,7 @@ confusing "it worked yesterday" failure. See <a href="../../admin/upgrading/">Up
 <li>Operate it remotely: <a href="../../commands/node-prompt/">The node command prompt</a>.</li>
 </ul>
 <hr />
-<p><strong>Sources:</strong> <a href="https://wiki.oarc.uk/packet:xrouter:docs:man6">in-program manual, OARC wiki — installation/running topics (man6)</a>
+<p><strong>Sources:</strong> <a href="https://wiki.oarc.uk/packet:xrouter:docs:man6">in-program manual, OARC wiki: installation/running topics (man6)</a>
 · <a href="https://groups.io/g/xrouter">XRouter support group, groups.io</a> (the <code>-d</code> daemon-mode and
 <code>setcap</code> guidance from the author). The <code>systemd</code> unit above is a generic example written for
 these docs; adapt it to your own user and paths.</p>
@@ -2945,7 +2945,7 @@ these docs; adapt it to your own user and paths.</p>
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Documentation re-presentation released under CC BY 4.0. XRouter itself is copyright Paula G8PZT and is free for non-commercial amateur use. This is an unofficial, community-maintained site; for canonical information defer to the author.
+      Documentation re-presentation released under CC BY 4.0, written entirely by AI from primary sources and not fact-checked by a human. XRouter itself is copyright Paula G8PZT and is free for non-commercial amateur use. This is an unofficial, community-maintained site; for canonical information defer to the author.
     </div>
   
   

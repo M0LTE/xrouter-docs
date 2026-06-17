@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="A re-presentation of the documentation for XRouter, Paula G8PZT's AX.25 / NET-ROM / TCP-IP packet-radio node, router, chat server and APRS digipeater — organised by user journey and cited to primary sources.">
+        <meta name="description" content="A re-presentation of the documentation for XRouter, Paula G8PZT's AX.25 / NET-ROM / TCP-IP packet-radio node, router, chat server and APRS digipeater, organised by user journey and cited to primary sources.">
       
       
         <meta name="author" content="XRouter Documentation contributors">
@@ -569,7 +569,7 @@
   <span class="md-ellipsis">
     
   
-    AX.25 — the data link
+    AX.25: the data link
   
 
     
@@ -597,7 +597,7 @@
   <span class="md-ellipsis">
     
   
-    NET/ROM — networking and routing
+    NET/ROM: networking and routing
   
 
     
@@ -2664,7 +2664,7 @@
 
 
 <h1 id="interfaces">Interfaces<a class="headerlink" href="#interfaces" title="Permanent link">&para;</a></h1>
-<p>An <strong>interface</strong> is a point of connection between XRouter and somewhere else — a serial port
+<p>An <strong>interface</strong> is a point of connection between XRouter and somewhere else, a serial port
 driving a TNC, a soundcard link, an Ethernet adaptor, or a socket carrying AX.25 across the
 internet. Interfaces are defined in <code>INTERFACE=n … ENDINTERFACE</code> blocks in the GLOBAL section
 of <code>XROUTER.CFG</code>, and every <a href="../ports/">port</a> attaches to one. This page covers the block,
@@ -2674,11 +2674,11 @@ modems</a> section; this page is the configuration-file reference that
 underpins it.</p>
 <h2 id="the-interface-block">The interface block<a class="headerlink" href="#the-interface-block" title="Permanent link">&para;</a></h2>
 <p>Each block opens with <code>INTERFACE=n</code>, where <code>n</code> is a unique number greater than zero, and
-closes with <code>ENDINTERFACE</code>. Inside, <strong>two keywords are mandatory</strong> — XRouter refuses to start
+closes with <code>ENDINTERFACE</code>. Inside, <strong>two keywords are mandatory</strong>, XRouter refuses to start
 without them:</p>
 <ul>
-<li><strong><code>TYPE</code></strong> — the kind of interface (the hardware or transport). See the table below.</li>
-<li><strong><code>MTU</code></strong> — the Maximum Transmission Unit in bytes.</li>
+<li><strong><code>TYPE</code></strong>, the kind of interface (the hardware or transport). See the table below.</li>
+<li><strong><code>MTU</code></strong>, the Maximum Transmission Unit in bytes.</li>
 </ul>
 <p>Most interface types also need a <strong><code>PROTOCOL</code></strong>, and you will usually see an <code>ID</code> for the
 ports display too. A bare minimum looks like this:</p>
@@ -2692,7 +2692,7 @@ ports display too. A bare minimum looks like this:</p>
 </span></code></pre></div>
 <div class="admonition tip">
 <p class="admonition-title">MTU: if in doubt, use 256</p>
-<p><code>MTU</code> may be set up to 1500, but values above 256 are not recommended on AX.25 ports —
+<p><code>MTU</code> may be set up to 1500, but values above 256 are not recommended on AX.25 ports,
 hardware TNC buffers and on-air efficiency both favour smaller frames. The standard
 advice is simply: <strong>if in doubt, use 256.</strong> Larger MTUs make sense only on wired or IP
 interfaces (SLIP, PPP, Ethernet), not on a radio channel.</p>
@@ -2728,7 +2728,7 @@ take none.</p>
 </tr>
 <tr>
 <td><code>AXTCP</code></td>
-<td>AX.25 carried over a TCP stream — traverses NAT and firewalls. One port only.</td>
+<td>AX.25 carried over a TCP stream, traverses NAT and firewalls. One port only.</td>
 </tr>
 <tr>
 <td><code>TCP</code></td>
@@ -2740,7 +2740,7 @@ take none.</p>
 </tr>
 <tr>
 <td><code>TUN</code></td>
-<td>A Linux <code>tun</code> device — an IP-layer link between XRouter's stack and the Linux kernel.</td>
+<td>A Linux <code>tun</code> device, an IP-layer link between XRouter's stack and the Linux kernel.</td>
 </tr>
 <tr>
 <td><code>EXTERNAL</code></td>
@@ -2748,7 +2748,7 @@ take none.</p>
 </tr>
 <tr>
 <td><code>LOOPBACK</code></td>
-<td>An internal loopback inside XRouter's own stack. Test and development only — and the shipped dummy config.</td>
+<td>An internal loopback inside XRouter's own stack. Test and development only, and the shipped dummy config.</td>
 </tr>
 <tr>
 <td><code>YAM</code></td>
@@ -2789,11 +2789,11 @@ will start. It has no on-air use; comment it out once you have a real interface 
 </tr>
 <tr>
 <td><code>PPP</code></td>
-<td>Point-to-Point Protocol — TCP/IP over a serial line.</td>
+<td>Point-to-Point Protocol, TCP/IP over a serial line.</td>
 </tr>
 <tr>
 <td><code>SLIP</code></td>
-<td>Serial Line Internet Protocol — TCP/IP over a serial line.</td>
+<td>Serial Line Internet Protocol, TCP/IP over a serial line.</td>
 </tr>
 <tr>
 <td><code>MODEM</code></td>
@@ -2827,7 +2827,7 @@ will start. It has no on-air use; comment it out once you have a real interface 
 </table>
 <div class="admonition warning">
 <p class="admonition-title">An interface needs a protocol</p>
-<p>Most interface types fail to start with a missing or unrecognised protocol —
+<p>Most interface types fail to start with a missing or unrecognised protocol,
 <code>ERROR … Bad or missing protocol</code>. If an interface won't come up, check <code>PROTOCOL</code> first,
 then <code>TYPE</code> and <code>MTU</code>.</p>
 </div>
@@ -2859,7 +2859,7 @@ then <code>TYPE</code> and <code>MTU</code>.</p>
 </tr>
 <tr>
 <td><code>CONFIG</code></td>
-<td>Type-specific configuration — e.g. the AGWPE password for <code>AGW</code>, or <code>&lt;alias&gt; &lt;host&gt; &lt;port&gt;</code> client lines for <code>AXTCP</code>/<code>TCP</code>.</td>
+<td>Type-specific configuration, e.g. the AGWPE password for <code>AGW</code>, or <code>&lt;alias&gt; &lt;host&gt; &lt;port&gt;</code> client lines for <code>AXTCP</code>/<code>TCP</code>.</td>
 </tr>
 <tr>
 <td><code>INTNUM</code></td>
@@ -2911,26 +2911,26 @@ the link for the full setup, including the matching radio/modem configuration.</
 <tr>
 <td>An AGW Packet Engine / Direwolf as a packet engine</td>
 <td><code>AGW</code></td>
-<td>—</td>
-<td><a href="../../interfaces/agwpe/">AGWPE</a></td>
+<td>n/a  <a href="../../interfaces/agwpe/">AGWPE</a></td>
+<td></td>
 </tr>
 <tr>
 <td>An internet link to a partner node (raw IP)</td>
 <td><code>AXIP</code></td>
-<td>—</td>
-<td><a href="../../interfaces/axip-axudp-axtcp/">AXIP / AXUDP / AXTCP</a></td>
+<td>n/a  <a href="../../interfaces/axip-axudp-axtcp/">AXIP / AXUDP / AXTCP</a></td>
+<td></td>
 </tr>
 <tr>
 <td>An internet link to a partner node (over UDP)</td>
 <td><code>AXUDP</code></td>
-<td>—</td>
-<td><a href="../../interfaces/axip-axudp-axtcp/">AXIP / AXUDP / AXTCP</a></td>
+<td>n/a  <a href="../../interfaces/axip-axudp-axtcp/">AXIP / AXUDP / AXTCP</a></td>
+<td></td>
 </tr>
 <tr>
 <td>An internet link through NAT/firewalls (over TCP)</td>
 <td><code>AXTCP</code></td>
-<td>—</td>
-<td><a href="../../interfaces/axip-axudp-axtcp/">AXIP / AXUDP / AXTCP</a></td>
+<td>n/a  <a href="../../interfaces/axip-axudp-axtcp/">AXIP / AXUDP / AXTCP</a></td>
+<td></td>
 </tr>
 <tr>
 <td>Ethernet or WiFi (a LAN port)</td>
@@ -2946,13 +2946,13 @@ the link for the full setup, including the matching radio/modem configuration.</
 </tr>
 </tbody>
 </table>
-<p>Once an interface is defined, give it a <a href="../ports/">port</a> so XRouter's core can use it — and
+<p>Once an interface is defined, give it a <a href="../ports/">port</a> so XRouter's core can use it, and
 remember the ordering rule: <strong>the interface must appear above the port that references it</strong>.</p>
 <hr />
 <p><strong>Sources:</strong>
 <a href="https://wiki.oarc.uk/packet:xrouter:docs:man6">Installation and configuration topics, OARC wiki (man6)</a> ·
 <a href="https://wiki.oarc.uk/packet:xrouter:docs:man7">Configuration directives, OARC wiki (man7)</a> ·
-<a href="https://ohiopacket.org/xrpi/docs/ifaces.htm">ohiopacket.org XRPi mirror — interfaces</a> ·
+<a href="https://ohiopacket.org/xrpi/docs/ifaces.htm">ohiopacket.org XRPi mirror: interfaces</a> ·
 <a href="https://groups.io/g/xrouter">XRouter support group, groups.io</a></p>
 
 
@@ -3031,7 +3031,7 @@ remember the ordering rule: <strong>the interface must appear above the port tha
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Documentation re-presentation released under CC BY 4.0. XRouter itself is copyright Paula G8PZT and is free for non-commercial amateur use. This is an unofficial, community-maintained site; for canonical information defer to the author.
+      Documentation re-presentation released under CC BY 4.0, written entirely by AI from primary sources and not fact-checked by a human. XRouter itself is copyright Paula G8PZT and is free for non-commercial amateur use. This is an unofficial, community-maintained site; for canonical information defer to the author.
     </div>
   
   

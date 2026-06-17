@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="A re-presentation of the documentation for XRouter, Paula G8PZT's AX.25 / NET-ROM / TCP-IP packet-radio node, router, chat server and APRS digipeater — organised by user journey and cited to primary sources.">
+        <meta name="description" content="A re-presentation of the documentation for XRouter, Paula G8PZT's AX.25 / NET-ROM / TCP-IP packet-radio node, router, chat server and APRS digipeater, organised by user journey and cited to primary sources.">
       
       
         <meta name="author" content="XRouter Documentation contributors">
@@ -669,7 +669,7 @@
   <span class="md-ellipsis">
     
   
-    AX.25 — the data link
+    AX.25: the data link
   
 
     
@@ -697,7 +697,7 @@
   <span class="md-ellipsis">
     
   
-    NET/ROM — networking and routing
+    NET/ROM: networking and routing
   
 
     
@@ -2664,14 +2664,14 @@
 program, written and maintained by <strong>Paula G8PZT</strong>. From one small executable it provides
 an AX.25 / NET-ROM packet switch with the INP3 link-state routing extension, its own
 multi-homed TCP/IP stack, a personal mailbox (PMS), a multi-channel chat server, an APRS
-digipeater and IGate, and a family of built-in internet servers — Telnet, an HTTP server
+digipeater and IGate, and a family of built-in internet servers: Telnet, an HTTP server
 with a REST API, FTP, an MQTT broker and more.</p>
 <p>It has been in continuous development since 1996, is free for non-commercial amateur use,
 and is closed source. It is widely regarded in the packet community as the main alternative
-to G8BPQ's BPQ32 / LinBPQ — often described as quick to get on the air and strong at routing.</p>
+to G8BPQ's BPQ32 / LinBPQ, and is often described as quick to get on the air and strong at routing.</p>
 <div class="admonition info">
 <p class="admonition-title">Not sure where to begin?</p>
-<p>Jump to <strong><a href="start/">Start here</a></strong> and pick the path that matches you — whether
+<p>Jump to <strong><a href="start/">Start here</a></strong> and pick the path that matches you, whether
 you've never run a packet station, you know packet but are new to XRouter, or you're
 moving across from BPQ or another node program.</p>
 </div>
@@ -2690,12 +2690,12 @@ historical; the current builds share one codebase:</p>
 <tr>
 <td><strong>XrPi</strong></td>
 <td>Raspberry Pi / ARM (Linux)</td>
-<td>Current — actively developed</td>
+<td>Current, actively developed</td>
 </tr>
 <tr>
 <td><strong>XrLin</strong></td>
 <td>Linux PC, x86 / x86-64</td>
-<td>Current — <em>same codebase</em> as XrPi, different CPU</td>
+<td>Current; <em>same codebase</em> as XrPi, different CPU</td>
 </tr>
 <tr>
 <td><strong>XrWin</strong></td>
@@ -2732,10 +2732,10 @@ living reference for all builds is the in-program manual (see
   modern AX.25 features (extended sequence numbers, selective reject).</li>
 <li><strong>Routing</strong> by classic NET/ROM quality <em>and</em> the <strong>INP3</strong> link-state extension with
   round-trip-time measurement (L3RTT), so the node can choose good paths automatically.</li>
-<li><strong>NetRom-X</strong>, XRouter's service-numbering scheme — one node callsign exposing up to
+<li><strong>NetRom-X</strong>, XRouter's service-numbering scheme: one node callsign exposing up to
   65535 numbered services (mailbox, chat, info and so on), like well-known TCP ports.</li>
 <li>Its own <strong>TCP/IP stack</strong> alongside the host's, for IP-over-AX.25, AMPRNet (44Net),
-  tunnels, NAT and RIP — useful whether or not you run amateur IP.</li>
+  tunnels, NAT and RIP, useful whether or not you run amateur IP.</li>
 <li>A <strong>PMS mailbox</strong>, a <strong>chat server</strong> (interworking with BPQ RoundTable and JNOS
   Ping-Pong), and an <strong>APRS digipeater / IGate</strong>.</li>
 <li>Built-in <strong>Telnet, HTTP (with REST API), FTP, Finger, MQTT</strong> and other servers, so the
@@ -2750,7 +2750,7 @@ RF or the internet via <strong>AXIP / AXUDP / AXTCP</strong>.</p>
 <li>
 <p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 10a2 2 0 0 1 2 2 2 2 0 0 1-.47 1.29L16.7 22h-2.13L12 14.93 9.43 22H7.3l3.17-8.71A2 2 0 0 1 10 12a2 2 0 0 1 2-2m0-2a4 4 0 0 0-4 4c0 .5.1 1 .28 1.46l-.88 2.4A6.03 6.03 0 0 1 6 12a6 6 0 0 1 6-6 6 6 0 0 1 6 6c0 1.47-.53 2.81-1.4 3.86l-.88-2.4C15.9 13 16 12.5 16 12a4 4 0 0 0-4-4m0-4a8 8 0 0 0-8 8c0 2.36 1 4.5 2.64 5.94l-.72 2A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10c0 3.23-1.54 6.11-3.92 7.94l-.72-2C19 16.5 20 14.36 20 12a8 8 0 0 0-8-8"/></svg></span> <strong><a href="start/new-to-packet/">New to packet radio</a></strong></p>
 <p>Start with the <a href="basics/what-is-packet-radio/">basics</a>: what packet is, AX.25,
-NET/ROM, KISS and modems — then stand up your first node.</p>
+NET/ROM, KISS and modems, then stand up your first node.</p>
 </li>
 <li>
 <p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 19V7H4v12zm0-16a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm-7 14v-2h5v2zm-3.42-4L5.57 9H8.4l3.3 3.3c.39.39.39 1.03 0 1.42L8.42 17H5.59z"/></svg></span> <strong><a href="start/new-to-xrouter/">New to XRouter</a></strong></p>
@@ -2769,14 +2769,23 @@ NET/ROM, KISS and modems — then stand up your first node.</p>
 organised by what a reader is trying to do and cited to primary sources. It is <strong>not
 authoritative</strong>. The author, Paula G8PZT, is the authority on how XRouter behaves; the
 in-program manual (mirrored on the OARC wiki) is the canonical reference. Where this site
-disagrees with the author or the program, treat <strong>the author as right</strong> — and please
+disagrees with the author or the program, treat <strong>the author as right</strong>, and please
 <a href="project/contributing/">contribute a correction</a>. See
-<a href="project/about-these-docs/">About these docs</a> for how the site was built and fact-checked.</p>
+<a href="project/about-these-docs/">About these docs</a> for how the site was made and what it is not.</p>
+<div class="admonition note">
+<p class="admonition-title">Written entirely by AI</p>
+<p>Every page on this site was written entirely by an AI (a large language model) from the
+primary sources listed below, and checked by that same model against them. <strong>No human has
+fact-checked or verified any of it.</strong> Treat the site as a useful but unverified secondary
+source, not the author's own words, and confirm anything that matters against the
+in-program manual. See
+<a href="project/about-these-docs/#how-this-site-was-written">How this site was written</a>.</p>
+</div>
 <h2 id="versions-and-where-to-get-it">Versions and where to get it<a class="headerlink" href="#versions-and-where-to-get-it" title="Permanent link">&para;</a></h2>
 <p>XRouter releases briskly; at the time of writing the current family is the <strong>v504</strong> series
 (for example <em>v504v</em>, January 2026). The most reliable place to obtain current builds and
 support is the <strong><a href="https://groups.io/g/xrouter">XRouter support group on groups.io</a></strong> (latest
-binaries live in its <em>Files</em> area). Older mirrors exist but lag behind — see
+binaries live in its <em>Files</em> area). Older mirrors exist but lag behind. See
 <a href="admin/upgrading/">Upgrading and versions</a> and
 <a href="project/sources-and-attribution/">Sources and attribution</a>.</p>
 <hr />
@@ -2845,7 +2854,7 @@ binaries live in its <em>Files</em> area). Older mirrors exist but lag behind �
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Documentation re-presentation released under CC BY 4.0. XRouter itself is copyright Paula G8PZT and is free for non-commercial amateur use. This is an unofficial, community-maintained site; for canonical information defer to the author.
+      Documentation re-presentation released under CC BY 4.0, written entirely by AI from primary sources and not fact-checked by a human. XRouter itself is copyright Paula G8PZT and is free for non-commercial amateur use. This is an unofficial, community-maintained site; for canonical information defer to the author.
     </div>
   
   

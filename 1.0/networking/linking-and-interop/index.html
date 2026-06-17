@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="A re-presentation of the documentation for XRouter, Paula G8PZT's AX.25 / NET-ROM / TCP-IP packet-radio node, router, chat server and APRS digipeater — organised by user journey and cited to primary sources.">
+        <meta name="description" content="A re-presentation of the documentation for XRouter, Paula G8PZT's AX.25 / NET-ROM / TCP-IP packet-radio node, router, chat server and APRS digipeater, organised by user journey and cited to primary sources.">
       
       
         <meta name="author" content="XRouter Documentation contributors">
@@ -569,7 +569,7 @@
   <span class="md-ellipsis">
     
   
-    AX.25 — the data link
+    AX.25: the data link
   
 
     
@@ -597,7 +597,7 @@
   <span class="md-ellipsis">
     
   
-    NET/ROM — networking and routing
+    NET/ROM: networking and routing
   
 
     
@@ -2687,7 +2687,7 @@
 
 <h1 id="linking-nodes-and-interoperating">Linking nodes and interoperating<a class="headerlink" href="#linking-nodes-and-interoperating" title="Permanent link">&para;</a></h1>
 <p>This page is the practical companion to the routing pages: how you actually <strong>link</strong> XRouter
-to other nodes — over RF and over the internet — and how to <strong>interoperate</strong> cleanly with the
+to other nodes, over RF and over the internet, and how to <strong>interoperate</strong> cleanly with the
 other node programs you will meet on a real network (BPQ, (X)Net, JNOS and FBB). It is aimed at
 a sysop joining an existing network or extending their own, and it is deliberately even-handed:
 mixed networks are the norm, and they work.</p>
@@ -2697,20 +2697,20 @@ points back to <strong><a href="../netrom-inp3/">NET/ROM, INP3 and L3RTT</a></st
 <h2 id="two-ways-to-link-rf-and-internet">Two ways to link: RF and internet<a class="headerlink" href="#two-ways-to-link-rf-and-internet" title="Permanent link">&para;</a></h2>
 <p>A link to another node is, at bottom, just another XRouter <strong>port</strong>:</p>
 <ul>
-<li><strong>Over RF</strong> — a port on a radio frequency you share with the neighbour. The neighbour appears
+<li><strong>Over RF</strong>, a port on a radio frequency you share with the neighbour. The neighbour appears
   in your nodes table once you hear its NODES broadcasts, and routing takes over from there. The
   per-port AX.25 settings (<a href="../ax25/">AX.25 on XRouter</a>) and the port's <code>QUALITY</code> are how you
   describe that link to the routing layer.</li>
-<li><strong>Over the internet</strong> — an <code>AXIP</code>, <code>AXUDP</code> or <code>AXTCP</code> interface and port that carries AX.25
+<li><strong>Over the internet</strong>, an <code>AXIP</code>, <code>AXUDP</code> or <code>AXTCP</code> interface and port that carries AX.25
   between you and a distant node across the net. These are how most modern backbone links are
-  built. The full how-to — choosing between them, NAT/firewall behaviour, the <code>IPLINK</code> and
-  <code>UDPLOCAL</code>/<code>UDPREMOTE</code> keywords — is on
+  built. The full how-to (choosing between them, NAT/firewall behaviour, the <code>IPLINK</code> and
+  <code>UDPLOCAL</code>/<code>UDPREMOTE</code> keywords) is on
   <strong><a href="../../interfaces/axip-axudp-axtcp/">AXIP / AXUDP / AXTCP linking</a></strong>. Remember that, being
   IP-based, internet links require a non-zero <code>IPADDRESS</code> to function at all (see
   <a href="../tcpip/">The TCP/IP stack</a>).</li>
 </ul>
 <p>Either way, once the link is up the routing layer treats the neighbour the same. What differs
-between <em>programs</em> is how that neighbour expresses routing information — which is where interop
+between <em>programs</em> is how that neighbour expresses routing information, which is where interop
 care comes in.</p>
 <h2 id="interoperating-inp3-vs-quality-only-neighbours">Interoperating: INP3 vs quality-only neighbours<a class="headerlink" href="#interoperating-inp3-vs-quality-only-neighbours" title="Permanent link">&para;</a></h2>
 <p>XRouter routes on INP3's measured round-trip times by default; many neighbours do not. The
@@ -2718,18 +2718,18 @@ care comes in.</p>
 link to a node running something else.</p>
 <ul>
 <li>
-<p><strong>BPQ neighbours.</strong> Linking BPQ and XRouter is routine — the author's own summary is that
+<p><strong>BPQ neighbours.</strong> Linking BPQ and XRouter is routine, the author's own summary is that
   <em>"there's never been a problem linking BPQ and XRouter."</em> BPQ supports INP3 but tends to
   <strong>prefer classic NET/ROM quality</strong> to INP3 when it has both. The two ends can therefore form a
   perfectly good link while occasionally disagreeing about which onward path is "best". That is
   usually benign; it only matters when a quality figure is misleading.</p>
 </li>
 <li>
-<p><strong>The runtime/quality conversion caution.</strong> Some programs — <strong>(X)Net</strong> in particular — convert
+<p><strong>The runtime/quality conversion caution.</strong> Some programs, <strong>(X)Net</strong> in particular, convert
   NET/ROM qualities to and from run-times. When those converted figures propagate into your
   tables they can manifest as implausibly high qualities that pull traffic the wrong way. The
   author has described exactly this: <em>"ridiculously high bogus netrom qualities … distorting the
-  routing"</em> — <em>Paula G8PZT, <a href="https://groups.io/g/xrouter/message/4048">groups.io</a></em>. In severe
+  routing"</em>, <em>Paula G8PZT, <a href="https://groups.io/g/xrouter/message/4048">groups.io</a></em>. In severe
   cases sysops have called the resulting NET/ROM network unusable.</p>
 </li>
 </ul>
@@ -2738,7 +2738,7 @@ link to a node running something else.</p>
 <p>If your network mixes INP3 (XRouter), quality-only (BPQ) and converting ((X)Net) nodes,
 keep an eye on <code>N[odes]</code> for qualities that look too good to be true, and lean on
 <code>MINQUAL</code> / <code>MINTXQUAL</code> and sensible per-link <code>QUALITY</code> values to keep the table honest.
-None of this is a reason not to interoperate — it is a reason to understand <em>why</em> a route
+None of this is a reason not to interoperate, it is a reason to understand <em>why</em> a route
 was chosen. See <a href="../netrom-inp3/">NET/ROM, INP3 and L3RTT</a>.</p>
 </div>
 <p>There is no single switch that "fixes" a heterogeneous network; the goal is a sane, well-bounded
@@ -2748,18 +2748,18 @@ qualities, and the mixed network settles down.</p>
 <p>XRouter's chat server is built to bridge the historically separate amateur chat networks, so a
 linked XRouter does not strand its users on an island:</p>
 <ul>
-<li><strong>BPQ RoundTable</strong> — XRouter reserves chat <strong>channel 101</strong> as the RoundTable gateway,
+<li><strong>BPQ RoundTable</strong>, XRouter reserves chat <strong>channel 101</strong> as the RoundTable gateway,
   interworking with the W0RLI / BPQ RoundTable conference network.</li>
-<li><strong>JNOS "Ping-Pong"</strong> — XRouter's chat also interworks with the JNOS "Tampa Ping-Pong"
+<li><strong>JNOS "Ping-Pong"</strong>, XRouter's chat also interworks with the JNOS "Tampa Ping-Pong"
   Converse network.</li>
 </ul>
-<p>Chat peers are linked with <code>CHATLINKS</code> (over NET/ROM or TCP), and links must be <strong>bilateral</strong> —
+<p>Chat peers are linked with <code>CHATLINKS</code> (over NET/ROM or TCP), and links must be <strong>bilateral</strong>,
 each side has to list the other's chat callsign, and you should only link servers that are
 already in your nodes table and not too distant or slow. The full chat configuration is on
 <strong><a href="../../subsystems/chat/">Chat server</a></strong>.</p>
 <h2 id="running-a-full-bbs-alongside-xrouter-fbb-via-host-mode">Running a full BBS alongside XRouter (FBB via host mode)<a class="headerlink" href="#running-a-full-bbs-alongside-xrouter-fbb-via-host-mode" title="Permanent link">&para;</a></h2>
 <p>XRouter ships an integral <strong>PMS</strong> (Personal Message System), not a full BBS. If you want a full
-BBS — message areas, bulletins, full forwarding — the established approach is to run <strong>FBB</strong>
+BBS (message areas, bulletins, full forwarding), the established approach is to run <strong>FBB</strong>
 alongside XRouter and connect the two through XRouter's <strong>WA8DED / DEDHOST host-mode</strong> emulation.
 XRouter presents itself to FBB as a WA8DED-style multi-channel TNC; FBB drives it as its packet
 engine while XRouter continues to do the switching and routing. The author confirms the pairing
@@ -2773,35 +2773,35 @@ the host-mode configuration on <a href="../../configuration/interfaces/">Interfa
 <div class="admonition note">
 <p class="admonition-title">PMS or BBS?</p>
 <p>For a personal mailbox and light traffic, the built-in PMS is enough and needs no extra
-software. Reach for FBB-over-host-mode only when you genuinely need a full BBS — it is more
+software. Reach for FBB-over-host-mode only when you genuinely need a full BBS, it is more
 to run and maintain.</p>
 </div>
 <h2 id="a-note-on-even-handedness">A note on even-handedness<a class="headerlink" href="#a-note-on-even-handedness" title="Permanent link">&para;</a></h2>
 <p>XRouter is one of several good node programs, and packet networks are healthier for mixing them.
 BPQ is the most widely deployed and includes a full BBS; (X)Net and TheNet/TheNetNode have long
 European histories; JNOS brings its own TCP/IP-and-BBS lineage. XRouter's distinctive strengths
-are its routing (INP3 + L3RTT) and its designed-in IP stack — but a network is a shared thing,
+are its routing (INP3 + L3RTT) and its designed-in IP stack, but a network is a shared thing,
 and the considerate sysop tunes their node to play well with whatever the neighbours run, rather
 than expecting the neighbours to change.</p>
 <h2 id="see-also">See also<a class="headerlink" href="#see-also" title="Permanent link">&para;</a></h2>
 <ul>
-<li><a href="../../interfaces/axip-axudp-axtcp/">AXIP / AXUDP / AXTCP linking</a> — the how-to for internet
+<li><a href="../../interfaces/axip-axudp-axtcp/">AXIP / AXUDP / AXTCP linking</a>, the how-to for internet
   links.</li>
-<li><a href="../netrom-inp3/">NET/ROM, INP3 and L3RTT</a> — the routing behaviour behind the interop notes.</li>
-<li><a href="../../configuration/ports/">Ports</a> — <code>QUALITY</code>, <code>MINQUAL</code>, <code>MAXHOPS</code>, <code>MAXTT</code> and the per-link
+<li><a href="../netrom-inp3/">NET/ROM, INP3 and L3RTT</a>, the routing behaviour behind the interop notes.</li>
+<li><a href="../../configuration/ports/">Ports</a>, <code>QUALITY</code>, <code>MINQUAL</code>, <code>MAXHOPS</code>, <code>MAXTT</code> and the per-link
   settings.</li>
-<li><a href="../../subsystems/chat/">Chat server</a> and <a href="../../subsystems/pms-mailbox/">PMS mailbox</a> — the
+<li><a href="../../subsystems/chat/">Chat server</a> and <a href="../../subsystems/pms-mailbox/">PMS mailbox</a>, the
   services referenced above.</li>
 </ul>
 <hr />
-<p><strong>Sources:</strong> in-program manual on the OARC wiki —
+<p><strong>Sources:</strong> in-program manual on the OARC wiki,
 <a href="https://wiki.oarc.uk/packet:xrouter:docs:man9">Subsystems and features (man9)</a> (host mode,
 chat interworking, services) ·
 <a href="https://wiki.oarc.uk/packet:xrouter:docs:man7">Configuration Directives (man7)</a>;
-author guidance on interop, groups.io —
+author guidance on interop, groups.io,
 <a href="https://groups.io/g/xrouter/message/4048">bogus qualities / (X)Net conversion</a> ·
 <a href="https://groups.io/g/xrouter/message/2971">mixed INP3 / quality networks</a>;
-chat-network interworking, OARC wiki —
+chat-network interworking, OARC wiki,
 <a href="https://wiki.oarc.uk/packet:xrouter:chatserver">chat server</a>.</p>
 
 
@@ -2880,7 +2880,7 @@ chat-network interworking, OARC wiki —
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Documentation re-presentation released under CC BY 4.0. XRouter itself is copyright Paula G8PZT and is free for non-commercial amateur use. This is an unofficial, community-maintained site; for canonical information defer to the author.
+      Documentation re-presentation released under CC BY 4.0, written entirely by AI from primary sources and not fact-checked by a human. XRouter itself is copyright Paula G8PZT and is free for non-commercial amateur use. This is an unofficial, community-maintained site; for canonical information defer to the author.
     </div>
   
   

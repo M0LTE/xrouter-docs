@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="A re-presentation of the documentation for XRouter, Paula G8PZT's AX.25 / NET-ROM / TCP-IP packet-radio node, router, chat server and APRS digipeater — organised by user journey and cited to primary sources.">
+        <meta name="description" content="A re-presentation of the documentation for XRouter, Paula G8PZT's AX.25 / NET-ROM / TCP-IP packet-radio node, router, chat server and APRS digipeater, organised by user journey and cited to primary sources.">
       
       
         <meta name="author" content="XRouter Documentation contributors">
@@ -569,7 +569,7 @@
   <span class="md-ellipsis">
     
   
-    AX.25 — the data link
+    AX.25: the data link
   
 
     
@@ -597,7 +597,7 @@
   <span class="md-ellipsis">
     
   
-    NET/ROM — networking and routing
+    NET/ROM: networking and routing
   
 
     
@@ -2731,10 +2731,10 @@
 
 <h1 id="getting-started-on-linux-pc-xrlin">Getting started on Linux PC (XrLin)<a class="headerlink" href="#getting-started-on-linux-pc-xrlin" title="Permanent link">&para;</a></h1>
 <p>This page stands up an XRouter node on an ordinary x86 / x86-64 Linux PC from nothing:
-download the right build, unpack it, write a minimal config, and run it — including how to
+download the right build, unpack it, write a minimal config, and run it, including how to
 run it <strong>without root</strong>, which is the part most newcomers trip over.</p>
 <p>XRouter for the desktop is called <strong>XrLin</strong>. It is the <em>same program</em> as the Raspberry Pi
-build (<a href="../raspberry-pi/">XrPi</a>) — the same source, simply compiled for the x86 / x86-64
+build (<a href="../raspberry-pi/">XrPi</a>), the same source, simply compiled for the x86 / x86-64
 processor family rather than ARM. (The Pi build adds GPIO support that a PC does not have;
 nothing else differs.) It is a single self-contained binary, a few hundred kilobytes, with
 no installer. If you have used a hardware TNC or a soundcard modem before, you can have a
@@ -2747,10 +2747,10 @@ The config file and almost everything else is identical across them.</p>
 </div>
 <h2 id="1-what-you-need">1. What you need<a class="headerlink" href="#1-what-you-need" title="Permanent link">&para;</a></h2>
 <ul>
-<li>A PC running a 64-bit or 32-bit Linux distribution. XRouter is undemanding — it has run on
+<li>A PC running a 64-bit or 32-bit Linux distribution. XRouter is undemanding, it has run on
   lightweight distros and needs well under a megabyte of disk for the program and its files.</li>
 <li>A way onto the air: a hardware <strong>KISS</strong> TNC, a <strong>NinoTNC</strong>, or a soundcard modem such as
-  <strong><a href="../../interfaces/soundcard-modems/">Direwolf</a></strong> — or just an internet
+  <strong><a href="../../interfaces/soundcard-modems/">Direwolf</a></strong>, or just an internet
   <a href="../../interfaces/axip-axudp-axtcp/">AXUDP/AXIP link</a> to another node if you're starting
   without radio.</li>
 <li>Your callsign, and a spare SSID for the node (for example <code>-1</code>).</li>
@@ -2762,17 +2762,17 @@ to download). Builds are named by their target and version, for example <code>xr
 the version baked into the filename.</p>
 <p>A couple of choices to make:</p>
 <ul>
-<li><strong>32-bit vs 64-bit</strong> — pick the build that matches your installation. A 64-bit Linux
+<li><strong>32-bit vs 64-bit</strong>, pick the build that matches your installation. A 64-bit Linux
   system normally wants the 64-bit XrLin build; use the 32-bit build on a 32-bit system (or
   on a 64-bit system that has 32-bit library support).</li>
-<li><strong><code>-static</code> vs dynamically linked</strong> — a <strong><code>-static</code></strong> build bundles what it needs and is
+<li><strong><code>-static</code> vs dynamically linked</strong>, a <strong><code>-static</code></strong> build bundles what it needs and is
   the path of least resistance, because it avoids any mismatch with your distribution's
   system libraries. A dynamically linked build is smaller but depends on libraries being
   present on your system.</li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">If a dynamic build complains about a missing library, use the static one</p>
-<p>Some dynamically linked builds expect a system library to be installed — for example an
+<p>Some dynamically linked builds expect a system library to be installed, for example an
 audio library such as <code>libasound2</code> for sound support. If a dynamic build fails to start
 with a missing-library error, the cleanest fix is to download and use a <strong><code>-static</code></strong>
 build instead, which sidesteps the dependency entirely. (The author is famously
@@ -2781,13 +2781,13 @@ dependency-averse, which is exactly why static builds are offered.)</p>
 <div class="admonition note">
 <p class="admonition-title">Mirrors lag behind</p>
 <p>You may find older XRouter documentation and binaries on <code>ohiopacket.org/xrpi</code> or
-<code>vk2dot.dyndns.org/xrpi</code>. These are historic mirrors — good for concepts, but <strong>out of
+<code>vk2dot.dyndns.org/xrpi</code>. These are historic mirrors, good for concepts, but <strong>out of
 date on versions</strong> (and many vk2dot links are now dead). Get current binaries from the
 groups.io Files area. See <a href="../../admin/upgrading/">Upgrading and versions</a>.</p>
 </div>
 <h2 id="3-unpack-and-make-it-runnable">3. Unpack and make it runnable<a class="headerlink" href="#3-unpack-and-make-it-runnable" title="Permanent link">&para;</a></h2>
-<p>Put the download in its own directory — XRouter reads and writes its files from wherever the
-binary lives — then unzip, rename the binary to something convenient, and mark it
+<p>Put the download in its own directory, XRouter reads and writes its files from wherever the
+binary lives, then unzip, rename the binary to something convenient, and mark it
 executable:</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>mkdir<span class="w"> </span>-p<span class="w"> </span>~/xrlin<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>~/xrlin
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>unzip<span class="w"> </span>~/Downloads/xrlin502r.zip<span class="w">        </span><span class="c1"># use the file you downloaded</span>
@@ -2795,7 +2795,7 @@ executable:</p>
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>chmod<span class="w"> </span>+x<span class="w"> </span>xrlin
 </span></code></pre></div>
 <div class="admonition warning">
-<p class="admonition-title">Filenames are case-sensitive — and XRouter wants UPPER CASE</p>
+<p class="admonition-title">Filenames are case-sensitive, and XRouter wants UPPER CASE</p>
 <p>On Linux, <code>XROUTER.CFG</code> and <code>xrouter.cfg</code> are different files. XRouter expects its
 configuration and data files in <strong>UPPER CASE</strong> (<code>XROUTER.CFG</code>, <code>IPROUTE.SYS</code>,
 <code>PASSWORD.SYS</code>, …). Getting the case wrong is the single most common "it won't start"
@@ -2808,7 +2808,7 @@ alias, one interface and one port. The full walk-through is on
 this:</p>
 <div class="language-ini highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="na">NODECALL</span><span class="o">=</span><span class="s">M0XXX-1</span>
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="na">NODEALIAS</span><span class="o">=</span><span class="s">MYNODE</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="na">IPADDRESS</span><span class="o">=</span><span class="s">10.1.1.1</span><span class="w">        </span><span class="c1">; see the warning below — required for IP services</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="na">IPADDRESS</span><span class="o">=</span><span class="s">10.1.1.1</span><span class="w">        </span><span class="c1">; see the warning below, required for IP services</span>
 </span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
 </span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="na">INTERFACE</span><span class="o">=</span><span class="s">1</span>
 </span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">        </span><span class="na">TYPE</span><span class="o">=</span><span class="s">ASYNC</span>
@@ -2827,10 +2827,10 @@ this:</p>
 <div class="admonition danger">
 <p class="admonition-title">Set IPADDRESS, or you lose <em>all</em> IP services</p>
 <p>If the global <code>IPADDRESS</code> is <code>0.0.0.0</code> or left undefined, XRouter <strong>deliberately
-disables all IP activity</strong> — AXUDP, AXTCP, AXIP, HTTP, FTP, the lot — on both stacks.
+disables all IP activity</strong>, AXUDP, AXTCP, AXIP, HTTP, FTP, the lot, on both stacks.
 This is an intentional security feature. If you don't have an AMPRNet (44Net) address,
 set a private dummy such as <code>10.1.1.1</code> so the IP-based features work. (Recent builds
-refuse to start cleanly without it.) — <em>Paula G8PZT,
+refuse to start cleanly without it.), <em>Paula G8PZT,
 <a href="https://groups.io/g/xrouter/message/1957">groups.io</a></em></p>
 </div>
 <h2 id="5-first-run">5. First run<a class="headerlink" href="#5-first-run" title="Permanent link">&para;</a></h2>
@@ -2840,7 +2840,7 @@ refuse to start cleanly without it.) — <em>Paula G8PZT,
 </span></code></pre></div>
 <p>XRouter comes up as a colour text UI with several status screens. It reads <code>XROUTER.CFG</code>
 once at startup and reports configuration errors <strong>with the line number</strong>, which makes
-fixing them straightforward — change one thing, restart, repeat. If you see
+fixing them straightforward, change one thing, restart, repeat. If you see
 <code>ERROR in line N</code>, open the config at that line.</p>
 <p>Once it's running, connect to the node prompt locally over Telnet to try it out, then learn
 your way around with the <a href="../../commands/node-prompt/">node command prompt</a>.</p>
@@ -2856,18 +2856,18 @@ without elevated privileges. You can confirm the capabilities were set with
 <code>getcap ./xrlin</code>.</p>
 <div class="admonition danger">
 <p class="admonition-title">Don't run XRouter as root</p>
-<p>Running a network-facing service as root is unnecessary here and best avoided — if a
+<p>Running a network-facing service as root is unnecessary here and best avoided, if a
 miscreant ever broke out to a shell, they would have only your user's directory tree,
 not the whole machine. Running under <code>sudo</code> is worse still, because the <code>sudo</code> session
 timeout can leave XRouter unable to respond or restart. Use <code>setcap</code> as above. You'll
-need to <strong>re-apply <code>setcap</code> after replacing the binary with a new version</strong>. — see
+need to <strong>re-apply <code>setcap</code> after replacing the binary with a new version</strong>., see
 <a href="../../admin/security-hardening/">Security and hardening</a>.</p>
 </div>
 <h2 id="7-keep-it-running">7. Keep it running<a class="headerlink" href="#7-keep-it-running" title="Permanent link">&para;</a></h2>
 <p>For a permanent node you'll want XRouter to start at boot and survive crashes. It can run
 fully headless as a daemon (<code>./xrlin -d</code>, controllable over HTTP/Telnet/packet) or inside a
-<code>screen</code>/<code>tmux</code> session so you can re-attach to the TUI. Both approaches — and a sample
-<code>systemd</code> service — are on <strong><a href="../running-as-a-service/">Running as a service</a></strong>.</p>
+<code>screen</code>/<code>tmux</code> session so you can re-attach to the TUI. Both approaches, and a sample
+<code>systemd</code> service, are on <strong><a href="../running-as-a-service/">Running as a service</a></strong>.</p>
 <h2 id="next-steps">Next steps<a class="headerlink" href="#next-steps" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Flesh out the config: <a href="../first-config/">Your first XROUTER.CFG</a> →
@@ -2881,7 +2881,7 @@ fully headless as a daemon (<code>./xrlin -d</code>, controllable over HTTP/Teln
 <hr />
 <p><strong>Sources:</strong> <a href="https://groups.io/g/xrouter">XRouter support group, groups.io</a> (downloads,
 and the <code>IPADDRESS</code> and <code>setcap</code> guidance from the author) ·
-<a href="https://wiki.oarc.uk/packet:xrouter:docs:man6">in-program manual, OARC wiki — running as root / capability flags (man6)</a>
+<a href="https://wiki.oarc.uk/packet:xrouter:docs:man6">in-program manual, OARC wiki: running as root / capability flags (man6)</a>
 · <a href="https://ohiopacket.org/xrpi/docs/install.htm">ohiopacket.org XRPi mirror</a> (XrLin shares
 the XrPi install model)</p>
 
@@ -2961,7 +2961,7 @@ the XrPi install model)</p>
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Documentation re-presentation released under CC BY 4.0. XRouter itself is copyright Paula G8PZT and is free for non-commercial amateur use. This is an unofficial, community-maintained site; for canonical information defer to the author.
+      Documentation re-presentation released under CC BY 4.0, written entirely by AI from primary sources and not fact-checked by a human. XRouter itself is copyright Paula G8PZT and is free for non-commercial amateur use. This is an unofficial, community-maintained site; for canonical information defer to the author.
     </div>
   
   

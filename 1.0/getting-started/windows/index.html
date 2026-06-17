@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="A re-presentation of the documentation for XRouter, Paula G8PZT's AX.25 / NET-ROM / TCP-IP packet-radio node, router, chat server and APRS digipeater — organised by user journey and cited to primary sources.">
+        <meta name="description" content="A re-presentation of the documentation for XRouter, Paula G8PZT's AX.25 / NET-ROM / TCP-IP packet-radio node, router, chat server and APRS digipeater, organised by user journey and cited to primary sources.">
       
       
         <meta name="author" content="XRouter Documentation contributors">
@@ -569,7 +569,7 @@
   <span class="md-ellipsis">
     
   
-    AX.25 — the data link
+    AX.25: the data link
   
 
     
@@ -597,7 +597,7 @@
   <span class="md-ellipsis">
     
   
-    NET/ROM — networking and routing
+    NET/ROM: networking and routing
   
 
     
@@ -957,12 +957,12 @@
   <a href="#3-configure-it-same-xroutercfg-as-everywhere-else" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Configure it — same XROUTER.CFG as everywhere else
+        3. Configure it: same XROUTER.CFG as everywhere else
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="3. Configure it — same XROUTER.CFG as everywhere else">
+    <nav class="md-nav" aria-label="3. Configure it: same XROUTER.CFG as everywhere else">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2653,12 +2653,12 @@
   <a href="#3-configure-it-same-xroutercfg-as-everywhere-else" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Configure it — same XROUTER.CFG as everywhere else
+        3. Configure it: same XROUTER.CFG as everywhere else
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="3. Configure it — same XROUTER.CFG as everywhere else">
+    <nav class="md-nav" aria-label="3. Configure it: same XROUTER.CFG as everywhere else">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2750,11 +2750,11 @@ on the few things that are genuinely Windows-specific and sends you to
 codebase and the same feature set as the Linux builds; only the operating-system glue
 differs.</p>
 <div class="admonition note">
-<p class="admonition-title">XrWin is current — XR32 is the legacy Windows build</p>
+<p class="admonition-title">XrWin is current, XR32 is the legacy Windows build</p>
 <p>There are two Windows programs in XRouter's history, and they are easy to confuse:</p>
 <ul>
-<li><strong>XrWin</strong> — the <strong>current</strong> Windows build, kept in step with the Linux versions.</li>
-<li><strong>XR32</strong> — the <strong>legacy</strong> 32-bit Windows build, frozen around 2013 and no longer
+<li><strong>XrWin</strong>, the <strong>current</strong> Windows build, kept in step with the Linux versions.</li>
+<li><strong>XR32</strong>, the <strong>legacy</strong> 32-bit Windows build, frozen around 2013 and no longer
   developed. The well-known <code>XR32.doc</code> Word manual documents <em>this older</em> program.</li>
 </ul>
 <p>If you are setting up a node today, use <strong>XrWin</strong>. Treat <code>XR32.doc</code> as useful background
@@ -2772,7 +2772,7 @@ almost everything else is identical across them.</p>
 <li>A Windows PC.</li>
 <li>A way onto the air: a hardware <strong>KISS</strong> TNC, a <strong>NinoTNC</strong>, or a soundcard modem such as
   <strong><a href="../../interfaces/soundcard-modems/">Direwolf</a></strong>, <strong>UZ7HO SoundModem</strong> or
-  <strong>QtSoundModem</strong> — or just an internet
+  <strong>QtSoundModem</strong>, or just an internet
   <a href="../../interfaces/axip-axudp-axtcp/">AXUDP/AXIP link</a> to another node if you're starting
   without radio.</li>
 <li>Your callsign, and a spare SSID for the node (for example <code>-1</code>).</li>
@@ -2790,18 +2790,18 @@ together; there is no system-wide installation path.</p>
 versions. For a current Windows build, use the groups.io Files area or the OARC
 downloads page. See <a href="../../admin/upgrading/">Upgrading and versions</a>.</p>
 </div>
-<h2 id="3-configure-it-same-xroutercfg-as-everywhere-else">3. Configure it — same XROUTER.CFG as everywhere else<a class="headerlink" href="#3-configure-it-same-xroutercfg-as-everywhere-else" title="Permanent link">&para;</a></h2>
+<h2 id="3-configure-it-same-xroutercfg-as-everywhere-else">3. Configure it: same XROUTER.CFG as everywhere else<a class="headerlink" href="#3-configure-it-same-xroutercfg-as-everywhere-else" title="Permanent link">&para;</a></h2>
 <p>The whole of XRouter's configuration model is identical on Windows: the same
 <code>XROUTER.CFG</code>, the same <code>KEYWORD=value</code> syntax, the same <code>INTERFACE</code>/<code>PORT</code> blocks, the same
 ordering rule (interfaces before ports), and the same mandatory keywords. Rather than repeat
-it here, work through <strong><a href="../first-config/">Your first XROUTER.CFG</a></strong> — it applies directly,
+it here, work through <strong><a href="../first-config/">Your first XROUTER.CFG</a></strong>, it applies directly,
 with only the Windows points below to keep in mind.</p>
 <div class="admonition danger">
 <p class="admonition-title">Set IPADDRESS, or you lose <em>all</em> IP services</p>
 <p>As on every platform, if the global <code>IPADDRESS</code> is left at <code>0.0.0.0</code> or undefined,
-XRouter <strong>deliberately disables all IP activity</strong> — AXUDP, AXTCP, AXIP, HTTP, FTP, the
+XRouter <strong>deliberately disables all IP activity</strong>, AXUDP, AXTCP, AXIP, HTTP, FTP, the
 lot. If you don't have an AMPRNet (44Net) address, set a private dummy such as <code>10.1.1.1</code>
-so the IP-based features work. — <em>Paula G8PZT,
+so the IP-based features work., <em>Paula G8PZT,
 <a href="https://groups.io/g/xrouter/message/1957">groups.io</a></em></p>
 </div>
 <h3 id="serial-ports-are-comn">Serial ports are COMn<a class="headerlink" href="#serial-ports-are-comn" title="Permanent link">&para;</a></h3>
@@ -2825,12 +2825,12 @@ assigned.</p>
 per-port AX.25 delayed-acknowledgement timer should be relaxed a little. Set
 <strong><code>RESPTIME=200</code></strong> (milliseconds) on your ports rather than a very small value. This
 avoids spurious timing behaviour caused by the host's scheduling jitter. The directive
-is set per <code>PORT</code> block — see <a href="../../configuration/ports/">Ports</a>.</p>
+is set per <code>PORT</code> block, see <a href="../../configuration/ports/">Ports</a>.</p>
 </div>
 <h2 id="4-run-it">4. Run it<a class="headerlink" href="#4-run-it" title="Permanent link">&para;</a></h2>
 <p>Start XrWin from its working directory. Like the other builds it presents an interactive
 colour text interface with status screens, reads <code>XROUTER.CFG</code> once at start-up, and reports
-configuration errors <strong>with the line number</strong> — so the edit-restart-check loop on
+configuration errors <strong>with the line number</strong>, so the edit-restart-check loop on
 <a href="../first-config/">Your first XROUTER.CFG</a> works exactly the same way here. Once it is up,
 connect to the node prompt over Telnet to try it out and explore the
 <a href="../../commands/node-prompt/">node command prompt</a>.</p>
@@ -2845,8 +2845,8 @@ and its Files area carries the current build.</p>
 <h2 id="5-keep-it-running">5. Keep it running<a class="headerlink" href="#5-keep-it-running" title="Permanent link">&para;</a></h2>
 <p>XrWin can be run permanently, including <strong>as a Windows service</strong> so the node starts with the
 machine and keeps running in the background without an interactive logon. The general
-principles of running XRouter unattended — daemon-style headless operation versus keeping an
-attachable interactive interface, and surviving restarts — are covered on
+principles of running XRouter unattended, daemon-style headless operation versus keeping an
+attachable interactive interface, and surviving restarts, are covered on
 <strong><a href="../running-as-a-service/">Running as a service</a></strong>. For the exact mechanism of registering
 XrWin as a Windows service on your version of Windows, ask on the groups.io group.</p>
 <h2 id="next-steps">Next steps<a class="headerlink" href="#next-steps" title="Permanent link">&para;</a></h2>
@@ -2942,7 +2942,7 @@ Windows behaviour.</p>
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Documentation re-presentation released under CC BY 4.0. XRouter itself is copyright Paula G8PZT and is free for non-commercial amateur use. This is an unofficial, community-maintained site; for canonical information defer to the author.
+      Documentation re-presentation released under CC BY 4.0, written entirely by AI from primary sources and not fact-checked by a human. XRouter itself is copyright Paula G8PZT and is free for non-commercial amateur use. This is an unofficial, community-maintained site; for canonical information defer to the author.
     </div>
   
   

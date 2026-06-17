@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="A re-presentation of the documentation for XRouter, Paula G8PZT's AX.25 / NET-ROM / TCP-IP packet-radio node, router, chat server and APRS digipeater — organised by user journey and cited to primary sources.">
+        <meta name="description" content="A re-presentation of the documentation for XRouter, Paula G8PZT's AX.25 / NET-ROM / TCP-IP packet-radio node, router, chat server and APRS digipeater, organised by user journey and cited to primary sources.">
       
       
         <meta name="author" content="XRouter Documentation contributors">
@@ -569,7 +569,7 @@
   <span class="md-ellipsis">
     
   
-    AX.25 — the data link
+    AX.25: the data link
   
 
     
@@ -597,7 +597,7 @@
   <span class="md-ellipsis">
     
   
-    NET/ROM — networking and routing
+    NET/ROM: networking and routing
   
 
     
@@ -2808,8 +2808,8 @@
 
 
 <h1 id="the-node-command-prompt">The node command prompt<a class="headerlink" href="#the-node-command-prompt" title="Permanent link">&para;</a></h1>
-<p>When you connect to an XRouter node — over the air, or in over the internet, or
-at the node's own console — you arrive at a <strong>command prompt</strong>. From there you
+<p>When you connect to an XRouter node, over the air, or in over the internet, or
+at the node's own console, you arrive at a <strong>command prompt</strong>. From there you
 drive the node: list what it can reach, connect onward, check who is around, and
 reach the mailbox and chat server. This page is for anyone using a node as an
 ordinary user; the <a href="../sysop/">sysop commands</a> build on the same prompt with
@@ -2817,15 +2817,15 @@ extra privileges.</p>
 <h2 id="getting-to-the-prompt">Getting to the prompt<a class="headerlink" href="#getting-to-the-prompt" title="Permanent link">&para;</a></h2>
 <p>You can reach the node prompt several ways:</p>
 <ul>
-<li><strong>Over RF (AX.25 / NET/ROM)</strong> — connect to the node's callsign or alias from
+<li><strong>Over RF (AX.25 / NET/ROM)</strong>, connect to the node's callsign or alias from
   your TNC or terminal, exactly as you would connect to any packet station. If
   the node has a <a href="../../configuration/global-settings/">connect text</a> it greets
   you, then drops you at the prompt.</li>
-<li><strong>By Telnet</strong> — XRouter runs a built-in Telnet server (port 23 by default), so
+<li><strong>By Telnet</strong>, XRouter runs a built-in Telnet server (port 23 by default), so
   you can reach the prompt from any Telnet client on the same network or, where
   the sysop allows it, across the internet. This is the easiest way to try a node
   you are running yourself.</li>
-<li><strong>At the console</strong> — on the machine running XRouter, the text-mode console
+<li><strong>At the console</strong>, on the machine running XRouter, the text-mode console
   windows include a command line that talks to the same node core.</li>
 </ul>
 <p>However you arrive, the prompt behaves the same way: type a command, press Enter,
@@ -2833,7 +2833,7 @@ read the reply.</p>
 <h2 id="the-abbreviation-convention">The abbreviation convention<a class="headerlink" href="#the-abbreviation-convention" title="Permanent link">&para;</a></h2>
 <p>The in-program manual writes every command with its shortest acceptable form in
 square brackets. So <code>C[onnect]</code> means <strong>you can type <code>C</code>, or <code>CONNECT</code>, or
-anything in between</strong> (<code>CO</code>, <code>CON</code>, …) — the part outside the brackets is the
+anything in between</strong> (<code>CO</code>, <code>CON</code>, …), the part outside the brackets is the
 minimum, and the bracketed tail is optional. A few more examples you will meet
 below:</p>
 <table>
@@ -2872,26 +2872,26 @@ below:</p>
 </tr>
 </tbody>
 </table>
-<p>Commands are <strong>not case-sensitive</strong> — <code>connect</code>, <code>Connect</code> and <code>CONNECT</code> are the
+<p>Commands are <strong>not case-sensitive</strong>, <code>connect</code>, <code>Connect</code> and <code>CONNECT</code> are the
 same. (Anything that names a <em>file</em>, on the other hand, is case-sensitive on
 Linux; that only matters for sysop file commands.) Throughout this site we print
 commands in capitals for clarity, but you never have to.</p>
 <h2 id="getting-help">Getting help<a class="headerlink" href="#getting-help" title="Permanent link">&para;</a></h2>
 <p>Three commands open the node's own documentation, which is always the final word:</p>
 <ul>
-<li><strong><code>HELP</code></strong> (or <strong><code>?</code></strong>) — <code>?</code> on its own lists the available commands; <code>HELP</code>
+<li><strong><code>HELP</code></strong> (or <strong><code>?</code></strong>), <code>?</code> on its own lists the available commands; <code>HELP</code>
   gives help, and <code>HELP &lt;command&gt;</code> explains one command and its syntax. Because
   this help is generated from the same manual the node was built from, it
   reflects exactly what <em>your</em> build supports.</li>
-<li><strong><code>MAN</code></strong> — displays the sysop manual pages (the man-style reference sections)
+<li><strong><code>MAN</code></strong>, displays the sysop manual pages (the man-style reference sections)
   held on the node.</li>
-<li><strong><code>INFO</code></strong> or <strong><code>I</code></strong> — shows the node's own information text and can look up a
+<li><strong><code>INFO</code></strong> or <strong><code>I</code></strong>, shows the node's own information text and can look up a
   topic or another node.</li>
 </ul>
 <div class="admonition tip">
 <p class="admonition-title">Trust the node over this site</p>
 <p>If <code>HELP</code> on your node and a table on this site ever disagree, the node is
-right — it knows its own version. Use <code>?</code> to see the exact command set your
+right, it knows its own version. Use <code>?</code> to see the exact command set your
 build offers.</p>
 </div>
 <h2 id="the-everyday-commands">The everyday commands<a class="headerlink" href="#the-everyday-commands" title="Permanent link">&para;</a></h2>
@@ -2899,14 +2899,14 @@ build offers.</p>
 them is listed in the <a href="../command-reference/">command reference</a>; here we show how
 they fit together.</p>
 <h3 id="finding-your-way-around">Finding your way around<a class="headerlink" href="#finding-your-way-around" title="Permanent link">&para;</a></h3>
-<p><strong><code>NODES</code></strong> displays the node's NET/ROM nodes table — every distant node it knows
+<p><strong><code>NODES</code></strong> displays the node's NET/ROM nodes table, every distant node it knows
 how to reach, by alias and callsign. With no argument you get the whole list;
 name a node to see the routes to it:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>NODES            list every known node
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>NODES GB7XXX     show the route(s) to one node
 </span></code></pre></div>
-<p><strong><code>ROUTES</code></strong> lists the node's immediate <strong>neighbours</strong> — the directly reachable
-links, with their quality — so you can see what this node is actually wired to,
+<p><strong><code>ROUTES</code></strong> lists the node's immediate <strong>neighbours</strong>, the directly reachable
+links, with their quality, so you can see what this node is actually wired to,
 as opposed to everything it has <em>heard about</em> (which is <code>NODES</code>).</p>
 <p><strong><code>PORTS</code></strong> lists the node's ports (its radio channels and links) with the
 identifying text the sysop gave each one. Knowing the port numbers matters when
@@ -2919,27 +2919,27 @@ node to another station, on RF or onward through the network.</p>
 </span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>C 2 GB7XXX V GB7DIG  connect via a digipeater
 </span></code></pre></div>
 <p>XRouter also uses CONNECT to reach <strong>numbered services</strong> on a node (its
-NetRom-X service numbers — see
+NetRom-X service numbers, see
 <a href="../../networking/netromx-services/">NetRom-X service numbers</a>). The same idea
 underpins the two subsystem gateways below.</p>
 <h3 id="seeing-who-and-what-is-about">Seeing who and what is about<a class="headerlink" href="#seeing-who-and-what-is-about" title="Permanent link">&para;</a></h3>
 <p><strong><code>USERS</code></strong> shows who is currently using the node and what they are doing.</p>
 <p><strong><code>MHEARD</code></strong> (<code>MH</code>) lists the callsigns the node has recently heard on the air,
-newest first — a quick way to see who is active on a frequency and whether your
+newest first, a quick way to see who is active on a frequency and whether your
 own signal is getting in.</p>
 <h3 id="testing-reachability">Testing reachability<a class="headerlink" href="#testing-reachability" title="Permanent link">&para;</a></h3>
-<p><strong><code>PING</code></strong> sends an ICMP echo to a TCP/IP host and reports whether it answered —
+<p><strong><code>PING</code></strong> sends an ICMP echo to a TCP/IP host and reports whether it answered,
 the familiar reachability test, for the node's IP side. (For NET/ROM links there
 are sibling commands such as <code>NPING</code>; see the
 <a href="../command-reference/">command reference</a>.)</p>
 <h3 id="leaving">Leaving<a class="headerlink" href="#leaving" title="Permanent link">&para;</a></h3>
-<p><strong><code>BYE</code></strong> (<code>B</code>) — or its synonym <strong><code>QUIT</code></strong> — disconnects you cleanly from the
+<p><strong><code>BYE</code></strong> (<code>B</code>), or its synonym <strong><code>QUIT</code></strong>, disconnects you cleanly from the
 node. On an RF or Telnet session this drops the link and returns you to wherever
 you came from.</p>
 <h2 id="the-two-subsystem-gateways">The two subsystem gateways<a class="headerlink" href="#the-two-subsystem-gateways" title="Permanent link">&para;</a></h2>
 <p>Two subsystems have their own command worlds, reached from the node prompt:</p>
 <ul>
-<li><strong><code>CHAT</code></strong> (<code>CH</code>) connects you to the node's <strong>chat server</strong> — a multi-channel
+<li><strong><code>CHAT</code></strong> (<code>CH</code>) connects you to the node's <strong>chat server</strong>, a multi-channel
   conversation system that can link to peer chat servers. Once inside, chat has
   its own set of <code>/</code>-prefixed commands. See <a href="../../subsystems/chat/">Chat server</a>
   for the full walkthrough.</li>
@@ -2948,7 +2948,7 @@ you came from.</p>
   turn. See <a href="../../subsystems/pms-mailbox/">PMS mailbox</a>.</li>
 </ul>
 <p>Both behave like connecting to a service: you enter the subsystem, work there,
-and leave it to return to the node prompt — or <code>BYE</code> to leave the node entirely.</p>
+and leave it to return to the node prompt, or <code>BYE</code> to leave the node entirely.</p>
 <h2 id="where-to-go-next">Where to go next<a class="headerlink" href="#where-to-go-next" title="Permanent link">&para;</a></h2>
 <ul>
 <li>The full list, including sysop-only commands:
@@ -2960,7 +2960,7 @@ and leave it to return to the node prompt — or <code>BYE</code> to leave the n
   <a href="../../subsystems/chat/">Chat server</a>.</li>
 </ul>
 <hr />
-<p><strong>Sources:</strong> <a href="https://wiki.oarc.uk/packet:xrouter:docs:man1">In-program manual, Section 1 — General Commands (OARC wiki)</a>
+<p><strong>Sources:</strong> <a href="https://wiki.oarc.uk/packet:xrouter:docs:man1">In-program manual, Section 1: General Commands (OARC wiki)</a>
 · <a href="https://wiki.oarc.uk/packet:xrouter:docs:generalhelp">General Help (OARC wiki)</a>
 · <a href="https://groups.io/g/xrouter">XRouter support group (groups.io)</a></p>
 
@@ -3040,7 +3040,7 @@ and leave it to return to the node prompt — or <code>BYE</code> to leave the n
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Documentation re-presentation released under CC BY 4.0. XRouter itself is copyright Paula G8PZT and is free for non-commercial amateur use. This is an unofficial, community-maintained site; for canonical information defer to the author.
+      Documentation re-presentation released under CC BY 4.0, written entirely by AI from primary sources and not fact-checked by a human. XRouter itself is copyright Paula G8PZT and is free for non-commercial amateur use. This is an unofficial, community-maintained site; for canonical information defer to the author.
     </div>
   
   

@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="A re-presentation of the documentation for XRouter, Paula G8PZT's AX.25 / NET-ROM / TCP-IP packet-radio node, router, chat server and APRS digipeater — organised by user journey and cited to primary sources.">
+        <meta name="description" content="A re-presentation of the documentation for XRouter, Paula G8PZT's AX.25 / NET-ROM / TCP-IP packet-radio node, router, chat server and APRS digipeater, organised by user journey and cited to primary sources.">
       
       
         <meta name="author" content="XRouter Documentation contributors">
@@ -569,7 +569,7 @@
   <span class="md-ellipsis">
     
   
-    AX.25 — the data link
+    AX.25: the data link
   
 
     
@@ -597,7 +597,7 @@
   <span class="md-ellipsis">
     
   
-    NET/ROM — networking and routing
+    NET/ROM: networking and routing
   
 
     
@@ -2734,8 +2734,8 @@
 reachable from both radio and the internet. This page collects the generic, forward-looking
 hardening measures every XRouter sysop should consider: a strong sysop password, careful use
 of the trust controls, running without root, restricting who can reach the node, and turning
-off services you do not use. None of it is exotic — it is ordinary good practice applied to a
-node — and most of it is a few lines of configuration.</p>
+off services you do not use. None of it is exotic, it is ordinary good practice applied to a
+node, and most of it is a few lines of configuration.</p>
 <div class="admonition note">
 <p class="admonition-title">Scope of this page</p>
 <p>This is generic best practice, not an audit of any particular node. It assumes a working
@@ -2744,18 +2744,18 @@ lives in a system file, the <a href="../../configuration/system-files/">System a
 reference gives the exact format.</p>
 </div>
 <h2 id="set-a-strong-sysop-password">Set a strong sysop password<a class="headerlink" href="#set-a-strong-sysop-password" title="Permanent link">&para;</a></h2>
-<p>Sysop status gives full control of the node — every command, the OS shell, file maintenance,
+<p>Sysop status gives full control of the node, every command, the OS shell, file maintenance,
 the lot. Protect it.</p>
 <p>XRouter keeps sysop passwords in <strong><code>PASSWORD.SYS</code></strong>, which governs remote sysop access via the
 AX.25 <code>@</code> challenge, RLOGIN and FTP. Each line is <code>&lt;callsign&gt; &lt;password&gt;</code> (no SSID, no spaces,
-not case-sensitive). If the file is absent, none of those remote-sysop routes work at all —
+not case-sensitive). If the file is absent, none of those remote-sysop routes work at all,
 which is itself a safe default.</p>
 <ul>
 <li>Use a long, unpredictable passphrase, not a word anyone could guess from your callsign or QTH.</li>
 <li>Treat <code>PASSWORD.SYS</code> as a secret: it is plain text, so keep its file permissions tight and
   do not leave copies in a web-served directory.</li>
 <li>The separate <strong><code>USERPASS.SYS</code></strong> holds <em>ordinary user</em> passwords (Telnet, the Telnet proxy,
-  the APRS server). It is <strong>not</strong> a route to sysop privilege — keep the two files distinct in
+  the APRS server). It is <strong>not</strong> a route to sysop privilege, keep the two files distinct in
   your mind.</li>
 </ul>
 <p>The AX.25 remote-sysop challenge (<code>@</code>) deliberately never sends the password over the air in
@@ -2770,33 +2770,33 @@ does:</p>
 <blockquote>
 <p>"If you set <code>SYSOP=1</code>, all users who connect on this port get full sysop status without
 needing to answer a password challenge. This is intended ONLY FOR USE ON SECURE LINKS,
-such as RS232 or Ethernet, and the default is zero." — <em>XRouter manual</em></p>
+such as RS232 or Ethernet, and the default is zero.", <em>XRouter manual</em></p>
 </blockquote>
 </div>
-<p>In other words, <code>SYSOP=1</code> is appropriate only on a link that is <em>physically</em> trustworthy — a
+<p>In other words, <code>SYSOP=1</code> is appropriate only on a link that is <em>physically</em> trustworthy, a
 direct serial cable, or a private wired LAN segment you control. <strong>Never</strong> set it on an RF
 port, an AXIP/AXUDP internet link, or anything an outsider could connect to, because it hands
 them the keys. The default (<code>0</code>) is the safe choice everywhere else; leave it alone unless you
 have a specific, secure reason.</p>
 <h2 id="understand-the-ipaddress-security-behaviour">Understand the IPADDRESS security behaviour<a class="headerlink" href="#understand-the-ipaddress-security-behaviour" title="Permanent link">&para;</a></h2>
 <p>XRouter treats IP as off-by-default. If the global <code>IPADDRESS</code> is <code>0.0.0.0</code> or undefined, the
-node <strong>deliberately disables all IP activity</strong> — AXUDP, AXTCP, AXIP, HTTP, FTP, everything, on
+node <strong>deliberately disables all IP activity</strong>, AXUDP, AXTCP, AXIP, HTTP, FTP, everything, on
 both its own stack and the Linux stack.</p>
 <div class="admonition warning">
-<p class="admonition-title">No IP address means no IP services — by design</p>
+<p class="admonition-title">No IP address means no IP services, by design</p>
 <blockquote>
 <p>"If you set the global IPADDRESS to 0.0.0.0 or leave it undefined, <em>all</em> IP activity is
 disabled … This is a deliberate security feature. Therefore at present, if you don't
 have an amprnet address, and you want to use any IP services, it is suggested that you
-set a non-zero dummy IP address such as <code>10.1.1.1</code>." — <em>Paula G8PZT,
+set a non-zero dummy IP address such as <code>10.1.1.1</code>.", <em>Paula G8PZT,
 <a href="https://groups.io/g/xrouter/message/1957">groups.io</a></em></p>
 </blockquote>
 </div>
 <p>This matters two ways round. As a <em>feature</em>, it means a node with no IP configuration exposes
-no IP attack surface at all — a sensible default for an RF-only station. As a <em>gotcha</em>, it
+no IP attack surface at all, a sensible default for an RF-only station. As a <em>gotcha</em>, it
 means that the moment you do want HTTP, FTP or an internet link you must give the node an
 address (a private dummy such as <code>10.1.1.1</code> is fine if you have no AMPRNet allocation). The
-flip side of that coin: only set an address — and so light up the IP services — once you
+flip side of that coin: only set an address, and so light up the IP services, once you
 actually intend to run them. See
 <a href="../troubleshooting/#ip-services-wont-start">IP services dead</a> in the troubleshooting page for
 the failure this causes.</p>
@@ -2806,7 +2806,7 @@ compromise of the whole machine. XRouter does not need it. The manual recommends
 non-root path and explains why:</p>
 <blockquote>
 <p>"Non-root is safer. Even if a miscreant managed to break out to a command shell, he would
-only have access to that user's directory tree." — <em>XRouter manual</em></p>
+only have access to that user's directory tree.", <em>XRouter manual</em></p>
 </blockquote>
 <p>The only reason XRouter ever wants elevated privilege is to bind low service ports (Telnet on
 23, HTTP on 80, …) and to use raw sockets for <code>EXTERNAL</code>/Ethernet and AXIP. Grant it exactly
@@ -2827,19 +2827,19 @@ flags above.</p>
 <p>Beyond authentication, you can limit <em>who connects in the first place</em>. XRouter offers
 controls at several layers; reach for the one that fits the threat.</p>
 <ul>
-<li><strong>Telnet access control — <code>ACCESS.SYS</code>.</strong> Set per-caller-IP login requirements: each line is
+<li><strong>Telnet access control, <code>ACCESS.SYS</code>.</strong> Set per-caller-IP login requirements: each line is
   <code>&lt;subnet&gt;[/bits] &lt;flags&gt;</code> where the flags sum <code>1</code> = valid callsign required, <code>2</code> = password
   required, <code>4</code> = guest allowed, <code>8</code> = trusted (LAN). Absent, a Telnet login needs only a
   valid callsign. Use it to demand a password from the wider internet while trusting your LAN.</li>
-<li><strong>AX.25 call filtering — <code>VALIDCALLS</code> and <code>EXCLUDE</code>.</strong> Per port, <code>VALIDCALLS</code> is a whitelist
+<li><strong>AX.25 call filtering, <code>VALIDCALLS</code> and <code>EXCLUDE</code>.</strong> Per port, <code>VALIDCALLS</code> is a whitelist
   (accept only these callsigns) and <code>EXCLUDE</code> is a blacklist (refuse these). A whitelist on a
   private backbone port, or a blacklist to keep a persistent nuisance off, are both reasonable.</li>
-<li><strong>IP banning — the <code>IP BAN</code> command and <code>IPBAN.SYS</code>.</strong> Ban an individual address or a whole
+<li><strong>IP banning, the <code>IP BAN</code> command and <code>IPBAN.SYS</code>.</strong> Ban an individual address or a whole
   range by netmask; bans persist across restarts (and you can schedule <code>IP BAN SAVE</code> in
   <code>CRONTAB.SYS</code> so they survive a power cut).</li>
 <li><strong>Egress controls on the proxies.</strong> If you run the SOCKS, Telnet or HTTP proxies, their
   <code>.ACL</code> files (<code>SOCKS.ACL</code>, <code>TELPROXY.ACL</code>, <code>HTTP.ACL</code>, <code>TELGUEST.ACL</code>) decide where a caller
-  may be relayed <em>to</em>. These default to deny-all — leave them that way unless you deliberately
+  may be relayed <em>to</em>. These default to deny-all, leave them that way unless you deliberately
   open specific destinations, or an open proxy becomes someone else's free relay.</li>
 </ul>
 <h2 id="the-built-in-ids-and-honeypots">The built-in IDS and honeypots<a class="headerlink" href="#the-built-in-ids-and-honeypots" title="Permanent link">&para;</a></h2>
@@ -2847,20 +2847,20 @@ controls at several layers; reach for the one that fits the threat.</p>
 it watches the node's IP-facing side for hostile patterns and can react automatically:</p>
 <ul>
 <li>It detects TCP and UDP <strong>port scans</strong>, and classic spoofed-traffic patterns (Smurf, Fraggle).</li>
-<li>It can run <strong>honeypots</strong> on commonly probed but unused ports — an attacker who touches one is
+<li>It can run <strong>honeypots</strong> on commonly probed but unused ports, an attacker who touches one is
   flagged and can be banned, with the ban recorded (and IDS events logged to the <code>LOG</code>
   directory). The author's own long-standing practice is to honeypot the popular unused ports
   and put real services on non-standard ports.</li>
 <li>Bans accumulate in <code>IPBAN.SYS</code> and persist across restarts; live control is via the <code>IDS</code>
   and <code>IP BAN</code> commands, and the dedicated Security Monitor console window shows activity.</li>
 </ul>
-<p>Honeypots are a useful tripwire, not a wall — the author is candid that they are "not
+<p>Honeypots are a useful tripwire, not a wall, the author is candid that they are "not
 foolproof" against an attacker with an unlimited supply of source addresses. Treat the IDS as
 one layer among several, not the whole defence.</p>
 <h2 id="only-expose-the-servers-you-need">Only expose the servers you need<a class="headerlink" href="#only-expose-the-servers-you-need" title="Permanent link">&para;</a></h2>
 <p>Every open server is attack surface. XRouter starts a generous set of built-in TCP/UDP servers
-by default — Telnet, HTTP, FTP, Finger, Echo, Discard, SOCKS, the APRS server, MQTT, the chat
-server and more — and each has a matching <code>*PORT</code> directive. The convention is simple:</p>
+by default, Telnet, HTTP, FTP, Finger, Echo, Discard, SOCKS, the APRS server, MQTT, the chat
+server and more, and each has a matching <code>*PORT</code> directive. The convention is simple:</p>
 <ul>
 <li>a <code>*PORT</code> directive with <strong>no value, or <code>0</code>, disables</strong> that server;</li>
 <li>one value <strong>moves</strong> it to a different port;</li>
@@ -2880,16 +2880,16 @@ defend. See <a href="../../subsystems/built-in-servers/">Built-in TCP servers</a
 <h2 id="a-short-hardening-checklist">A short hardening checklist<a class="headerlink" href="#a-short-hardening-checklist" title="Permanent link">&para;</a></h2>
 <ul>
 <li>[ ] A strong passphrase in <code>PASSWORD.SYS</code>, with tight file permissions.</li>
-<li>[ ] <code>SYSOP=1</code> only on physically secure links — never on RF or internet ports.</li>
+<li>[ ] <code>SYSOP=1</code> only on physically secure links, never on RF or internet ports.</li>
 <li>[ ] Running as a non-root user with <code>cap_net_raw,cap_net_bind_service</code> via <code>setcap</code>.</li>
 <li>[ ] <code>IPADDRESS</code> set only if you actually run IP services.</li>
 <li>[ ] Access restricted where appropriate (<code>ACCESS.SYS</code>, <code>VALIDCALLS</code>/<code>EXCLUDE</code>, <code>IP BAN</code>).</li>
 <li>[ ] Proxy <code>.ACL</code> files left deny-all unless you deliberately opened a destination.</li>
 <li>[ ] Unused <code>*PORT</code> servers closed.</li>
-<li>[ ] Kept up to date — see <a href="../upgrading/">Upgrading and versions</a>.</li>
+<li>[ ] Kept up to date, see <a href="../upgrading/">Upgrading and versions</a>.</li>
 </ul>
 <hr />
-<p><strong>Sources:</strong> <a href="https://groups.io/g/xrouter">XRouter support group, groups.io</a> — the
+<p><strong>Sources:</strong> <a href="https://groups.io/g/xrouter">XRouter support group, groups.io</a>, the
 <code>IPADDRESS</code> security behaviour (<a href="https://groups.io/g/xrouter/message/1957">message/1957</a>) and
 <code>setcap</code> guidance (<a href="https://groups.io/g/xrouter/message/1958">message/1958</a>) ·
 <a href="https://wiki.oarc.uk/packet:xrouter:docs:man6">in-program manual, OARC wiki</a> (running as
@@ -2974,7 +2974,7 @@ the sudo caveat)</p>
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Documentation re-presentation released under CC BY 4.0. XRouter itself is copyright Paula G8PZT and is free for non-commercial amateur use. This is an unofficial, community-maintained site; for canonical information defer to the author.
+      Documentation re-presentation released under CC BY 4.0, written entirely by AI from primary sources and not fact-checked by a human. XRouter itself is copyright Paula G8PZT and is free for non-commercial amateur use. This is an unofficial, community-maintained site; for canonical information defer to the author.
     </div>
   
   

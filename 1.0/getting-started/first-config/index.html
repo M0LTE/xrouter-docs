@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="A re-presentation of the documentation for XRouter, Paula G8PZT's AX.25 / NET-ROM / TCP-IP packet-radio node, router, chat server and APRS digipeater — organised by user journey and cited to primary sources.">
+        <meta name="description" content="A re-presentation of the documentation for XRouter, Paula G8PZT's AX.25 / NET-ROM / TCP-IP packet-radio node, router, chat server and APRS digipeater, organised by user journey and cited to primary sources.">
       
       
         <meta name="author" content="XRouter Documentation contributors">
@@ -569,7 +569,7 @@
   <span class="md-ellipsis">
     
   
-    AX.25 — the data link
+    AX.25: the data link
   
 
     
@@ -597,7 +597,7 @@
   <span class="md-ellipsis">
     
   
-    NET/ROM — networking and routing
+    NET/ROM: networking and routing
   
 
     
@@ -2820,8 +2820,8 @@
 
 
 <h1 id="your-first-xroutercfg">Your first XROUTER.CFG<a class="headerlink" href="#your-first-xroutercfg" title="Permanent link">&para;</a></h1>
-<p>This page walks through a minimal, working <code>XROUTER.CFG</code> line by line — enough to get
-XRouter to start, identify itself on the air and accept a connection — and then shows how
+<p>This page walks through a minimal, working <code>XROUTER.CFG</code> line by line, enough to get
+XRouter to start, identify itself on the air and accept a connection, and then shows how
 to verify it and grow it safely. It is for anyone who has just unpacked a build (see
 <a href="../raspberry-pi/">Raspberry Pi</a>, <a href="../linux-pc/">Linux PC</a> or <a href="../windows/">Windows</a>) and is
 staring at an empty config wondering what the bare minimum is.</p>
@@ -2829,11 +2829,11 @@ staring at an empty config wondering what the bare minimum is.</p>
 configuration lives here, and getting the first dozen lines right is most of the battle.
 The good news is that the bare minimum is genuinely short.</p>
 <h2 id="where-the-file-lives">Where the file lives<a class="headerlink" href="#where-the-file-lives" title="Permanent link">&para;</a></h2>
-<p>XRouter reads its files from <strong>the directory the binary lives in</strong> — there is no
+<p>XRouter reads its files from <strong>the directory the binary lives in</strong>, there is no
 system-wide config path, no <code>/etc</code> entry, nothing hidden. Put <code>XROUTER.CFG</code> next to the
 executable and that is where it will be found.</p>
 <div class="admonition warning">
-<p class="admonition-title">The name is UPPER CASE — and on Linux that matters</p>
+<p class="admonition-title">The name is UPPER CASE, and on Linux that matters</p>
 <p>The file must be named <code>XROUTER.CFG</code> in <strong>upper case</strong>. On Linux and the Raspberry Pi
 the filesystem is case-sensitive, so <code>xrouter.cfg</code> is a <em>different file</em> and XRouter
 will behave as though it has no config at all. Every XRouter configuration and data
@@ -2842,14 +2842,14 @@ single most common "it won't start" mistake on a fresh install. On Windows the
 filesystem is not case-sensitive, but using upper case keeps your config portable.</p>
 </div>
 <p>The file is <strong>read once, at start-up</strong>. XRouter parses it top to bottom, and if it finds a
-problem it reports the <strong>line number</strong> of the offending line. Many — though not all —
+problem it reports the <strong>line number</strong> of the offending line. Many, though not all,
 parameters can also be changed live from the <a href="../../commands/node-prompt/">node command prompt</a>
 once the program is running, but the file itself is not re-read until the next restart.</p>
 <h2 id="syntax-in-a-nutshell">Syntax in a nutshell<a class="headerlink" href="#syntax-in-a-nutshell" title="Permanent link">&para;</a></h2>
 <p><code>XROUTER.CFG</code> is plain ASCII text. The rules are few:</p>
 <ul>
 <li>Each directive is written <strong><code>KEYWORD=value</code></strong>, one per line.</li>
-<li><strong>Keywords are not case-sensitive</strong> — <code>NODECALL</code>, <code>nodecall</code> and <code>NodeCall</code> are the same
+<li><strong>Keywords are not case-sensitive</strong>, <code>NODECALL</code>, <code>nodecall</code> and <code>NodeCall</code> are the same
   directive. (Filenames given as <em>values</em> still obey the filesystem's own case rules.)</li>
 <li>A line beginning with <strong><code>;</code></strong> or <strong><code>#</code></strong> in the leftmost column is a comment. Blank lines
   are allowed and ignored.</li>
@@ -2874,7 +2874,7 @@ callsign, alias and most defaults live here. A few things are grouped into paire
 </tr>
 <tr>
 <td><code>PORT=n</code> … <code>ENDPORT</code></td>
-<td>A logical port — usually one radio frequency — attached to an interface.</td>
+<td>A logical port, usually one radio frequency, attached to an interface.</td>
 </tr>
 <tr>
 <td><code>RADIO=n</code> … <code>ENDRADIO</code></td>
@@ -2917,7 +2917,7 @@ all of that and adds a couple of sensible extras.</p>
 <p>The example below brings up a single radio port through a KISS TNC (or NinoTNC). Swap in
 your own callsign and serial device. The inline comments explain each line.</p>
 <div class="language-ini highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1">; ------------------------------------------------------------------</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="c1">;  XROUTER.CFG  —  minimal single-port example</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="c1">;  XROUTER.CFG  -  minimal single-port example</span>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="c1">; ------------------------------------------------------------------</span>
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
 </span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="c1">; --- Node identity (GLOBAL) ---------------------------------------</span>
@@ -2927,7 +2927,7 @@ your own callsign and serial device. The inline comments explain each line.</p>
 </span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="na">QTH</span><span class="o">=</span><span class="s">Anytown IO00AA</span><span class="w">        </span><span class="c1">; free-text location, advertised to users</span>
 </span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="na">LOCATOR</span><span class="o">=</span><span class="s">IO00AA</span><span class="w">            </span><span class="c1">; Maidenhead locator (optional)</span>
 </span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>
-</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="na">IPADDRESS</span><span class="o">=</span><span class="s">10.1.1.1</span><span class="w">        </span><span class="c1">; see the warning below — needed for ANY IP service</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="na">IPADDRESS</span><span class="o">=</span><span class="s">10.1.1.1</span><span class="w">        </span><span class="c1">; see the warning below, needed for ANY IP service</span>
 </span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>
 </span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="c1">; --- Connect / info text ------------------------------------------</span>
 </span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="na">CTEXT</span>
@@ -2935,7 +2935,7 @@ your own callsign and serial device. The inline comments explain each line.</p>
 </span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="na">***</span>
 </span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>
 </span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="na">INFOTEXT</span>
-</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="na">MYNODE — an XRouter packet node at Anytown.</span>
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="na">MYNODE, an XRouter packet node at Anytown.</span>
 </span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="na">Sysop</span><span class="o">:</span><span class="w"> </span><span class="s">M0XXX.  Running XRouter.</span>
 </span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="na">***</span>
 </span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>
@@ -2959,12 +2959,12 @@ your own callsign and serial device. The inline comments explain each line.</p>
 <h3 id="identity">Identity<a class="headerlink" href="#identity" title="Permanent link">&para;</a></h3>
 <p><code>NODECALL</code> is your node's main AX.25 / NET-ROM callsign and <strong>must</strong> include an SSID
 (for example <code>-1</code>) to distinguish the node from your personal station. <code>NODEALIAS</code> is a
-short text alias of up to six characters with no SSID — it is what neighbours and users see
+short text alias of up to six characters with no SSID, it is what neighbours and users see
 alongside your callsign in nodes lists.</p>
 <p><code>CONSOLECALL</code> is optional. By default the console uses <code>NODECALL</code>; set <code>CONSOLECALL</code> if you
 want connections <em>you</em> originate from the local console to go out under your personal
 callsign rather than the node's. <code>QTH</code> (a free-text location, up to 32 characters) and
-<code>LOCATOR</code> (a Maidenhead grid square) are both optional but worth setting — they tell users
+<code>LOCATOR</code> (a Maidenhead grid square) are both optional but worth setting, they tell users
 and mapping services where you are.</p>
 <h3 id="the-ipaddress-gotcha">The IPADDRESS gotcha<a class="headerlink" href="#the-ipaddress-gotcha" title="Permanent link">&para;</a></h3>
 <div class="language-ini highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="na">IPADDRESS</span><span class="o">=</span><span class="s">10.1.1.1</span>
@@ -2973,11 +2973,11 @@ and mapping services where you are.</p>
 <div class="admonition danger">
 <p class="admonition-title">No <code>IPADDRESS</code> means <em>no</em> IP services at all</p>
 <p>If the global <code>IPADDRESS</code> is left at its default of <code>0.0.0.0</code> (or undefined), XRouter
-<strong>deliberately disables all IP activity</strong> — AXUDP, AXTCP, AXIP, the HTTP server, FTP,
-the lot — on <em>both</em> its own stack and the Linux stack. This is an intentional security
+<strong>deliberately disables all IP activity</strong>, AXUDP, AXTCP, AXIP, the HTTP server, FTP,
+the lot, on <em>both</em> its own stack and the Linux stack. This is an intentional security
 feature, not a bug. If you have an AMPRNet (44Net) address, put it here. If you do not,
 set a private dummy address such as <code>10.1.1.1</code> so that the IP-based features work.
-Recent builds will not start cleanly with <code>IPADDRESS</code> omitted. — <em>Paula G8PZT,
+Recent builds will not start cleanly with <code>IPADDRESS</code> omitted., <em>Paula G8PZT,
 <a href="https://groups.io/g/xrouter/message/1957">groups.io</a></em></p>
 </div>
 <h3 id="free-text-blocks-ctext-and-infotext">Free-text blocks: CTEXT and INFOTEXT<a class="headerlink" href="#free-text-blocks-ctext-and-infotext" title="Permanent link">&para;</a></h3>
@@ -2991,7 +2991,7 @@ containing <code>***</code></strong>:</p>
 <div class="admonition tip">
 <p class="admonition-title">Don't forget the <code>***</code> terminator</p>
 <p>Forgetting the <code>***</code> that closes a <code>CTEXT</code>, <code>INFOTEXT</code>, <code>IDTEXT</code> or <code>ROUTES</code> block is a
-classic error — without it, XRouter keeps reading following lines as part of the text.
+classic error, without it, XRouter keeps reading following lines as part of the text.
 Keep <code>CTEXT</code> short, because users see it on <em>every</em> connection, and put something
 genuinely useful in <code>INFOTEXT</code> so the <code>I</code> command teaches a visitor something.</p>
 </div>
@@ -3000,7 +3000,7 @@ until you have the node on the air and working.</p>
 <h3 id="one-interface-and-one-port">One interface and one port<a class="headerlink" href="#one-interface-and-one-port" title="Permanent link">&para;</a></h3>
 <p>The <code>INTERFACE</code> block describes <em>how</em> XRouter reaches the outside world; the <code>PORT</code> block
 describes a logical channel on it. The example uses <code>TYPE=ASYNC</code> with <code>PROTOCOL=KISS</code> to
-drive a serial KISS TNC — see <a href="../../configuration/interfaces/">Interfaces</a> and
+drive a serial KISS TNC, see <a href="../../configuration/interfaces/">Interfaces</a> and
 <a href="../../interfaces/kiss-tncs/">KISS TNCs</a> for the other interface types (soundcard modems,
 AGWPE, AXIP/AXUDP internet links, and so on). The <code>PORT</code> block needs only an <code>ID</code> (a label)
 and <code>INTERFACENUM</code> (which interface it belongs to); see <a href="../../configuration/ports/">Ports</a>
@@ -3021,8 +3021,8 @@ loop:</p>
 <p>A boot log is also written under <code>LOG/</code> (for example <code>BOOTLOG.TXT</code>), which is useful if the
 program exits before you can read the screen. Once it comes up cleanly, connect to the node
 locally over Telnet to confirm your <code>CTEXT</code> and try the <code>PORTS</code>, <code>NODES</code> and <code>INFO</code>
-commands. From there, build the config up <strong>one change at a time</strong> — add a second port, a
-mailbox callsign, an APRS IGate — restarting and checking after each. Making many changes
+commands. From there, build the config up <strong>one change at a time</strong>, add a second port, a
+mailbox callsign, an APRS IGate, restarting and checking after each. Making many changes
 at once and then trying to work out which one broke start-up is the slow way round.</p>
 <h2 id="next-steps">Next steps<a class="headerlink" href="#next-steps" title="Permanent link">&para;</a></h2>
 <ul>
@@ -3032,7 +3032,7 @@ at once and then trying to work out which one broke start-up is the slow way rou
 <li>Keep the node running unattended: <a href="../running-as-a-service/">Running as a service</a>.</li>
 </ul>
 <hr />
-<p><strong>Sources:</strong> <a href="https://wiki.oarc.uk/packet:xrouter:docs:man8">In-program manual, OARC wiki — XROUTER.CFG (man8)</a>
+<p><strong>Sources:</strong> <a href="https://wiki.oarc.uk/packet:xrouter:docs:man8">In-program manual, OARC wiki: XROUTER.CFG (man8)</a>
 · <a href="https://wiki.oarc.uk/packet:xrouter:docs:man7">configuration directives (man7)</a> ·
 <a href="https://wiki.oarc.uk/packet:xrouter:docs:man6">installation and configuration topics (man6)</a>
 · <a href="https://groups.io/g/xrouter">XRouter support group, groups.io</a> (the <code>IPADDRESS</code>
@@ -3115,7 +3115,7 @@ behaviour, from the author) · <a href="https://ohiopacket.org/xrpi/docs/config0
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Documentation re-presentation released under CC BY 4.0. XRouter itself is copyright Paula G8PZT and is free for non-commercial amateur use. This is an unofficial, community-maintained site; for canonical information defer to the author.
+      Documentation re-presentation released under CC BY 4.0, written entirely by AI from primary sources and not fact-checked by a human. XRouter itself is copyright Paula G8PZT and is free for non-commercial amateur use. This is an unofficial, community-maintained site; for canonical information defer to the author.
     </div>
   
   

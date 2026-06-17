@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="A re-presentation of the documentation for XRouter, Paula G8PZT's AX.25 / NET-ROM / TCP-IP packet-radio node, router, chat server and APRS digipeater — organised by user journey and cited to primary sources.">
+        <meta name="description" content="A re-presentation of the documentation for XRouter, Paula G8PZT's AX.25 / NET-ROM / TCP-IP packet-radio node, router, chat server and APRS digipeater, organised by user journey and cited to primary sources.">
       
       
         <meta name="author" content="XRouter Documentation contributors">
@@ -571,7 +571,7 @@
   <span class="md-ellipsis">
     
   
-    AX.25 — the data link
+    AX.25: the data link
   
 
     
@@ -599,7 +599,7 @@
   <span class="md-ellipsis">
     
   
-    NET/ROM — networking and routing
+    NET/ROM: networking and routing
   
 
     
@@ -2665,18 +2665,18 @@
 
 <h1 id="ip-over-ax25-and-amprnet">IP over AX.25 and AMPRNet<a class="headerlink" href="#ip-over-ax25-and-amprnet" title="Permanent link">&para;</a></h1>
 <p>Because <a href="../ax25/">AX.25</a> is only a layer-2 link, you can run a network protocol on top of it
-— including TCP/IP. This primer explains IP over AX.25, the AMPRNet (44Net) address space,
+including TCP/IP. This primer explains IP over AX.25, the AMPRNet (44Net) address space,
 why a node might route IP at all, and how it relates to XRouter's own IP stack.</p>
 <h2 id="running-tcpip-over-packet">Running TCP/IP over packet<a class="headerlink" href="#running-tcpip-over-packet" title="Permanent link">&para;</a></h2>
 <p>AX.25 carries frames between stations; it does not care what is inside them. So just as it
 can carry NET/ROM, it can carry <strong>IP packets</strong>, giving you TCP/IP over amateur radio. The
-landmark early software was <strong>KA9Q NET/NOS</strong> by Phil Karn — an MS-DOS program implementing
+landmark early software was <strong>KA9Q NET/NOS</strong> by Phil Karn, an MS-DOS program implementing
 AX.25, IP, TCP and UDP over a KISS TNC, complete with an email mailer.</p>
 <h2 id="amprnet-and-44net">AMPRNet and 44Net<a class="headerlink" href="#amprnet-and-44net" title="Permanent link">&para;</a></h2>
 <p><strong>AMPRNet</strong> (Amateur Packet Radio Network), also called <strong>Network 44</strong> or <strong>44Net</strong>, is an
 amateur TCP/IP internetwork carried over amateur links and internet tunnels. It is
 historically remarkable: in <strong>1981 Hank Magnuski</strong> obtained the class-A block
-<strong>44.0.0.0/8</strong> — some 16.7 million addresses — for amateur use worldwide, <em>before</em> the public
+<strong>44.0.0.0/8</strong>, some 16.7 million addresses, for amateur use worldwide, <em>before</em> the public
 internet's TCP/IP flag day in 1983. Addresses are coordinated by volunteers.</p>
 <p>The picture has changed with IPv4 scarcity. In 2019 the block <code>44.192.0.0/10</code> was sold for
 conventional use, the proceeds funding <strong>Amateur Radio Digital Communications (ARDC)</strong>, which
@@ -2685,19 +2685,19 @@ now stewards the space and makes grants. The remaining amateur allocations are <
 <h2 id="how-it-links-together">How it links together<a class="headerlink" href="#how-it-links-together" title="Permanent link">&para;</a></h2>
 <p>In practice many 44Net subnets are not RF-adjacent to one another, so they are interconnected
 by <strong>IP-in-IP tunnels</strong> over the internet. Closer to home, amateur AX.25 nodes commonly
-interlink over the internet using <strong>AXIP</strong> and <strong>AXUDP</strong> — encapsulations that tunnel raw
+interlink over the internet using <strong>AXIP</strong> and <strong>AXUDP</strong>, encapsulations that tunnel raw
 AX.25 frames inside IP or UDP. (Note that amateur regulations restrict encryption and some
 content, and rules vary by country.)</p>
 <h2 id="why-a-node-might-route-ip">Why a node might route IP<a class="headerlink" href="#why-a-node-might-route-ip" title="Permanent link">&para;</a></h2>
-<p>Even though TCP/IP was always a minority on classic packet — its overhead bites at
-1200–9600 baud — there are good reasons a node carries it: to provide local users IP
+<p>Even though TCP/IP was always a minority on classic packet, its overhead bites at
+1200–9600 baud, there are good reasons a node carries it: to provide local users IP
 connectivity, to reach other systems on the same machine, and to link to neighbouring nodes
 over internet tunnels. Higher-speed amateur IP today often uses adapted Wi-Fi gear (HAMNET)
 rather than classic packet, but the concept is the same: IP running <em>on top of</em> the radio
 link.</p>
 <h2 id="on-xrouter">On XRouter<a class="headerlink" href="#on-xrouter" title="Permanent link">&para;</a></h2>
 <p>XRouter is unusual in having <strong>its own multi-homed TCP/IP stack</strong> alongside the host's, so it
-can route IP-over-AX.25, run AMPRNet, build tunnels, and do NAT and RIP — whether or not you
+can route IP-over-AX.25, run AMPRNet, build tunnels, and do NAT and RIP, whether or not you
 run amateur IP. The AXIP/AXUDP tunnels above are also how XRouter nodes often link to one
 another over the internet. See <a href="../../networking/tcpip/">The TCP/IP stack</a>.</p>
 <hr />
@@ -2783,7 +2783,7 @@ another over the internet. See <a href="../../networking/tcpip/">The TCP/IP stac
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Documentation re-presentation released under CC BY 4.0. XRouter itself is copyright Paula G8PZT and is free for non-commercial amateur use. This is an unofficial, community-maintained site; for canonical information defer to the author.
+      Documentation re-presentation released under CC BY 4.0, written entirely by AI from primary sources and not fact-checked by a human. XRouter itself is copyright Paula G8PZT and is free for non-commercial amateur use. This is an unofficial, community-maintained site; for canonical information defer to the author.
     </div>
   
   

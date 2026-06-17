@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="A re-presentation of the documentation for XRouter, Paula G8PZT's AX.25 / NET-ROM / TCP-IP packet-radio node, router, chat server and APRS digipeater — organised by user journey and cited to primary sources.">
+        <meta name="description" content="A re-presentation of the documentation for XRouter, Paula G8PZT's AX.25 / NET-ROM / TCP-IP packet-radio node, router, chat server and APRS digipeater, organised by user journey and cited to primary sources.">
       
       
         <meta name="author" content="XRouter Documentation contributors">
@@ -569,7 +569,7 @@
   <span class="md-ellipsis">
     
   
-    AX.25 — the data link
+    AX.25: the data link
   
 
     
@@ -597,7 +597,7 @@
   <span class="md-ellipsis">
     
   
-    NET/ROM — networking and routing
+    NET/ROM: networking and routing
   
 
     
@@ -2574,7 +2574,7 @@
 
 <h1 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">&para;</a></h1>
 <p>Almost everything XRouter does is steered by a single text file, <strong><code>XROUTER.CFG</code></strong>.
-This page explains the shape of that file — the one mandatory config, its syntax, the
+This page explains the shape of that file, the one mandatory config, its syntax, the
 handful of block types, and the absolute minimum you need to make the program start. Read
 it once and the <a href="global-settings/">global settings</a>, <a href="interfaces/">interfaces</a> and
 <a href="ports/">ports</a> pages will all make sense.</p>
@@ -2589,7 +2589,7 @@ installer and no registry; configuring XRouter <em>is</em> editing this file.</p
   parameters can also be changed live with sysop commands, but the file itself is not
   re-read on the fly.</li>
 <li>Errors are reported <strong>with the line number</strong>. If the program prints something like
-  <code>ERROR in line 42</code>, open the file at that line — the parser stopped there. This makes the
+  <code>ERROR in line 42</code>, open the file at that line, the parser stopped there. This makes the
   natural workflow "change one thing, restart, repeat", and it is why incremental edits are
   so much easier than big rewrites.</li>
 </ul>
@@ -2603,7 +2603,7 @@ See <a href="system-files/">System and data files</a>.</p>
 <h2 id="syntax-in-one-minute">Syntax in one minute<a class="headerlink" href="#syntax-in-one-minute" title="Permanent link">&para;</a></h2>
 <p><code>XROUTER.CFG</code> is plain ASCII text. The rules are few:</p>
 <ul>
-<li>Most directives are <strong><code>KEYWORD=value</code></strong>, one per line — for example <code>NODECALL=M0XXX-1</code>.</li>
+<li>Most directives are <strong><code>KEYWORD=value</code></strong>, one per line, for example <code>NODECALL=M0XXX-1</code>.</li>
 <li><strong>Keywords are not case-sensitive.</strong> <code>NODECALL</code>, <code>nodecall</code> and <code>NodeCall</code> are the same
   directive. (Filenames given as <em>values</em> still obey the case rule above.)</li>
 <li><strong>Comments</strong> start with <code>;</code> or <code>#</code> in the leftmost column. Blank lines are allowed and
@@ -2638,7 +2638,7 @@ GLOBAL section, where the node's identity and most network-wide defaults live.</
 <tr>
 <td>Port</td>
 <td><code>PORT=n</code> … <code>ENDPORT</code></td>
-<td>An AX.25 port — usually one radio channel — bound to an interface. See <a href="ports/">Ports</a>.</td>
+<td>An AX.25 port, usually one radio channel, bound to an interface. See <a href="ports/">Ports</a>.</td>
 </tr>
 <tr>
 <td>Radio</td>
@@ -2653,7 +2653,7 @@ GLOBAL section, where the node's identity and most network-wide defaults live.</
 <tr>
 <td>Application</td>
 <td><code>APPL=n</code> … <code>ENDAPPL</code></td>
-<td>A hosted application — its name, callsign, alias and NET/ROM quality.</td>
+<td>A hosted application, its name, callsign, alias and NET/ROM quality.</td>
 </tr>
 <tr>
 <td>Routes</td>
@@ -2676,10 +2676,10 @@ single most common ordering mistake in a hand-edited config.</p>
 <p>A few directives introduce a <em>block of free text</em> rather than a single value, and these are
 terminated not by an <code>END…</code> keyword but by a line containing only <code>***</code>:</p>
 <ul>
-<li><code>CTEXT</code> — the connect text shown to users when they connect to the node.</li>
-<li><code>INFOTEXT</code> — the text returned by the <code>INFO</code> (or <code>I</code>) command.</li>
-<li><code>IDTEXT</code> — the identification beacon.</li>
-<li><code>ROUTES</code> — the locked-in routes block (also <code>***</code>-terminated).</li>
+<li><code>CTEXT</code>, the connect text shown to users when they connect to the node.</li>
+<li><code>INFOTEXT</code>, the text returned by the <code>INFO</code> (or <code>I</code>) command.</li>
+<li><code>IDTEXT</code>, the identification beacon.</li>
+<li><code>ROUTES</code>, the locked-in routes block (also <code>***</code>-terminated).</li>
 </ul>
 <div class="language-ini highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="na">CTEXT</span>
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="na">Welcome to MYNODE. Type ? for a list of commands.</span>
@@ -2691,14 +2691,14 @@ terminated not by an <code>END…</code> keyword but by a line containing only <
 <p>Omitting the <code>***</code> terminator is a classic error: the parser keeps swallowing
 subsequent lines as part of the text block, so the directives below it silently vanish.
 If a keyword you <em>did</em> set seems to be ignored, check that the free-text block above it
-was closed with <code>***</code>. Keep <code>CTEXT</code> short — users see it on every connection — and put
+was closed with <code>***</code>. Keep <code>CTEXT</code> short, users see it on every connection, and put
 something genuinely useful in <code>INFOTEXT</code>.</p>
 </div>
 <h2 id="the-minimum-to-start">The minimum to start<a class="headerlink" href="#the-minimum-to-start" title="Permanent link">&para;</a></h2>
 <p>XRouter refuses to start unless the configuration provides, at the very least:</p>
 <ol>
-<li><code>NODECALL</code> — the node's AX.25 / NET/ROM callsign (a callsign plus an SSID, e.g. <code>-1</code>).</li>
-<li><code>NODEALIAS</code> — the node's alias (up to 6 characters, no SSID).</li>
+<li><code>NODECALL</code>, the node's AX.25 / NET/ROM callsign (a callsign plus an SSID, e.g. <code>-1</code>).</li>
+<li><code>NODEALIAS</code>, the node's alias (up to 6 characters, no SSID).</li>
 <li><strong>One <code>INTERFACE</code> block</strong>, which itself must contain at least <code>TYPE</code> and <code>MTU</code>.</li>
 <li><strong>One <code>PORT</code> block</strong>, which itself must contain at least <code>ID</code> and <code>INTERFACENUM</code>.</li>
 </ol>
@@ -2726,18 +2726,18 @@ have added a real interface and port, comment the loopback out. The full guided 
 is on <a href="../getting-started/first-config/">Your first XROUTER.CFG</a>.</p>
 <h2 id="where-to-go-next">Where to go next<a class="headerlink" href="#where-to-go-next" title="Permanent link">&para;</a></h2>
 <ul>
-<li><a href="global-settings/">Global settings</a> — identity, server ports, NET/ROM and IP globals.</li>
-<li><a href="interfaces/">Interfaces</a> — the <code>INTERFACE</code> block: <code>TYPE</code>, <code>PROTOCOL</code>, <code>MTU</code> and the hardware.</li>
-<li><a href="ports/">Ports</a> — the <code>PORT</code> block: AX.25 timing, NET/ROM quality and behaviour flags.</li>
-<li><a href="examples/">Worked example configs</a> — complete, annotated configurations to adapt.</li>
-<li><a href="directive-reference/">Directive reference</a> — every keyword, grouped by block.</li>
-<li><a href="system-files/">System and data files</a> — <code>XROUTER.CFG</code> and the optional <code>*.SYS</code> / <code>*.CFG</code> files.</li>
+<li><a href="global-settings/">Global settings</a>, identity, server ports, NET/ROM and IP globals.</li>
+<li><a href="interfaces/">Interfaces</a>, the <code>INTERFACE</code> block: <code>TYPE</code>, <code>PROTOCOL</code>, <code>MTU</code> and the hardware.</li>
+<li><a href="ports/">Ports</a>, the <code>PORT</code> block: AX.25 timing, NET/ROM quality and behaviour flags.</li>
+<li><a href="examples/">Worked example configs</a>, complete, annotated configurations to adapt.</li>
+<li><a href="directive-reference/">Directive reference</a>, every keyword, grouped by block.</li>
+<li><a href="system-files/">System and data files</a>, <code>XROUTER.CFG</code> and the optional <code>*.SYS</code> / <code>*.CFG</code> files.</li>
 </ul>
 <hr />
 <p><strong>Sources:</strong>
 <a href="https://wiki.oarc.uk/packet:xrouter:docs:man8">XROUTER.CFG, OARC wiki (man8)</a> ·
 <a href="https://wiki.oarc.uk/packet:xrouter:docs:man6">Installation and configuration topics, OARC wiki (man6)</a> ·
-<a href="https://ohiopacket.org/xrpi/docs/xrcfg.htm">ohiopacket.org XRPi mirror — configuration</a> ·
+<a href="https://ohiopacket.org/xrpi/docs/xrcfg.htm">ohiopacket.org XRPi mirror: configuration</a> ·
 <a href="https://groups.io/g/xrouter">XRouter support group, groups.io</a></p>
 
 
@@ -2816,7 +2816,7 @@ is on <a href="../getting-started/first-config/">Your first XROUTER.CFG</a>.</p>
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Documentation re-presentation released under CC BY 4.0. XRouter itself is copyright Paula G8PZT and is free for non-commercial amateur use. This is an unofficial, community-maintained site; for canonical information defer to the author.
+      Documentation re-presentation released under CC BY 4.0, written entirely by AI from primary sources and not fact-checked by a human. XRouter itself is copyright Paula G8PZT and is free for non-commercial amateur use. This is an unofficial, community-maintained site; for canonical information defer to the author.
     </div>
   
   

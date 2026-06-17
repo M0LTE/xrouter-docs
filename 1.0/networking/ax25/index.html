@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="A re-presentation of the documentation for XRouter, Paula G8PZT's AX.25 / NET-ROM / TCP-IP packet-radio node, router, chat server and APRS digipeater — organised by user journey and cited to primary sources.">
+        <meta name="description" content="A re-presentation of the documentation for XRouter, Paula G8PZT's AX.25 / NET-ROM / TCP-IP packet-radio node, router, chat server and APRS digipeater, organised by user journey and cited to primary sources.">
       
       
         <meta name="author" content="XRouter Documentation contributors">
@@ -569,7 +569,7 @@
   <span class="md-ellipsis">
     
   
-    AX.25 — the data link
+    AX.25: the data link
   
 
     
@@ -597,7 +597,7 @@
   <span class="md-ellipsis">
     
   
-    NET/ROM — networking and routing
+    NET/ROM: networking and routing
   
 
     
@@ -1612,7 +1612,7 @@
   <a href="#mheard-the-heard-stations-list" class="md-nav__link">
     <span class="md-ellipsis">
       
-        MHEARD — the heard-stations list
+        MHEARD: the heard-stations list
       
     </span>
   </a>
@@ -2658,7 +2658,7 @@
   <a href="#mheard-the-heard-stations-list" class="md-nav__link">
     <span class="md-ellipsis">
       
-        MHEARD — the heard-stations list
+        MHEARD: the heard-stations list
       
     </span>
   </a>
@@ -2712,16 +2712,16 @@
 sessions, the modulo-8 and modulo-128 sequence-numbering schemes, selective reject,
 digipeating and the heard-stations list. It is written for a sysop who already knows what
 AX.25 <em>is</em> and wants to know how XRouter behaves and where to tune it. If you need the
-fundamentals first — frames, addresses, SSIDs, the difference between UI and connected
-frames — start with the primer, <strong><a href="../../basics/ax25/">AX.25 — the data link</a></strong>.</p>
+fundamentals first, frames, addresses, SSIDs, the difference between UI and connected
+frames, start with the primer, <strong><a href="../../basics/ax25/">AX.25: the data link</a></strong>.</p>
 <p>XRouter has its <strong>own</strong> AX.25 stack built into the program. It does not use the Linux
 kernel's AX.25 subsystem; it speaks KISS, serial and various IP transports directly. That
 independence is deliberate and is one reason XRouter keeps working as the kernel AX.25 code
-ages — see <a href="../tcpip/">The TCP/IP stack</a> for the same story on the IP side.</p>
+ages, see <a href="../tcpip/">The TCP/IP stack</a> for the same story on the IP side.</p>
 <h2 id="connected-mode-sessions">Connected-mode sessions<a class="headerlink" href="#connected-mode-sessions" title="Permanent link">&para;</a></h2>
 <p>Most user traffic through a node is <strong>connected mode</strong> (AX.25 "I" frames): a reliable,
 sequenced, acknowledged link between two stations. XRouter maintains a level-2 link for
-each such connection, on a per-port basis — in XRouter a <em>port</em> is normally one radio
+each such connection, on a per-port basis, in XRouter a <em>port</em> is normally one radio
 frequency, and all AX.25 operation is port-based. You can see the live level-2 links at any
 time with the <code>AX[routes]</code> command (sysop) and the user-visible <code>L[inks]</code> command.</p>
 <p>The behaviour of those links is governed by the standard AX.25 timers and counters, all of
@@ -2774,8 +2774,8 @@ and a fast backbone link can tune each independently. The full keyword list and 
 one is valid is on <strong><a href="../../configuration/ports/">Ports</a></strong>.</p>
 <div class="admonition note">
 <p class="admonition-title">AX.25 behaviour is tuned per port</p>
-<p>Almost everything on this page — window size, packet length, timers, digipeating,
-MHEARD, even whether NET/ROM runs at all — is set inside a <code>PORT…ENDPORT</code> block, with
+<p>Almost everything on this page, window size, packet length, timers, digipeating,
+MHEARD, even whether NET/ROM runs at all, is set inside a <code>PORT…ENDPORT</code> block, with
 optional global defaults. There is no single "AX.25 mode" switch; you describe each
 radio frequency's link behaviour on its own port. See
 <a href="../../configuration/ports/">Ports</a>.</p>
@@ -2788,13 +2788,13 @@ sequence numbers, raising the ceiling to 127 outstanding frames.</p>
 <p>In XRouter the scheme is chosen by the window size you ask for. Set the port's <code>MAXFRAME</code>
 to <strong>8 or more</strong> and XRouter will attempt modulo-128 on that link; leave it at 7 or below
 and the link stays modulo-8. The two ends negotiate at connect time, so a modulo-128-capable
-port still talks happily to an older modulo-8-only station — it simply falls back.</p>
+port still talks happily to an older modulo-8-only station, it simply falls back.</p>
 <p>You can also force an <em>outgoing</em> connection to use modulo-128 regardless of the port default
 with the <code>CX</code> command (the modulo-128 counterpart of <code>C[onnect]</code>), which is handy for
 testing a link.</p>
 <div class="admonition tip">
 <p class="admonition-title">Where extended mode actually helps</p>
-<p>Modulo-128 only pays off when the link can keep many frames in flight — a fast modem, a
+<p>Modulo-128 only pays off when the link can keep many frames in flight, a fast modem, a
 9600-baud or faster channel, or an internet <a href="../../interfaces/axip-axudp-axtcp/">AXIP/AXUDP</a>
 link with appreciable latency. On a plain 1200-baud channel a window of 3–4 frames is
 usually all the channel can carry, and modulo-8 is fine.</p>
@@ -2817,19 +2817,19 @@ those are covered with the rest of APRS on
 <strong><a href="../../subsystems/aprs-igate/">APRS digipeater and IGate</a></strong>. For ordinary node operation
 you rarely need to change <code>DIGIFLAG</code> from its default.</p>
 <p>A separate, related facility is the <strong>frame pipe</strong> (<code>PIPE</code>/<code>PIPEFLAG</code>), which forwards
-selected frames from one port to another — useful for funnelling a particular station or
+selected frames from one port to another, useful for funnelling a particular station or
 service across ports. It is listed with the port keywords on
 <a href="../../configuration/ports/">Ports</a>.</p>
-<h2 id="mheard-the-heard-stations-list">MHEARD — the heard-stations list<a class="headerlink" href="#mheard-the-heard-stations-list" title="Permanent link">&para;</a></h2>
+<h2 id="mheard-the-heard-stations-list">MHEARD: the heard-stations list<a class="headerlink" href="#mheard-the-heard-stations-list" title="Permanent link">&para;</a></h2>
 <p>Each port can keep an <strong>MHEARD</strong> list of recently heard callsigns, which is the first thing
 most sysops check to confirm a port is actually receiving. Enable it and set its depth with
-the per-port <code>MHEARD</code> keyword (0 disables it); <code>MHFLAGS</code> controls <em>what</em> gets recorded —
+the per-port <code>MHEARD</code> keyword (0 disables it); <code>MHFLAGS</code> controls <em>what</em> gets recorded,
 stations heard direct, stations heard via digipeaters, and the digipeaters themselves. Users
 read it with <code>M[heard]</code>, and a sysop can clear it with <code>MHCLEAR</code>. The heard list is also
 what feeds the node's view of who is active on a frequency, so it is worth leaving on for
 any real RF port.</p>
 <h2 id="how-this-differs-from-the-beginner-primer">How this differs from the beginner primer<a class="headerlink" href="#how-this-differs-from-the-beginner-primer" title="Permanent link">&para;</a></h2>
-<p>The <a href="../../basics/ax25/">basics AX.25 page</a> explains the protocol in the abstract — what a
+<p>The <a href="../../basics/ax25/">basics AX.25 page</a> explains the protocol in the abstract, what a
 frame looks like, why SSIDs exist, what "connected mode" means. This page is about
 <strong>XRouter's implementation choices</strong>: that it carries its own stack, that modulo-128 is
 gated on <code>MAXFRAME&gt;7</code>, that SREJ and resequencing are available, and that every behaviour is
@@ -2837,13 +2837,13 @@ a per-port setting. When the two pages appear to overlap, the primer describes t
 and this page describes what XRouter does with it.</p>
 <h2 id="see-also">See also<a class="headerlink" href="#see-also" title="Permanent link">&para;</a></h2>
 <ul>
-<li><a href="../../configuration/ports/">Ports</a> — every per-port AX.25 keyword and its scope.</li>
-<li><a href="../netrom-inp3/">NET/ROM, INP3 and L3RTT</a> — what rides on top of these AX.25 links.</li>
-<li><a href="../../interfaces/axip-axudp-axtcp/">AXIP / AXUDP / AXTCP linking</a> — carrying AX.25 over
+<li><a href="../../configuration/ports/">Ports</a>, every per-port AX.25 keyword and its scope.</li>
+<li><a href="../netrom-inp3/">NET/ROM, INP3 and L3RTT</a>, what rides on top of these AX.25 links.</li>
+<li><a href="../../interfaces/axip-axudp-axtcp/">AXIP / AXUDP / AXTCP linking</a>, carrying AX.25 over
   the internet, where extended sequence numbers and lower timers matter.</li>
 </ul>
 <hr />
-<p><strong>Sources:</strong> in-program manual on the OARC wiki —
+<p><strong>Sources:</strong> in-program manual on the OARC wiki,
 <a href="https://wiki.oarc.uk/packet:xrouter:docs:man7">Configuration Directives (man7)</a> ·
 <a href="https://wiki.oarc.uk/packet:xrouter:docs:man9">Subsystems and features (man9)</a> ·
 <a href="https://wiki.oarc.uk/packet:xrouter:docs:man1">General Commands (man1)</a>.</p>
@@ -2924,7 +2924,7 @@ and this page describes what XRouter does with it.</p>
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Documentation re-presentation released under CC BY 4.0. XRouter itself is copyright Paula G8PZT and is free for non-commercial amateur use. This is an unofficial, community-maintained site; for canonical information defer to the author.
+      Documentation re-presentation released under CC BY 4.0, written entirely by AI from primary sources and not fact-checked by a human. XRouter itself is copyright Paula G8PZT and is free for non-commercial amateur use. This is an unofficial, community-maintained site; for canonical information defer to the author.
     </div>
   
   

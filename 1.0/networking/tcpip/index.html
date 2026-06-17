@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="A re-presentation of the documentation for XRouter, Paula G8PZT's AX.25 / NET-ROM / TCP-IP packet-radio node, router, chat server and APRS digipeater — organised by user journey and cited to primary sources.">
+        <meta name="description" content="A re-presentation of the documentation for XRouter, Paula G8PZT's AX.25 / NET-ROM / TCP-IP packet-radio node, router, chat server and APRS digipeater, organised by user journey and cited to primary sources.">
       
       
         <meta name="author" content="XRouter Documentation contributors">
@@ -569,7 +569,7 @@
   <span class="md-ellipsis">
     
   
-    AX.25 — the data link
+    AX.25: the data link
   
 
     
@@ -597,7 +597,7 @@
   <span class="md-ellipsis">
     
   
-    NET/ROM — networking and routing
+    NET/ROM: networking and routing
   
 
     
@@ -1663,7 +1663,7 @@
   <a href="#ipaddress-required-and-a-security-feature" class="md-nav__link">
     <span class="md-ellipsis">
       
-        IPADDRESS — required, and a security feature
+        IPADDRESS: required, and a security feature
       
     </span>
   </a>
@@ -2636,7 +2636,7 @@
   <a href="#ipaddress-required-and-a-security-feature" class="md-nav__link">
     <span class="md-ellipsis">
       
-        IPADDRESS — required, and a security feature
+        IPADDRESS: required, and a security feature
       
     </span>
   </a>
@@ -2755,19 +2755,19 @@ broad rule of thumb is:</p>
 <p>This is what people mean when they say XRouter has IP "designed in" rather than bolted on:
 the same program that switches AX.25 and NET/ROM also routes IP, with one consistent
 configuration. It also means XRouter is <strong>largely independent of the Linux kernel's AX.25
-subsystem</strong> — it brings its own AX.25 <em>and</em> IP stacks and talks KISS, serial and TCP/UDP
+subsystem</strong>, it brings its own AX.25 <em>and</em> IP stacks and talks KISS, serial and TCP/UDP
 directly. As the kernel AX.25 code ages, XRouter keeps working.</p>
-<h2 id="ipaddress-required-and-a-security-feature">IPADDRESS — required, and a security feature<a class="headerlink" href="#ipaddress-required-and-a-security-feature" title="Permanent link">&para;</a></h2>
+<h2 id="ipaddress-required-and-a-security-feature">IPADDRESS: required, and a security feature<a class="headerlink" href="#ipaddress-required-and-a-security-feature" title="Permanent link">&para;</a></h2>
 <p>The single global directive that gates all of this is <code>IPADDRESS</code>. It is the node's core
 (AMPRNet / 44Net) IP address, which the ports inherit unless overridden. It also has a
 deliberate security behaviour that surprises newcomers:</p>
 <div class="admonition danger">
-<p class="admonition-title">No IPADDRESS means no IP — on purpose</p>
+<p class="admonition-title">No IPADDRESS means no IP, on purpose</p>
 <p>If the global <code>IPADDRESS</code> is <code>0.0.0.0</code> or left undefined, XRouter <strong>deliberately disables
-all IP activity</strong> — AXUDP, AXTCP, AXIP, HTTP, FTP and the rest — on <strong>both</strong> stacks. This
+all IP activity</strong>, AXUDP, AXTCP, AXIP, HTTP, FTP and the rest, on <strong>both</strong> stacks. This
 is an intentional security feature, not a bug. If you do not have an AMPRNet (44Net)
 address but want any IP-based feature to work, set a private dummy such as <code>10.1.1.1</code>.
-Recent builds will not work with <code>IPADDRESS</code> omitted. — <em>Paula G8PZT,
+Recent builds will not work with <code>IPADDRESS</code> omitted., <em>Paula G8PZT,
 <a href="https://groups.io/g/xrouter/message/1957">groups.io</a></em></p>
 </div>
 <p>This is the most common reason a sysop finds that their internet links or web server "just
@@ -2782,20 +2782,20 @@ don't work" on a fresh install. The fix is one line. The same warning appears on
 reloadable live with <code>IP ROUTE LOAD</code>). One entry per line, it defines routes and the IP-layer
 facilities that ride on the router. Its command set includes:</p>
 <ul>
-<li><code>IP ROUTE ADD</code> / <code>IP ROUTE DEFAULT</code> — add routes, including the default route, each tagged
+<li><code>IP ROUTE ADD</code> / <code>IP ROUTE DEFAULT</code>, add routes, including the default route, each tagged
   with the stack to use (see below).</li>
-<li><code>ARP</code> — static ARP entries and ARP control.</li>
-<li><code>NAT</code> — Network Address Translation (<code>NAT ADD STATIC</code>, <code>NAT ADD OVERLOAD</code>), so a node can
+<li><code>ARP</code>, static ARP entries and ARP control.</li>
+<li><code>NAT</code>, Network Address Translation (<code>NAT ADD STATIC</code>, <code>NAT ADD OVERLOAD</code>), so a node can
   masquerade radio-side hosts behind one address.</li>
-<li><code>RIP</code> — the RIP routing-information protocol, to learn and advertise routes dynamically
+<li><code>RIP</code>, the RIP routing-information protocol, to learn and advertise routes dynamically
   (enabled with <code>RIP LEARN ON</code>).</li>
-<li><code>ACL</code> — packet-filtering rules.</li>
+<li><code>ACL</code>, packet-filtering rules.</li>
 </ul>
 <p>You only need <code>IPROUTE.SYS</code> if you are actually doing IP routing or IP facilities; a node that
 just runs the built-in servers over a single address does not require it.</p>
 <h2 id="choosing-the-xrouter-stack-or-the-kernel-stack-per-route">Choosing the XRouter stack or the kernel stack, per route<a class="headerlink" href="#choosing-the-xrouter-stack-or-the-kernel-stack-per-route" title="Permanent link">&para;</a></h2>
 <p>Because both stacks exist, each IP route can be pinned to one of them. In XRouter's IP routing,
-routes carry a <strong>mode</strong> letter — notably <code>d</code> for XRouter's own stack and <code>k</code> for the host
+routes carry a <strong>mode</strong> letter, notably <code>d</code> for XRouter's own stack and <code>k</code> for the host
 (kernel) stack. To force particular traffic onto the kernel stack, you give it a <code>k</code>-mode route;
 otherwise it travels via XRouter's own (<code>d</code>) stack. (The <code>k</code> "kernel" mode was previously
 called <code>w</code> for "Windows" and the old letter is still accepted for backward compatibility.)</p>
@@ -2808,7 +2808,7 @@ while sending some other traffic straight out through the host's normal networki
   single IP, the familiar masquerading pattern, configured with <code>NAT ADD STATIC</code> /
   <code>NAT ADD OVERLOAD</code>.</li>
 <li><strong>RIP</strong> lets XRouter participate in dynamic routing rather than relying solely on static
-  routes — handy on a larger 44Net subnet.</li>
+  routes, handy on a larger 44Net subnet.</li>
 <li><strong>Packet filtering</strong> via <code>ACL</code> rules gives the IP router a basic firewall.</li>
 </ul>
 <p>These are all part of the same <code>IPROUTE.SYS</code> / IP-router subsystem; reach for them only when
@@ -2816,39 +2816,39 @@ your topology needs them.</p>
 <h2 id="ip-tunnels-ipip-ipudp-and-axip">IP tunnels: IPIP, IPUDP and AXIP<a class="headerlink" href="#ip-tunnels-ipip-ipudp-and-axip" title="Permanent link">&para;</a></h2>
 <p>XRouter can tunnel IP and AX.25 across the internet several ways:</p>
 <ul>
-<li><strong>IPIP</strong> (IP-in-IP, protocol 94) and <strong>IPENCAP</strong> (protocol 4) — the AMPRNet encapsulation
+<li><strong>IPIP</strong> (IP-in-IP, protocol 94) and <strong>IPENCAP</strong> (protocol 4), the AMPRNet encapsulation
   schemes, enabled with <code>IPIP=1</code> / <code>IPENCAP=1</code>, with encapsulated routes read from the
   <code>ENCAP.TXT</code> / <code>XENCAP.TXT</code> files. This is how 44Net hosts reach each other across the public
   internet.</li>
-<li><strong>IPUDP</strong> — IP carried over UDP, with the receive port set by <code>IPUDPPORT</code>.</li>
-<li><strong>AXIP / AXUDP / AXTCP</strong> — these carry <em>AX.25</em> (not raw IP) over the internet and are how you
+<li><strong>IPUDP</strong>, IP carried over UDP, with the receive port set by <code>IPUDPPORT</code>.</li>
+<li><strong>AXIP / AXUDP / AXTCP</strong>, these carry <em>AX.25</em> (not raw IP) over the internet and are how you
   link <strong>nodes</strong> over the net. They are interfaces in their own right and are documented on
   <strong><a href="../../interfaces/axip-axudp-axtcp/">AXIP / AXUDP / AXTCP linking</a></strong>; the practical linking
   walk-through is on <a href="../linking-and-interop/">Linking nodes and interoperating</a>. Note that
   because they are IP-based, they too are subject to the <code>IPADDRESS</code> rule above.</li>
 </ul>
 <h2 id="relation-to-amprnet-44net">Relation to AMPRNet / 44Net<a class="headerlink" href="#relation-to-amprnet-44net" title="Permanent link">&para;</a></h2>
-<p>Most of this stack's reason for existing is amateur IP — the <strong>44.0.0.0/8</strong> AMPRNet (44Net)
+<p>Most of this stack's reason for existing is amateur IP, the <strong>44.0.0.0/8</strong> AMPRNet (44Net)
 address space. XRouter's <code>IPADDRESS</code> is, properly, your 44Net address; its IPIP/IPENCAP tunnels
 are the standard way 44Net is carried over the internet; and its router, NAT and RIP let a node
 act as a real 44Net gateway between radio and the wider network. The conceptual background to
 all of that is on <strong><a href="../../basics/ip-over-ax25/">IP over AX.25 and AMPRNet</a></strong>.</p>
 <div class="admonition tip">
 <p class="admonition-title">Bind a service to one stack only</p>
-<p>Many of the service-port directives accept two values — the XRouter-stack port and the
-host-stack port — so you can, for instance, run Telnet on the radio/AMPRNet side but not
+<p>Many of the service-port directives accept two values, the XRouter-stack port and the
+host-stack port, so you can, for instance, run Telnet on the radio/AMPRNet side but not
 expose it on your LAN, or vice versa. See the built-in servers and the
 <a href="../../reference/ports-and-services/">Ports and service numbers reference</a>.</p>
 </div>
 <h2 id="see-also">See also<a class="headerlink" href="#see-also" title="Permanent link">&para;</a></h2>
 <ul>
-<li><a href="../../basics/ip-over-ax25/">IP over AX.25 and AMPRNet</a> — the concepts behind 44Net.</li>
-<li><a href="../../interfaces/axip-axudp-axtcp/">AXIP / AXUDP / AXTCP linking</a> — linking nodes over the
+<li><a href="../../basics/ip-over-ax25/">IP over AX.25 and AMPRNet</a>, the concepts behind 44Net.</li>
+<li><a href="../../interfaces/axip-axudp-axtcp/">AXIP / AXUDP / AXTCP linking</a>, linking nodes over the
   internet.</li>
-<li><a href="../../admin/security-hardening/">Security and hardening</a> — running the IP services safely.</li>
+<li><a href="../../admin/security-hardening/">Security and hardening</a>, running the IP services safely.</li>
 </ul>
 <hr />
-<p><strong>Sources:</strong> in-program manual on the OARC wiki —
+<p><strong>Sources:</strong> in-program manual on the OARC wiki,
 <a href="https://wiki.oarc.uk/packet:xrouter:docs:man6">Installation and configuration topics (man6)</a>,
 including the two-IP-stacks topic ·
 <a href="https://wiki.oarc.uk/packet:xrouter:docs:man7">Configuration Directives (man7)</a> ·
@@ -2934,7 +2934,7 @@ author's IP-stack notes on the ohiopacket mirror,
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Documentation re-presentation released under CC BY 4.0. XRouter itself is copyright Paula G8PZT and is free for non-commercial amateur use. This is an unofficial, community-maintained site; for canonical information defer to the author.
+      Documentation re-presentation released under CC BY 4.0, written entirely by AI from primary sources and not fact-checked by a human. XRouter itself is copyright Paula G8PZT and is free for non-commercial amateur use. This is an unofficial, community-maintained site; for canonical information defer to the author.
     </div>
   
   

@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="A re-presentation of the documentation for XRouter, Paula G8PZT's AX.25 / NET-ROM / TCP-IP packet-radio node, router, chat server and APRS digipeater — organised by user journey and cited to primary sources.">
+        <meta name="description" content="A re-presentation of the documentation for XRouter, Paula G8PZT's AX.25 / NET-ROM / TCP-IP packet-radio node, router, chat server and APRS digipeater, organised by user journey and cited to primary sources.">
       
       
         <meta name="author" content="XRouter Documentation contributors">
@@ -569,7 +569,7 @@
   <span class="md-ellipsis">
     
   
-    AX.25 — the data link
+    AX.25: the data link
   
 
     
@@ -597,7 +597,7 @@
   <span class="md-ellipsis">
     
   
-    NET/ROM — networking and routing
+    NET/ROM: networking and routing
   
 
     
@@ -2533,8 +2533,8 @@
 XRouter can talk to a radio or to another node, and how each one maps to an <strong>interface
 type</strong> in <code>XROUTER.CFG</code>. It is written for a sysop who has a node running and now wants to
 attach hardware or build a link.</p>
-<p>Everything XRouter connects to — a hardware TNC, a soundcard modem, a packet engine, the
-internet — is described to the program as an <strong>interface</strong>. An interface says <em>what kind of
+<p>Everything XRouter connects to, a hardware TNC, a soundcard modem, a packet engine, the
+internet, is described to the program as an <strong>interface</strong>. An interface says <em>what kind of
 connection this is and how to reach it</em>; a <strong>port</strong> then sits on top of an interface and is
 where AX.25 actually happens (one port usually equals one radio frequency). The two are
 configured separately, and the order matters.</p>
@@ -2575,20 +2575,20 @@ interface type. The table maps the common cases to a <code>TYPE</code> (and, whe
 <tr>
 <td>An <strong>AGWPE / AGW Packet Engine</strong> (or Direwolf in AGW mode) to drive your radios</td>
 <td><code>AGW</code></td>
-<td>—</td>
-<td><a href="agwpe/">AGWPE</a></td>
+<td>n/a  <a href="agwpe/">AGWPE</a></td>
+<td></td>
 </tr>
 <tr>
 <td>An <strong>internet link to another node</strong> (RF can't reach it)</td>
 <td><code>AXUDP</code>, <code>AXIP</code> or <code>AXTCP</code></td>
-<td>—</td>
-<td><a href="axip-axudp-axtcp/">AXIP / AXUDP / AXTCP</a></td>
+<td>n/a  <a href="axip-axudp-axtcp/">AXIP / AXUDP / AXTCP</a></td>
+<td></td>
 </tr>
 <tr>
 <td>A <strong>VARA</strong> (FM/HF) or <strong>ARDOP</strong> modem reached over TCP</td>
 <td>(see page)</td>
-<td>—</td>
-<td><a href="vara-ardop/">VARA and ARDOP</a></td>
+<td>n/a  <a href="vara-ardop/">VARA and ARDOP</a></td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -2599,7 +2599,7 @@ interface type. The table maps the common cases to a <code>TYPE</code> (and, whe
   example) is reached with a <code>TCP</code> interface instead. Both speak <code>PROTOCOL=KISS</code>; only the
   transport differs. The <a href="soundcard-modems/">soundcard modems</a> page covers both.</li>
 <li><strong>AGW vs KISS for soundcard modems.</strong> Direwolf, UZ7HO SoundModem and QtSoundModem can each
-  present <em>either</em> a KISS interface <em>or</em> an AGW interface. Either works with XRouter — pick
+  present <em>either</em> a KISS interface <em>or</em> an AGW interface. Either works with XRouter, pick
   whichever you find simpler to wire up. If you choose AGW, see <a href="agwpe/">AGWPE</a>.</li>
 <li><strong>Internet links need IP enabled.</strong> AXUDP, AXIP and AXTCP are IP-based, so they are subject
   to XRouter's <code>IPADDRESS</code> rule (below). VARA and ARDOP are reached over TCP and are affected
@@ -2608,7 +2608,7 @@ interface type. The table maps the common cases to a <code>TYPE</code> (and, whe
 <div class="admonition danger">
 <p class="admonition-title">Internet and TCP interfaces need a non-zero IPADDRESS</p>
 <p>If the global <code>IPADDRESS</code> is <code>0.0.0.0</code> or left undefined, XRouter <strong>deliberately disables
-all IP activity</strong> — AXUDP, AXTCP, AXIP, and TCP-based modem links included. This is an
+all IP activity</strong>, AXUDP, AXTCP, AXIP, and TCP-based modem links included. This is an
 intentional security feature. If you don't have an AMPRNet (44Net) address, set a private
 dummy such as <code>10.1.1.1</code> so these interfaces work. See
 <a href="../configuration/global-settings/">Global settings</a>.</p>
@@ -2619,10 +2619,10 @@ dummy such as <code>10.1.1.1</code> so these interfaces work. See
 topics rather than radio interfacing; see <a href="../networking/tcpip/">The TCP/IP stack</a> and
 <a href="../networking/linking-and-interop/">Linking nodes and interoperating</a>.</p>
 <hr />
-<p><strong>Sources:</strong> <a href="https://wiki.oarc.uk/packet:xrouter:docs:man6">In-program manual, OARC wiki — §6 Installation &amp; Configuration</a>
+<p><strong>Sources:</strong> <a href="https://wiki.oarc.uk/packet:xrouter:docs:man6">In-program manual, OARC wiki: §6 Installation &amp; Configuration</a>
 (interface block model, <code>TYPE</code>/<code>PROTOCOL</code> values) ·
 <a href="https://groups.io/g/xrouter">XRouter support group (groups.io)</a> ·
-<a href="https://ohiopacket.org/xrpi/docs/ifaces.htm">ohiopacket.org XRPi mirror — interfaces</a></p>
+<a href="https://ohiopacket.org/xrpi/docs/ifaces.htm">ohiopacket.org XRPi mirror: interfaces</a></p>
 
 
 
@@ -2700,7 +2700,7 @@ topics rather than radio interfacing; see <a href="../networking/tcpip/">The TCP
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Documentation re-presentation released under CC BY 4.0. XRouter itself is copyright Paula G8PZT and is free for non-commercial amateur use. This is an unofficial, community-maintained site; for canonical information defer to the author.
+      Documentation re-presentation released under CC BY 4.0, written entirely by AI from primary sources and not fact-checked by a human. XRouter itself is copyright Paula G8PZT and is free for non-commercial amateur use. This is an unofficial, community-maintained site; for canonical information defer to the author.
     </div>
   
   

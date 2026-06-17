@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="A re-presentation of the documentation for XRouter, Paula G8PZT's AX.25 / NET-ROM / TCP-IP packet-radio node, router, chat server and APRS digipeater — organised by user journey and cited to primary sources.">
+        <meta name="description" content="A re-presentation of the documentation for XRouter, Paula G8PZT's AX.25 / NET-ROM / TCP-IP packet-radio node, router, chat server and APRS digipeater, organised by user journey and cited to primary sources.">
       
       
         <meta name="author" content="XRouter Documentation contributors">
@@ -569,7 +569,7 @@
   <span class="md-ellipsis">
     
   
-    AX.25 — the data link
+    AX.25: the data link
   
 
     
@@ -597,7 +597,7 @@
   <span class="md-ellipsis">
     
   
-    NET/ROM — networking and routing
+    NET/ROM: networking and routing
   
 
     
@@ -2686,8 +2686,8 @@
 
 
 <h1 id="logging-and-monitoring">Logging and monitoring<a class="headerlink" href="#logging-and-monitoring" title="Permanent link">&para;</a></h1>
-<p>Knowing what your node is doing — who is connecting, what is passing over the air, whether a
-link is healthy — is half of running one well. XRouter gives you several overlapping ways to
+<p>Knowing what your node is doing, who is connecting, what is passing over the air, whether a
+link is healthy, is half of running one well. XRouter gives you several overlapping ways to
 watch it: live status and monitor screens, on-demand traffic capture to a file, activity logs,
 performance statistics, and two automation surfaces (a REST API and an MQTT event feed) for
 feeding a dashboard. This page covers each, and how to capture a crash backtrace if the worst
@@ -2702,7 +2702,7 @@ are dedicated screens for <strong>status/overview</strong> (shown at startup), a
 <strong>nodes monitor</strong>, a <strong>routes monitor</strong>, a <strong>chat monitor</strong>, and the <strong>Security Monitor</strong> that
 shows intrusion-detection activity. These give you an at-a-glance picture without typing
 anything.</p>
-<p>If you run the node headless under a service manager you will not see these — that is the
+<p>If you run the node headless under a service manager you will not see these, that is the
 trade-off of daemon mode. See <a href="../../getting-started/running-as-a-service/">Running as a service</a>
 for keeping the TUI available under <code>screen</code>/<code>tmux</code>, and operate a headless node over HTTP,
 Telnet or packet instead.</p>
@@ -2713,7 +2713,7 @@ recipe is short:</p>
 <p class="admonition-title">Decode all traffic to a text file</p>
 <blockquote>
 <p>"To decode all traffic in xrpi to a text file … <code>MON on</code>, <code>Cap on</code>, job done. If you
-want each packet hex dumped, set <code>mmask 43ff</code> instead of the default <code>3ff</code>." —
+want each packet hex dumped, set <code>mmask 43ff</code> instead of the default <code>3ff</code>.",
 <em>Paula G8PZT</em></p>
 </blockquote>
 </div>
@@ -2724,18 +2724,18 @@ want each packet hex dumped, set <code>mmask 43ff</code> instead of the default 
 <ul>
 <li><strong><code>MON</code>/<code>MONITOR</code></strong> turns tracing on; <strong><code>CAP</code>/<code>CAPTURE</code></strong> mirrors that trace to a disk file.</li>
 <li><strong><code>MMASK</code></strong> is a hex bitmask selecting which protocols are traced. The default is <strong><code>0x3ff</code></strong>.
-  Setting <strong><code>MMASK 43ff</code></strong> adds a full <strong>hex dump</strong> of each packet — invaluable when you need to
+  Setting <strong><code>MMASK 43ff</code></strong> adds a full <strong>hex dump</strong> of each packet, invaluable when you need to
   see exactly what is on the wire, noisy otherwise.</li>
 <li><strong><code>MPORT</code></strong> selects which ports are monitored; users can also use <code>LISTEN</code>/<code>WATCH</code> to view
   RF ports.</li>
 </ul>
 <p>Turn capture off again (<code>CAP OFF</code>) when you are done. There is also a separate
 Wireshark-compatible IP packet capture (<code>PCAP</code>), but note the author's warning that it "can
-fill the disk fast" — it is for short diagnostic sessions, not long-term running.</p>
+fill the disk fast", it is for short diagnostic sessions, not long-term running.</p>
 <div class="admonition warning">
 <p class="admonition-title">Capture files grow quickly</p>
 <p>A capture with <code>MMASK 43ff</code> on a busy port produces a lot of text. Capture for as long as
-you need to catch the problem, then stop — do not leave it running unattended on a node
+you need to catch the problem, then stop, do not leave it running unattended on a node
 with limited storage.</p>
 </div>
 <h2 id="log-files-and-the-log-directive">Log files and the LOG directive<a class="headerlink" href="#log-files-and-the-log-directive" title="Permanent link">&para;</a></h2>
@@ -2749,28 +2749,28 @@ if the node will not start.</p>
 <p class="admonition-title">Viewing logs on Windows? Use the CRLF option</p>
 <p>XRouter offers a CRLF line-ending option on its logs "for those who view the logs on a
 Windows machine". Linux-native log viewers handle bare <code>LF</code> fine, but some Windows text
-viewers show everything on one line without it — enable the CRLF option if your logs look
+viewers show everything on one line without it, enable the CRLF option if your logs look
 like a single run-on line in Notepad.</p>
 </div>
 <h2 id="statistics">Statistics<a class="headerlink" href="#statistics" title="Permanent link">&para;</a></h2>
 <p>The <strong><code>STATS</code></strong> command reports running performance counters. On its own it gives an overview;
-with an argument it narrows to a layer or subsystem — for example <code>STATS L2</code>, <code>STATS L4</code>,
+with an argument it narrows to a layer or subsystem, for example <code>STATS L2</code>, <code>STATS L4</code>,
 <code>STATS TCP</code>, <code>STATS IP</code>, and <code>STATS IDS</code> for intrusion-detection counters. It is a quick,
 non-intrusive health check: rising error or retry counts on a link, or a steadily growing IDS
 hit count, tell you where to look next.</p>
 <h2 id="automation-rest-api-and-mqtt">Automation: REST API and MQTT<a class="headerlink" href="#automation-rest-api-and-mqtt" title="Permanent link">&para;</a></h2>
-<p>For anything beyond eyeballing a screen — a status page, a Grafana panel, an alerting rule —
+<p>For anything beyond eyeballing a screen, a status page, a Grafana panel, an alerting rule,
 XRouter exposes two machine-readable surfaces. Both are covered in detail on
 <a href="../../subsystems/http-rest-mqtt/">HTTP, REST and MQTT</a>; in summary:</p>
 <ul>
 <li><strong>REST API.</strong> Served over the built-in HTTP server (so it rides on <code>HTTPPORT</code>, default 80),
   returning JSON. Endpoints under <code>/api/v1/</code> cover the NET/ROM nodes and routes
-  (<code>/api/v1/netrom</code>), mail, weather, the blog and the wall — handy for polling node state into
+  (<code>/api/v1/netrom</code>), mail, weather, the blog and the wall, handy for polling node state into
   your own monitoring.</li>
 <li><strong>MQTT event feed.</strong> XRouter has an inbuilt MQTT broker (<code>MQTTPORT</code>, default 1883) and can
   also publish to an external broker (<code>MQTTSERVADDR</code>/<code>MQTTSERVPORT</code>). It emits node and traffic
-  events as JSON — for example a <code>nodeup</code> event carrying the node call, alias, locator,
-  software and version — so a subscriber can react to the node coming up, links changing, mail
+  events as JSON, for example a <code>nodeup</code> event carrying the node call, alias, locator,
+  software and version, so a subscriber can react to the node coming up, links changing, mail
   arriving and so on. This is an event <em>push</em>, complementing the REST <em>pull</em>.</li>
 </ul>
 <p>Between them, a pull-based REST poll and a push-based MQTT subscription cover most monitoring
@@ -2791,7 +2791,7 @@ than "it crashed". See also <a href="../troubleshooting/#freezes-segfaults">Trou
 context around historic stability fixes.</p>
 <hr />
 <p><strong>Sources:</strong> <a href="https://groups.io/g/xrouter">XRouter support group, groups.io</a> (the <code>MON</code>/<code>CAP</code>/
-<code>MMASK</code> capture recipe, the MQTT <code>nodeup</code> event shape, and the gdb backtrace workflow — all
+<code>MMASK</code> capture recipe, the MQTT <code>nodeup</code> event shape, and the gdb backtrace workflow, all
 community/author guidance) ·
 <a href="https://wiki.oarc.uk/packet:xrouter:docs:man1">in-program manual, OARC wiki</a> (the <code>MON</code>,
 <code>CAP</code>, <code>MMASK</code>, <code>STATS</code>, <code>LOG</code>, <code>PCAP</code> commands;
@@ -2875,7 +2875,7 @@ Windows viewers)</p>
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Documentation re-presentation released under CC BY 4.0. XRouter itself is copyright Paula G8PZT and is free for non-commercial amateur use. This is an unofficial, community-maintained site; for canonical information defer to the author.
+      Documentation re-presentation released under CC BY 4.0, written entirely by AI from primary sources and not fact-checked by a human. XRouter itself is copyright Paula G8PZT and is free for non-commercial amateur use. This is an unofficial, community-maintained site; for canonical information defer to the author.
     </div>
   
   

@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="A re-presentation of the documentation for XRouter, Paula G8PZT's AX.25 / NET-ROM / TCP-IP packet-radio node, router, chat server and APRS digipeater — organised by user journey and cited to primary sources.">
+        <meta name="description" content="A re-presentation of the documentation for XRouter, Paula G8PZT's AX.25 / NET-ROM / TCP-IP packet-radio node, router, chat server and APRS digipeater, organised by user journey and cited to primary sources.">
       
       
         <meta name="author" content="XRouter Documentation contributors">
@@ -569,7 +569,7 @@
   <span class="md-ellipsis">
     
   
-    AX.25 — the data link
+    AX.25: the data link
   
 
     
@@ -597,7 +597,7 @@
   <span class="md-ellipsis">
     
   
-    NET/ROM — networking and routing
+    NET/ROM: networking and routing
   
 
     
@@ -2821,8 +2821,8 @@
 
 <h1 id="sysop-access-and-commands">Sysop access and commands<a class="headerlink" href="#sysop-access-and-commands" title="Permanent link">&para;</a></h1>
 <p>Most of the node prompt is open to any user, but the commands that <em>change</em> the
-node — editing routes, monitoring traffic, restarting daemons, managing the IP
-stack and security — are reserved for the <strong>sysop</strong>. This page explains how a
+node, editing routes, monitoring traffic, restarting daemons, managing the IP
+stack and security, are reserved for the <strong>sysop</strong>. This page explains how a
 session becomes a sysop session, then surveys the categories of sysop power and
 the representative commands in each. The commands themselves are catalogued in
 the <a href="../command-reference/">command reference</a>.</p>
@@ -2831,17 +2831,17 @@ the <a href="../command-reference/">command reference</a>.</p>
 trusted links.</p>
 <h3 id="authenticate-with-the-sysop-password">Authenticate with the sysop password<a class="headerlink" href="#authenticate-with-the-sysop-password" title="Permanent link">&para;</a></h3>
 <p>The normal, link-agnostic way is to <strong>prove who you are</strong> against the node's
-sysop password file. XRouter keeps sysop passwords in <code>PASSWORD.SYS</code> — a list of
+sysop password file. XRouter keeps sysop passwords in <code>PASSWORD.SYS</code>, a list of
 <code>callsign password</code> pairs (no SSID, no spaces, not case-sensitive). When a
 recognised sysop connects, the node can issue a <strong>password challenge</strong>; you
 answer it, and the session is promoted to sysop for its duration. This is what
 guards remote AX.25 (<code>@</code>), RLOGIN and FTP sysop access. With no <code>PASSWORD.SYS</code>
-present, that access simply does not exist — which is itself a safe default.</p>
+present, that access simply does not exist, which is itself a safe default.</p>
 <div class="admonition note">
 <p class="admonition-title">Password file is sysop-only and case-matters on disk</p>
 <p><code>PASSWORD.SYS</code> holds the keys to the node; it must be readable only by the
 node's own user. Remember that on Linux the filename is <strong>upper case</strong> and
-case-sensitive — see <a href="../../configuration/system-files/">System and data files</a>.</p>
+case-sensitive, see <a href="../../configuration/system-files/">System and data files</a>.</p>
 </div>
 <h3 id="the-sysop1-on-a-port-shortcut">The <code>SYSOP=1</code>-on-a-port shortcut<a class="headerlink" href="#the-sysop1-on-a-port-shortcut" title="Permanent link">&para;</a></h3>
 <p>A port can instead be declared <em>inherently</em> trusted, so that <strong>everyone</strong> who
@@ -2850,16 +2850,16 @@ directive:</p>
 <div class="language-ini highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="na">PORT</span><span class="o">=</span><span class="s">1</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">        </span><span class="na">ID</span><span class="o">=</span><span class="s">Console / LAN link</span>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">        </span><span class="na">INTERFACENUM</span><span class="o">=</span><span class="s">1</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">        </span><span class="na">SYSOP</span><span class="o">=</span><span class="s">1</span><span class="w">        </span><span class="c1">; every caller on this port is sysop — secure links ONLY</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">        </span><span class="na">SYSOP</span><span class="o">=</span><span class="s">1</span><span class="w">        </span><span class="c1">; every caller on this port is sysop, secure links ONLY</span>
 </span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="na">ENDPORT</span>
 </span></code></pre></div>
 <div class="admonition danger">
-<p class="admonition-title"><code>SYSOP=1</code> gives every caller full control — secure links only</p>
+<p class="admonition-title"><code>SYSOP=1</code> gives every caller full control, secure links only</p>
 <p>The manual is explicit: <em>"If you set <code>SYSOP=1</code>, all users who connect on this
 port get full sysop status without needing to answer a password challenge.
 This is intended ONLY FOR USE ON SECURE LINKS, such as RS232 or Ethernet, and
 the default is zero."</em> Never set <code>SYSOP=1</code> on a port that is reachable over
-the air or from the wider internet — doing so hands node administration to
+the air or from the wider internet, doing so hands node administration to
 anyone who can connect. The default is <code>0</code>, and on any RF port it must stay
 that way.</p>
 </div>
@@ -2870,11 +2870,11 @@ below show the shape of what is available, with representative commands. (Exact
 syntax for a given command is on the node itself via <code>HELP &lt;command&gt;</code>.)</p>
 <h3 id="node-and-route-management">Node and route management<a class="headerlink" href="#node-and-route-management" title="Permanent link">&para;</a></h3>
 <p>XRouter learns its NET/ROM nodes table from broadcasts, which can take hours to
-rebuild — so the sysop can save and restore it, and lock in routes by hand.</p>
+rebuild, so the sysop can save and restore it, and lock in routes by hand.</p>
 <ul>
 <li><strong><code>SAVENODES</code></strong> writes the current nodes table out to the <code>XRNODES</code> recovery
   file (it is also saved periodically and at shutdown).</li>
-<li><strong><code>LOADNODES</code></strong> reads that file back, repopulating the table — the mechanism
+<li><strong><code>LOADNODES</code></strong> reads that file back, repopulating the table, the mechanism
   that lets the node restart without losing everything it knew.</li>
 <li><code>ROUTES</code> (add / drop / list) manages the neighbour routes directly, and
   <code>NODES</code> can modify the nodes table; broadcasts can be triggered or requested
@@ -2883,7 +2883,7 @@ rebuild — so the sysop can save and restore it, and lock in routes by hand.</p
 <p>See <a href="../../networking/netrom-inp3/">NET/ROM, INP3 and L3RTT</a> for what these tables
 mean and how routing uses them.</p>
 <h3 id="monitoring-and-traffic-capture">Monitoring and traffic capture<a class="headerlink" href="#monitoring-and-traffic-capture" title="Permanent link">&para;</a></h3>
-<p>XRouter can trace traffic at every protocol layer — invaluable for diagnosing a
+<p>XRouter can trace traffic at every protocol layer, invaluable for diagnosing a
 link.</p>
 <ul>
 <li><strong><code>MON</code></strong> / <strong><code>MONITOR</code></strong> turns live tracing on and off.</li>
@@ -2923,15 +2923,15 @@ from the prompt as well as from <code>IPROUTE.SYS</code>:</p>
 <h3 id="security">Security<a class="headerlink" href="#security" title="Permanent link">&para;</a></h3>
 <p>XRouter includes several layers a sysop can drive live:</p>
 <ul>
-<li><strong><code>ACL</code></strong> edits the IP Access Control List — the live packet-filter rules.</li>
-<li><strong>IP ban</strong> — the Intrusion Detection System maintains a banned-IP list
+<li><strong><code>ACL</code></strong> edits the IP Access Control List, the live packet-filter rules.</li>
+<li><strong>IP ban</strong>, the Intrusion Detection System maintains a banned-IP list
   (<code>IPBAN.SYS</code>); <code>IDS</code> controls it, including honeypot ports and unbanning.</li>
 <li><strong><code>IDS</code></strong> is the front end to that Intrusion Detection System.</li>
 <li>Packet capture (<strong>PCAP</strong>) and the tracing commands above let you see exactly
   what is hitting the node.</li>
 </ul>
-<p>General hardening guidance — sysop passwords, ACLs, not running as root, the
-<code>IPADDRESS</code> security behaviour — is collected on
+<p>General hardening guidance, sysop passwords, ACLs, not running as root, the
+<code>IPADDRESS</code> security behaviour, is collected on
 <a href="../../admin/security-hardening/">Security and hardening</a>.</p>
 <h3 id="file-maintenance-pztdos">File maintenance (PZTDOS)<a class="headerlink" href="#file-maintenance-pztdos" title="Permanent link">&para;</a></h3>
 <p>XRouter has a small built-in DOS-style file shell, <strong>PZTDOS</strong>, entered with the
@@ -2948,8 +2948,8 @@ commands are sysop-only</strong>; they are listed in the
 <li>Hardening a public node: <a href="../../admin/security-hardening/">Security and hardening</a>.</li>
 </ul>
 <hr />
-<p><strong>Sources:</strong> <a href="https://wiki.oarc.uk/packet:xrouter:docs:man1">In-program manual, Section 1 — General Commands (OARC wiki)</a>
-· <a href="https://wiki.oarc.uk/packet:xrouter:docs:man3">Section 3 — PZTDOS Commands (OARC wiki)</a>
+<p><strong>Sources:</strong> <a href="https://wiki.oarc.uk/packet:xrouter:docs:man1">In-program manual, Section 1: General Commands (OARC wiki)</a>
+· <a href="https://wiki.oarc.uk/packet:xrouter:docs:man3">Section 3: PZTDOS Commands (OARC wiki)</a>
 · <a href="https://wiki.oarc.uk/packet:xrouter:docs:man7">Configuration directives, <code>SYSOP</code> (OARC wiki)</a>
 · <a href="https://groups.io/g/xrouter">XRouter support group (groups.io)</a></p>
 
@@ -3029,7 +3029,7 @@ commands are sysop-only</strong>; they are listed in the
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Documentation re-presentation released under CC BY 4.0. XRouter itself is copyright Paula G8PZT and is free for non-commercial amateur use. This is an unofficial, community-maintained site; for canonical information defer to the author.
+      Documentation re-presentation released under CC BY 4.0, written entirely by AI from primary sources and not fact-checked by a human. XRouter itself is copyright Paula G8PZT and is free for non-commercial amateur use. This is an unofficial, community-maintained site; for canonical information defer to the author.
     </div>
   
   

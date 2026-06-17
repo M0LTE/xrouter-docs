@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="A re-presentation of the documentation for XRouter, Paula G8PZT's AX.25 / NET-ROM / TCP-IP packet-radio node, router, chat server and APRS digipeater — organised by user journey and cited to primary sources.">
+        <meta name="description" content="A re-presentation of the documentation for XRouter, Paula G8PZT's AX.25 / NET-ROM / TCP-IP packet-radio node, router, chat server and APRS digipeater, organised by user journey and cited to primary sources.">
       
       
         <meta name="author" content="XRouter Documentation contributors">
@@ -569,7 +569,7 @@
   <span class="md-ellipsis">
     
   
-    AX.25 — the data link
+    AX.25: the data link
   
 
     
@@ -597,7 +597,7 @@
   <span class="md-ellipsis">
     
   
-    NET/ROM — networking and routing
+    NET/ROM: networking and routing
   
 
     
@@ -2207,7 +2207,7 @@
   <a href="#ip-services-wont-start" class="md-nav__link">
     <span class="md-ellipsis">
       
-        IP services are dead — HTTP, FTP, AXUDP "won't start"
+        IP services are dead: HTTP, FTP, AXUDP "won't start"
       
     </span>
   </a>
@@ -2229,7 +2229,7 @@
   <a href="#bad-or-missing-protocol" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The config won't load — "Bad or missing protocol"
+        The config won't load: "Bad or missing protocol"
       
     </span>
   </a>
@@ -2401,7 +2401,7 @@
   <a href="#my-problem-isnt-here-where-do-i-ask" class="md-nav__link">
     <span class="md-ellipsis">
       
-        My problem isn't here — where do I ask?
+        My problem isn't here: where do I ask?
       
     </span>
   </a>
@@ -2771,7 +2771,7 @@
   <a href="#ip-services-wont-start" class="md-nav__link">
     <span class="md-ellipsis">
       
-        IP services are dead — HTTP, FTP, AXUDP "won't start"
+        IP services are dead: HTTP, FTP, AXUDP "won't start"
       
     </span>
   </a>
@@ -2793,7 +2793,7 @@
   <a href="#bad-or-missing-protocol" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The config won't load — "Bad or missing protocol"
+        The config won't load: "Bad or missing protocol"
       
     </span>
   </a>
@@ -2965,7 +2965,7 @@
   <a href="#my-problem-isnt-here-where-do-i-ask" class="md-nav__link">
     <span class="md-ellipsis">
       
-        My problem isn't here — where do I ask?
+        My problem isn't here: where do I ask?
       
     </span>
   </a>
@@ -3000,7 +3000,7 @@
 <h1 id="troubleshooting-and-faq">Troubleshooting and FAQ<a class="headerlink" href="#troubleshooting-and-faq" title="Permanent link">&para;</a></h1>
 <p>Most XRouter problems are not subtle once you know the cause, and a handful of them account for
 the great majority of "it won't start" and "it won't work" reports. This page is a question-
-and-answer guide to those real-world issues — each with the underlying cause and the fix — drawn
+and-answer guide to those real-world issues, each with the underlying cause and the fix, drawn
 from the support group, the community, and the manual. If you are setting a node up for the
 first time, reading it once will save you an evening.</p>
 <div class="admonition tip">
@@ -3012,11 +3012,11 @@ half the file at once. The boot log (<code>LOG/BOOTLOG.TXT</code>) records start
 place to look if the node quits immediately.</p>
 </div>
 <h2 id="starting-up">Starting up<a class="headerlink" href="#starting-up" title="Permanent link">&para;</a></h2>
-<h3 id="ip-services-wont-start">IP services are dead — HTTP, FTP, AXUDP "won't start"<a class="headerlink" href="#ip-services-wont-start" title="Permanent link">&para;</a></h3>
+<h3 id="ip-services-wont-start">IP services are dead: HTTP, FTP, AXUDP "won't start"<a class="headerlink" href="#ip-services-wont-start" title="Permanent link">&para;</a></h3>
 <p><strong>Symptom.</strong> None of the IP-based services work. The web server, FTP, and AXUDP/AXTCP/AXIP
 internet links are all silent or refuse to start, even though they look configured.</p>
 <p><strong>Cause.</strong> The global <code>IPADDRESS</code> is unset or <code>0.0.0.0</code>. XRouter then <strong>deliberately disables
-all IP activity</strong> — on both its own stack and the Linux stack. This is an intentional security
+all IP activity</strong>, on both its own stack and the Linux stack. This is an intentional security
 feature, not a bug: a node with no IP address exposes no IP attack surface.</p>
 <div class="admonition danger">
 <p class="admonition-title">Set IPADDRESS, or you lose every IP service</p>
@@ -3024,7 +3024,7 @@ feature, not a bug: a node with no IP address exposes no IP attack surface.</p>
 <p>"If you set the global IPADDRESS to 0.0.0.0 or leave it undefined, <em>all</em> IP activity is
 disabled, including AXUDP, AXTCP, AXIP, HTTP, FTP etc on BOTH stacks! This is a deliberate
 security feature. … if you don't have an amprnet address, and you want to use any IP
-services, it is suggested that you set a non-zero dummy IP address such as <code>10.1.1.1</code>." —
+services, it is suggested that you set a non-zero dummy IP address such as <code>10.1.1.1</code>.",
 <em>Paula G8PZT, <a href="https://groups.io/g/xrouter/message/1957">groups.io</a></em></p>
 </blockquote>
 </div>
@@ -3039,16 +3039,16 @@ is on <a href="../security-hardening/#understand-the-ipaddress-security-behaviou
 <p><strong>Symptom.</strong> On startup XRouter reports it cannot open the Telnet server port 23 (or HTTP on
 80), often as <code>Error 13</code>.</p>
 <p><strong>Cause.</strong> Ports below 1024 are privileged on Linux. A program running as an ordinary user
-cannot bind them without the right capability — and <code>Error 13</code> is "permission denied".</p>
+cannot bind them without the right capability, and <code>Error 13</code> is "permission denied".</p>
 <p><strong>Fix.</strong> Do <strong>not</strong> reach for <code>sudo</code>/root. Grant the binary the two capabilities it needs, once:</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>sudo<span class="w"> </span>setcap<span class="w"> </span>cap_net_raw,cap_net_bind_service<span class="o">=</span>ep<span class="w"> </span>./xrpi
 </span></code></pre></div>
 <p>Then run as your normal user. <code>cap_net_bind_service</code> lets it bind the low ports;
 <code>cap_net_raw</code> covers raw sockets for <code>EXTERNAL</code>/Ethernet and AXIP. Re-apply <code>setcap</code> whenever
-you replace the binary. The full rationale — and why root is the wrong fix — is on
+you replace the binary. The full rationale, and why root is the wrong fix, is on
 <a href="../security-hardening/#run-as-a-non-root-user">Security and hardening</a> and the
 <a href="../../getting-started/raspberry-pi/#6-run-it-without-root-recommended">Raspberry Pi page</a>.</p>
-<h3 id="bad-or-missing-protocol">The config won't load — "Bad or missing protocol"<a class="headerlink" href="#bad-or-missing-protocol" title="Permanent link">&para;</a></h3>
+<h3 id="bad-or-missing-protocol">The config won't load: "Bad or missing protocol"<a class="headerlink" href="#bad-or-missing-protocol" title="Permanent link">&para;</a></h3>
 <p><strong>Symptom.</strong> XRouter refuses to start and complains about a bad or missing protocol on an
 interface, or stops at a numbered line in an <code>INTERFACE</code> block.</p>
 <p><strong>Cause.</strong> Most interface types need a <code>PROTOCOL=</code> directive (a KISS TNC needs
@@ -3066,7 +3066,7 @@ interface, or stops at a numbered line in an <code>INTERFACE</code> block.</p>
 <p>Because errors are line-numbered, fix the one it names, restart, and see if it gets further.
 Two related classics: <strong>interfaces must be defined before the ports that reference them</strong>, and
 multi-line text blocks (<code>CTEXT</code>, <code>INFOTEXT</code>, <code>IDTEXT</code>, <code>ROUTES</code>) must be closed with their
-terminator — forgetting it is a common parse error. See
+terminator, forgetting it is a common parse error. See
 <a href="../../configuration/interfaces/">Interfaces</a> and <a href="../../configuration/ports/">Ports</a>.</p>
 <h3 id="case-sensitive-filenames">Files not found, or odd behaviour, on Linux<a class="headerlink" href="#case-sensitive-filenames" title="Permanent link">&para;</a></h3>
 <p><strong>Symptom.</strong> A configuration or data file you definitely created is ignored; a feature that
@@ -3075,7 +3075,7 @@ needs a <code>.SYS</code> file behaves as if the file is absent.</p>
 CASE</strong>. <code>IPROUTE.SYS</code> and <code>iproute.sys</code> are different files, and XRouter only reads the former.</p>
 <div class="admonition warning">
 <p class="admonition-title">XRouter wants UPPER CASE filenames</p>
-<p>On Linux, name every configuration and data file in upper case — <code>XROUTER.CFG</code>,
+<p>On Linux, name every configuration and data file in upper case, <code>XROUTER.CFG</code>,
 <code>PASSWORD.SYS</code>, <code>IPROUTE.SYS</code>, <code>XRNODES</code>, and the rest. The executable is the exception: on
 the Pi build it is the lowercase <code>xrpi</code>. Getting the case wrong is the single most common
 reason a file is silently ignored.</p>
@@ -3087,7 +3087,7 @@ reason a file is silently ignored.</p>
 <p><strong>Symptom.</strong> A KISS-over-TCP link to Direwolf repeatedly reconnects or drops out, never settling.</p>
 <p><strong>Cause.</strong> This was a fault in <strong>very old</strong> XrPi builds, from before Direwolf was widely used.</p>
 <blockquote>
-<p>"I don't think Direwolf was much of a thing when that version of xrpi was written." —
+<p>"I don't think Direwolf was much of a thing when that version of xrpi was written.",
 <em>Paula G8PZT</em></p>
 </blockquote>
 <p><strong>Fix.</strong> Update to a current build; the behaviour was fixed in later versions. See
@@ -3096,12 +3096,12 @@ reason a file is silently ignored.</p>
 <p><strong>Symptom.</strong> The node is up, but a browser or Telnet client on another machine on your LAN
 cannot reach its web or Telnet server.</p>
 <p><strong>Cause.</strong> Usually one of: the service is not actually listening (it was disabled, moved to a
-non-default port, or IP is off because <code>IPADDRESS</code> is unset — see
+non-default port, or IP is off because <code>IPADDRESS</code> is unset, see
 <a href="#ip-services-wont-start">above</a>); the node is answering on its <em>own</em> IP stack rather than the
 Linux one; or a firewall between you and the node is blocking the port.</p>
 <p><strong>Fix.</strong> Work through it in order:</p>
 <ul>
-<li>Confirm the service is enabled and note its port — <code>TELNETPORT</code> (default 23), <code>HTTPPORT</code>
+<li>Confirm the service is enabled and note its port, <code>TELNETPORT</code> (default 23), <code>HTTPPORT</code>
   (default 80). A <code>*PORT</code> of <code>0</code> disables it; two values set the XRouter-stack and Linux-stack
   ports separately, so a service can be reachable on one stack and not the other.</li>
 <li>Confirm <code>IPADDRESS</code> is set, or no IP service runs at all.</li>
@@ -3113,9 +3113,9 @@ Linux one; or a firewall between you and the node is blocking the port.</p>
 <p><strong>Symptom.</strong> Startup or runtime errors such as "Can't open AXIP socket", or an AXUDP/AXIP link
 that never passes traffic.</p>
 <p><strong>Cause.</strong> AXIP and AXUDP ride on the IP stack, so they fall over for the same reasons any IP
-feature does — most often <code>IPADDRESS</code> being unset (which disables them entirely), but also a
+feature does, most often <code>IPADDRESS</code> being unset (which disables them entirely), but also a
 wrong local/remote UDP port, or a firewall/NAT in the path. (AXIP uses IP protocol 93; AXUDP
-defaults to UDP port 93 — don't confuse the two.) Recent builds added stricter checks here and
+defaults to UDP port 93, don't confuse the two.) Recent builds added stricter checks here and
 will not start with <code>IPADDRESS</code> omitted.</p>
 <p><strong>Fix.</strong></p>
 <ul>
@@ -3130,7 +3130,7 @@ will not start with <code>IPADDRESS</code> omitted.</p>
 <p><strong>Symptom.</strong> The node freezes or crashes (segfaults) at random.</p>
 <p><strong>Cause.</strong> Builds <strong>before 501b</strong> had known random-freeze and segfault problems, which were
 fixed. A current build should be stable; a crash on a current build is worth reporting.</p>
-<p><strong>Fix.</strong> First, <strong>update</strong> — see <a href="../upgrading/">Upgrading and versions</a>. If a current build
+<p><strong>Fix.</strong> First, <strong>update</strong>, see <a href="../upgrading/">Upgrading and versions</a>. If a current build
 still crashes, capture a backtrace under a debugger and send it to the author:</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>gdb<span class="w"> </span>--ex<span class="w"> </span>run<span class="w"> </span>./xrpi
 </span></code></pre></div>
@@ -3167,8 +3167,8 @@ case: a <code>-static</code> build has no system resolver, so there you may <em>
 <h2 id="frequently-asked">Frequently asked<a class="headerlink" href="#frequently-asked" title="Permanent link">&para;</a></h2>
 <h3 id="should-i-run-xrouter-as-root">Should I run XRouter as root?<a class="headerlink" href="#should-i-run-xrouter-as-root" title="Permanent link">&para;</a></h3>
 <p>No. Run it as an ordinary user with <code>cap_net_raw,cap_net_bind_service</code> granted via <code>setcap</code>
-(see <a href="#error-13-privileged-port">Error 13</a>). Root — and especially <code>sudo</code>, whose session
-time-limit can make a long-running node stop responding — is best avoided. Full reasoning on
+(see <a href="#error-13-privileged-port">Error 13</a>). Root, and especially <code>sudo</code>, whose session
+time-limit can make a long-running node stop responding, is best avoided. Full reasoning on
 <a href="../security-hardening/#run-as-a-non-root-user">Security and hardening</a>.</p>
 <h3 id="how-do-i-restart-or-update-without-losing-my-netrom-routes">How do I restart or update without losing my NET/ROM routes?<a class="headerlink" href="#how-do-i-restart-or-update-without-losing-my-netrom-routes" title="Permanent link">&para;</a></h3>
 <p>You don't lose them: XRouter saves the nodes table to <code>XRNODES</code> and reloads it at boot. Keep
@@ -3176,16 +3176,16 @@ that file across a restart or upgrade. The only time to delete it is after a <em
 when the saved data is stale. See <a href="../upgrading/#your-netrom-routes-survive-usually">Upgrading and versions</a>.</p>
 <h3 id="where-do-i-get-the-current-version-and-how-do-i-know-its-current">Where do I get the current version, and how do I know it's current?<a class="headerlink" href="#where-do-i-get-the-current-version-and-how-do-i-know-its-current" title="Permanent link">&para;</a></h3>
 <p>From the <strong>Files</strong> area of the <a href="https://groups.io/g/xrouter/files">groups.io support group</a>.
-Do not gauge "current" from the <code>ohiopacket.org</code> or <code>vk2dot</code> mirrors — they are stale. See
+Do not gauge "current" from the <code>ohiopacket.org</code> or <code>vk2dot</code> mirrors, they are stale. See
 <a href="../upgrading/#where-to-get-current-builds">Upgrading and versions</a>.</p>
-<h3 id="my-problem-isnt-here-where-do-i-ask">My problem isn't here — where do I ask?<a class="headerlink" href="#my-problem-isnt-here-where-do-i-ask" title="Permanent link">&para;</a></h3>
+<h3 id="my-problem-isnt-here-where-do-i-ask">My problem isn't here: where do I ask?<a class="headerlink" href="#my-problem-isnt-here-where-do-i-ask" title="Permanent link">&para;</a></h3>
 <p>The <a href="https://groups.io/g/xrouter">XRouter support group on groups.io</a> is the primary venue, and
 the author answers there. Include your version string, the relevant slice of <code>XROUTER.CFG</code>
 (minus passwords), the exact error text or boot-log line, and a <a href="../logging-and-monitoring/#capturing-a-crash-backtrace">gdb
 backtrace</a> for a crash. The maintained
 reference is the <a href="https://wiki.oarc.uk/packet:xrouter">in-program manual on the OARC wiki</a>.</p>
 <hr />
-<p><strong>Sources:</strong> <a href="https://groups.io/g/xrouter">XRouter support group, groups.io</a> — the <code>IPADDRESS</code>
+<p><strong>Sources:</strong> <a href="https://groups.io/g/xrouter">XRouter support group, groups.io</a>, the <code>IPADDRESS</code>
 behaviour (<a href="https://groups.io/g/xrouter/message/1957">message/1957</a>), the <code>Error 13</code>/<code>setcap</code>
 fix (<a href="https://groups.io/g/xrouter/message/1958">message/1958</a>), and the pre-501b stability,
 Direwolf, MTU and DNS guidance (author/community) ·
@@ -3270,7 +3270,7 @@ incremental editing, root vs non-root)</p>
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Documentation re-presentation released under CC BY 4.0. XRouter itself is copyright Paula G8PZT and is free for non-commercial amateur use. This is an unofficial, community-maintained site; for canonical information defer to the author.
+      Documentation re-presentation released under CC BY 4.0, written entirely by AI from primary sources and not fact-checked by a human. XRouter itself is copyright Paula G8PZT and is free for non-commercial amateur use. This is an unofficial, community-maintained site; for canonical information defer to the author.
     </div>
   
   

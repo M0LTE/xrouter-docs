@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="A re-presentation of the documentation for XRouter, Paula G8PZT's AX.25 / NET-ROM / TCP-IP packet-radio node, router, chat server and APRS digipeater — organised by user journey and cited to primary sources.">
+        <meta name="description" content="A re-presentation of the documentation for XRouter, Paula G8PZT's AX.25 / NET-ROM / TCP-IP packet-radio node, router, chat server and APRS digipeater, organised by user journey and cited to primary sources.">
       
       
         <meta name="author" content="XRouter Documentation contributors">
@@ -569,7 +569,7 @@
   <span class="md-ellipsis">
     
   
-    AX.25 — the data link
+    AX.25: the data link
   
 
     
@@ -597,7 +597,7 @@
   <span class="md-ellipsis">
     
   
-    NET/ROM — networking and routing
+    NET/ROM: networking and routing
   
 
     
@@ -2632,11 +2632,11 @@
 
 
 <h1 id="agwpe">AGWPE<a class="headerlink" href="#agwpe" title="Permanent link">&para;</a></h1>
-<p>This page connects XRouter to an <strong>AGW Packet Engine</strong> — SV2AGW's AGWPE, or any program that
+<p>This page connects XRouter to an <strong>AGW Packet Engine</strong>, SV2AGW's AGWPE, or any program that
 speaks the AGW protocol, including <strong>Direwolf</strong>, <strong>UZ7HO SoundModem</strong> and <strong>QtSoundModem</strong> in
 AGW mode. It is for a sysop who already runs an AGW engine to drive their radios and wants
-XRouter to use it. The reverse case — XRouter pretending to <em>be</em> an AGW engine for other
-apps — is covered at the end.</p>
+XRouter to use it. The reverse case, XRouter pretending to <em>be</em> an AGW engine for other
+apps, is covered at the end.</p>
 <p>The AGW protocol lets one program present multiple radio ports over a single TCP connection.
 Where KISS gives you one TNC per interface, an AGW interface can carry <strong>up to 16 ports</strong>
 (one per AGW "radio port"), each mapped to an XRouter port via a channel letter.</p>
@@ -2654,7 +2654,7 @@ Where KISS gives you one TNC per interface, an AGW interface can carry <strong>u
 <tr>
 <td><code>TYPE=AGW</code></td>
 <td>AGW client interface</td>
-<td>— (mandatory)</td>
+<td>, (mandatory)</td>
 </tr>
 <tr>
 <td><code>MTU=&lt;bytes&gt;</code></td>
@@ -2674,7 +2674,7 @@ Where KISS gives you one TNC per interface, an AGW interface can carry <strong>u
 <tr>
 <td><code>CONFIG=&lt;password&gt;</code></td>
 <td>AGW login password, if the engine requires one</td>
-<td>—</td>
+<td>n/a</td>
 </tr>
 </tbody>
 </table>
@@ -2702,8 +2702,8 @@ with one radio port:</p>
 <div class="admonition tip">
 <p class="admonition-title">AGW vs KISS for a soundcard modem</p>
 <p>Direwolf, UZ7HO SoundModem and QtSoundModem can present <em>either</em> a KISS interface or an
-AGW interface. If you would rather connect via KISS — for instance over a serial device
-or Direwolf's KISS-over-TCP — see <a href="../soundcard-modems/">Soundcard modems</a>. Either path
+AGW interface. If you would rather connect via KISS, for instance over a serial device
+or Direwolf's KISS-over-TCP, see <a href="../soundcard-modems/">Soundcard modems</a>. Either path
 works; choose whichever is simpler on your system.</p>
 </div>
 <div class="admonition warning">
@@ -2714,15 +2714,15 @@ activity is disabled. Set a non-zero address such as <code>10.1.1.1</code>. See
 <a href="../../configuration/global-settings/">Global settings</a>.</p>
 </div>
 <h2 id="xrouter-as-an-agw-host-the-other-direction">XRouter as an AGW host (the other direction)<a class="headerlink" href="#xrouter-as-an-agw-host-the-other-direction" title="Permanent link">&para;</a></h2>
-<p>XRouter can also <strong>emulate an AGW Packet Engine</strong>, so that other applications — a logger, a
-terminal, an APRS client — can use XRouter as <em>their</em> packet engine. This is the opposite of
+<p>XRouter can also <strong>emulate an AGW Packet Engine</strong>, so that other applications, a logger, a
+terminal, an APRS client, can use XRouter as <em>their</em> packet engine. This is the opposite of
 the interface above: here other programs connect <em>in</em> to XRouter.</p>
 <p>The emulator is enabled with the global directive <strong><code>AGWPORT</code></strong>, which sets the TCP port
 XRouter listens on for AGW clients; the default is <strong><code>8000</code></strong>.</p>
 <div class="language-ini highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="na">AGWPORT</span><span class="o">=</span><span class="s">8000</span><span class="w">        </span><span class="c1">; XRouter offers an AGWPE host on port 8000</span>
 </span></code></pre></div>
 <p>A client application then points its AGWPE connection at XRouter's IP address and that port.
-Because the emulator listens on a TCP port, it is — like all IP services — subject to the
+Because the emulator listens on a TCP port, it is, like all IP services, subject to the
 <code>IPADDRESS</code> rule above.</p>
 <div class="admonition note">
 <p class="admonition-title">Don't run a client and host on the same port by accident</p>
@@ -2731,9 +2731,9 @@ Because the emulator listens on a TCP port, it is — like all IP services — s
 the emulator a different <code>AGWPORT</code>, or point the client at the real engine's port.</p>
 </div>
 <hr />
-<p><strong>Sources:</strong> <a href="https://wiki.oarc.uk/packet:xrouter:docs:man6">In-program manual, OARC wiki — §6 Installation &amp; Configuration</a>
+<p><strong>Sources:</strong> <a href="https://wiki.oarc.uk/packet:xrouter:docs:man6">In-program manual, OARC wiki: §6 Installation &amp; Configuration</a>
 (AGW client interface keywords; AGW host emulation via <code>AGWPORT</code>) ·
-<a href="https://ohiopacket.org/xrpi/docs/ifaces.htm">ohiopacket.org XRPi mirror — interfaces</a> ·
+<a href="https://ohiopacket.org/xrpi/docs/ifaces.htm">ohiopacket.org XRPi mirror: interfaces</a> ·
 <a href="https://groups.io/g/xrouter">XRouter support group (groups.io)</a></p>
 
 
@@ -2812,7 +2812,7 @@ the emulator a different <code>AGWPORT</code>, or point the client at the real e
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Documentation re-presentation released under CC BY 4.0. XRouter itself is copyright Paula G8PZT and is free for non-commercial amateur use. This is an unofficial, community-maintained site; for canonical information defer to the author.
+      Documentation re-presentation released under CC BY 4.0, written entirely by AI from primary sources and not fact-checked by a human. XRouter itself is copyright Paula G8PZT and is free for non-commercial amateur use. This is an unofficial, community-maintained site; for canonical information defer to the author.
     </div>
   
   

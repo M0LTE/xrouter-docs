@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="A re-presentation of the documentation for XRouter, Paula G8PZT's AX.25 / NET-ROM / TCP-IP packet-radio node, router, chat server and APRS digipeater — organised by user journey and cited to primary sources.">
+        <meta name="description" content="A re-presentation of the documentation for XRouter, Paula G8PZT's AX.25 / NET-ROM / TCP-IP packet-radio node, router, chat server and APRS digipeater, organised by user journey and cited to primary sources.">
       
       
         <meta name="author" content="XRouter Documentation contributors">
@@ -569,7 +569,7 @@
   <span class="md-ellipsis">
     
   
-    AX.25 — the data link
+    AX.25: the data link
   
 
     
@@ -597,7 +597,7 @@
   <span class="md-ellipsis">
     
   
-    NET/ROM — networking and routing
+    NET/ROM: networking and routing
   
 
     
@@ -2490,7 +2490,7 @@
   <a href="#the-xrouter-family-pick-your-platform" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The XRouter family — pick your platform
+        The XRouter family: pick your platform
       
     </span>
   </a>
@@ -2555,7 +2555,7 @@
 your hardware, getting hold of it, writing a first <code>XROUTER.CFG</code>, and keeping it running. If
 you are new to packet radio itself, start with the <a href="../basics/what-is-packet-radio/">basics</a>
 first; if you already run packet and just want a node on the air, you are in the right place.</p>
-<h2 id="the-xrouter-family-pick-your-platform">The XRouter family — pick your platform<a class="headerlink" href="#the-xrouter-family-pick-your-platform" title="Permanent link">&para;</a></h2>
+<h2 id="the-xrouter-family-pick-your-platform">The XRouter family: pick your platform<a class="headerlink" href="#the-xrouter-family-pick-your-platform" title="Permanent link">&para;</a></h2>
 <p>XRouter is distributed as a single self-contained binary per platform. The names are
 historical, but the three current builds share <strong>one codebase</strong> and one feature set; they
 differ only in the operating-system glue:</p>
@@ -2571,12 +2571,12 @@ differ only in the operating-system glue:</p>
 <tr>
 <td><strong>XrPi</strong></td>
 <td>Raspberry Pi / ARM (Linux)</td>
-<td>Current — actively developed</td>
+<td>Current, actively developed</td>
 </tr>
 <tr>
 <td><strong>XrLin</strong></td>
 <td>Linux PC, x86 / x86-64</td>
-<td>Current — <em>same codebase</em> as XrPi, different CPU</td>
+<td>Current, <em>same codebase</em> as XrPi, different CPU</td>
 </tr>
 <tr>
 <td><strong>XrWin</strong></td>
@@ -2596,11 +2596,11 @@ differ only in the operating-system glue:</p>
 </tbody>
 </table>
 <p>XrPi and XrLin are literally the same source compiled for two processor families (the Pi
-build adds GPIO support that x86 lacks). On Windows, <strong>XrWin is the current build</strong> — the
+build adds GPIO support that x86 lacks). On Windows, <strong>XrWin is the current build</strong>, the
 older <strong>XR32</strong>, and the <code>XR32.doc</code> Word manual that documents it, are legacy.</p>
 <p>Choosing is mostly a matter of the hardware in front of you:</p>
 <ul>
-<li><strong>A Raspberry Pi</strong> — low power, happy running unattended for months — is the classic
+<li><strong>A Raspberry Pi</strong>, low power, happy running unattended for months, is the classic
   choice for a permanent node. Follow <strong><a href="raspberry-pi/">Raspberry Pi (XrPi)</a></strong>.</li>
 <li><strong>An x86 / x86-64 Linux PC</strong> (including small fanless boxes and lightweight distros) uses
   <strong><a href="linux-pc/">Linux PC (XrLin)</a></strong>. The install model is identical to the Pi.</li>
@@ -2611,27 +2611,27 @@ configuration file and the way you operate the node are essentially the same eve
 the platform pages share most of their content.</p>
 <h2 id="where-to-download">Where to download<a class="headerlink" href="#where-to-download" title="Permanent link">&para;</a></h2>
 <p>The current and most reliable source for binaries and support is the
-<strong><a href="https://groups.io/g/xrouter">XRouter support group on groups.io</a></strong> — the latest builds for
+<strong><a href="https://groups.io/g/xrouter">XRouter support group on groups.io</a></strong>, the latest builds for
 every platform live in its <strong>Files</strong> area, and you must join the group to download them. The
 <a href="https://wiki.oarc.uk/packet:xrouter:downloads">XRouter downloads page on the OARC wiki</a>
 lists the builds too.</p>
 <div class="admonition note">
-<p class="admonition-title">Use the groups.io Files area — older mirrors are stale</p>
+<p class="admonition-title">Use the groups.io Files area, older mirrors are stale</p>
 <p>You may come across XRouter on <code>ohiopacket.org/xrpi</code> or <code>vk2dot.dyndns.org/xrpi</code>. These
 are historic mirrors: useful for <em>concepts</em>, but <strong>out of date on versions</strong> (and many
-<code>vk2dot</code> links are now dead). XRouter releases briskly — at the time of writing the
-current family is the <strong>v504</strong> series (for example <em>v504v</em>, January 2026) — so always get
+<code>vk2dot</code> links are now dead). XRouter releases briskly, at the time of writing the
+current family is the <strong>v504</strong> series (for example <em>v504v</em>, January 2026), so always get
 binaries from the groups.io Files area rather than a mirror. See
 <a href="../admin/upgrading/">Upgrading and versions</a>.</p>
 </div>
 <h2 id="what-you-need-in-general">What you need, in general<a class="headerlink" href="#what-you-need-in-general" title="Permanent link">&para;</a></h2>
 <p>Across all three platforms the shopping list is the same:</p>
 <ul>
-<li><strong>A computer</strong> running one of the supported platforms above. XRouter is undemanding — well
+<li><strong>A computer</strong> running one of the supported platforms above. XRouter is undemanding, well
   under a megabyte of disk, no special CPU.</li>
 <li><strong>A callsign and a spare SSID</strong> for the node (for example <code>-1</code>), separate from your
   personal station.</li>
-<li><strong>A way onto the air</strong> — one of:<ul>
+<li><strong>A way onto the air</strong>, one of:<ul>
 <li>a hardware <strong>KISS</strong> TNC or a <strong>NinoTNC</strong>;</li>
 <li>a <strong>soundcard modem</strong> such as <a href="../interfaces/soundcard-modems/">Direwolf</a>,
   UZ7HO SoundModem or QtSoundModem;</li>
@@ -2640,16 +2640,16 @@ binaries from the groups.io Files area rather than a mirror. See
 </ul>
 </li>
 </ul>
-<p>You do <strong>not</strong> need an installer, root privileges (on Linux, a capability flag does the job —
+<p>You do <strong>not</strong> need an installer, root privileges (on Linux, a capability flag does the job,
 see the platform pages), or any AMPRNet allocation to begin.</p>
 <h2 id="the-path-from-here">The path from here<a class="headerlink" href="#the-path-from-here" title="Permanent link">&para;</a></h2>
 <ol>
-<li><strong>Install and first-run</strong> on your platform —
+<li><strong>Install and first-run</strong> on your platform,
    <a href="raspberry-pi/">Raspberry Pi</a>, <a href="linux-pc/">Linux PC</a> or <a href="windows/">Windows</a>.</li>
-<li><strong>Write your configuration</strong> — the cornerstone is
+<li><strong>Write your configuration</strong>, the cornerstone is
    <strong><a href="first-config/">Your first XROUTER.CFG</a></strong>, a line-by-line walk-through of a minimal
    working node, including the <code>IPADDRESS</code> and case-sensitivity gotchas that catch newcomers.</li>
-<li><strong>Keep it running</strong> unattended — <a href="running-as-a-service/">Running as a service</a>.</li>
+<li><strong>Keep it running</strong> unattended, <a href="running-as-a-service/">Running as a service</a>.</li>
 </ol>
 <p>From there, the <a href="../configuration/">Configuration</a> section covers
 <a href="../configuration/global-settings/">global settings</a>,
@@ -2738,7 +2738,7 @@ hardware.</p>
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Documentation re-presentation released under CC BY 4.0. XRouter itself is copyright Paula G8PZT and is free for non-commercial amateur use. This is an unofficial, community-maintained site; for canonical information defer to the author.
+      Documentation re-presentation released under CC BY 4.0, written entirely by AI from primary sources and not fact-checked by a human. XRouter itself is copyright Paula G8PZT and is free for non-commercial amateur use. This is an unofficial, community-maintained site; for canonical information defer to the author.
     </div>
   
   

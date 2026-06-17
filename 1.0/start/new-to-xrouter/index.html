@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="A re-presentation of the documentation for XRouter, Paula G8PZT's AX.25 / NET-ROM / TCP-IP packet-radio node, router, chat server and APRS digipeater — organised by user journey and cited to primary sources.">
+        <meta name="description" content="A re-presentation of the documentation for XRouter, Paula G8PZT's AX.25 / NET-ROM / TCP-IP packet-radio node, router, chat server and APRS digipeater, organised by user journey and cited to primary sources.">
       
       
         <meta name="author" content="XRouter Documentation contributors">
@@ -651,7 +651,7 @@
   <span class="md-ellipsis">
     
   
-    AX.25 — the data link
+    AX.25: the data link
   
 
     
@@ -679,7 +679,7 @@
   <span class="md-ellipsis">
     
   
-    NET/ROM — networking and routing
+    NET/ROM: networking and routing
   
 
     
@@ -2620,8 +2620,8 @@
 
 
 <h1 id="new-to-xrouter">New to XRouter<a class="headerlink" href="#new-to-xrouter" title="Permanent link">&para;</a></h1>
-<p>This page is the fast path for someone who already understands packet — AX.25,
-NET/ROM, KISS, the sysop role — and just wants XRouter up and configured. It points
+<p>This page is the fast path for someone who already understands packet, AX.25,
+NET/ROM, KISS, the sysop role, and just wants XRouter up and configured. It points
 you straight at the practical pages and summarises what makes XRouter different from
 node software you may already know.</p>
 <h2 id="the-fast-path">The fast path<a class="headerlink" href="#the-fast-path" title="Permanent link">&para;</a></h2>
@@ -2651,20 +2651,20 @@ data file names are <strong>UPPER CASE</strong> and case-sensitive.</p>
 </div>
 <h2 id="whats-distinctive-about-xrouter">What's distinctive about XRouter<a class="headerlink" href="#whats-distinctive-about-xrouter" title="Permanent link">&para;</a></h2>
 <p>If you're coming from another node program, these are the things that will feel
-different — each links to its full page:</p>
+different, each links to its full page:</p>
 <ul>
 <li><strong>INP3 link-state routing is on by default.</strong> As well as classic NET/ROM quality,
   XRouter times every packet for a round-trip-time metric (L3RTT) and uses the
   <strong>INP3</strong> extension to choose good paths automatically. The author is a firm
-  believer in it — in her words you "have to disable it if you want to be a luddite."
+  believer in it, in her words you "have to disable it if you want to be a luddite."
   See <a href="../../networking/netrom-inp3/">NET/ROM, INP3 and L3RTT</a>.</li>
 <li><strong>NetRom-X service numbers instead of SSID sprawl.</strong> Rather than a separate SSID
   per service, one node callsign exposes up to 65535 <em>numbered</em> services, like
-  well-known TCP ports — service 2 is the PMS, service 8 is chat, and so on. So
+  well-known TCP ports, service 2 is the PMS, service 8 is chat, and so on. So
   <code>C[onnect] G8PZT 2</code> reaches that node's mailbox. See
   <a href="../../networking/netromx-services/">NetRom-X service numbers</a>.</li>
 <li><strong>Its own TCP/IP stack.</strong> XRouter carries a complete multi-homed IP stack of its
-  own, alongside the host's — ARP, a router, DNS, NAT, RIP and IPIP/IPUDP tunnels —
+  own, alongside the host's, ARP, a router, DNS, NAT, RIP and IPIP/IPUDP tunnels,
   designed in from the start rather than bolted on. See
   <a href="../../networking/tcpip/">The TCP/IP stack</a>.</li>
 <li><strong>Built-in servers, no add-ons.</strong> A <a href="../../subsystems/pms-mailbox/">PMS mailbox</a>, a
@@ -2681,7 +2681,7 @@ via WA8DED host mode (<code>DEDHOST</code>). See <a href="../../subsystems/pms-m
 </div>
 <h2 id="good-to-know">Good to know<a class="headerlink" href="#good-to-know" title="Permanent link">&para;</a></h2>
 <p>XRouter is <strong>closed source</strong>, free for non-commercial amateur use, and released
-briskly — at the time of writing the current family is the <strong>v504</strong> series. Get
+briskly, at the time of writing the current family is the <strong>v504</strong> series. Get
 current builds and support from the
 <a href="https://groups.io/g/xrouter">XRouter group on groups.io</a>; see
 <a href="../../admin/upgrading/">Upgrading and versions</a>. When you're ready to put a node into
@@ -2768,7 +2768,7 @@ service, read <a href="../../admin/security-hardening/">Security and hardening</
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Documentation re-presentation released under CC BY 4.0. XRouter itself is copyright Paula G8PZT and is free for non-commercial amateur use. This is an unofficial, community-maintained site; for canonical information defer to the author.
+      Documentation re-presentation released under CC BY 4.0, written entirely by AI from primary sources and not fact-checked by a human. XRouter itself is copyright Paula G8PZT and is free for non-commercial amateur use. This is an unofficial, community-maintained site; for canonical information defer to the author.
     </div>
   
   

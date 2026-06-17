@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="A re-presentation of the documentation for XRouter, Paula G8PZT's AX.25 / NET-ROM / TCP-IP packet-radio node, router, chat server and APRS digipeater — organised by user journey and cited to primary sources.">
+        <meta name="description" content="A re-presentation of the documentation for XRouter, Paula G8PZT's AX.25 / NET-ROM / TCP-IP packet-radio node, router, chat server and APRS digipeater, organised by user journey and cited to primary sources.">
       
       
         <meta name="author" content="XRouter Documentation contributors">
@@ -569,7 +569,7 @@
   <span class="md-ellipsis">
     
   
-    AX.25 — the data link
+    AX.25: the data link
   
 
     
@@ -597,7 +597,7 @@
   <span class="md-ellipsis">
     
   
-    NET/ROM — networking and routing
+    NET/ROM: networking and routing
   
 
     
@@ -1294,7 +1294,7 @@
   <a href="#mailbox-pms-in-the-pms-subdirectory" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Mailbox (PMS) — in the PMS subdirectory
+        Mailbox (PMS): in the PMS subdirectory
       
     </span>
   </a>
@@ -2746,7 +2746,7 @@
   <a href="#mailbox-pms-in-the-pms-subdirectory" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Mailbox (PMS) — in the PMS subdirectory
+        Mailbox (PMS): in the PMS subdirectory
       
     </span>
   </a>
@@ -2818,7 +2818,7 @@
 
 
 <h1 id="system-and-data-files">System and data files<a class="headerlink" href="#system-and-data-files" title="Permanent link">&para;</a></h1>
-<p>XRouter reads and writes a family of configuration and data files — around forty of them —
+<p>XRouter reads and writes a family of configuration and data files, around forty of them,
 all living in (or beneath) the working directory that holds the executable. Only two are
 mandatory: the program itself and <code>XROUTER.CFG</code>. Everything else is optional, and the system
 runs in a restricted mode without them. This page is a reference to the files named in the
@@ -2830,12 +2830,12 @@ manual's "Configuration and System Files" section.</p>
 <p>Linux filesystems are case-sensitive, and XRouter looks for its files in <strong>UPPER CASE</strong>.
 <code>IPROUTE.SYS</code> and <code>iproute.sys</code> are different files, and XRouter only reads the former.
 Getting the case wrong is the single most common reason an expected file is silently
-ignored. The executable itself is the exception — on the Pi build it is the lowercase
+ignored. The executable itself is the exception, on the Pi build it is the lowercase
 <code>xrpi</code>.</p>
 </div>
 <h2 id="how-to-read-this-table">How to read this table<a class="headerlink" href="#how-to-read-this-table" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>File</strong> — the exact (upper-case) name. A trailing <code>.n</code> (e.g. <code>PPPHOST.n</code>) means one file
+<li><strong>File</strong>, the exact (upper-case) name. A trailing <code>.n</code> (e.g. <code>PPPHOST.n</code>) means one file
   per port, with <code>n</code> replaced by the port number.</li>
 <li><strong>Notes</strong> lists where the file lives if not the working directory, and cross-references the
   page that explains it.</li>
@@ -2857,8 +2857,8 @@ ignored. The executable itself is the exception — on the Pi build it is the lo
 </tr>
 <tr>
 <td><code>BOOTCMDS.SYS</code></td>
-<td>Commands executed at bootup, after <code>XROUTER.CFG</code> and <code>IPROUTE.SYS</code> — for settings that have no <code>XROUTER.CFG</code> keyword (e.g. <code>GNET</code>, <code>PPP</code>). One command per line</td>
-<td>—</td>
+<td>Commands executed at bootup, after <code>XROUTER.CFG</code> and <code>IPROUTE.SYS</code>, for settings that have no <code>XROUTER.CFG</code> keyword (e.g. <code>GNET</code>, <code>PPP</code>). One command per line</td>
+<td>n/a</td>
 </tr>
 <tr>
 <td><code>CRONTAB.SYS</code></td>
@@ -2880,7 +2880,7 @@ ignored. The executable itself is the exception — on the Pi build it is the lo
 <tr>
 <td><code>XRNODES</code></td>
 <td><strong>NET/ROM nodes-table recovery file.</strong> Populates the nodes table at boot so the node can restart without losing routes (rebuilding from broadcasts can take hours). Saved every <code>NODESINTERVAL</code>, at close-down and on <code>SAVENODES</code>. Plain text, no extension, sysop-editable</td>
-<td><strong>Delete it before booting if the node has been down for a long time</strong> — stale data re-introduces nodes that have since expired. See <a href="../../networking/netrom-inp3/">NET/ROM, INP3 and L3RTT</a></td>
+<td><strong>Delete it before booting if the node has been down for a long time</strong>, stale data re-introduces nodes that have since expired. See <a href="../../networking/netrom-inp3/">NET/ROM, INP3 and L3RTT</a></td>
 </tr>
 </tbody>
 </table>
@@ -2896,7 +2896,7 @@ ignored. The executable itself is the exception — on the Pi build it is the lo
 <tbody>
 <tr>
 <td><code>IPROUTE.SYS</code></td>
-<td>IP router configuration — routes, ARP, NAT, RIP and filtering (<code>ACL</code>, <code>ARP</code>, <code>DUN</code>, <code>IP</code>, <code>NAT</code>, <code>RIP</code> commands). Needed only for IP routing/facilities</td>
+<td>IP router configuration, routes, ARP, NAT, RIP and filtering (<code>ACL</code>, <code>ARP</code>, <code>DUN</code>, <code>IP</code>, <code>NAT</code>, <code>RIP</code> commands). Needed only for IP routing/facilities</td>
 <td>Read at boot or on <code>IP ROUTE LOAD</code>. See <a href="../../networking/tcpip/">The TCP/IP stack</a></td>
 </tr>
 <tr>
@@ -2912,7 +2912,7 @@ ignored. The executable itself is the exception — on the Pi build it is the lo
 <tr>
 <td><code>XENCAP.TXT</code></td>
 <td>Extended <code>ENCAP.TXT</code> allowing modes other than encap (<code>ipip</code>, <code>ipudp</code>). Experimental</td>
-<td>—</td>
+<td>n/a</td>
 </tr>
 <tr>
 <td><code>DYNDNS.CFG</code></td>
@@ -2954,7 +2954,7 @@ ignored. The executable itself is the exception — on the Pi build it is the lo
 <tr>
 <td><code>HTTPBAN.SYS</code></td>
 <td>Blocks malicious HTTP request URLs by signature and bans the sender IP. <code>ANYCASE</code> prefix for case-independent matching</td>
-<td>—</td>
+<td>n/a</td>
 </tr>
 <tr>
 <td><code>POPUSERS.SYS</code></td>
@@ -2964,7 +2964,7 @@ ignored. The executable itself is the exception — on the Pi build it is the lo
 </tbody>
 </table>
 <h2 id="egress-control-acl-files">Egress control (<code>.ACL</code> files)<a class="headerlink" href="#egress-control-acl-files" title="Permanent link">&para;</a></h2>
-<p><code>.ACL</code> files share one format — <code>&lt;PERMIT|DENY&gt; &lt;src_ip&gt;[/mask] &lt;dst_ip&gt;[/mask] &lt;port(s)&gt;</code>,
+<p><code>.ACL</code> files share one format, <code>&lt;PERMIT|DENY&gt; &lt;src_ip&gt;[/mask] &lt;dst_ip&gt;[/mask] &lt;port(s)&gt;</code>,
 first match wins, ordering is significant. Where a proxy is password-less, the matching <code>.ACL</code>
 is essential to prevent it being abused as an open relay. See
 <a href="../../admin/security-hardening/">Security and hardening</a>.</p>
@@ -2980,12 +2980,12 @@ is essential to prevent it being abused as an open relay. See
 <tr>
 <td><code>HTTP.ACL</code></td>
 <td>HTTP proxy egress control. Absent / no rules ⇒ all blocked (403)</td>
-<td>—</td>
+<td>n/a</td>
 </tr>
 <tr>
 <td><code>SOCKS.ACL</code></td>
 <td>SOCKS proxy egress control. Absent / no rules ⇒ all blocked</td>
-<td>—</td>
+<td>n/a</td>
 </tr>
 <tr>
 <td><code>TELGUEST.ACL</code></td>
@@ -3026,7 +3026,7 @@ is essential to prevent it being abused as an open relay. See
 </tr>
 </tbody>
 </table>
-<h2 id="mailbox-pms-in-the-pms-subdirectory">Mailbox (PMS) — in the <code>PMS</code> subdirectory<a class="headerlink" href="#mailbox-pms-in-the-pms-subdirectory" title="Permanent link">&para;</a></h2>
+<h2 id="mailbox-pms-in-the-pms-subdirectory">Mailbox (PMS): in the <code>PMS</code> subdirectory<a class="headerlink" href="#mailbox-pms-in-the-pms-subdirectory" title="Permanent link">&para;</a></h2>
 <p>These control files all live in the <code>PMS</code> subdirectory. See
 <a href="../../subsystems/pms-mailbox/">PMS mailbox</a>.</p>
 <table>
@@ -3045,12 +3045,12 @@ is essential to prevent it being abused as an open relay. See
 </tr>
 <tr>
 <td><code>FWD.SYS</code></td>
-<td>Forwarding control — when and how to deliver queued mail to neighbours (per-BBS blocks, day/hour lines, a script)</td>
+<td>Forwarding control, when and how to deliver queued mail to neighbours (per-BBS blocks, day/hour lines, a script)</td>
 <td>In <code>PMS</code></td>
 </tr>
 <tr>
 <td><code>DISTRIB.SYS</code></td>
-<td>Mail distribution control — queue mail to neighbour mailboxes; <code>^</code>-prefixed entries reject</td>
+<td>Mail distribution control, queue mail to neighbour mailboxes; <code>^</code>-prefixed entries reject</td>
 <td>In <code>PMS</code></td>
 </tr>
 <tr>
@@ -3060,12 +3060,12 @@ is essential to prevent it being abused as an open relay. See
 </tr>
 <tr>
 <td><code>REJECT.SYS</code></td>
-<td>Mail rejection control — reject offered mail by type/to/from/at/size</td>
+<td>Mail rejection control, reject offered mail by type/to/from/at/size</td>
 <td>In <code>PMS</code></td>
 </tr>
 <tr>
 <td><code>EXPORT.SYS</code></td>
-<td>Mail export control — archive or create files for other mail systems</td>
+<td>Mail export control, archive or create files for other mail systems</td>
 <td>In <code>PMS</code></td>
 </tr>
 <tr>
@@ -3104,18 +3104,18 @@ is essential to prevent it being abused as an open relay. See
 <tbody>
 <tr>
 <td><code>FTPCLI.SYS</code></td>
-<td>FTP client account file — automate logins to FTP servers (<code>&lt;name&gt; &lt;host&gt;[:port] [user [pass …]]</code>)</td>
+<td>FTP client account file, automate logins to FTP servers (<code>&lt;name&gt; &lt;host&gt;[:port] [user [pass …]]</code>)</td>
 <td><code>*</code> = empty placeholder</td>
 </tr>
 <tr>
 <td><code>PPPHOST.n</code></td>
 <td>PPP configuration, one file per modem port (<code>n</code> = port). Needed only for auto-answer PSTN</td>
-<td>—</td>
+<td>n/a</td>
 </tr>
 <tr>
 <td><code>*.SCR</code></td>
 <td>Dialler scripts</td>
-<td>—</td>
+<td>n/a</td>
 </tr>
 </tbody>
 </table>
@@ -3137,7 +3137,7 @@ is essential to prevent it being abused as an open relay. See
 <tr>
 <td><code>LANGS.SYS</code></td>
 <td>Language-by-callsign selection at session start (<code>&lt;callsign_mask&gt; &lt;lang_number&gt;</code>; English 0, French 1, Spanish 2, German 3, Dutch 4). Unlisted callers get <code>DEFAULTLANG</code></td>
-<td>—</td>
+<td>n/a</td>
 </tr>
 <tr>
 <td><code>ENGLISH.SYS</code></td>
@@ -3181,15 +3181,15 @@ is essential to prevent it being abused as an open relay. See
 <hr />
 <div class="admonition note">
 <p class="admonition-title">Platform-specific filenames</p>
-<p>A few items use platform-specific names on the legacy Windows/DOS builds — for example the
+<p>A few items use platform-specific names on the legacy Windows/DOS builds, for example the
 main configuration file is referenced as <code>XR16.CFG</code> / <code>XR32.CFG</code> for some XR16/XR32-only
 settings (such as the NDISXPKT driver). On current XrPi/XrLin/XrWin the file is
 <code>XROUTER.CFG</code>.</p>
 </div>
 <hr />
-<p><strong>Sources:</strong> In-program manual mirrored on the OARC wiki —
+<p><strong>Sources:</strong> In-program manual mirrored on the OARC wiki,
 <a href="https://wiki.oarc.uk/packet:xrouter:docs:man8">Section 8, Configuration and System Files (<code>man8</code>)</a> ·
-<a href="https://ohiopacket.org/xrpi/docs/index.htm">ohiopacket.org XRPi mirror — "Files used by XRPi" and <code>install.htm</code></a></p>
+<a href="https://ohiopacket.org/xrpi/docs/index.htm">ohiopacket.org XRPi mirror: "Files used by XRPi" and <code>install.htm</code></a></p>
 
 
 
@@ -3267,7 +3267,7 @@ settings (such as the NDISXPKT driver). On current XrPi/XrLin/XrWin the file is
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Documentation re-presentation released under CC BY 4.0. XRouter itself is copyright Paula G8PZT and is free for non-commercial amateur use. This is an unofficial, community-maintained site; for canonical information defer to the author.
+      Documentation re-presentation released under CC BY 4.0, written entirely by AI from primary sources and not fact-checked by a human. XRouter itself is copyright Paula G8PZT and is free for non-commercial amateur use. This is an unofficial, community-maintained site; for canonical information defer to the author.
     </div>
   
   

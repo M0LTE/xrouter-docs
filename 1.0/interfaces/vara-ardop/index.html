@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="A re-presentation of the documentation for XRouter, Paula G8PZT's AX.25 / NET-ROM / TCP-IP packet-radio node, router, chat server and APRS digipeater — organised by user journey and cited to primary sources.">
+        <meta name="description" content="A re-presentation of the documentation for XRouter, Paula G8PZT's AX.25 / NET-ROM / TCP-IP packet-radio node, router, chat server and APRS digipeater, organised by user journey and cited to primary sources.">
       
       
         <meta name="author" content="XRouter Documentation contributors">
@@ -569,7 +569,7 @@
   <span class="md-ellipsis">
     
   
-    AX.25 — the data link
+    AX.25: the data link
   
 
     
@@ -597,7 +597,7 @@
   <span class="md-ellipsis">
     
   
-    NET/ROM — networking and routing
+    NET/ROM: networking and routing
   
 
     
@@ -2626,7 +2626,7 @@ and wants XRouter to use it as a packet modem. VARA and ARDOP are not configured
 TNC; XRouter attaches to the running modem over a TCP connection.</p>
 <p>VARA and ARDOP are software modems that run as their own applications and expose a TCP
 interface for other programs to drive. XRouter connects to that interface rather than to a
-serial KISS device — so, as with <a href="../soundcard-modems/">Direwolf KISS-over-TCP</a>, the modem
+serial KISS device, so, as with <a href="../soundcard-modems/">Direwolf KISS-over-TCP</a>, the modem
 runs alongside XRouter and the two talk over a socket.</p>
 <h2 id="attaching-xrouter-to-the-modem">Attaching XRouter to the modem<a class="headerlink" href="#attaching-xrouter-to-the-modem" title="Permanent link">&para;</a></h2>
 <p>You configure a port for the modem, and then attach to the running modem from the node with
@@ -2650,14 +2650,14 @@ and other VARA users can give you a configuration that matches your build.</p>
 <p>VARA is widely used with other packet software, and those setups are a useful guide to how
 the modem itself is installed and connected over TCP. One reference noted by the community is
 the <strong>VARA + JNOS</strong> write-up at
-<a href="https://www.langelaar.net/projects/jnos2/vara">langelaar.net/projects/jnos2/vara</a> — it is
+<a href="https://www.langelaar.net/projects/jnos2/vara">langelaar.net/projects/jnos2/vara</a>, it is
 about JNOS rather than XRouter, but it illustrates the general pattern of driving a VARA modem
 over its TCP interface, which carries across.</p>
 <div class="admonition tip">
 <p class="admonition-title">VARA and ARDOP are still IP/TCP links</p>
 <p>Because XRouter reaches these modems over TCP, the <code>IPADDRESS</code> rule applies: with the
 global <code>IPADDRESS</code> left at <code>0.0.0.0</code>, all IP activity is disabled and the modem connection
-will not come up. Set a non-zero address (a private dummy such as <code>10.1.1.1</code> is fine) —
+will not come up. Set a non-zero address (a private dummy such as <code>10.1.1.1</code> is fine),
 see <a href="../../configuration/global-settings/">Global settings</a>.</p>
 </div>
 <h2 id="where-to-go-next">Where to go next<a class="headerlink" href="#where-to-go-next" title="Permanent link">&para;</a></h2>
@@ -2671,10 +2671,10 @@ see <a href="../../configuration/global-settings/">Global settings</a>.</p>
   to ask.</li>
 </ul>
 <hr />
-<p><strong>Sources:</strong> <a href="https://groups.io/g/xrouter/message/3407">groups.io — author runs a VARA port, attaches with <code>TNC 6</code></a> ·
-<a href="https://groups.io/g/xrouter/message/3413">groups.io — ARDOP interface also exists in XRouter</a> ·
-<a href="https://groups.io/g/xrouter/message/633">groups.io — VARA is a soundcard modem reached over TCP</a> ·
-<a href="https://groups.io/g/xrouter/message/3366">groups.io — VARA+JNOS reference (external)</a>.
+<p><strong>Sources:</strong> <a href="https://groups.io/g/xrouter/message/3407">groups.io: author runs a VARA port, attaches with <code>TNC 6</code></a> ·
+<a href="https://groups.io/g/xrouter/message/3413">groups.io: ARDOP interface also exists in XRouter</a> ·
+<a href="https://groups.io/g/xrouter/message/633">groups.io: VARA is a soundcard modem reached over TCP</a> ·
+<a href="https://groups.io/g/xrouter/message/3366">groups.io: VARA+JNOS reference (external)</a>.
 This page intentionally omits interface-block specifics not confirmed in those sources.</p>
 
 
@@ -2753,7 +2753,7 @@ This page intentionally omits interface-block specifics not confirmed in those s
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Documentation re-presentation released under CC BY 4.0. XRouter itself is copyright Paula G8PZT and is free for non-commercial amateur use. This is an unofficial, community-maintained site; for canonical information defer to the author.
+      Documentation re-presentation released under CC BY 4.0, written entirely by AI from primary sources and not fact-checked by a human. XRouter itself is copyright Paula G8PZT and is free for non-commercial amateur use. This is an unofficial, community-maintained site; for canonical information defer to the author.
     </div>
   
   

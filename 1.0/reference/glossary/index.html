@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="A re-presentation of the documentation for XRouter, Paula G8PZT's AX.25 / NET-ROM / TCP-IP packet-radio node, router, chat server and APRS digipeater — organised by user journey and cited to primary sources.">
+        <meta name="description" content="A re-presentation of the documentation for XRouter, Paula G8PZT's AX.25 / NET-ROM / TCP-IP packet-radio node, router, chat server and APRS digipeater, organised by user journey and cited to primary sources.">
       
       
         <meta name="author" content="XRouter Documentation contributors">
@@ -569,7 +569,7 @@
   <span class="md-ellipsis">
     
   
-    AX.25 — the data link
+    AX.25: the data link
   
 
     
@@ -597,7 +597,7 @@
   <span class="md-ellipsis">
     
   
-    NET/ROM — networking and routing
+    NET/ROM: networking and routing
   
 
     
@@ -3216,7 +3216,7 @@
 <h1 id="glossary">Glossary<a class="headerlink" href="#glossary" title="Permanent link">&para;</a></h1>
 <p>Short definitions of the terms you meet across this site and in XRouter's own manual.
 Where a concept has a fuller page, the term links to it. This is a quick reference, not
-a tutorial — start with <a href="../../basics/what-is-packet-radio/">Packet radio basics</a> if a
+a tutorial, start with <a href="../../basics/what-is-packet-radio/">Packet radio basics</a> if a
 whole area is new to you.</p>
 <h3 id="agwpe">AGWPE<a class="headerlink" href="#agwpe" title="Permanent link">&para;</a></h3>
 <p>The <strong>AGW Packet Engine</strong> (SV2AGW), a Windows program that presents radios/TNCs to
@@ -3238,13 +3238,13 @@ plotted on a live map. XRouter can digipeat APRS and act as an <a href="#igate">
 <h3 id="ax25">AX.25<a class="headerlink" href="#ax25" title="Permanent link">&para;</a></h3>
 <p><strong>Amateur X.25</strong>, the data-link (layer-2) protocol underneath almost all packet radio.
 It carries <a href="#ssid">callsigns</a> in every frame, supports both connected and connectionless
-operation, and defines <a href="#digipeater">digipeating</a>. See <a href="../../basics/ax25/">AX.25 — the data link</a>.</p>
+operation, and defines <a href="#digipeater">digipeating</a>. See <a href="../../basics/ax25/">AX.25: the data link</a>.</p>
 <h3 id="axip-axudp-axtcp">AXIP / AXUDP / AXTCP<a class="headerlink" href="#axip-axudp-axtcp" title="Permanent link">&para;</a></h3>
 <p>Three ways to carry AX.25 frames over the internet to link nodes: <strong>AXIP</strong> wraps them in
 raw IP (protocol 93), <strong>AXUDP</strong> in UDP datagrams, <strong>AXTCP</strong> in a TCP stream (which traverses
 NAT and firewalls well). See <a href="../../interfaces/axip-axudp-axtcp/">AXIP / AXUDP / AXTCP linking</a>.</p>
 <h3 id="bbs">BBS<a class="headerlink" href="#bbs" title="Permanent link">&para;</a></h3>
-<p>A <strong>Bulletin Board System</strong> — full store-and-forward mail and message handling. XRouter
+<p>A <strong>Bulletin Board System</strong>, full store-and-forward mail and message handling. XRouter
 provides a smaller <a href="#pms">PMS</a> rather than a full BBS; for a full BBS the community usually
 points to BPQ.</p>
 <h3 id="dedhost-wa8ded-host-mode">DEDHOST / WA8DED host mode<a class="headerlink" href="#dedhost-wa8ded-host-mode" title="Permanent link">&para;</a></h3>
@@ -3253,8 +3253,8 @@ a host program drive several logical channels over one serial link. XRouter can 
 WA8DED host-mode TNC so applications such as FBB can use it as their packet engine.</p>
 <h3 id="digipeater">Digipeater<a class="headerlink" href="#digipeater" title="Permanent link">&para;</a></h3>
 <p>A single-frequency, store-and-forward repeater at layer 2: if its callsign appears next in a
-frame's repeater list, it retransmits the frame. It is simple source routing — the sender
-lists the path — and is the building block beneath APRS paths. See <a href="../../basics/ax25/">AX.25</a>.</p>
+frame's repeater list, it retransmits the frame. It is simple source routing, the sender
+lists the path, and is the building block beneath APRS paths. See <a href="../../basics/ax25/">AX.25</a>.</p>
 <h3 id="frack">FRACK<a class="headerlink" href="#frack" title="Permanent link">&para;</a></h3>
 <p><strong>Frame ACK</strong> time: the AX.25 T1 timer, the time a station waits for an acknowledgement before
 resending a frame. Set per port (<code>FRACK</code>, milliseconds); higher on slow RF links, lower on fast
@@ -3269,7 +3269,7 @@ broadcasting <a href="#quality">quality</a>, it unicasts routing updates to neig
 <strong>trip time</strong> (plus hop count) as the metric, so the network can prefer genuinely faster paths.
 See <a href="../../networking/netrom-inp3/">NET/ROM, INP3 and L3RTT</a>.</p>
 <h3 id="kiss">KISS<a class="headerlink" href="#kiss" title="Permanent link">&para;</a></h3>
-<p>"<strong>Keep It Simple, Stupid</strong>" — a minimal framing protocol on the link between a computer and a
+<p>"<strong>Keep It Simple, Stupid</strong>", a minimal framing protocol on the link between a computer and a
 <a href="#tnc">TNC</a>. It is not part of AX.25 and never goes on the air; it just delimits frames over the
 wire. Runs over serial or over TCP. See <a href="../../basics/kiss-tncs-and-modems/">KISS, TNCs and soundcard modems</a>.</p>
 <h3 id="kiss-over-tcp">KISS-over-TCP<a class="headerlink" href="#kiss-over-tcp" title="Permanent link">&para;</a></h3>
@@ -3284,7 +3284,7 @@ inter-node links alive.</p>
 <p>The maximum number of un-acknowledged AX.25 information frames a station may have outstanding
 (the window). Set per port; values of 8 or more switch the link to extended (modulo-128) operation.</p>
 <h3 id="mtu">MTU<a class="headerlink" href="#mtu" title="Permanent link">&para;</a></h3>
-<p><strong>Maximum Transmission Unit</strong> — the largest frame an <a href="../../configuration/interfaces/">interface</a>
+<p><strong>Maximum Transmission Unit</strong>, the largest frame an <a href="../../configuration/interfaces/">interface</a>
 will pass. Mandatory in every interface block; the manual advises keeping it to 256 (or less) on
 AX.25 ports because of TNC buffer limits.</p>
 <h3 id="neighbour">Neighbour<a class="headerlink" href="#neighbour" title="Permanent link">&para;</a></h3>
@@ -3294,21 +3294,21 @@ is built up from what each node learns about its neighbours.</p>
 <p>A layer-3/4 networking scheme over connected-mode AX.25 that lets traffic be routed automatically
 across many nodes (with friendly <a href="#alias">aliases</a> and per-hop acknowledgement) instead of relying
 on manual <a href="#digipeater">digipeater</a> paths. XRouter implements it and extends it. See
-<a href="../../basics/netrom/">NET/ROM — networking and routing</a>.</p>
+<a href="../../basics/netrom/">NET/ROM: networking and routing</a>.</p>
 <h3 id="netrom-x">NetRom-X<a class="headerlink" href="#netrom-x" title="Permanent link">&para;</a></h3>
 <p>XRouter's <strong>service-numbering scheme</strong>: one node callsign exposing many numbered services
 (mailbox, chat, info and so on), like well-known TCP ports, avoiding a separate <a href="#ssid">SSID</a>
 per service. See <a href="../../networking/netromx-services/">NetRom-X service numbers</a> and the
 <a href="../ports-and-services/#netrom-x-standard-service-numbers">service-number table</a>.</p>
 <h3 id="node">Node<a class="headerlink" href="#node" title="Permanent link">&para;</a></h3>
-<p>A station — usually unattended, at a good RF site — that provides onward connectivity between
+<p>A station, usually unattended, at a good RF site, that provides onward connectivity between
 users and other nodes, identified by a <a href="#ssid">callsign</a> and an <a href="#alias">alias</a>. XRouter turns a
 computer plus radios/links into such a node. See <a href="../../basics/nodes-and-sysops/">Nodes, switches and the sysop role</a>.</p>
 <h3 id="paclen">PACLEN<a class="headerlink" href="#paclen" title="Permanent link">&para;</a></h3>
 <p><strong>Packet length</strong>: the maximum payload XRouter puts in a packet (<code>PACLEN</code>). Set globally and
 per port; the global value also sets the NET/ROM layer-3 default.</p>
 <h3 id="pms">PMS<a class="headerlink" href="#pms" title="Permanent link">&para;</a></h3>
-<p>The <strong>Personal Message Server</strong> — XRouter's built-in mailbox. It does FBB-style forwarding but is
+<p>The <strong>Personal Message Server</strong>, XRouter's built-in mailbox. It does FBB-style forwarding but is
 deliberately smaller than a full <a href="#bbs">BBS</a>. See <a href="../../subsystems/pms-mailbox/">PMS mailbox</a>.</p>
 <h3 id="pztdos">PZTDOS<a class="headerlink" href="#pztdos" title="Permanent link">&para;</a></h3>
 <p>A small DOS-style file-maintenance shell built into XRouter (with a line editor) for managing
@@ -3319,7 +3319,7 @@ de-rated as it propagates, so each node can pick the best next hop. Sensible qua
 node tables sane; everyone using 255 causes route "hijacking" and bloat.</p>
 <h3 id="soundcard-modem">Soundcard modem<a class="headerlink" href="#soundcard-modem" title="Permanent link">&para;</a></h3>
 <p>Software that turns a computer sound card (or USB audio interface) into an AX.25 modem, replacing
-a hardware TNC — for example <strong>Direwolf</strong>, <strong>UZ7HO SoundModem</strong> or <strong>QtSoundModem</strong>. XRouter
+a hardware TNC, for example <strong>Direwolf</strong>, <strong>UZ7HO SoundModem</strong> or <strong>QtSoundModem</strong>. XRouter
 connects to these over <a href="#kiss">KISS</a> (often <a href="#kiss-over-tcp">KISS-over-TCP</a>) or <a href="#agwpe">AGWPE</a>.
 See <a href="../../interfaces/soundcard-modems/">Soundcard modems</a>.</p>
 <h3 id="ssid">SSID<a class="headerlink" href="#ssid" title="Permanent link">&para;</a></h3>
@@ -3416,7 +3416,7 @@ UI frames.</p>
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Documentation re-presentation released under CC BY 4.0. XRouter itself is copyright Paula G8PZT and is free for non-commercial amateur use. This is an unofficial, community-maintained site; for canonical information defer to the author.
+      Documentation re-presentation released under CC BY 4.0, written entirely by AI from primary sources and not fact-checked by a human. XRouter itself is copyright Paula G8PZT and is free for non-commercial amateur use. This is an unofficial, community-maintained site; for canonical information defer to the author.
     </div>
   
   

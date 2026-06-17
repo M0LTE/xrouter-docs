@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="A re-presentation of the documentation for XRouter, Paula G8PZT's AX.25 / NET-ROM / TCP-IP packet-radio node, router, chat server and APRS digipeater — organised by user journey and cited to primary sources.">
+        <meta name="description" content="A re-presentation of the documentation for XRouter, Paula G8PZT's AX.25 / NET-ROM / TCP-IP packet-radio node, router, chat server and APRS digipeater, organised by user journey and cited to primary sources.">
       
       
         <meta name="author" content="XRouter Documentation contributors">
@@ -29,7 +29,7 @@
     
     
       
-        <title>AX.25 — the data link - XRouter Documentation</title>
+        <title>AX.25: the data link - XRouter Documentation</title>
       
     
     
@@ -122,7 +122,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              AX.25 — the data link
+              AX.25: the data link
             
           </span>
         </div>
@@ -580,7 +580,7 @@
   <span class="md-ellipsis">
     
   
-    AX.25 — the data link
+    AX.25: the data link
   
 
     
@@ -598,7 +598,7 @@
   <span class="md-ellipsis">
     
   
-    AX.25 — the data link
+    AX.25: the data link
   
 
     
@@ -638,7 +638,7 @@
   <a href="#addressing-callsign-plus-ssid" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Addressing — callsign plus SSID
+        Addressing: callsign plus SSID
       
     </span>
   </a>
@@ -690,7 +690,7 @@
   <span class="md-ellipsis">
     
   
-    NET/ROM — networking and routing
+    NET/ROM: networking and routing
   
 
     
@@ -2592,7 +2592,7 @@
   <a href="#addressing-callsign-plus-ssid" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Addressing — callsign plus SSID
+        Addressing: callsign plus SSID
       
     </span>
   </a>
@@ -2641,36 +2641,36 @@
   
 
 
-<h1 id="ax25-the-data-link">AX.25 — the data link<a class="headerlink" href="#ax25-the-data-link" title="Permanent link">&para;</a></h1>
+<h1 id="ax25-the-data-link">AX.25: the data link<a class="headerlink" href="#ax25-the-data-link" title="Permanent link">&para;</a></h1>
 <p>AX.25 is the protocol that actually moves packets between stations on a radio channel. This
 page explains what it does, how stations are addressed, the difference between connected and
-connectionless working, and why its built-in digipeating does not scale — which is the
+connectionless working, and why its built-in digipeating does not scale, which is the
 reason <a href="../netrom/">NET/ROM</a> exists.</p>
-<p><strong>AX.25 (Amateur X.25)</strong> is a <strong>data-link-layer</strong> protocol — OSI layer 2 — derived from
+<p><strong>AX.25 (Amateur X.25)</strong> is a <strong>data-link-layer</strong> protocol, OSI layer 2, derived from
 layer 2 of the X.25 suite and adapted for amateur use. The long-standing baseline is v2.0
 (Terry Fox, 1984); the authoritative specification is <strong>TAPR's AX.25 v2.2 (1998)</strong>, which
 added efficiency improvements such as larger payloads, extended sequence numbers for bigger
-windows, and Selective Reject. Adoption of v2.2 was slow — around 2020 Dire Wolf was noted
+windows, and Selective Reject. Adoption of v2.2 was slow, around 2020 Dire Wolf was noted
 as the only known complete implementation.</p>
 <h2 id="frames">Frames<a class="headerlink" href="#frames" title="Permanent link">&para;</a></h2>
 <p>AX.25 borrows its frame structure from HDLC. There are three frame types:</p>
 <ul>
 <li><strong>I (Information) frames</strong> carry user data, numbered, in <em>connected</em> mode.</li>
-<li><strong>S (Supervisory) frames</strong> handle link control — Receive Ready, Receive Not Ready,
+<li><strong>S (Supervisory) frames</strong> handle link control, Receive Ready, Receive Not Ready,
   Reject, and (in v2.2) Selective Reject.</li>
 <li><strong>U (Unnumbered) frames</strong> set up and tear down connections, and include the
   connectionless <strong>UI (Unnumbered Information)</strong> frame.</li>
 </ul>
-<h2 id="addressing-callsign-plus-ssid">Addressing — callsign plus SSID<a class="headerlink" href="#addressing-callsign-plus-ssid" title="Permanent link">&para;</a></h2>
+<h2 id="addressing-callsign-plus-ssid">Addressing: callsign plus SSID<a class="headerlink" href="#addressing-callsign-plus-ssid" title="Permanent link">&para;</a></h2>
 <p>Each station in an AX.25 frame is identified by its <strong>callsign plus a Secondary Station
 Identifier (SSID)</strong>. The SSID is a 4-bit number in the range <strong>0–15</strong>, so one operator can
-run several distinct stations or services from one callsign — <code>CALL-1</code>, <code>CALL-7</code> and so on.
+run several distinct stations or services from one callsign, <code>CALL-1</code>, <code>CALL-7</code> and so on.
 Two limits are worth knowing from the outset:</p>
 <ul>
 <li>AX.25 has a <strong>hard six-character callsign limit</strong>. The seven-character callsigns permitted
   since WRC-03 cannot be used on AX.25.</li>
 <li>AX.25 has <strong>no separate port or service number</strong>, so the SSID often doubles as a service
-  selector — effectively one service per SSID. (XRouter's NetRom-X scheme is one way around
+  selector, effectively one service per SSID. (XRouter's NetRom-X scheme is one way around
   that limitation; see <a href="../netrom/">NET/ROM</a>.)</li>
 </ul>
 <h2 id="connected-mode-vs-ui-frames">Connected mode vs UI frames<a class="headerlink" href="#connected-mode-vs-ui-frames" title="Permanent link">&para;</a></h2>
@@ -2689,7 +2689,7 @@ before transmitting to reduce collisions.</p>
 <p>A <strong>digipeater</strong> is a single-frequency store-and-forward repeater. When a station cannot
 hear the one it wants to reach, it can list one or more digipeaters in the frame's repeater
 path; each named digipeater that hears the frame retransmits it and marks itself as "done",
-so the packet hops across the gap. This is simple <strong>source routing</strong> at layer 2 — the
+so the packet hops across the gap. This is simple <strong>source routing</strong> at layer 2, the
 sender spells out the path explicitly.</p>
 <p>It works, but it does not scale to a real network:</p>
 <ul>
@@ -2758,13 +2758,13 @@ created to solve, by adding automatic routing and per-hop acknowledgement on top
         
         
           
-          <a href="../netrom/" class="md-footer__link md-footer__link--next" aria-label="Next: NET/ROM — networking and routing">
+          <a href="../netrom/" class="md-footer__link md-footer__link--next" aria-label="Next: NET/ROM: networking and routing">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                NET/ROM — networking and routing
+                NET/ROM: networking and routing
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -2781,7 +2781,7 @@ created to solve, by adding automatic routing and per-hop acknowledgement on top
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Documentation re-presentation released under CC BY 4.0. XRouter itself is copyright Paula G8PZT and is free for non-commercial amateur use. This is an unofficial, community-maintained site; for canonical information defer to the author.
+      Documentation re-presentation released under CC BY 4.0, written entirely by AI from primary sources and not fact-checked by a human. XRouter itself is copyright Paula G8PZT and is free for non-commercial amateur use. This is an unofficial, community-maintained site; for canonical information defer to the author.
     </div>
   
   

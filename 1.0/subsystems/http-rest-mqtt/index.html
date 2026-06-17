@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="A re-presentation of the documentation for XRouter, Paula G8PZT's AX.25 / NET-ROM / TCP-IP packet-radio node, router, chat server and APRS digipeater — organised by user journey and cited to primary sources.">
+        <meta name="description" content="A re-presentation of the documentation for XRouter, Paula G8PZT's AX.25 / NET-ROM / TCP-IP packet-radio node, router, chat server and APRS digipeater, organised by user journey and cited to primary sources.">
       
       
         <meta name="author" content="XRouter Documentation contributors">
@@ -569,7 +569,7 @@
   <span class="md-ellipsis">
     
   
-    AX.25 — the data link
+    AX.25: the data link
   
 
     
@@ -597,7 +597,7 @@
   <span class="md-ellipsis">
     
   
-    NET/ROM — networking and routing
+    NET/ROM: networking and routing
   
 
     
@@ -2636,7 +2636,7 @@ remote-management surface.</p>
 <div class="admonition warning">
 <p class="admonition-title">Binding port 80 does not require running as root</p>
 <p>On Linux, binding a privileged port such as 80 is better solved with the
-<code>cap_net_bind_service</code> capability than by running XRouter as root — see
+<code>cap_net_bind_service</code> capability than by running XRouter as root, see
 <a href="../../getting-started/raspberry-pi/">Getting started on Raspberry Pi</a> and
 <a href="../../admin/security-hardening/">Security and hardening</a>. Also remember the global
 <code>IPADDRESS</code> rule: if <code>IPADDRESS</code> is unset, XRouter disables <strong>all</strong> IP services,
@@ -2711,20 +2711,20 @@ it at one with:</p>
 </span></code></pre></div>
 <p>Each message is a JSON object describing something that happened on the node. For example,
 a node coming up produces an event whose payload carries the node's callsign, alias,
-locator, coordinates, software name and version — the kind of structured event you can feed
+locator, coordinates, software name and version, the kind of structured event you can feed
 straight into a monitoring system. AX.25/KISS activity and mailbox events are published in
 the same way.</p>
 <div class="admonition tip">
 <p class="admonition-title">This is what makes XRouter easy to monitor at scale</p>
 <p>The combination of a REST API for state and an MQTT event feed for changes is unusual
 in this niche. Together they let you build live network maps, dashboards and alerting
-around a node without touching its console — see
+around a node without touching its console, see
 <a href="../../admin/logging-and-monitoring/">Logging and monitoring</a> for ways to use them.</p>
 </div>
 <hr />
-<p><strong>Sources:</strong> <a href="https://wiki.oarc.uk/packet:xrouter:docs:man9">In-program manual, OARC wiki — Section 9 (HTTP, REST, MQTT)</a> ·
-<a href="https://wiki.oarc.uk/packet:xrouter">OARC wiki — XRouter overview (REST/MQTT)</a> ·
-<a href="https://wiki.oarc.uk/packet:xrouter:docs:man7">In-program manual — Section 7 (directives)</a> ·
+<p><strong>Sources:</strong> <a href="https://wiki.oarc.uk/packet:xrouter:docs:man9">In-program manual, OARC wiki: Section 9 (HTTP, REST, MQTT)</a> ·
+<a href="https://wiki.oarc.uk/packet:xrouter">OARC wiki: XRouter overview (REST/MQTT)</a> ·
+<a href="https://wiki.oarc.uk/packet:xrouter:docs:man7">In-program manual: Section 7 (directives)</a> ·
 <a href="https://groups.io/g/xrouter">XRouter support group (groups.io)</a></p>
 
 
@@ -2803,7 +2803,7 @@ around a node without touching its console — see
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Documentation re-presentation released under CC BY 4.0. XRouter itself is copyright Paula G8PZT and is free for non-commercial amateur use. This is an unofficial, community-maintained site; for canonical information defer to the author.
+      Documentation re-presentation released under CC BY 4.0, written entirely by AI from primary sources and not fact-checked by a human. XRouter itself is copyright Paula G8PZT and is free for non-commercial amateur use. This is an unofficial, community-maintained site; for canonical information defer to the author.
     </div>
   
   

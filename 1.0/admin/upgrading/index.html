@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="A re-presentation of the documentation for XRouter, Paula G8PZT's AX.25 / NET-ROM / TCP-IP packet-radio node, router, chat server and APRS digipeater — organised by user journey and cited to primary sources.">
+        <meta name="description" content="A re-presentation of the documentation for XRouter, Paula G8PZT's AX.25 / NET-ROM / TCP-IP packet-radio node, router, chat server and APRS digipeater, organised by user journey and cited to primary sources.">
       
       
         <meta name="author" content="XRouter Documentation contributors">
@@ -569,7 +569,7 @@
   <span class="md-ellipsis">
     
   
-    AX.25 — the data link
+    AX.25: the data link
   
 
     
@@ -597,7 +597,7 @@
   <span class="md-ellipsis">
     
   
-    NET/ROM — networking and routing
+    NET/ROM: networking and routing
   
 
     
@@ -2257,7 +2257,7 @@
   <a href="#your-netrom-routes-survive-usually" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Your NET/ROM routes survive — usually
+        Your NET/ROM routes survive: usually
       
     </span>
   </a>
@@ -2632,7 +2632,7 @@
   <a href="#your-netrom-routes-survive-usually" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Your NET/ROM routes survive — usually
+        Your NET/ROM routes survive: usually
       
     </span>
   </a>
@@ -2676,7 +2676,7 @@
 
 
 <h1 id="upgrading-and-versions">Upgrading and versions<a class="headerlink" href="#upgrading-and-versions" title="Permanent link">&para;</a></h1>
-<p>XRouter releases briskly, and keeping reasonably current is itself a form of maintenance —
+<p>XRouter releases briskly, and keeping reasonably current is itself a form of maintenance,
 many of the "it keeps crashing" and "the link won't stay up" reports in the support group turn
 out to be old builds. This page explains the version scheme, where to get current binaries,
 how to upgrade a node safely without losing your configuration or your NET/ROM routes, and
@@ -2684,7 +2684,7 @@ what to expect from XRouter's release style.</p>
 <h2 id="the-version-scheme">The version scheme<a class="headerlink" href="#the-version-scheme" title="Permanent link">&para;</a></h2>
 <p>XRouter version numbers run in series. The modern Linux/Windows builds are numbered in the
 <strong>500s</strong>; the current series at the time of writing is <strong>~v504</strong> (for example v504v, January
-2026). The table below gives selected highlights — see the release notes for specifics:</p>
+2026). The table below gives selected highlights, see the release notes for specifics:</p>
 <table>
 <thead>
 <tr>
@@ -2712,7 +2712,7 @@ what to expect from XRouter's release style.</p>
 <tr>
 <td><strong>504</strong></td>
 <td>current</td>
-<td>The current series — for example <strong>v504v</strong> (January 2026)</td>
+<td>The current series, for example <strong>v504v</strong> (January 2026)</td>
 </tr>
 </tbody>
 </table>
@@ -2734,11 +2734,11 @@ the current builds together. See the <a href="../../">home page</a> for the full
 group to download). The <a href="https://wiki.oarc.uk/packet:xrouter:downloads">OARC wiki downloads page</a>
 mirrors recent builds and the changelog.</p>
 </div>
-<p>Older mirrors lag — sometimes by years:</p>
+<p>Older mirrors lag, sometimes by years:</p>
 <div class="admonition warning">
 <p class="admonition-title">ohiopacket and vk2dot are stale</p>
 <p>The historic <code>ohiopacket.org/xrpi</code> mirror (and the original <code>vk2dot.dyndns.org/xrpi</code>) are
-excellent for <em>concepts</em> but <strong>out of date on versions</strong> — ohiopacket still shows the
+excellent for <em>concepts</em> but <strong>out of date on versions</strong>, ohiopacket still shows the
 v501c era, and many vk2dot links are now dead. Do not judge "the current version" by them;
 go to the groups.io Files area for binaries.</p>
 </div>
@@ -2748,7 +2748,7 @@ distribution-matched build such as <code>-stretch</code>/<code>-bullseye</code>.
 <a href="../../getting-started/raspberry-pi/#2-download-the-right-build">Raspberry Pi getting-started page</a>
 covers choosing between them.</p>
 <h2 id="how-to-upgrade-safely">How to upgrade safely<a class="headerlink" href="#how-to-upgrade-safely" title="Permanent link">&para;</a></h2>
-<p>Upgrading is essentially "swap the binary" — XRouter never overwrites your configuration — but
+<p>Upgrading is essentially "swap the binary", XRouter never overwrites your configuration, but
 do it in a controlled order so you can fall back if a new build misbehaves.</p>
 <ol>
 <li><strong>Read the release notes first.</strong> Each release ships notes describing what changed, and
@@ -2758,12 +2758,12 @@ do it in a controlled order so you can fall back if a new build misbehaves.</p>
    while you replace its executable. A clean shutdown also saves the NET/ROM nodes table.</li>
 <li><strong>Keep your old binary and your config.</strong> Rename the existing executable (for example
    <code>xrpi</code> → <code>xrpi504n</code>) rather than deleting it, so you can roll back. Your <code>XROUTER.CFG</code> and
-   <code>.SYS</code>/<code>.CFG</code> files stay exactly as they are — leave them in place.</li>
+   <code>.SYS</code>/<code>.CFG</code> files stay exactly as they are, leave them in place.</li>
 <li><strong>Drop in the new binary.</strong> Put the new download in the working directory and rename it to
    the name your service/start command expects (e.g. <code>xrpi</code>). Mark it executable with
    <code>chmod +x</code>.</li>
 <li><strong>Re-apply <code>setcap</code>.</strong> Capabilities do not survive replacing the file, so if you run
-   unprivileged (you should — see <a href="../security-hardening/#run-as-a-non-root-user">Security and hardening</a>)
+   unprivileged (you should, see <a href="../security-hardening/#run-as-a-non-root-user">Security and hardening</a>)
    re-run <code>sudo setcap cap_net_raw,cap_net_bind_service=ep ./xrpi</code>.</li>
 <li><strong>Restart and watch the boot.</strong> Start the node and check the boot log and status screen for
    errors. If something is wrong, stop, swap your renamed old binary back, and you are
@@ -2776,7 +2776,7 @@ must <code>chmod +x</code> the new file first (and re-apply <code>setcap</code> 
 is refused. The stop/replace/start order above sidesteps this. See
 <a href="../../getting-started/running-as-a-service/">Running as a service</a>.</p>
 </div>
-<h3 id="your-netrom-routes-survive-usually">Your NET/ROM routes survive — usually<a class="headerlink" href="#your-netrom-routes-survive-usually" title="Permanent link">&para;</a></h3>
+<h3 id="your-netrom-routes-survive-usually">Your NET/ROM routes survive: usually<a class="headerlink" href="#your-netrom-routes-survive-usually" title="Permanent link">&para;</a></h3>
 <p>XRouter persists the NET/ROM nodes table to the <strong><code>XRNODES</code></strong> file and reloads it at startup,
 so an upgrade or routine restart does <strong>not</strong> cost you the routing table (which can take hours
 to rebuild from broadcasts). You normally want to keep <code>XRNODES</code> across an upgrade.</p>
@@ -2787,12 +2787,12 @@ and this caveat are detailed in <a href="../../configuration/system-files/">Syst
 <h2 id="releases-are-beta-by-nature">Releases are beta by nature<a class="headerlink" href="#releases-are-beta-by-nature" title="Permanent link">&para;</a></h2>
 <p>XRouter is developed and released informally. Builds are frequent, distributed through the
 group rather than packaged repositories, and explicitly offered to a community that is, in
-effect, beta-testing them — the author asks users to report bugs and ships fixes quickly.</p>
+effect, beta-testing them, the author asks users to report bugs and ships fixes quickly.</p>
 <p>That has two practical consequences. First, <strong>reporting problems is part of the deal</strong>: if a
 new build breaks something, say so in the <a href="https://groups.io/g/xrouter">support group</a>, ideally
 with a <a href="../logging-and-monitoring/#capturing-a-crash-backtrace">gdb backtrace</a> for a crash.
 Second, <strong>keep your fallback</strong>: because any given build is a development release, the renamed
-previous binary from step 3 is your safety net — keep it until the new one has proven itself on
+previous binary from step 3 is your safety net, keep it until the new one has proven itself on
 your node.</p>
 <hr />
 <p><strong>Sources:</strong> <a href="https://groups.io/g/xrouter">XRouter support group, groups.io</a> (current builds in
@@ -2800,7 +2800,7 @@ the Files area; the version-progression and stability history) ·
 <a href="https://wiki.oarc.uk/packet:xrouter:downloads">OARC wiki downloads</a> (build flavours and the
 v504 series, e.g. v504v, Jan 2026) ·
 <a href="https://ohiopacket.org/xrpi/docs/install.htm">ohiopacket.org XRPi mirror</a> (the upgrade
-procedure, re-applying <code>setcap</code>, and the <code>RESTART</code>-needs-<code>chmod +x</code> note — mirror stale on
+procedure, re-applying <code>setcap</code>, and the <code>RESTART</code>-needs-<code>chmod +x</code> note, mirror stale on
 versions) · release notes (the per-series feature highlights and the <code>XRNODES</code> persistence
 behaviour)</p>
 
@@ -2880,7 +2880,7 @@ behaviour)</p>
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Documentation re-presentation released under CC BY 4.0. XRouter itself is copyright Paula G8PZT and is free for non-commercial amateur use. This is an unofficial, community-maintained site; for canonical information defer to the author.
+      Documentation re-presentation released under CC BY 4.0, written entirely by AI from primary sources and not fact-checked by a human. XRouter itself is copyright Paula G8PZT and is free for non-commercial amateur use. This is an unofficial, community-maintained site; for canonical information defer to the author.
     </div>
   
   

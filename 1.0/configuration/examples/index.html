@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="A re-presentation of the documentation for XRouter, Paula G8PZT's AX.25 / NET-ROM / TCP-IP packet-radio node, router, chat server and APRS digipeater — organised by user journey and cited to primary sources.">
+        <meta name="description" content="A re-presentation of the documentation for XRouter, Paula G8PZT's AX.25 / NET-ROM / TCP-IP packet-radio node, router, chat server and APRS digipeater, organised by user journey and cited to primary sources.">
       
       
         <meta name="author" content="XRouter Documentation contributors">
@@ -569,7 +569,7 @@
   <span class="md-ellipsis">
     
   
-    AX.25 — the data link
+    AX.25: the data link
   
 
     
@@ -597,7 +597,7 @@
   <span class="md-ellipsis">
     
   
-    NET/ROM — networking and routing
+    NET/ROM: networking and routing
   
 
     
@@ -2666,17 +2666,17 @@
 <h1 id="worked-example-configs">Worked example configs<a class="headerlink" href="#worked-example-configs" title="Permanent link">&para;</a></h1>
 <p>This page collects complete, annotated <code>XROUTER.CFG</code> examples for the common ways a node gets
 on the air. They are written from scratch to be readable starting points, not copies of any
-running station — substitute your own callsigns, devices and addresses throughout. Each one
+running station, substitute your own callsigns, devices and addresses throughout. Each one
 obeys the rules from the <a href="../">configuration model</a>: identity in the GLOBAL section,
 interfaces before the ports that use them, and a valid <code>IPADDRESS</code>.</p>
 <div class="admonition tip">
 <p class="admonition-title">Edit incrementally</p>
 <p>XRouter reports configuration errors with a line number and reads the file once at
-startup. Change one thing, restart, check, repeat — it is far easier than writing a large
+startup. Change one thing, restart, check, repeat, it is far easier than writing a large
 file and debugging it all at once.</p>
 </div>
 <h2 id="1-soundcard-modem-kiss-rf-node">1. Soundcard-modem (KISS) RF node<a class="headerlink" href="#1-soundcard-modem-kiss-rf-node" title="Permanent link">&para;</a></h2>
-<p>A single VHF channel through a soundcard modem — Direwolf, UZ7HO SoundModem or QtSoundModem —
+<p>A single VHF channel through a soundcard modem, Direwolf, UZ7HO SoundModem or QtSoundModem,
 configured to present a KISS interface on a serial device or pseudo-TTY. This is the typical
 "no hardware TNC" station.</p>
 <div class="language-ini highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1">; ---- Identity -------------------------------------------------------------</span>
@@ -2716,7 +2716,7 @@ application's job, not XRouter's); <code>FLOW=0</code> because KISS and XON/XOFF
 here is the <em>host</em> link speed to the modem, not the over-the-air baud rate. See <a href="../../interfaces/soundcard-modems/">Soundcard
 modems</a> for the modem-side setup.</p>
 <h2 id="2-serial-kiss-tnc-ninotnc-node">2. Serial KISS TNC / NinoTNC node<a class="headerlink" href="#2-serial-kiss-tnc-ninotnc-node" title="Permanent link">&para;</a></h2>
-<p>A hardware KISS TNC — including a NinoTNC, which appears as a USB-serial device — on one
+<p>A hardware KISS TNC, including a NinoTNC, which appears as a USB-serial device, on one
 channel. Almost identical to the soundcard case, because both speak KISS over a serial port;
 only the device and speed differ.</p>
 <div class="language-ini highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1">; ---- Identity -------------------------------------------------------------</span>
@@ -2748,7 +2748,7 @@ only the device and speed differ.</p>
 </span><span id="__span-1-27"><a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a><span class="na">ENDPORT</span>
 </span></code></pre></div>
 <p>Key points: <code>KISSOPTIONS=NONE</code> is plain KISS, which suits most TNCs; raise <code>MAXFRAME</code> above 7
-only on a clean channel (it would switch on modulo-128). A BPQ-KISS EPROM is the exception —
+only on a clean channel (it would switch on modulo-128). A BPQ-KISS EPROM is the exception,
 it needs <code>KISSOPTIONS=POLLED,CHECKSUM</code>. See <a href="../../interfaces/kiss-tncs/">KISS TNCs</a>.</p>
 <h2 id="3-internet-axudp-link-to-a-partner-node">3. Internet AXUDP link to a partner node<a class="headerlink" href="#3-internet-axudp-link-to-a-partner-node" title="Permanent link">&para;</a></h2>
 <p>Linking to another node over the internet, with no radio involved. AXUDP carries AX.25 inside
@@ -2756,9 +2756,9 @@ UDP datagrams; you and your partner agree on UDP ports and each points at the ot
 <div class="admonition danger">
 <p class="admonition-title">IPADDRESS is required for any internet link</p>
 <p>AXUDP, AXIP and AXTCP are all IP services, so they are <strong>disabled entirely</strong> if the global
-<code>IPADDRESS</code> is <code>0.0.0.0</code> or undefined — XRouter switches off all IP activity as a
+<code>IPADDRESS</code> is <code>0.0.0.0</code> or undefined, XRouter switches off all IP activity as a
 deliberate security measure. Set a real 44Net address, or a private dummy such as
-<code>10.1.1.1</code>, before an internet link will work. — <em>Paula G8PZT,
+<code>10.1.1.1</code>, before an internet link will work., <em>Paula G8PZT,
 <a href="https://groups.io/g/xrouter/message/1957">groups.io</a></em></p>
 </div>
 <div class="language-ini highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1">; ---- Identity -------------------------------------------------------------</span>
@@ -2790,7 +2790,7 @@ deliberate security measure. Set a real 44Net address, or a private dummy such a
 for sharing one public IP across several partners, see <a href="../../interfaces/axip-axudp-axtcp/">AXIP / AXUDP /
 AXTCP</a>.</p>
 <h2 id="4-adding-a-lan-ethernet-port">4. Adding a LAN / Ethernet port<a class="headerlink" href="#4-adding-a-lan-ethernet-port" title="Permanent link">&para;</a></h2>
-<p>A LAN port gives XRouter its own address on your home network — useful for IP routing between
+<p>A LAN port gives XRouter its own address on your home network, useful for IP routing between
 radio ports and the LAN, and for reaching the node's web and Telnet servers from another
 machine. This snippet adds an Ethernet interface and port to any of the configs above; the
 <code>EXTERNAL</code> interface's IP address must differ from the host Linux box's own IP.</p>
@@ -2806,7 +2806,7 @@ machine. This snippet adds an Ethernet interface and port to any of the configs 
 </span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="na">PORT</span><span class="o">=</span><span class="s">8</span>
 </span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">        </span><span class="na">ID</span><span class="o">=</span><span class="s">Ethernet LAN</span>
 </span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">        </span><span class="na">INTERFACENUM</span><span class="o">=</span><span class="s">8</span>
-</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="w">        </span><span class="na">IPADDRESS</span><span class="o">=</span><span class="s">192.168.1.50</span><span class="w">   </span><span class="c1">; XRouter&#39;s own LAN address — NOT the host&#39;s IP</span>
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="w">        </span><span class="na">IPADDRESS</span><span class="o">=</span><span class="s">192.168.1.50</span><span class="w">   </span><span class="c1">; XRouter&#39;s own LAN address, NOT the host&#39;s IP</span>
 </span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="w">        </span><span class="na">NETMASK</span><span class="o">=</span><span class="s">255.255.255.0</span>
 </span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="na">ENDPORT</span>
 </span></code></pre></div>
@@ -2814,16 +2814,16 @@ machine. This snippet adds an Ethernet interface and port to any of the configs 
 <p class="admonition-title">Capabilities for Ethernet and low ports</p>
 <p>The <code>EXTERNAL</code> interface uses raw sockets, and binding service ports below 1024 needs
 privilege. Rather than running as root, grant the binary the right Linux capabilities
-once with <code>setcap</code> — see <a href="../../getting-started/raspberry-pi/">Raspberry Pi</a> and <a href="../../admin/security-hardening/">Security
+once with <code>setcap</code>, see <a href="../../getting-started/raspberry-pi/">Raspberry Pi</a> and <a href="../../admin/security-hardening/">Security
 and hardening</a>.</p>
 </div>
 <p>If you only need to reach IP services <em>from</em> the LAN (not route between the LAN and radio
-ports), you may not need an <code>EXTERNAL</code> port at all — the Linux kernel stack can carry it. The
+ports), you may not need an <code>EXTERNAL</code> port at all, the Linux kernel stack can carry it. The
 trade-offs between the two approaches are covered on <a href="../../networking/tcpip/">The TCP/IP
 stack</a>.</p>
 <h2 id="putting-it-together">Putting it together<a class="headerlink" href="#putting-it-together" title="Permanent link">&para;</a></h2>
 <p>A real node usually combines several of these: one or more RF ports, perhaps an internet link
-to a neighbour, and a LAN port for administration. Stack the blocks in one <code>XROUTER.CFG</code> —
+to a neighbour, and a LAN port for administration. Stack the blocks in one <code>XROUTER.CFG</code>,
 GLOBAL identity at the top, then each <code>INTERFACE</code> followed (anywhere below it) by its
 <code>PORT</code>(s). Give each interface and port a unique number, and keep your descriptive <code>ID</code>
 strings meaningful, because that is what you will see on the <code>PORTS</code> display when something
@@ -2912,7 +2912,7 @@ needs attention.</p>
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Documentation re-presentation released under CC BY 4.0. XRouter itself is copyright Paula G8PZT and is free for non-commercial amateur use. This is an unofficial, community-maintained site; for canonical information defer to the author.
+      Documentation re-presentation released under CC BY 4.0, written entirely by AI from primary sources and not fact-checked by a human. XRouter itself is copyright Paula G8PZT and is free for non-commercial amateur use. This is an unofficial, community-maintained site; for canonical information defer to the author.
     </div>
   
   

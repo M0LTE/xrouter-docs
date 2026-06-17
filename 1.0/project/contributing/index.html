@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="A re-presentation of the documentation for XRouter, Paula G8PZT's AX.25 / NET-ROM / TCP-IP packet-radio node, router, chat server and APRS digipeater — organised by user journey and cited to primary sources.">
+        <meta name="description" content="A re-presentation of the documentation for XRouter, Paula G8PZT's AX.25 / NET-ROM / TCP-IP packet-radio node, router, chat server and APRS digipeater, organised by user journey and cited to primary sources.">
       
       
         <meta name="author" content="XRouter Documentation contributors">
@@ -567,7 +567,7 @@
   <span class="md-ellipsis">
     
   
-    AX.25 — the data link
+    AX.25: the data link
   
 
     
@@ -595,7 +595,7 @@
   <span class="md-ellipsis">
     
   
-    NET/ROM — networking and routing
+    NET/ROM: networking and routing
   
 
     
@@ -2642,8 +2642,8 @@
 <h1 id="contributing">Contributing<a class="headerlink" href="#contributing" title="Permanent link">&para;</a></h1>
 <p>This site is community-maintained, and corrections and improvements are welcome. It is a
 small MkDocs Material project, so contributing is mostly a matter of editing Markdown and
-opening a pull request. This page covers the practical steps and the one policy that
-matters most.</p>
+opening a pull request. This page covers the practical steps and the one policy that matters
+most.</p>
 <h2 id="how-to-make-a-change">How to make a change<a class="headerlink" href="#how-to-make-a-change" title="Permanent link">&para;</a></h2>
 <ol>
 <li><strong>Find the page.</strong> Every page is a Markdown file under <code>docs/</code>, laid out to match the
@@ -2655,16 +2655,19 @@ matters most.</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt<span class="w">   </span><span class="c1"># first time only</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>mkdocs<span class="w"> </span>build<span class="w"> </span>--strict
 </span></code></pre></div>
-<p><code>--strict</code> turns warnings (such as a dead cross-link) into errors. To preview as you
-write, use <code>mkdocs serve</code> and open the local URL it prints.</p>
+<p><code>--strict</code> turns warnings such as a dead cross-link into errors. To preview as you write,
+use <code>mkdocs serve</code> and open the local URL it prints.</p>
 </li>
 <li>
 <p><strong>Open a pull request</strong> against the documentation repository with a clear description of
    what you changed and, where it matters, the source you checked it against.</p>
 </li>
 </ol>
-<p>If you would rather not use Git, raise the correction on the
-<a href="https://groups.io/g/xrouter">XRouter support group</a> and someone can fold it in.</p>
+<p>If you would rather not use Git,
+<a href="https://github.com/m0lte/xrouter-docs/issues">open an issue</a> describing the correction and
+someone can fold it in. Issues on this repository are the only place to report documentation
+problems. Please do not take them to the XRouter support group, which is for the program
+itself.</p>
 <h2 id="the-correction-policy">The correction policy<a class="headerlink" href="#the-correction-policy" title="Permanent link">&para;</a></h2>
 <p>There is one rule that overrides the rest:</p>
 <div class="admonition warning">
@@ -2673,35 +2676,36 @@ write, use <code>mkdocs serve</code> and open the local URL it prints.</p>
 author and the manual are correct. The right fix is to <strong>change the doc to match them</strong>,
 not to argue the point in the text. This site is a re-presentation; it has no authority
 of its own. If you are unsure which is right, check the <code>MAN</code> command in a current build,
-or ask on the support group.</p>
+or ask the author and other sysops on the support group.</p>
 </div>
-<p>When you correct a fact, it helps to cite the source you used — the in-program manual, a
-groups.io message, or one of the references in <a href="../sources-and-attribution/">Sources and attribution</a>
-— so the next person can see why the page says what it says.</p>
+<p>When you correct a fact, it helps to cite the source you used, such as the in-program manual,
+a groups.io message, or one of the references in
+<a href="../sources-and-attribution/">Sources and attribution</a>, so the next person can see why the
+page says what it says.</p>
 <h2 id="house-style">House style<a class="headerlink" href="#house-style" title="Permanent link">&para;</a></h2>
 <p>Keep to the existing style so the site stays consistent:</p>
 <ul>
-<li><strong>Original prose.</strong> Do not paste text from the manual or any mirror; write it in your own
+<li><strong>Original prose.</strong> Do not paste text from the manual or any mirror. Write it in your own
   words, faithful to how XRouter behaves.</li>
 <li><strong>Be accurate, not impressive.</strong> Never invent keyword names, default values, port numbers
-  or version strings. If a value varies by build or you cannot confirm it, say so or leave
-  it out — better a gap than a confident error.</li>
+  or version strings. If a value varies by build or you cannot confirm it, say so or leave it
+  out. A gap is better than a confident error.</li>
 <li><strong>Lead with what the page is for</strong>, write in calm second-person prose, and prefer short
   paragraphs with tables for reference data and fenced blocks for config and commands.
   British spelling is fine.</li>
-<li><strong>Cross-link</strong> generously to related pages with relative links, and add a <strong>Sources</strong>
-  line where a page makes specific factual claims.</li>
-<li><strong>Mind the scope.</strong> This site documents XRouter generically; it does not describe any
+<li><strong>Cross-link</strong> generously to related pages with relative links, and add a <strong>Sources</strong> line
+  where a page makes specific factual claims.</li>
+<li><strong>Mind the scope.</strong> This site documents XRouter generically. It does not describe any
   particular club or individual node deployment, and it does not publish security findings.
   General hardening guidance is welcome.</li>
 </ul>
 <h2 id="discuss-it-first-if-it-is-large">Discuss it first if it is large<a class="headerlink" href="#discuss-it-first-if-it-is-large" title="Permanent link">&para;</a></h2>
-<p>For anything bigger than a fix — restructuring a section, adding new pages, changing the
-navigation — it is worth raising the idea on the <a href="https://groups.io/g/xrouter">XRouter support group</a>
-before you do the work, so the approach can be agreed and effort is not wasted.</p>
+<p>For anything bigger than a fix, such as restructuring a section, adding new pages, or
+changing the navigation, it is worth
+<a href="https://github.com/m0lte/xrouter-docs/issues">opening an issue</a> to float the idea before you
+do the work, so the approach can be agreed and effort is not wasted.</p>
 <hr />
-<p><strong>Sources:</strong> <a href="https://groups.io/g/xrouter">XRouter support group (groups.io)</a> ·
-<a href="../about-these-docs/">About these docs</a> ·
+<p><strong>Sources:</strong> <a href="../about-these-docs/">About these docs</a> ·
 <a href="../sources-and-attribution/">Sources and attribution</a></p>
 
 
@@ -2764,7 +2768,7 @@ before you do the work, so the approach can be agreed and effort is not wasted.<
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Documentation re-presentation released under CC BY 4.0. XRouter itself is copyright Paula G8PZT and is free for non-commercial amateur use. This is an unofficial, community-maintained site; for canonical information defer to the author.
+      Documentation re-presentation released under CC BY 4.0, written entirely by AI from primary sources and not fact-checked by a human. XRouter itself is copyright Paula G8PZT and is free for non-commercial amateur use. This is an unofficial, community-maintained site; for canonical information defer to the author.
     </div>
   
   

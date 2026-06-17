@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="A re-presentation of the documentation for XRouter, Paula G8PZT's AX.25 / NET-ROM / TCP-IP packet-radio node, router, chat server and APRS digipeater — organised by user journey and cited to primary sources.">
+        <meta name="description" content="A re-presentation of the documentation for XRouter, Paula G8PZT's AX.25 / NET-ROM / TCP-IP packet-radio node, router, chat server and APRS digipeater, organised by user journey and cited to primary sources.">
       
       
         <meta name="author" content="XRouter Documentation contributors">
@@ -569,7 +569,7 @@
   <span class="md-ellipsis">
     
   
-    AX.25 — the data link
+    AX.25: the data link
   
 
     
@@ -597,7 +597,7 @@
   <span class="md-ellipsis">
     
   
-    NET/ROM — networking and routing
+    NET/ROM: networking and routing
   
 
     
@@ -1441,7 +1441,7 @@
   <a href="#axudp-the-usual-choice" class="md-nav__link">
     <span class="md-ellipsis">
       
-        AXUDP — the usual choice
+        AXUDP: the usual choice
       
     </span>
   </a>
@@ -1452,7 +1452,7 @@
   <a href="#axip-slightly-leaner" class="md-nav__link">
     <span class="md-ellipsis">
       
-        AXIP — slightly leaner
+        AXIP: slightly leaner
       
     </span>
   </a>
@@ -1463,7 +1463,7 @@
   <a href="#axtcp-for-when-udp-is-blocked" class="md-nav__link">
     <span class="md-ellipsis">
       
-        AXTCP — for when UDP is blocked
+        AXTCP: for when UDP is blocked
       
     </span>
   </a>
@@ -2581,7 +2581,7 @@
   <a href="#axudp-the-usual-choice" class="md-nav__link">
     <span class="md-ellipsis">
       
-        AXUDP — the usual choice
+        AXUDP: the usual choice
       
     </span>
   </a>
@@ -2592,7 +2592,7 @@
   <a href="#axip-slightly-leaner" class="md-nav__link">
     <span class="md-ellipsis">
       
-        AXIP — slightly leaner
+        AXIP: slightly leaner
       
     </span>
   </a>
@@ -2603,7 +2603,7 @@
   <a href="#axtcp-for-when-udp-is-blocked" class="md-nav__link">
     <span class="md-ellipsis">
       
-        AXTCP — for when UDP is blocked
+        AXTCP: for when UDP is blocked
       
     </span>
   </a>
@@ -2643,7 +2643,7 @@
 
 <h1 id="axip-axudp-axtcp-linking">AXIP / AXUDP / AXTCP linking<a class="headerlink" href="#axip-axudp-axtcp-linking" title="Permanent link">&para;</a></h1>
 <p>This page links your node to another node <strong>over the internet</strong> instead of over RF. It is for
-a sysop who wants to join the wider packet network — or simply reach a partner node — across
+a sysop who wants to join the wider packet network, or simply reach a partner node, across
 the internet, carrying AX.25 (and NET/ROM on top of it) inside IP. If you want the bigger
 picture of how nodes interconnect and route to each other, read
 <a href="../../networking/linking-and-interop/">Linking nodes and interoperating</a>; this page is the
@@ -2664,7 +2664,7 @@ RF hop. They differ only in the transport underneath:</p>
 <td><strong>AXUDP</strong></td>
 <td><code>AXUDP</code></td>
 <td>UDP datagrams</td>
-<td>Default choice — flexible, several partners can share one public IP.</td>
+<td>Default choice, flexible, several partners can share one public IP.</td>
 </tr>
 <tr>
 <td><strong>AXIP</strong></td>
@@ -2683,21 +2683,21 @@ RF hop. They differ only in the transport underneath:</p>
 <div class="admonition danger">
 <p class="admonition-title">No link works without a non-zero IPADDRESS</p>
 <p>These are all IP links, so XRouter's security rule applies: if the global <code>IPADDRESS</code> is
-<code>0.0.0.0</code> or undefined, <strong>all</strong> IP activity — AXUDP, AXIP, AXTCP and the rest — is
+<code>0.0.0.0</code> or undefined, <strong>all</strong> IP activity, AXUDP, AXIP, AXTCP and the rest, is
 disabled, on both stacks. If you don't have an AMPRNet (44Net) address, set a private
 dummy such as <code>10.1.1.1</code>. Recent builds will not bring an AXIP/AXUDP link up at all
-without it. — <em>see <a href="../../configuration/global-settings/">Global settings</a></em></p>
+without it., <em>see <a href="../../configuration/global-settings/">Global settings</a></em></p>
 </div>
-<h2 id="axudp-the-usual-choice">AXUDP — the usual choice<a class="headerlink" href="#axudp-the-usual-choice" title="Permanent link">&para;</a></h2>
+<h2 id="axudp-the-usual-choice">AXUDP: the usual choice<a class="headerlink" href="#axudp-the-usual-choice" title="Permanent link">&para;</a></h2>
 <p>AXUDP carries AX.25 over UDP. It is the most versatile of the three: it costs a handful of
 bytes more per frame than AXIP, but several AXUDP nodes can sit behind a single public IP,
 which AXIP cannot do.</p>
-<p>The interface itself is minimal — just <code>TYPE</code> and <code>MTU</code>. The <em>partner</em> is defined on the
+<p>The interface itself is minimal, just <code>TYPE</code> and <code>MTU</code>. The <em>partner</em> is defined on the
 <strong>port</strong>:</p>
 <ul>
-<li><code>IPLINK</code> — the partner's IP address or hostname.</li>
-<li><code>UDPLOCAL</code> — the UDP port XRouter receives on. Default <code>93</code>.</li>
-<li><code>UDPREMOTE</code> — the partner's UDP port (where you transmit to). Default <code>93</code>.</li>
+<li><code>IPLINK</code>, the partner's IP address or hostname.</li>
+<li><code>UDPLOCAL</code>, the UDP port XRouter receives on. Default <code>93</code>.</li>
+<li><code>UDPREMOTE</code>, the partner's UDP port (where you transmit to). Default <code>93</code>.</li>
 </ul>
 <div class="language-ini highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="na">INTERFACE</span><span class="o">=</span><span class="s">2</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">        </span><span class="na">TYPE</span><span class="o">=</span><span class="s">AXUDP</span>
@@ -2715,8 +2715,8 @@ which AXIP cannot do.</p>
 </span></code></pre></div>
 <p>Both ends must agree: your <code>UDPREMOTE</code> must be the partner's <code>UDPLOCAL</code>, and vice versa. If
 both nodes use the default <code>93</code> on each side, they match automatically.</p>
-<h2 id="axip-slightly-leaner">AXIP — slightly leaner<a class="headerlink" href="#axip-slightly-leaner" title="Permanent link">&para;</a></h2>
-<p>AXIP puts AX.25 directly into raw IP (protocol number 93), saving the UDP header — a little
+<h2 id="axip-slightly-leaner">AXIP: slightly leaner<a class="headerlink" href="#axip-slightly-leaner" title="Permanent link">&para;</a></h2>
+<p>AXIP puts AX.25 directly into raw IP (protocol number 93), saving the UDP header, a little
 less overhead per frame. The trade-off is that only <strong>one AXIP node can live behind a given
 public IP</strong>, because there are no port numbers to tell two of them apart. The interface is
 again just <code>TYPE</code>/<code>MTU</code>, and the partner is set on the port with <code>IPLINK</code>:</p>
@@ -2732,13 +2732,13 @@ again just <code>TYPE</code>/<code>MTU</code>, and the partner is set on the por
 </span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">        </span><span class="na">QUALITY</span><span class="o">=</span><span class="s">192</span>
 </span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="na">ENDPORT</span>
 </span></code></pre></div>
-<h2 id="axtcp-for-when-udp-is-blocked">AXTCP — for when UDP is blocked<a class="headerlink" href="#axtcp-for-when-udp-is-blocked" title="Permanent link">&para;</a></h2>
+<h2 id="axtcp-for-when-udp-is-blocked">AXTCP: for when UDP is blocked<a class="headerlink" href="#axtcp-for-when-udp-is-blocked" title="Permanent link">&para;</a></h2>
 <p>AXTCP carries AX.25 inside a TCP stream, which traverses NAT and firewalls cleanly and suits
 a partner on a mobile or CGNAT connection. One end listens (server) and the other connects
 in (client); an AXTCP interface supports <strong>one port only</strong>.</p>
 <ul>
-<li><strong>Server end</strong> — set <code>INTNUM</code> to the TCP port to listen on.</li>
-<li><strong>Client end</strong> — set <code>CONFIG</code> to <code>&lt;alias&gt; &lt;host&gt; &lt;tcp_port&gt;</code> identifying the partner to
+<li><strong>Server end</strong>, set <code>INTNUM</code> to the TCP port to listen on.</li>
+<li><strong>Client end</strong>, set <code>CONFIG</code> to <code>&lt;alias&gt; &lt;host&gt; &lt;tcp_port&gt;</code> identifying the partner to
   dial.</li>
 </ul>
 <div class="language-ini highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1">; --- Server end (listens for the partner to connect) ---</span>
@@ -2771,7 +2771,7 @@ in (client); an AXTCP interface supports <strong>one port only</strong>.</p>
 <p>A link that passes AX.25 is not automatically a NET/ROM neighbour. For NET/ROM to route over
 it, the port needs a non-zero <strong><code>QUALITY</code></strong> (the default neighbour quality is low, and
 <code>QUALITY=0</code> disables NET/ROM on the port entirely). Set a <code>QUALITY</code> that reflects how good the
-link is relative to your RF paths — the examples above use <code>192</code> as a placeholder; choose a
+link is relative to your RF paths, the examples above use <code>192</code> as a placeholder; choose a
 value that fits your network. The connection-control flags <strong><code>CFLAGS</code></strong> govern up/downlinking
 and the L3RTT behaviour on the port; the defaults are usually fine for an internet link, but
 see <a href="../../configuration/ports/">Ports</a> and
@@ -2785,10 +2785,10 @@ usually needs no inbound rule, which is exactly why AXTCP is the answer when you
 open ports. Coordinate the addresses and ports with your link partner before you start.</p>
 </div>
 <hr />
-<p><strong>Sources:</strong> <a href="https://wiki.oarc.uk/packet:xrouter:docs:man6">In-program manual, OARC wiki — §6 Installation &amp; Configuration</a>
+<p><strong>Sources:</strong> <a href="https://wiki.oarc.uk/packet:xrouter:docs:man6">In-program manual, OARC wiki: §6 Installation &amp; Configuration</a>
 (AXIP/AXUDP/AXTCP interfaces, <code>IPLINK</code>, <code>UDPLOCAL</code>/<code>UDPREMOTE</code>, <code>INTNUM</code>, <code>CONFIG</code>) ·
-<a href="https://groups.io/g/xrouter/message/1957">groups.io — IPADDRESS is effectively mandatory for IP links</a> ·
-<a href="https://ohiopacket.org/xrpi/docs/ifaces.htm">ohiopacket.org XRPi mirror — interfaces</a></p>
+<a href="https://groups.io/g/xrouter/message/1957">groups.io: IPADDRESS is effectively mandatory for IP links</a> ·
+<a href="https://ohiopacket.org/xrpi/docs/ifaces.htm">ohiopacket.org XRPi mirror: interfaces</a></p>
 
 
 
@@ -2866,7 +2866,7 @@ open ports. Coordinate the addresses and ports with your link partner before you
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Documentation re-presentation released under CC BY 4.0. XRouter itself is copyright Paula G8PZT and is free for non-commercial amateur use. This is an unofficial, community-maintained site; for canonical information defer to the author.
+      Documentation re-presentation released under CC BY 4.0, written entirely by AI from primary sources and not fact-checked by a human. XRouter itself is copyright Paula G8PZT and is free for non-commercial amateur use. This is an unofficial, community-maintained site; for canonical information defer to the author.
     </div>
   
   

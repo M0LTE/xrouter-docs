@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="A re-presentation of the documentation for XRouter, Paula G8PZT's AX.25 / NET-ROM / TCP-IP packet-radio node, router, chat server and APRS digipeater — organised by user journey and cited to primary sources.">
+        <meta name="description" content="A re-presentation of the documentation for XRouter, Paula G8PZT's AX.25 / NET-ROM / TCP-IP packet-radio node, router, chat server and APRS digipeater, organised by user journey and cited to primary sources.">
       
       
         <meta name="author" content="XRouter Documentation contributors">
@@ -569,7 +569,7 @@
   <span class="md-ellipsis">
     
   
-    AX.25 — the data link
+    AX.25: the data link
   
 
     
@@ -597,7 +597,7 @@
   <span class="md-ellipsis">
     
   
-    NET/ROM — networking and routing
+    NET/ROM: networking and routing
   
 
     
@@ -1216,7 +1216,7 @@
   <a href="#the-sysop-keyword-handle-with-care" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The SYSOP keyword — handle with care
+        The SYSOP keyword: handle with care
       
     </span>
   </a>
@@ -2669,7 +2669,7 @@
   <a href="#the-sysop-keyword-handle-with-care" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The SYSOP keyword — handle with care
+        The SYSOP keyword: handle with care
       
     </span>
   </a>
@@ -2716,8 +2716,8 @@ and the AX.25 timing and NET/ROM behaviour you tune per port.</p>
 <h2 id="the-port-block">The port block<a class="headerlink" href="#the-port-block" title="Permanent link">&para;</a></h2>
 <p>Each block opens with <code>PORT=n</code> and closes with <code>ENDPORT</code>. <strong>Two keywords are mandatory:</strong></p>
 <ul>
-<li><strong><code>ID</code></strong> — the text shown for this port on the <code>PORTS</code> display. Make it descriptive.</li>
-<li><strong><code>INTERFACENUM</code></strong> — the number of the <a href="../interfaces/">interface</a> this port binds to.</li>
+<li><strong><code>ID</code></strong>, the text shown for this port on the <code>PORTS</code> display. Make it descriptive.</li>
+<li><strong><code>INTERFACENUM</code></strong>, the number of the <a href="../interfaces/">interface</a> this port binds to.</li>
 </ul>
 <p>On a multi-channel interface, add <code>CHANNEL</code> (A–P) to pick the channel; it defaults to <code>A</code> and
 is not needed on AXIP/AXUDP/AXTCP. A minimal port is therefore:</p>
@@ -2730,7 +2730,7 @@ is not needed on AXIP/AXUDP/AXTCP. A minimal port is therefore:</p>
 <a href="../">configuration model</a>: <strong>the interface named in <code>INTERFACENUM</code> must appear earlier
 in the file than this port.</strong></p>
 <h2 id="ax25-timing-and-behaviour">AX.25 timing and behaviour<a class="headerlink" href="#ax25-timing-and-behaviour" title="Permanent link">&para;</a></h2>
-<p>These keywords shape how AX.25 behaves on the channel — how it shares the air, how long it
+<p>These keywords shape how AX.25 behaves on the channel, how it shares the air, how long it
 waits, and how many frames it sends before expecting an acknowledgement. Several also exist as
 global defaults; setting them in the port block overrides the default for that channel.</p>
 <table>
@@ -2790,7 +2790,7 @@ global defaults; setting them in the port block overrides the default for that c
 </tbody>
 </table>
 <div class="admonition note">
-<p class="admonition-title">Defaults vary by version — <code>RESPTIME</code> especially</p>
+<p class="admonition-title">Defaults vary by version, <code>RESPTIME</code> especially</p>
 <p>Documented defaults differ between the in-program manual and older mirrors. <code>RESPTIME</code>
 is the clearest case: it is documented as <strong>1500 ms</strong> in one place and <strong>2000 ms</strong> in
 another. On Windows builds, timing jitter makes a low value unreliable and the author
@@ -2802,13 +2802,13 @@ build with the matching sysop command.</p>
 <p class="admonition-title">MAXFRAME above 7 enables modulo-128</p>
 <p><code>MAXFRAME</code> defaults to 3 and may be raised on good channels. Setting <code>MAXFRAME</code> greater
 than 7 makes XRouter attempt <strong>extended (modulo-128) AX.25</strong>, which allows up to 63
-outstanding frames — useful on a fast, clean link but pointless on a marginal one. On a
+outstanding frames, useful on a fast, clean link but pointless on a marginal one. On a
 busy 1200-baud channel keep <code>FRACK</code> high (the default 7000 ms is sensible); lower values
 such as ~2000 ms suit fast or wired links only. A rough rule for <code>PERSIST</code> is
 255 ÷ (number of users sharing the channel).</p>
 </div>
 <h2 id="netrom-on-the-port">NET/ROM on the port<a class="headerlink" href="#netrom-on-the-port" title="Permanent link">&para;</a></h2>
-<p><code>QUALITY</code> sets the default NET/ROM neighbour quality advertised over this port — how good a
+<p><code>QUALITY</code> sets the default NET/ROM neighbour quality advertised over this port, how good a
 path <em>through</em> this port is considered to be. A few related keywords go alongside it:</p>
 <table>
 <thead>
@@ -2843,22 +2843,22 @@ path <em>through</em> this port is considered to be. A few related keywords go a
 </table>
 <div class="admonition note">
 <p class="admonition-title">QUALITY=0 disables Layer 3/4 on the port</p>
-<p>Setting <code>QUALITY=0</code> turns off NET/ROM Layer-3/Layer-4 on that port — the port carries
+<p>Setting <code>QUALITY=0</code> turns off NET/ROM Layer-3/Layer-4 on that port, the port carries
 plain AX.25 only, with no NET/ROM routing. This is exactly what you want on a busy
 user-access channel where you don't want node broadcasts. Separately, a <code>QUALITY</code> in the
 range <strong>256–511 enables AUTOQUAL</strong>, XRouter's automatic route-quality measurement, rather
-than a fixed quality. Use the per-port <code>NODESINTERVAL</code> — never a low <em>global</em> one — if a
+than a fixed quality. Use the per-port <code>NODESINTERVAL</code>, never a low <em>global</em> one, if a
 single neighbour needs more frequent broadcasts.</p>
 </div>
 <h2 id="behaviour-flags">Behaviour flags<a class="headerlink" href="#behaviour-flags" title="Permanent link">&para;</a></h2>
 <p>Two bitmask keywords control connection handling and digipeating. Add the bit values you want:</p>
 <p><code>CFLAGS</code> (default <strong>3</strong>) governs AX.25 up/downlinking:</p>
 <ul>
-<li><code>1</code> — allow uplinks (users may connect <em>to</em> the node).</li>
-<li><code>2</code> — allow downlinks (the node may connect <em>out</em> on behalf of users).</li>
-<li><code>4</code> — applications may downlink unconditionally.</li>
-<li><code>8</code> — suppress L3RTT on this port.</li>
-<li><code>16</code> — allow Layer-2 fragmentation.</li>
+<li><code>1</code>, allow uplinks (users may connect <em>to</em> the node).</li>
+<li><code>2</code>, allow downlinks (the node may connect <em>out</em> on behalf of users).</li>
+<li><code>4</code>, applications may downlink unconditionally.</li>
+<li><code>8</code>, suppress L3RTT on this port.</li>
+<li><code>16</code>, allow Layer-2 fragmentation.</li>
 </ul>
 <p><code>DIGIFLAG</code> (default <strong>7</strong>) governs digipeating, with bits for UI and non-UI digipeating,
 the APRS New-N paradigm (<code>UITRACE</code>/<code>WIDEn-n</code> and <code>UIFLOOD</code>), and IGate to/from the internet.
@@ -2896,13 +2896,13 @@ values.</p>
 </tr>
 </tbody>
 </table>
-<h2 id="the-sysop-keyword-handle-with-care">The SYSOP keyword — handle with care<a class="headerlink" href="#the-sysop-keyword-handle-with-care" title="Permanent link">&para;</a></h2>
+<h2 id="the-sysop-keyword-handle-with-care">The SYSOP keyword: handle with care<a class="headerlink" href="#the-sysop-keyword-handle-with-care" title="Permanent link">&para;</a></h2>
 <p><code>SYSOP</code> marks a whole port as sysop-privileged. It defaults to <code>0</code> (off), and it should
 almost always stay there.</p>
 <div class="admonition danger">
 <p class="admonition-title">SYSOP=1 grants full sysop with no password</p>
 <p>If you set <code>SYSOP=1</code>, <strong>every</strong> user who connects on that port is given full sysop
-status — with no password challenge at all. This is intended <strong>only for genuinely secure
+status, with no password challenge at all. This is intended <strong>only for genuinely secure
 links</strong>, such as a direct RS-232 connection or a trusted Ethernet segment that nobody else
 can reach. Never set <code>SYSOP=1</code> on an RF port or any port reachable from the internet:
 doing so hands node control to anyone who can connect. For remote sysop access over RF or
@@ -2912,7 +2912,7 @@ hardening</a>.</p>
 </div>
 <h2 id="defaults-at-a-glance">Defaults at a glance<a class="headerlink" href="#defaults-at-a-glance" title="Permanent link">&para;</a></h2>
 <p>The values below are collected for reference. They are the documented defaults, but <strong>defaults
-can vary by version</strong> — <code>RESPTIME</code> is the notable example (1500 vs 2000). Set the ones you
+can vary by version</strong>, <code>RESPTIME</code> is the notable example (1500 vs 2000). Set the ones you
 care about explicitly.</p>
 <table>
 <thead>
@@ -3005,7 +3005,7 @@ care about explicitly.</p>
 <a href="https://wiki.oarc.uk/packet:xrouter:docs:man7">Configuration directives, OARC wiki (man7)</a> ·
 <a href="https://wiki.oarc.uk/packet:xrouter:docs:man6">Installation and configuration topics, OARC wiki (man6)</a> ·
 <a href="https://wiki.oarc.uk/packet:xrouter:docs:man8">XROUTER.CFG, OARC wiki (man8)</a> ·
-<a href="https://ohiopacket.org/xrpi/docs/ports.htm">ohiopacket.org XRPi mirror — ports</a></p>
+<a href="https://ohiopacket.org/xrpi/docs/ports.htm">ohiopacket.org XRPi mirror: ports</a></p>
 
 
 
@@ -3083,7 +3083,7 @@ care about explicitly.</p>
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Documentation re-presentation released under CC BY 4.0. XRouter itself is copyright Paula G8PZT and is free for non-commercial amateur use. This is an unofficial, community-maintained site; for canonical information defer to the author.
+      Documentation re-presentation released under CC BY 4.0, written entirely by AI from primary sources and not fact-checked by a human. XRouter itself is copyright Paula G8PZT and is free for non-commercial amateur use. This is an unofficial, community-maintained site; for canonical information defer to the author.
     </div>
   
   
