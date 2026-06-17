@@ -1,0 +1,5022 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A re-presentation of the documentation for XRouter, Paula G8PZT's AX.25 / NET-ROM / TCP-IP packet-radio node, router, chat server and APRS digipeater — organised by user journey and cited to primary sources.">
+      
+      
+        <meta name="author" content="XRouter Documentation contributors">
+      
+      
+        <link rel="canonical" href="https://m0lte.github.io/xrouter-docs/1.0/configuration/directive-reference/">
+      
+      
+        <link rel="prev" href="../ports/">
+      
+      
+        <link rel="next" href="../system-files/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Directive reference - XRouter Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#directive-reference" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="XRouter Documentation" class="md-header__button md-logo" aria-label="XRouter Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            XRouter Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Directive reference
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/m0lte/xrouter-docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    m0lte/xrouter-docs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="XRouter Documentation" class="md-nav__button md-logo" aria-label="XRouter Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    XRouter Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/m0lte/xrouter-docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    m0lte/xrouter-docs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../start/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Start here
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Start here
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../start/new-to-packet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    New to packet radio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../start/new-to-xrouter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    New to XRouter
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../start/migrating-from-bpq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Migrating from BPQ or other node software
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Packet radio basics
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Packet radio basics
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../basics/what-is-packet-radio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    What is packet radio?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../basics/ax25/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AX.25 — the data link
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../basics/netrom/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NET/ROM — networking and routing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../basics/kiss-tncs-and-modems/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    KISS, TNCs and soundcard modems
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../basics/aprs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    APRS in brief
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../basics/ip-over-ax25/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IP over AX.25 and AMPRNet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../basics/nodes-and-sysops/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Nodes, switches and the sysop role
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../getting-started/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting started
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Getting started
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/raspberry-pi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Raspberry Pi (XrPi)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/linux-pc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linux PC (XrLin)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/windows/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Windows (XrWin)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/first-config/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Your first XROUTER.CFG
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/running-as-a-service/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Running as a service
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuration
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Configuration
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../global-settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Global settings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../interfaces/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Interfaces
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ports/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ports
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Directive reference
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Directive reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-read-these-tables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How to read these tables
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#global-identity-and-location" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Global — identity and location
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#global-console-and-display" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Global — console and display
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#global-languages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Global — languages
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#global-net-rom-and-routing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Global — NET-ROM and routing
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#global-tcpip-stack" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Global — TCP/IP stack
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#global-built-in-tcpip-server-ports" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Global — built-in TCP/IP server ports
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#global-chat-pms-blog-and-wall" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Global — chat, PMS, blog and wall
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#global-aprs-and-igate-identity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Global — APRS and IGate identity
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#global-weather-dyndns-mqtt-publisher-logging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Global — weather, DynDNS, MQTT publisher, logging
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#global-connect-text-and-access-defaults" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Global — connect text and access defaults
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interface-block" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        INTERFACE block
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#port-block" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PORT block
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="PORT block">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#port-identity-and-binding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Port — identity and binding
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#port-ax25-and-link-timing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Port — AX.25 and link timing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#port-scc-only-inert-on-pilinux" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Port — SCC-only (inert on Pi/Linux)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#port-net-rom-and-routing-per-port" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Port — NET-ROM and routing (per port)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#port-ip-per-port" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Port — IP (per port)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#port-digipeating-beacons-and-aprs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Port — digipeating, beacons and APRS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#port-mheard-and-frame-pipes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Port — MHeard and frame pipes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#port-access-and-applications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Port — access and applications
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appl-block" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        APPL block
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#radio-block" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RADIO block
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../system-files/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System and data files
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Worked example configs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../interfaces/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Interfaces & modems
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Interfaces & modems
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interfaces/kiss-tncs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    KISS TNCs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interfaces/soundcard-modems/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Soundcard modems (Direwolf, UZ7HO, QtSoundModem)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interfaces/agwpe/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AGWPE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interfaces/axip-axudp-axtcp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AXIP / AXUDP / AXTCP linking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interfaces/vara-ardop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    VARA and ARDOP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Networking & routing
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Networking & routing
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../networking/ax25/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AX.25 on XRouter
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../networking/netrom-inp3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NET/ROM, INP3 and L3RTT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../networking/netromx-services/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NetRom-X service numbers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../networking/tcpip/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The TCP/IP stack
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../networking/linking-and-interop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linking nodes and interoperating
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Subsystems & services
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Subsystems & services
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../subsystems/pms-mailbox/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PMS mailbox
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../subsystems/chat/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chat server
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../subsystems/aprs-igate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    APRS digipeater and IGate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../subsystems/http-rest-mqtt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HTTP, REST and MQTT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../subsystems/built-in-servers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Built-in TCP servers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operating the node
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Operating the node
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../commands/node-prompt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The node command prompt
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../commands/sysop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sysop access and commands
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../commands/command-reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Command reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Administration
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Administration
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../admin/security-hardening/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Security and hardening
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../admin/logging-and-monitoring/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Logging and monitoring
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../admin/troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting and FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../admin/upgrading/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Upgrading and versions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/ports-and-services/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ports and service numbers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Project
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/about-these-docs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About these docs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/sources-and-attribution/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sources and attribution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/contributing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contributing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-read-these-tables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How to read these tables
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#global-identity-and-location" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Global — identity and location
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#global-console-and-display" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Global — console and display
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#global-languages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Global — languages
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#global-net-rom-and-routing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Global — NET-ROM and routing
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#global-tcpip-stack" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Global — TCP/IP stack
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#global-built-in-tcpip-server-ports" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Global — built-in TCP/IP server ports
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#global-chat-pms-blog-and-wall" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Global — chat, PMS, blog and wall
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#global-aprs-and-igate-identity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Global — APRS and IGate identity
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#global-weather-dyndns-mqtt-publisher-logging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Global — weather, DynDNS, MQTT publisher, logging
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#global-connect-text-and-access-defaults" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Global — connect text and access defaults
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interface-block" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        INTERFACE block
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#port-block" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PORT block
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="PORT block">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#port-identity-and-binding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Port — identity and binding
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#port-ax25-and-link-timing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Port — AX.25 and link timing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#port-scc-only-inert-on-pilinux" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Port — SCC-only (inert on Pi/Linux)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#port-net-rom-and-routing-per-port" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Port — NET-ROM and routing (per port)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#port-ip-per-port" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Port — IP (per port)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#port-digipeating-beacons-and-aprs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Port — digipeating, beacons and APRS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#port-mheard-and-frame-pipes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Port — MHeard and frame pipes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#port-access-and-applications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Port — access and applications
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appl-block" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        APPL block
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#radio-block" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RADIO block
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="directive-reference">Directive reference<a class="headerlink" href="#directive-reference" title="Permanent link">&para;</a></h1>
+<p>This page is a consolidated reference of the <code>XROUTER.CFG</code> configuration directives, grouped
+by where they are used. It lists the directives documented in XRouter's in-program manual
+(Section 7, "Configuration Directives") and on the author's mirror. It is a convenience index,
+not a substitute for the manual: <strong>defer to the in-program manual and the running program for
+the authoritative current set of keywords and exact defaults.</strong> Some defaults differ between
+versions and between the global and per-port context, and where the sources disagree this page
+says so rather than asserting a false precision.</p>
+<p>For how the file is structured (blocks, comments, line length, ordering), see
+<a href="../">the configuration model</a> and <a href="../global-settings/">Global settings</a>. For the
+keywords that define hardware and radio ports, see <a href="../interfaces/">Interfaces</a> and
+<a href="../ports/">Ports</a>. For the files these directives reference, see
+<a href="../system-files/">System and data files</a>.</p>
+<h2 id="how-to-read-these-tables">How to read these tables<a class="headerlink" href="#how-to-read-these-tables" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Every directive takes the form <code>KEYWORD=value</code>, one per line. Keywords are <strong>not
+  case-sensitive</strong>.</li>
+<li><strong>Scope</strong> is where a directive is valid: <strong>G</strong> = GLOBAL section · <strong>P</strong> = inside a
+  <code>PORT…ENDPORT</code> block · <strong>I</strong> = inside an <code>INTERFACE…ENDINTERFACE</code> block · <strong>C</strong> = inside a
+  <code>CONSOLE…ENDCONSOLE</code> block · <strong>A</strong> = inside an <code>APPL…ENDAPPL</code> block · <strong>R</strong> = inside a
+  <code>RADIO…ENDRADIO</code> block. Several keywords are valid both globally (where they set a default)
+  and inside <code>PORT</code> (where they override per port); these show <strong>G/P</strong>.</li>
+<li><strong>Default</strong> is the value the manual gives in parentheses, where one is documented. Where the
+  sources conflict on the number, or it is version-dependent, the table reads
+  <em>varies / see note</em> and the conflict is noted beneath.</li>
+<li>In the manual's own listings, mandatory keywords are flagged; the genuinely mandatory ones
+  are <code>NODECALL</code>, <code>NODEALIAS</code>, per-port <code>ID</code> and <code>INTERFACENUM</code>, per-interface <code>TYPE</code> and
+  <code>MTU</code>, <code>PROTOCOL</code> (most interface types) and <code>IPLINK</code> (AXIP/AXUDP ports). <code>COLS</code> is
+  deprecated.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Defaults can shift between versions</p>
+<p>XRouter releases briskly and a handful of defaults have changed over the years (for
+example <code>CHATQUAL</code>, <code>RESPTIME</code> and the representation of <code>MAXTT</code>). Treat any number here as
+indicative and confirm against your build's manual (<code>MAN 7</code>) if it matters.</p>
+</div>
+<hr />
+<h2 id="global-identity-and-location">Global — identity and location<a class="headerlink" href="#global-identity-and-location" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Directive</th>
+<th>Scope</th>
+<th>Purpose</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>NODECALL</code></td>
+<td>G</td>
+<td>Primary AX.25 / NET-ROM callsign of the node (used for all L3/L4; default L2 per port). Mandatory</td>
+<td>(none)</td>
+</tr>
+<tr>
+<td><code>NODEALIAS</code></td>
+<td>G</td>
+<td>Primary AX.25 / NET-ROM alias of the node. Mandatory</td>
+<td>(none)</td>
+</tr>
+<tr>
+<td><code>CONTACT</code></td>
+<td>G</td>
+<td>Sysop contact details (sent to the mapping server)</td>
+<td>(none)</td>
+</tr>
+<tr>
+<td><code>QTH</code></td>
+<td>G</td>
+<td>Location of this node, free text</td>
+<td>(empty)</td>
+</tr>
+<tr>
+<td><code>LOCATOR</code></td>
+<td>G</td>
+<td>Maidenhead QTH locator (6 or 8 char)</td>
+<td>(empty)</td>
+</tr>
+<tr>
+<td><code>LATITUDE</code></td>
+<td>G</td>
+<td>Latitude, decimal degrees (−90..90)</td>
+<td>999 (unset)</td>
+</tr>
+<tr>
+<td><code>LONGITUDE</code></td>
+<td>G</td>
+<td>Longitude, decimal degrees (−180..180)</td>
+<td>999 (unset)</td>
+</tr>
+<tr>
+<td><code>ALTITUDE</code></td>
+<td>G</td>
+<td>Site altitude above mean sea level (metres)</td>
+<td>0</td>
+</tr>
+<tr>
+<td><code>HAAT</code></td>
+<td>G</td>
+<td>Antenna height above average terrain (metres)</td>
+<td>0</td>
+</tr>
+<tr>
+<td><code>MAPCOMMENT</code></td>
+<td>G</td>
+<td>Short text shown on the network map</td>
+<td>(none)</td>
+</tr>
+<tr>
+<td><code>MAPSERVADDR</code></td>
+<td>G</td>
+<td>Hostname/IP of the map server (override)</td>
+<td>built-in</td>
+</tr>
+<tr>
+<td><code>MAPSERVPORT</code></td>
+<td>G</td>
+<td>TCP port of the map server</td>
+<td>80</td>
+</tr>
+</tbody>
+</table>
+<h2 id="global-console-and-display">Global — console and display<a class="headerlink" href="#global-console-and-display" title="Permanent link">&para;</a></h2>
+<p>These control the local sysop console(s). Most colours are set inside a <code>CONSOLE</code> block; a few
+have global equivalents. Colour names are taken verbatim from the manual.</p>
+<table>
+<thead>
+<tr>
+<th>Directive</th>
+<th>Scope</th>
+<th>Purpose</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>NUMCONSOLES</code></td>
+<td>G</td>
+<td>Number of consoles (0–5). The manual's keyword list misspells this <code>NUMCONOLES</code></td>
+<td>3</td>
+</tr>
+<tr>
+<td><code>ROWS</code></td>
+<td>G</td>
+<td>Display height in rows</td>
+<td>25</td>
+</tr>
+<tr>
+<td><code>COLS</code></td>
+<td>G</td>
+<td>Display width — <strong>deprecated</strong></td>
+<td>80</td>
+</tr>
+<tr>
+<td><code>BOOTWIN</code></td>
+<td>G</td>
+<td>Window shown after bootup</td>
+<td>6 (overview)</td>
+</tr>
+<tr>
+<td><code>BELL</code></td>
+<td>G</td>
+<td>Allowed hours for console bells</td>
+<td>0800-2200</td>
+</tr>
+<tr>
+<td><code>AUDIODEVICE</code></td>
+<td>G</td>
+<td>Audio output device for sounds</td>
+<td>PC speaker / <code>/dev/audio</code> (Pi)</td>
+</tr>
+<tr>
+<td><code>CONSOLECALL</code></td>
+<td>C</td>
+<td>Callsign for console-originated connects</td>
+<td><code>NODECALL</code></td>
+</tr>
+<tr>
+<td><code>CONSOLELANG</code></td>
+<td>G/C</td>
+<td>Console language number</td>
+<td>0 (English)</td>
+</tr>
+<tr>
+<td><code>MMASK</code></td>
+<td>C</td>
+<td>Protocols to trace (hex bitmask)</td>
+<td>varies / see note</td>
+</tr>
+<tr>
+<td><code>MPORTS</code></td>
+<td>C</td>
+<td>Ports to monitor by default</td>
+<td>all</td>
+</tr>
+<tr>
+<td><code>REVIEW</code></td>
+<td>C</td>
+<td>Scrollback lines</td>
+<td>400</td>
+</tr>
+<tr>
+<td><code>ACTIONCOLOR</code></td>
+<td>G/C</td>
+<td>Colour for pending actions/events</td>
+<td>YELLOW</td>
+</tr>
+<tr>
+<td><code>CAPTIONCOLOR</code></td>
+<td>G/C</td>
+<td>Colour for captions/headings</td>
+<td>LIME</td>
+</tr>
+<tr>
+<td><code>PROMPTCOLOR</code></td>
+<td>G/C</td>
+<td>Colour for prompts</td>
+<td>varies / see note</td>
+</tr>
+<tr>
+<td><code>WARNCOLOR</code></td>
+<td>G/C</td>
+<td>Colour for warnings/errors</td>
+<td>CERISE</td>
+</tr>
+<tr>
+<td><code>TEXTCOLOR</code></td>
+<td>C</td>
+<td>Colour for normal text</td>
+<td>WHITE</td>
+</tr>
+<tr>
+<td><code>ECHOCOLOR</code></td>
+<td>C</td>
+<td>Colour for echoed command text</td>
+<td>YELLOW</td>
+</tr>
+<tr>
+<td><code>RXCOLOR</code></td>
+<td>C</td>
+<td>Colour for RX tracing</td>
+<td>LIME</td>
+</tr>
+<tr>
+<td><code>TXCOLOR</code></td>
+<td>C</td>
+<td>Colour for TX tracing</td>
+<td>PINK</td>
+</tr>
+<tr>
+<td><code>TOPWINBGCOLOR</code></td>
+<td>C</td>
+<td>Status-line background</td>
+<td>CYAN</td>
+</tr>
+<tr>
+<td><code>TOPWINTXTCOLOR</code></td>
+<td>C</td>
+<td>Status-line text</td>
+<td>WHITE</td>
+</tr>
+<tr>
+<td><code>BOTWINBGCOLOR</code></td>
+<td>C</td>
+<td>Menu-bar background</td>
+<td>CYAN</td>
+</tr>
+<tr>
+<td><code>BOTWINTXTCOLOR</code></td>
+<td>C</td>
+<td>Menu-bar text</td>
+<td>WHITE</td>
+</tr>
+<tr>
+<td><code>CMDWINBGCOLOR</code></td>
+<td>C</td>
+<td>Command-line background</td>
+<td>NAVY</td>
+</tr>
+<tr>
+<td><code>CMDWINTXTCOLOR</code></td>
+<td>C</td>
+<td>Command-line text</td>
+<td>YELLOW</td>
+</tr>
+<tr>
+<td><code>MIDWINBGCOLOR</code></td>
+<td>C</td>
+<td>Central-window background</td>
+<td>BLACK</td>
+</tr>
+<tr>
+<td><code>MIDWINTXTCOLOR</code></td>
+<td>C</td>
+<td>Central-window text</td>
+<td>WHITE</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Colour defaults</p>
+<p>The manual quotes <code>PROMPTCOLOR</code> as TURQUOISE in one place and <em>cyan</em> in the <code>XROUTER.CFG</code>
+keyword list, and <code>MMASK</code> as <code>3f8</code> / <code>03FF</code>. These are cosmetic; take them from your build.</p>
+</div>
+<h2 id="global-languages">Global — languages<a class="headerlink" href="#global-languages" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Directive</th>
+<th>Scope</th>
+<th>Purpose</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>DEFAULTLANG</code></td>
+<td>G</td>
+<td>Default language number for unassigned sessions</td>
+<td>0</td>
+</tr>
+<tr>
+<td><code>CONSOLELANG</code></td>
+<td>G/C</td>
+<td>Console language number (see console)</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<h2 id="global-net-rom-and-routing">Global — NET-ROM and routing<a class="headerlink" href="#global-net-rom-and-routing" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Directive</th>
+<th>Scope</th>
+<th>Purpose</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>MINQUAL</code></td>
+<td>G/P</td>
+<td>Minimum quality to ADD a node to the nodes table</td>
+<td>10</td>
+</tr>
+<tr>
+<td><code>QUALADJUST</code></td>
+<td>G</td>
+<td>Derate NET-ROM quality by callsign (<code>default</code>, or call + 0–255)</td>
+<td>255</td>
+</tr>
+<tr>
+<td><code>NODESINTERVAL</code></td>
+<td>G/P</td>
+<td>Minutes between NODES broadcasts</td>
+<td>60</td>
+</tr>
+<tr>
+<td><code>MAXHOPS</code></td>
+<td>G/P</td>
+<td>Hop-count horizon (also a <code>ROUTE ADD</code> parameter)</td>
+<td>30</td>
+</tr>
+<tr>
+<td><code>MAXTT</code></td>
+<td>G/P</td>
+<td>Trip-time horizon (also a <code>ROUTE ADD</code> parameter)</td>
+<td>varies / see note</td>
+</tr>
+<tr>
+<td><code>MAXNODES</code></td>
+<td>G</td>
+<td>Maximum size of the nodes table</td>
+<td>200</td>
+</tr>
+<tr>
+<td><code>MAXROUTES</code></td>
+<td>G</td>
+<td>Maximum number of neighbour routes</td>
+<td>30</td>
+</tr>
+<tr>
+<td><code>MAXCIRCUITS</code></td>
+<td>G</td>
+<td>Maximum concurrent NET-ROM L4 circuits</td>
+<td>20</td>
+</tr>
+<tr>
+<td><code>MAXSESSIONS</code></td>
+<td>G</td>
+<td>Maximum simultaneous sessions</td>
+<td>20</td>
+</tr>
+<tr>
+<td><code>OBSINIT</code></td>
+<td>G</td>
+<td>NET-ROM obsolescence initial value</td>
+<td>5</td>
+</tr>
+<tr>
+<td><code>OBSMIN</code></td>
+<td>G</td>
+<td>NET-ROM obsolescence minimum to broadcast</td>
+<td>3</td>
+</tr>
+<tr>
+<td><code>L3TTL</code></td>
+<td>G</td>
+<td>NET-ROM Layer 3 time-to-live (hops)</td>
+<td>25</td>
+</tr>
+<tr>
+<td><code>L4DELAY</code></td>
+<td>G</td>
+<td>NET-ROM Layer 4 delay (s)</td>
+<td>3</td>
+</tr>
+<tr>
+<td><code>L4RETRIES</code></td>
+<td>G</td>
+<td>NET-ROM Layer 4 retries</td>
+<td>3</td>
+</tr>
+<tr>
+<td><code>L4T3</code></td>
+<td>G</td>
+<td>NET-ROM Layer 4 link-check interval (s)</td>
+<td>840</td>
+</tr>
+<tr>
+<td><code>L4TIMEOUT</code></td>
+<td>G</td>
+<td>NET-ROM Layer 4 timeout (s)</td>
+<td>120</td>
+</tr>
+<tr>
+<td><code>L4WINDOW</code></td>
+<td>G</td>
+<td>NET-ROM Layer 4 window</td>
+<td>10</td>
+</tr>
+<tr>
+<td><code>L3RTTINTERVAL</code></td>
+<td>G</td>
+<td>Seconds between L3RTT round-trip checks</td>
+<td>300</td>
+</tr>
+<tr>
+<td><code>INPBCINTERVAL</code></td>
+<td>G</td>
+<td>Seconds between scheduled INP3 unicasts</td>
+<td>600</td>
+</tr>
+<tr>
+<td><code>L3EXCLUDE</code></td>
+<td>G</td>
+<td>Callsigns whose L3 traffic is disrupted</td>
+<td>(none)</td>
+</tr>
+<tr>
+<td><code>L3BUDLEVEL</code></td>
+<td>G</td>
+<td>Leakage level (0–255) for <code>L3EXCLUDE</code> (a.k.a. <code>BLEVEL</code>)</td>
+<td>0</td>
+</tr>
+<tr>
+<td><code>BLEVEL</code></td>
+<td>G</td>
+<td>Leakage level (0–255) for <code>L3EXCLUDE</code></td>
+<td>0</td>
+</tr>
+<tr>
+<td><code>HIDENODES</code></td>
+<td>G</td>
+<td>Visibility of <code>#</code> nodes</td>
+<td>0</td>
+</tr>
+<tr>
+<td><code>SORTBYCALL</code></td>
+<td>G</td>
+<td>Sort the nodes table by callsign rather than alias</td>
+<td>0</td>
+</tr>
+<tr>
+<td><code>PROXY</code></td>
+<td>G/P</td>
+<td>NET-ROM proxy / AX-IP proxy mapping (NetRom↔AX25 / NetRom↔TCP)</td>
+<td>(none)</td>
+</tr>
+<tr>
+<td><code>ROUTES</code></td>
+<td>G block</td>
+<td>Begins the locked-in NET-ROM routes section (terminated by <code>***</code>)</td>
+<td>(none)</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title"><code>MAXTT</code> units and default</p>
+<p>The <code>XROUTER.CFG</code> keyword list gives <code>MAXTT</code> as 500 ("Maximum Trip Time in secs"); other
+pages reference a 0–60000 range where 60000 = 600 s, and the author's mirror lists a global
+default of 5000 (hundredths of a second). The representation differs by page — confirm
+against your build. See <a href="../../networking/netrom-inp3/">NET/ROM, INP3 and L3RTT</a>.</p>
+</div>
+<h2 id="global-tcpip-stack">Global — TCP/IP stack<a class="headerlink" href="#global-tcpip-stack" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Directive</th>
+<th>Scope</th>
+<th>Purpose</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>IPADDRESS</code></td>
+<td>G/P</td>
+<td>Core (AMPRNet/44-net) IP, inherited by ports; per-port override; <code>0.0.0.0</code> disables all IP</td>
+<td>0.0.0.0</td>
+</tr>
+<tr>
+<td><code>NETMASK</code></td>
+<td>P</td>
+<td>Subnet mask for the port</td>
+<td>(none)</td>
+</tr>
+<tr>
+<td><code>DHCP</code></td>
+<td>P</td>
+<td>Obtain the port IP via DHCP (1) or static (0)</td>
+<td>0</td>
+</tr>
+<tr>
+<td><code>DNS</code></td>
+<td>G</td>
+<td>DNS server to use</td>
+<td>internal</td>
+</tr>
+<tr>
+<td><code>DOMAIN</code></td>
+<td>G</td>
+<td>Domain suffix</td>
+<td><code>ampr.org.</code></td>
+</tr>
+<tr>
+<td><code>DCACHE</code></td>
+<td>G</td>
+<td>Domain cache size</td>
+<td>10</td>
+</tr>
+<tr>
+<td><code>HOSTNAME</code></td>
+<td>G</td>
+<td>Host name for TCP/IP operations</td>
+<td><code>NODEALIAS:NODECALL</code></td>
+</tr>
+<tr>
+<td><code>MAXARP</code></td>
+<td>G</td>
+<td>Maximum ARP table size</td>
+<td>20</td>
+</tr>
+<tr>
+<td><code>MAXTCP</code></td>
+<td>G</td>
+<td>Maximum simultaneous TCP connections</td>
+<td>20</td>
+</tr>
+<tr>
+<td><code>IPENCAP</code></td>
+<td>G</td>
+<td>Enable IPENCAP (protocol 4) via the Linux stack</td>
+<td>0</td>
+</tr>
+<tr>
+<td><code>IPIP</code></td>
+<td>G</td>
+<td>Enable IPIP (protocol 94) via the Linux stack</td>
+<td>0</td>
+</tr>
+<tr>
+<td><code>IPTTL</code></td>
+<td>G</td>
+<td>IP time-to-live</td>
+<td>255</td>
+</tr>
+<tr>
+<td><code>IPUDPPORT</code></td>
+<td>G</td>
+<td>UDP port for receiving IPUDP traffic</td>
+<td>94</td>
+</tr>
+<tr>
+<td><code>SYNCACHELIFE</code></td>
+<td>G</td>
+<td>TCP SYN cache lifetime (s)</td>
+<td>10</td>
+</tr>
+<tr>
+<td><code>SYNCACHESIZE</code></td>
+<td>G</td>
+<td>TCP SYN cache slots</td>
+<td>1000</td>
+</tr>
+</tbody>
+</table>
+<h2 id="global-built-in-tcpip-server-ports">Global — built-in TCP/IP server ports<a class="headerlink" href="#global-built-in-tcpip-server-ports" title="Permanent link">&para;</a></h2>
+<p>Each of these sets the listening TCP/UDP port of a built-in server. See
+<a href="../../reference/ports-and-services/">Ports and service numbers</a> and
+<a href="../../subsystems/built-in-servers/">Built-in TCP servers</a> for the full service map.</p>
+<table>
+<thead>
+<tr>
+<th>Directive</th>
+<th>Scope</th>
+<th>Purpose</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>TELNETPORT</code></td>
+<td>G</td>
+<td>Telnet server</td>
+<td>23</td>
+</tr>
+<tr>
+<td><code>TELPROXYPORT</code></td>
+<td>G</td>
+<td>Telnet proxy server</td>
+<td>2323</td>
+</tr>
+<tr>
+<td><code>TTYLINKPORT</code></td>
+<td>G</td>
+<td>TTYLINK (keyboard-to-keyboard)</td>
+<td>87</td>
+</tr>
+<tr>
+<td><code>RLOGINPORT</code></td>
+<td>G</td>
+<td>Rlogin server (sysop access)</td>
+<td>513</td>
+</tr>
+<tr>
+<td><code>FTPPORT</code></td>
+<td>G</td>
+<td>FTP server</td>
+<td>21</td>
+</tr>
+<tr>
+<td><code>FINGERPORT</code></td>
+<td>G</td>
+<td>Finger server</td>
+<td>79</td>
+</tr>
+<tr>
+<td><code>HTTPPORT</code></td>
+<td>G</td>
+<td>HTTP server</td>
+<td>80</td>
+</tr>
+<tr>
+<td><code>HTTPROOT</code></td>
+<td>G</td>
+<td>HTTP server root directory</td>
+<td><code>HTTP</code></td>
+</tr>
+<tr>
+<td><code>ECHOPORT</code></td>
+<td>G</td>
+<td>Echo server</td>
+<td>7</td>
+</tr>
+<tr>
+<td><code>DISCARDPORT</code></td>
+<td>G</td>
+<td>Discard server</td>
+<td>9</td>
+</tr>
+<tr>
+<td><code>SOCKSPORT</code></td>
+<td>G</td>
+<td>SOCKS proxy</td>
+<td>1080</td>
+</tr>
+<tr>
+<td><code>APRSPORT</code></td>
+<td>G</td>
+<td>APRS server</td>
+<td>1448</td>
+</tr>
+<tr>
+<td><code>CHATPORT</code></td>
+<td>G</td>
+<td>Chat server</td>
+<td>3600</td>
+</tr>
+<tr>
+<td><code>MQTTPORT</code></td>
+<td>G</td>
+<td>MQTT broker</td>
+<td>1883</td>
+</tr>
+<tr>
+<td><code>AGWPORT</code></td>
+<td>G</td>
+<td>AGWPE emulator</td>
+<td>8000</td>
+</tr>
+<tr>
+<td><code>RHPPORT</code></td>
+<td>G</td>
+<td>Remote Host Protocol (host API) server</td>
+<td>9000</td>
+</tr>
+<tr>
+<td><code>HAMLIBPORT</code></td>
+<td>G</td>
+<td>Hamlib emulator port</td>
+<td>(unset)</td>
+</tr>
+<tr>
+<td><code>RIGSRVPORT</code></td>
+<td>G</td>
+<td>Radio control server port</td>
+<td>(unset)</td>
+</tr>
+<tr>
+<td><code>POP3PORT</code></td>
+<td>G</td>
+<td>POP3 server (default unverified in the manual)</td>
+<td>110</td>
+</tr>
+</tbody>
+</table>
+<h2 id="global-chat-pms-blog-and-wall">Global — chat, PMS, blog and wall<a class="headerlink" href="#global-chat-pms-blog-and-wall" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Directive</th>
+<th>Scope</th>
+<th>Purpose</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>CHATCALL</code></td>
+<td>G/P</td>
+<td>Chat server callsign (SSID −8 recommended)</td>
+<td>(none)</td>
+</tr>
+<tr>
+<td><code>CHATALIAS</code></td>
+<td>G/P</td>
+<td>Chat server alias (end in "CHT"; ≤6 chars)</td>
+<td>(none)</td>
+</tr>
+<tr>
+<td><code>CHATQUAL</code></td>
+<td>G</td>
+<td>Chat server NET-ROM quality (0 = invisible)</td>
+<td>varies / see note</td>
+</tr>
+<tr>
+<td><code>CHATLOG</code></td>
+<td>G</td>
+<td>Chat-activity logging bitmask</td>
+<td>0</td>
+</tr>
+<tr>
+<td><code>CHATLINKS</code></td>
+<td>G</td>
+<td>Callsigns of linked chat-server peers</td>
+<td>(none)</td>
+</tr>
+<tr>
+<td><code>PMSCALL</code></td>
+<td>G/P</td>
+<td>Mailbox (PMS) callsign (omit ⇒ PMS disabled)</td>
+<td>(none)</td>
+</tr>
+<tr>
+<td><code>PMSALIAS</code></td>
+<td>G/P</td>
+<td>Mailbox alias</td>
+<td>(none)</td>
+</tr>
+<tr>
+<td><code>PMSHADDR</code></td>
+<td>G</td>
+<td>Mailbox hierarchical address</td>
+<td>(none)</td>
+</tr>
+<tr>
+<td><code>PMSQUAL</code></td>
+<td>G</td>
+<td>PMS NET-ROM quality to broadcast (0 = suppress)</td>
+<td>0</td>
+</tr>
+<tr>
+<td><code>PMSTYPE</code></td>
+<td>G</td>
+<td>Mailbox type/mode (0–4; 1 = standard PMS, 3 = BBS-as-PMS)</td>
+<td>1</td>
+</tr>
+<tr>
+<td><code>KILONFWD</code></td>
+<td>G</td>
+<td>Kill a PMS message after forwarding</td>
+<td>0</td>
+</tr>
+<tr>
+<td><code>BLOGFLAGS</code></td>
+<td>G</td>
+<td>Sysop blog options bitmask (1/2/4/8)</td>
+<td>omitted = disabled</td>
+</tr>
+<tr>
+<td><code>WALLFLAGS</code></td>
+<td>G</td>
+<td>Message wall / guestbook options bitmask</td>
+<td>omitted = disabled</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title"><code>CHATQUAL</code> default</p>
+<p>The author's mirror gives <code>CHATQUAL</code> as 255 in detail ("visible over the same distance as
+<code>NODECALL</code>") but 150 in an overview table. 255 is the likely current default; confirm
+against your build. See <a href="../../subsystems/chat/">Chat server</a>.</p>
+</div>
+<h2 id="global-aprs-and-igate-identity">Global — APRS and IGate identity<a class="headerlink" href="#global-aprs-and-igate-identity" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Directive</th>
+<th>Scope</th>
+<th>Purpose</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>APRSCALL</code></td>
+<td>G</td>
+<td>Callsign used by the IGate</td>
+<td><code>NODECALL</code></td>
+</tr>
+<tr>
+<td><code>UITRACE</code></td>
+<td>G</td>
+<td>APRS N-n digipeating alias (TRACE)</td>
+<td>varies / see note</td>
+</tr>
+<tr>
+<td><code>UIFLOOD</code></td>
+<td>G</td>
+<td>APRS N-n digipeating alias (WIDE/flood)</td>
+<td>WIDE</td>
+</tr>
+<tr>
+<td><code>DXFLAGS</code></td>
+<td>G</td>
+<td>DX-list display control flags</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title"><code>UITRACE</code> / <code>UIFLOOD</code></p>
+<p>The two sources give the defaults slightly differently (one lists <code>UITRACE</code>=TRACE,
+<code>UIFLOOD</code>=WIDE; the other treats <code>UITRACE</code>=WIDE for the New-N paradigm). Set these
+explicitly for your region. See <a href="../../subsystems/aprs-igate/">APRS digipeater and IGate</a>.</p>
+</div>
+<h2 id="global-weather-dyndns-mqtt-publisher-logging">Global — weather, DynDNS, MQTT publisher, logging<a class="headerlink" href="#global-weather-dyndns-mqtt-publisher-logging" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Directive</th>
+<th>Scope</th>
+<th>Purpose</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>WXFILE</code></td>
+<td>G</td>
+<td>Weather import file name/path</td>
+<td>(none)</td>
+</tr>
+<tr>
+<td><code>WXMAXAGE</code></td>
+<td>G</td>
+<td>Maximum age of a weather record (s)</td>
+<td>21600 (6 h)</td>
+</tr>
+<tr>
+<td><code>WXMAXRECS</code></td>
+<td>G</td>
+<td>Maximum weather records stored (0–255)</td>
+<td>5</td>
+</tr>
+<tr>
+<td><code>MQTTSERVADDR</code></td>
+<td>G</td>
+<td>External MQTT broker host/IP (absent ⇒ publisher off)</td>
+<td>(none)</td>
+</tr>
+<tr>
+<td><code>MQTTSERVPORT</code></td>
+<td>G</td>
+<td>External MQTT broker port</td>
+<td>1883</td>
+</tr>
+<tr>
+<td><code>LOG</code></td>
+<td>G</td>
+<td>Activity-logging options bitmask (0 = none)</td>
+<td>0</td>
+</tr>
+<tr>
+<td><code>IGATE</code></td>
+<td>G</td>
+<td>Whether the IGate daemon starts at bootup</td>
+<td>0</td>
+</tr>
+<tr>
+<td><code>IDLETIME</code></td>
+<td>G</td>
+<td>Idle-link shutdown time (s)</td>
+<td>900</td>
+</tr>
+<tr>
+<td><code>CTRLADDR</code></td>
+<td>G</td>
+<td>Hex address of the hardware control port (not functional on Pi/Linux)</td>
+<td>378</td>
+</tr>
+<tr>
+<td><code>COMMAND</code></td>
+<td>G</td>
+<td>Creates a custom single-word command alias</td>
+<td>(none)</td>
+</tr>
+<tr>
+<td><code>ENABLE_LINKED</code></td>
+<td>G</td>
+<td>Controls who may use <code>*** LINKED AS</code> (Y/A/N)</td>
+<td>varies / see note</td>
+</tr>
+</tbody>
+</table>
+<h2 id="global-connect-text-and-access-defaults">Global — connect text and access defaults<a class="headerlink" href="#global-connect-text-and-access-defaults" title="Permanent link">&para;</a></h2>
+<p>These set defaults that can be overridden per port (next section).</p>
+<table>
+<thead>
+<tr>
+<th>Directive</th>
+<th>Scope</th>
+<th>Purpose</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>CTEXT</code></td>
+<td>G/P</td>
+<td>Connect text (global multi-line block ending <code>***</code>, or per-port one line / filename)</td>
+<td>(none)</td>
+</tr>
+<tr>
+<td><code>CTFLAGS</code></td>
+<td>G/P</td>
+<td>Which callers receive <code>CTEXT</code> (1 = alias, 2 = call, …)</td>
+<td>9</td>
+</tr>
+<tr>
+<td><code>INFOTEXT</code></td>
+<td>G</td>
+<td>Text for the <code>I</code> / INFO command (multi-line block ending <code>***</code>)</td>
+<td>(none)</td>
+</tr>
+<tr>
+<td><code>INFOMSG</code></td>
+<td>G</td>
+<td>Text for the INFO command</td>
+<td>(none)</td>
+</tr>
+<tr>
+<td><code>EXCLUDE</code></td>
+<td>G/P</td>
+<td>AX.25 L2 callsign blacklist</td>
+<td>(none)</td>
+</tr>
+<tr>
+<td><code>DEFAULTLANG</code></td>
+<td>G</td>
+<td>Default language number (see Languages)</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="interface-block">INTERFACE block<a class="headerlink" href="#interface-block" title="Permanent link">&para;</a></h2>
+<p>Defined inside <code>INTERFACE=n … ENDINTERFACE</code>, in the GLOBAL section. <code>TYPE</code> and <code>MTU</code> are
+mandatory; <code>PROTOCOL</code> is required for most types. Several keywords are <em>overloaded</em> — their
+meaning depends on the selected <code>TYPE</code>. See <a href="../interfaces/">Interfaces</a> for the per-type detail.</p>
+<table>
+<thead>
+<tr>
+<th>Directive</th>
+<th>Scope</th>
+<th>Purpose</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>TYPE</code></td>
+<td>I</td>
+<td>Hardware/driver type (<code>AGW</code>, <code>ASYNC</code>, <code>AXIP</code>, <code>AXTCP</code>, <code>AXUDP</code>, <code>EXTERNAL</code>, <code>LOOPBACK</code>, <code>TCP</code>, <code>TUN</code>, <code>UDP</code>, <code>YAM</code>). Mandatory</td>
+<td>(none)</td>
+</tr>
+<tr>
+<td><code>MTU</code></td>
+<td>I</td>
+<td>Maximum Transmission Unit (≤1500; ≤256 recommended on AX.25). Mandatory</td>
+<td>(none)</td>
+</tr>
+<tr>
+<td><code>PROTOCOL</code></td>
+<td>I</td>
+<td>Protocol on this interface (<code>ASCII</code>, <code>AX25</code>, <code>AXIP</code>, <code>AXTCP</code>, <code>AXUDP</code>, <code>DEDHOST</code>, <code>ETHER</code>, <code>HDLC</code>, <code>IP</code>, <code>KISS</code>, <code>MODEM</code>, <code>NETROM</code>, <code>NONE</code>, <code>PPP</code>, <code>SLIP</code>, <code>TNC</code>, <code>TNC2</code>)</td>
+<td>(none)</td>
+</tr>
+<tr>
+<td><code>COM</code></td>
+<td>I</td>
+<td>Serial device (ASYNC/YAM, e.g. <code>/dev/ttyUSB0</code>); tunnel name (TUN); remote UDP port (UDP); <code>COM=0</code> parks the interface</td>
+<td>(none)</td>
+</tr>
+<tr>
+<td><code>SPEED</code></td>
+<td>I</td>
+<td>Serial (ASYNC) or RF (SCC) baud rate, no comma</td>
+<td>(none)</td>
+</tr>
+<tr>
+<td><code>FLOW</code></td>
+<td>I</td>
+<td>Flow control (ASYNC): 0 none / 1 hardware RTS-CTS / 2 software XON-XOFF / 3 both</td>
+<td>(none)</td>
+</tr>
+<tr>
+<td><code>ID</code></td>
+<td>I</td>
+<td>Interface identification string (also device name, e.g. <code>eth0</code>, for EXTERNAL)</td>
+<td>(none)</td>
+</tr>
+<tr>
+<td><code>CONFIG</code></td>
+<td>I</td>
+<td>Hardware/type-specific config (e.g. AGWPE password, AXTCP client list)</td>
+<td>(none)</td>
+</tr>
+<tr>
+<td><code>KISSOPTIONS</code></td>
+<td>I</td>
+<td>KISS options: <code>NONE</code>, <code>POLLED</code>, <code>CHECKSUM</code>, <code>ACKMODE</code>, <code>SLAVE</code>, <code>NOPARMS</code></td>
+<td>NONE</td>
+</tr>
+<tr>
+<td><code>CHANNEL</code></td>
+<td>I</td>
+<td>Channel on multi-channel hardware (SCC; SCC unsupported on Pi)</td>
+<td>(none)</td>
+</tr>
+<tr>
+<td><code>CHANNELS</code></td>
+<td>I</td>
+<td>Number of TNC channels (DEDHOST/WA8DED only; 1–32)</td>
+<td>(none)</td>
+</tr>
+<tr>
+<td><code>APPLNUM</code></td>
+<td>I</td>
+<td>Application number (DEDHOST/WA8DED hostmode only; matches an <code>APPL</code> block)</td>
+<td>(none)</td>
+</tr>
+<tr>
+<td><code>INTNUM</code></td>
+<td>I</td>
+<td>Overloaded: AGWPE TCP port / AXTCP/TCP listen port / UDP local port</td>
+<td>(none)</td>
+</tr>
+<tr>
+<td><code>IOADDR</code></td>
+<td>I</td>
+<td>Overloaded: target IP for AGW/TCP/UDP</td>
+<td>127.0.0.1</td>
+</tr>
+<tr>
+<td><code>ETHADDR</code></td>
+<td>I</td>
+<td>Ethernet address (NDISXPKT/XR32 only; legacy)</td>
+<td>(none)</td>
+</tr>
+<tr>
+<td><code>RADIO</code></td>
+<td>I</td>
+<td>Associates a <code>RADIO</code> block with the interface</td>
+<td>(none)</td>
+</tr>
+<tr>
+<td><code>ENDINTERFACE</code></td>
+<td>I</td>
+<td>Ends the interface block. Mandatory</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="port-block">PORT block<a class="headerlink" href="#port-block" title="Permanent link">&para;</a></h2>
+<p>Defined inside <code>PORT=n … ENDPORT</code>, in the GLOBAL section, <strong>after</strong> the interface it binds to.
+<code>ID</code>, <code>INTERFACENUM</code> and <code>ENDPORT</code> are mandatory. Many keywords mirror a global default and
+override it for this port only.</p>
+<h3 id="port-identity-and-binding">Port — identity and binding<a class="headerlink" href="#port-identity-and-binding" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Directive</th>
+<th>Scope</th>
+<th>Purpose</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ID</code></td>
+<td>P</td>
+<td>Port identification text shown on the PORTS display. Mandatory</td>
+<td>(none)</td>
+</tr>
+<tr>
+<td><code>INTERFACENUM</code></td>
+<td>P</td>
+<td>Interface number this port binds to. Mandatory</td>
+<td>(none)</td>
+</tr>
+<tr>
+<td><code>CHANNEL</code></td>
+<td>P</td>
+<td>Channel (A–P) on a multi-channel interface</td>
+<td>A</td>
+</tr>
+<tr>
+<td><code>PORTCALL</code></td>
+<td>P</td>
+<td>Additional/override callsign for the port</td>
+<td>(none)</td>
+</tr>
+<tr>
+<td><code>PORTALIAS</code></td>
+<td>P</td>
+<td>Additional/override alias for the port</td>
+<td>(none)</td>
+</tr>
+<tr>
+<td><code>PORTALIAS2</code></td>
+<td>P</td>
+<td>Secondary alias (digipeating only)</td>
+<td>(none)</td>
+</tr>
+<tr>
+<td><code>CHATCALL</code></td>
+<td>P</td>
+<td>Per-port override of global <code>CHATCALL</code></td>
+<td>(none)</td>
+</tr>
+<tr>
+<td><code>CHATALIAS</code></td>
+<td>P</td>
+<td>Per-port override of global <code>CHATALIAS</code></td>
+<td>(none)</td>
+</tr>
+<tr>
+<td><code>PMSCALL</code></td>
+<td>P</td>
+<td>Per-port override of global <code>PMSCALL</code></td>
+<td>(none)</td>
+</tr>
+<tr>
+<td><code>PMSALIAS</code></td>
+<td>P</td>
+<td>Per-port override of global <code>PMSALIAS</code></td>
+<td>(none)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="port-ax25-and-link-timing">Port — AX.25 and link timing<a class="headerlink" href="#port-ax25-and-link-timing" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Directive</th>
+<th>Scope</th>
+<th>Purpose</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>PACLEN</code></td>
+<td>G/P</td>
+<td>Maximum packet length; global value sets the NET-ROM L3 default (max 256)</td>
+<td>120</td>
+</tr>
+<tr>
+<td><code>MAXFRAME</code></td>
+<td>P</td>
+<td>Max unacked AX.25 L2 frames (&gt;7 enables Modulo-128)</td>
+<td>3</td>
+</tr>
+<tr>
+<td><code>FRACK</code></td>
+<td>P</td>
+<td>AX.25 T1 frame-ack timeout (ms)</td>
+<td>7000</td>
+</tr>
+<tr>
+<td><code>RESPTIME</code></td>
+<td>P</td>
+<td>AX.25 delayed-ack timer (ms)</td>
+<td>varies / see note</td>
+</tr>
+<tr>
+<td><code>RETRIES</code></td>
+<td>P</td>
+<td>Max connect/disconnect/resend attempts</td>
+<td>10</td>
+</tr>
+<tr>
+<td><code>PERSIST</code></td>
+<td>P</td>
+<td>CSMA probability to transmit (0–255)</td>
+<td>64</td>
+</tr>
+<tr>
+<td><code>SLOTTIME</code></td>
+<td>P</td>
+<td>CSMA slot interval (ms)</td>
+<td>100</td>
+</tr>
+<tr>
+<td><code>TXDELAY</code></td>
+<td>P</td>
+<td>PTT-to-data delay (ms)</td>
+<td>300</td>
+</tr>
+<tr>
+<td><code>TXTAIL</code></td>
+<td>P</td>
+<td>Data-end-to-PTT-drop delay (ms)</td>
+<td>100</td>
+</tr>
+<tr>
+<td><code>T3</code></td>
+<td>G</td>
+<td>AX.25 link-check timer (s)</td>
+<td>180</td>
+</tr>
+<tr>
+<td><code>MAXLINKS</code></td>
+<td>G</td>
+<td>Max simultaneous AX.25 L2 links</td>
+<td>30</td>
+</tr>
+<tr>
+<td><code>SESSLIMIT</code></td>
+<td>G/P</td>
+<td>Max sessions per user (G) / per port (P)</td>
+<td>varies / see note</td>
+</tr>
+<tr>
+<td><code>USERS</code></td>
+<td>P</td>
+<td>Max simultaneous users on the port</td>
+<td>255</td>
+</tr>
+<tr>
+<td><code>CFLAGS</code></td>
+<td>P</td>
+<td>Connection-control flags (1 = uplink, 2 = downlink, 4 = apps unconditionally, 8 = suppress L3RTT, 16 = allow L2 frag)</td>
+<td>3</td>
+</tr>
+<tr>
+<td><code>RFBAUDS</code></td>
+<td>P</td>
+<td>Over-the-air baud rate</td>
+<td>1200</td>
+</tr>
+<tr>
+<td><code>KEEPALIVE</code></td>
+<td>P</td>
+<td>Link keepalive (set via the live command; see <a href="../../commands/command-reference/">command reference</a>)</td>
+<td>(per port)</td>
+</tr>
+<tr>
+<td><code>INITSTR</code></td>
+<td>P</td>
+<td>Modem init string (modem ports)</td>
+<td>(none)</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title"><code>RESPTIME</code> and <code>SESSLIMIT</code></p>
+<p><code>RESPTIME</code> is documented as 1500 ms in the directive section and 2000 ms in the
+<code>XROUTER.CFG</code> keyword list. The global <code>SESSLIMIT</code> default is given as both 32767
+("unrestricted") and, in worked examples, 10; the per-port default is 255. Use whichever
+your build reports.</p>
+</div>
+<h3 id="port-scc-only-inert-on-pilinux">Port — SCC-only (inert on Pi/Linux)<a class="headerlink" href="#port-scc-only-inert-on-pilinux" title="Permanent link">&para;</a></h3>
+<p>The Pi and Linux builds have no SCC card slot, so these keywords are accepted but inert there.</p>
+<table>
+<thead>
+<tr>
+<th>Directive</th>
+<th>Scope</th>
+<th>Purpose</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>FULLDUP</code></td>
+<td>P</td>
+<td>Full duplex (SCC only)</td>
+<td>0</td>
+</tr>
+<tr>
+<td><code>SOFTDCD</code></td>
+<td>P</td>
+<td>Software DCD (SCC only)</td>
+<td>0</td>
+</tr>
+<tr>
+<td><code>INTERLOCK</code></td>
+<td>P</td>
+<td>TX interlock group (SCC; non-zero shares; won't TX together)</td>
+<td>0</td>
+</tr>
+<tr>
+<td><code>CWID</code></td>
+<td>P</td>
+<td>CW Morse ID every 30 min (SCC only)</td>
+<td>(off)</td>
+</tr>
+<tr>
+<td><code>FEC</code></td>
+<td>P</td>
+<td>Reed-Solomon FEC (needs FEC-capable KISS/SCC/YAM)</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<h3 id="port-net-rom-and-routing-per-port">Port — NET-ROM and routing (per port)<a class="headerlink" href="#port-net-rom-and-routing-per-port" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Directive</th>
+<th>Scope</th>
+<th>Purpose</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>QUALITY</code></td>
+<td>P</td>
+<td>Default NET-ROM neighbour quality on the port (0 disables L3/L4 on the port; 256–511 enables AUTOQUAL)</td>
+<td>10</td>
+</tr>
+<tr>
+<td><code>MINQUAL</code></td>
+<td>G/P</td>
+<td>Min quality to add a node to the table (per-port override)</td>
+<td>10</td>
+</tr>
+<tr>
+<td><code>MINTXQUAL</code></td>
+<td>P</td>
+<td>Min quality to broadcast a node</td>
+<td>0</td>
+</tr>
+<tr>
+<td><code>NODESINTERVAL</code></td>
+<td>G/P</td>
+<td>Minutes between NODES broadcasts (per-port override)</td>
+<td>60</td>
+</tr>
+<tr>
+<td><code>MAXHOPS</code></td>
+<td>G/P</td>
+<td>Hop-count horizon (per-port override)</td>
+<td>30</td>
+</tr>
+<tr>
+<td><code>MAXTT</code></td>
+<td>G/P</td>
+<td>Trip-time horizon (per-port override)</td>
+<td>varies / see note</td>
+</tr>
+<tr>
+<td><code>PROXY</code></td>
+<td>G/P</td>
+<td>NET-ROM systems to tunnel AX.25 to (per-port override)</td>
+<td>(none)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="port-ip-per-port">Port — IP (per port)<a class="headerlink" href="#port-ip-per-port" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Directive</th>
+<th>Scope</th>
+<th>Purpose</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>IPADDRESS</code></td>
+<td>G/P</td>
+<td>Per-port IP address override (must differ from the Linux IP on EXTERNAL)</td>
+<td>(inherits)</td>
+</tr>
+<tr>
+<td><code>NETMASK</code></td>
+<td>P</td>
+<td>Subnet mask used with <code>IPADDRESS</code></td>
+<td>(none)</td>
+</tr>
+<tr>
+<td><code>DHCP</code></td>
+<td>P</td>
+<td>Enable (1) / disable (0) the DHCP client</td>
+<td>0</td>
+</tr>
+<tr>
+<td><code>DYNDNS</code></td>
+<td>P</td>
+<td>Enable/disable the Dynamic DNS update client</td>
+<td>(per page)</td>
+</tr>
+<tr>
+<td><code>IPLINK</code></td>
+<td>P</td>
+<td>IP address / hostname of the AXIP/AXUDP peer. Mandatory on AXIP/AXUDP ports</td>
+<td>(none)</td>
+</tr>
+<tr>
+<td><code>UDPLOCAL</code></td>
+<td>P</td>
+<td>RX UDP port for AXUDP operations</td>
+<td>93</td>
+</tr>
+<tr>
+<td><code>UDPREMOTE</code></td>
+<td>P</td>
+<td>TX UDP port / partner's AXUDP RX port</td>
+<td>93</td>
+</tr>
+</tbody>
+</table>
+<h3 id="port-digipeating-beacons-and-aprs">Port — digipeating, beacons and APRS<a class="headerlink" href="#port-digipeating-beacons-and-aprs" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Directive</th>
+<th>Scope</th>
+<th>Purpose</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>DIGIFLAG</code></td>
+<td>P</td>
+<td>Digipeat options bitmask (1 = UI, 2 = non-UI, 4 = RELAY, 8 = TRACE, 16 = WIDE, 32 = APRS 3rd-party via L4, 64 = to Internet, 128 = from Internet, 256 = UITRACE, 512 = UIFLOOD)</td>
+<td>7</td>
+</tr>
+<tr>
+<td><code>DIGIPORT</code></td>
+<td>P</td>
+<td>Destination port for digipeated frames</td>
+<td>0 (this port)</td>
+</tr>
+<tr>
+<td><code>TXPORT</code></td>
+<td>P</td>
+<td>Port on which to transmit if not this one</td>
+<td>0</td>
+</tr>
+<tr>
+<td><code>IDTEXT</code></td>
+<td>G/P</td>
+<td>Single ID-beacon line broadcast every <code>IDINTERVAL</code></td>
+<td>(none)</td>
+</tr>
+<tr>
+<td><code>IDINTERVAL</code></td>
+<td>G</td>
+<td>Minutes between <code>IDTEXT</code> beacons (0 disables)</td>
+<td>15</td>
+</tr>
+<tr>
+<td><code>IDPATH</code></td>
+<td>P</td>
+<td>AX.25 destination + digi path for ID beacons</td>
+<td>"ID"</td>
+</tr>
+<tr>
+<td><code>UNPROTO</code></td>
+<td>P</td>
+<td>Destination/digi path for unproto (UI) broadcasts</td>
+<td>(none)</td>
+</tr>
+<tr>
+<td><code>BCAST</code></td>
+<td>P</td>
+<td>AX.25 destination addresses for UI broadcasting</td>
+<td>(none)</td>
+</tr>
+<tr>
+<td><code>BCFROM</code></td>
+<td>P</td>
+<td>Callsigns allowed to use UI broadcast</td>
+<td>(unrestricted if absent)</td>
+</tr>
+<tr>
+<td><code>APRSPATH</code></td>
+<td>P</td>
+<td>Default digi path for APRS frames</td>
+<td>(none)</td>
+</tr>
+<tr>
+<td><code>FREQUENCY</code></td>
+<td>P</td>
+<td>Radio frequency (Hz)</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<h3 id="port-mheard-and-frame-pipes">Port — MHeard and frame pipes<a class="headerlink" href="#port-mheard-and-frame-pipes" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Directive</th>
+<th>Scope</th>
+<th>Purpose</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>MHEARD</code></td>
+<td>P</td>
+<td>Enable MHeard and its size on the port (0–50)</td>
+<td>15</td>
+</tr>
+<tr>
+<td><code>MHFLAGS</code></td>
+<td>P</td>
+<td>MHeard content flags bitmask (1 = direct, 2 = direct digis, 4 = digipeated)</td>
+<td>255</td>
+</tr>
+<tr>
+<td><code>PIPE</code></td>
+<td>P</td>
+<td>Frame pipe to another port (optional callsign filter)</td>
+<td>(none)</td>
+</tr>
+<tr>
+<td><code>PIPEFLAG</code></td>
+<td>P</td>
+<td>Frame-pipe option flags bitmask</td>
+<td>3</td>
+</tr>
+</tbody>
+</table>
+<h3 id="port-access-and-applications">Port — access and applications<a class="headerlink" href="#port-access-and-applications" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Directive</th>
+<th>Scope</th>
+<th>Purpose</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>APPLMASK</code></td>
+<td>P</td>
+<td>Which hosted apps are AX.25-L2 connectable on the port (bitmask)</td>
+<td>255</td>
+</tr>
+<tr>
+<td><code>EXCLUDE</code></td>
+<td>G/P</td>
+<td>Callsigns not allowed to connect (blacklist)</td>
+<td>(none)</td>
+</tr>
+<tr>
+<td><code>VALIDCALLS</code></td>
+<td>P</td>
+<td>Whitelist — accept only these callsigns</td>
+<td>(none)</td>
+</tr>
+<tr>
+<td><code>SYSOP</code></td>
+<td>P</td>
+<td>If 1, all users on this port get sysop status with <strong>no</strong> password challenge — secure links only</td>
+<td>0</td>
+</tr>
+<tr>
+<td><code>CTEXT</code></td>
+<td>G/P</td>
+<td>Per-port connect text (one line or filename)</td>
+<td>(none)</td>
+</tr>
+<tr>
+<td><code>CTFLAGS</code></td>
+<td>G/P</td>
+<td>Per-port connect-text control flags</td>
+<td>9</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition danger">
+<p class="admonition-title"><code>SYSOP=1</code> grants full control with no challenge</p>
+<p>Setting <code>SYSOP=1</code> on a port gives every connecting user full sysop privileges without a
+password. The manual restricts this to genuinely secure links (RS232, Ethernet); the
+default is 0. See <a href="../../admin/security-hardening/">Security and hardening</a>.</p>
+</div>
+<hr />
+<h2 id="appl-block">APPL block<a class="headerlink" href="#appl-block" title="Permanent link">&para;</a></h2>
+<p>Defined inside <code>APPL=n … ENDAPPL</code>. Describes a hosted application (e.g. a BBS reached through
+the node).</p>
+<table>
+<thead>
+<tr>
+<th>Directive</th>
+<th>Scope</th>
+<th>Purpose</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>APPLNAME</code></td>
+<td>A</td>
+<td>Application name</td>
+<td>(none)</td>
+</tr>
+<tr>
+<td><code>APPLCALL</code></td>
+<td>A</td>
+<td>Application callsign</td>
+<td>(none)</td>
+</tr>
+<tr>
+<td><code>APPLALIAS</code></td>
+<td>A</td>
+<td>Application alias</td>
+<td>(none)</td>
+</tr>
+<tr>
+<td><code>APPLQUAL</code></td>
+<td>A</td>
+<td>Application NET-ROM quality to broadcast (non-zero ⇒ L4-connectable and in NODES)</td>
+<td>150</td>
+</tr>
+<tr>
+<td><code>APPLFLAGS</code></td>
+<td>A</td>
+<td>Flags controlling the application</td>
+<td>(none)</td>
+</tr>
+<tr>
+<td><code>APPLTYPE</code></td>
+<td>A</td>
+<td>Application type (<code>=TCP[,ip:]port</code>)</td>
+<td>(none)</td>
+</tr>
+<tr>
+<td><code>APPLNUM</code></td>
+<td>A</td>
+<td>Application number (matches a host-mode interface)</td>
+<td>(none)</td>
+</tr>
+<tr>
+<td><code>ENDAPPL</code></td>
+<td>A</td>
+<td>Ends the application block. Mandatory</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="radio-block">RADIO block<a class="headerlink" href="#radio-block" title="Permanent link">&para;</a></h2>
+<p>Defined inside <code>RADIO=n … ENDRADIO</code>. Describes a CAT-controlled radio.</p>
+<table>
+<thead>
+<tr>
+<th>Directive</th>
+<th>Scope</th>
+<th>Purpose</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>NAME</code></td>
+<td>R</td>
+<td>Radio name</td>
+<td>(none)</td>
+</tr>
+<tr>
+<td><code>COM</code></td>
+<td>R</td>
+<td>TTY device or <code>ip:port</code> for radio control</td>
+<td>(none)</td>
+</tr>
+<tr>
+<td><code>BAUDS</code></td>
+<td>R</td>
+<td>Control-port baud rate</td>
+<td>(none)</td>
+</tr>
+<tr>
+<td><code>STOPBITS</code></td>
+<td>R</td>
+<td>Control-port stop bits</td>
+<td>(none)</td>
+</tr>
+<tr>
+<td><code>TYPE</code></td>
+<td>R</td>
+<td>Radio type</td>
+<td>(none)</td>
+</tr>
+<tr>
+<td><code>MODE</code></td>
+<td>R</td>
+<td>Operating mode</td>
+<td>(none)</td>
+</tr>
+<tr>
+<td><code>FREQUENCY</code></td>
+<td>R</td>
+<td>Receive frequency</td>
+<td>(none)</td>
+</tr>
+<tr>
+<td><code>TXFREQ</code></td>
+<td>R</td>
+<td>Transmit frequency</td>
+<td>(none)</td>
+</tr>
+<tr>
+<td><code>OFFSET</code></td>
+<td>R</td>
+<td>Frequency offset</td>
+<td>(none)</td>
+</tr>
+<tr>
+<td><code>SQUELCH</code></td>
+<td>R</td>
+<td>Squelch level</td>
+<td>(none)</td>
+</tr>
+<tr>
+<td><code>VOLUME</code></td>
+<td>R</td>
+<td>Volume level</td>
+<td>(none)</td>
+</tr>
+<tr>
+<td><code>PTTMETHOD</code></td>
+<td>R</td>
+<td>PTT keying method</td>
+<td>(none)</td>
+</tr>
+<tr>
+<td><code>RXAUDIODEV</code></td>
+<td>R</td>
+<td>Receive audio device</td>
+<td>(none)</td>
+</tr>
+<tr>
+<td><code>ENDRADIO</code></td>
+<td>R</td>
+<td>Ends the radio block</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<div class="admonition note">
+<p class="admonition-title">Typos in the manual's keyword list</p>
+<p>The wiki's <code>XROUTER.CFG</code> keyword listing reproduces several source typos verbatim, including
+<code>NUMCONOLES</code> (for <code>NUMCONSOLES</code>), <code>Aplication</code>, <code>protcol</code>, <code>coonfig</code>, <code>qulity</code> and
+<code>squuelch</code>. Use the corrected spellings shown above; expect the misspellings if you grep the
+raw manual.</p>
+</div>
+<hr />
+<p><strong>Sources:</strong> In-program manual mirrored on the OARC wiki —
+<a href="https://wiki.oarc.uk/packet:xrouter:docs:man7">Section 7, Configuration Directives (<code>man7</code>)</a> and
+<a href="https://wiki.oarc.uk/packet:xrouter:docs:man8"><code>XROUTER.CFG</code> keyword list, Section 8 (<code>man8</code>)</a> ·
+<a href="https://ohiopacket.org/xrpi/docs/xrcfg.htm">ohiopacket.org XRPi mirror — <code>xrcfg.htm</code> (global keywords), <code>ports.htm</code>, <code>ifaces.htm</code></a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../ports/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Ports">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Ports
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../system-files/" class="md-footer__link md-footer__link--next" aria-label="Next: System and data files">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                System and data files
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Documentation re-presentation released under CC BY 4.0. XRouter itself is copyright Paula G8PZT and is free for non-commercial amateur use. This is an unofficial, community-maintained site; for canonical information defer to the author.
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://groups.io/g/xrouter" target="_blank" rel="noopener" title="XRouter support group (groups.io)" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M256 0a64 64 0 1 1 0 128 64 64 0 1 1 0-128m96 312c0 25-12.7 47-32 59.9V464c0 26.5-21.5 48-48 48h-32c-26.5 0-48-21.5-48-48v-92.1C172.7 359 160 337 160 312v-40c0-53 43-96 96-96s96 43 96 96zM96 32a56 56 0 1 1 0 112 56 56 0 1 1 0-112m16 240v32c0 32.5 12.1 62.1 32 84.7V464c0 1.2 0 2.5.1 3.7-8.5 7.6-19.7 12.3-32.1 12.3H80c-26.5 0-48-21.5-48-48v-56.6c-19.1-11-32-31.7-32-55.4v-32c0-53 43-96 96-96 12.7 0 24.8 2.5 35.9 6.9-12.6 21.4-19.9 46.4-19.9 73.1m256 192v-75.3c19.9-22.5 32-52.2 32-84.7v-32c0-26.7-7.3-51.6-19.9-73.1 11.1-4.5 23.2-6.9 35.9-6.9 53 0 96 43 96 96v32c0 23.7-12.9 44.4-32 55.4V432c0 26.5-21.5 48-48 48h-32c-12.3 0-23.6-4.6-32.1-12.3 0-1.2.1-2.5.1-3.7m48-432a56 56 0 1 1 0 112 56 56 0 1 1 0-112"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.indexes", "navigation.top", "navigation.tracking", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"default": "latest", "provider": "mike"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
